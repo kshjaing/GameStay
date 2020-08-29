@@ -6,7 +6,7 @@
 
 .wrap {
     display: table-cell;
-    background-image: url('../Images/Background/BG_TheDivision2.jpg');
+    background-image: url('../Images/Background/BG_TheDivision.jpg');
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -14,9 +14,24 @@
     vertical-align: middle;
 }
 
+.wrap_table {
+    display: table;
+}
+
+.logo {
+    z-index: 1;
+    background-image: url('../Images/Logo_GameStay.png');
+    width: 400px;
+    height: 200px;
+    top: 0;
+    position: absolute;
+}
+
 .login_square {
+    z-index: 2;
+    display: table-cell;
     display: inline-block;
-    background-color: #1F2023;
+    background-color: #111213;
     width: 30vw;
     height: 65vh;
     position: relative;

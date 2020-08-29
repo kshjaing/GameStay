@@ -11,7 +11,8 @@
 <body>
     <form id="form1" runat="server">
         <div class="wrap">
-            <div class="login_square"></div>
+             <div class="logo"></div>
+             <div class="login_square"></div>
         </div>
     </form>
 </body>
