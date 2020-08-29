@@ -1,0 +1,6 @@
+1. 부모div의 자식 div 가로로 가운데 정렬하기
+-부모 div
+text-align: center
+
+-자식 div
+display: inline-block

@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="wrap">
-            <div class="login_sqaure">asdf</div>
+            <div class="login_square"></div>
         </div>
     </form>
 </body>
