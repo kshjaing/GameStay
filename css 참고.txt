@@ -4,3 +4,11 @@ text-align: center
 
 -자식 div
 display: inline-block
+
+
+2. 부모 div의 자식 div 가로로 가운데 정렬하기
+(부모 div를 테이블셀처럼 만듦)
+
+-부모 div
+display: table-cell
+vertical-align: middle
