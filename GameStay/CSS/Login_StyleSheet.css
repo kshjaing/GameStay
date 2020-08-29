@@ -5,18 +5,19 @@
 }
 
 .wrap {
+    display: table-cell;
     background-image: url('../Images/Background/BG_TheDivision2.jpg');
     width: 100vw;
     height: 100vh;
     position: relative;
     text-align: center;
+    vertical-align: middle;
 }
 
 .login_square {
     display: inline-block;
     background-color: #1F2023;
-    width: 20vw;
-    height: 55vh;
+    width: 30vw;
+    height: 65vh;
     position: relative;
-    vertical-align: central;
 }
