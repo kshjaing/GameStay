@@ -12,7 +12,7 @@
     <form id="form1" runat="server">
         <div class="wrap">
              <div class="div_logo">
-                 <img class="img_logo"/>
+                 <img class="img_logo" src="Images/Logo_GameStay.png" />
              </div>
              <div class="login_square"></div>
         </div>

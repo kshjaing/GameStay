@@ -12,3 +12,17 @@ display: inline-block
 -부모 div
 display: table-cell
 vertical-align: middle
+
+3. div의 크기에 맞춰 이미지 꽉 채우기
+(img에 background-image로 적용했을경우)
+-img
+background-size: cover;
+background-position: center;
+width: 100%;
+height: 100%;
+
+(img에 src로 적용했을경우)
+-img
+width: 100%
+height: 100%
+object-fit: cover
