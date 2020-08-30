@@ -86,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Fonts\NIXGONFONTS B 2.0.ttf" />
+    <Content Include="Fonts\NIXGONFONTS L 2.0.ttf" />
+    <Content Include="Fonts\NIXGONFONTS M 2.0.ttf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

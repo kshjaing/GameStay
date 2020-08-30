@@ -14,7 +14,9 @@
              <div class="div_logo">
                  <img class="img_logo" src="Images/Logo_GameStay.png" />
              </div>
-             <div class="login_square"></div>
+             <div class="login_square">
+
+             </div>
         </div>
     </form>
 </body>

@@ -1,4 +1,4 @@
-1. 부모div의 자식 div 가로로 가운데 정렬하기
+1. 부모div의 자식 div를 가로로 가운데 정렬하기
 -부모 div
 text-align: center
 
@@ -6,23 +6,30 @@ text-align: center
 display: inline-block
 
 
-2. 부모 div의 자식 div 가로로 가운데 정렬하기
+
+
+2. 부모 div의 자식 div 세로로 가운데 정렬하기
 (부모 div를 테이블셀처럼 만듦)
 
 -부모 div
 display: table-cell
 vertical-align: middle
 
+
+
+
 3. div의 크기에 맞춰 이미지 꽉 채우기
-(img에 background-image로 적용했을경우)
+(img에 src로 적용했을경우)
+-img
+width: 100%
+height: 100%
+object-fit: cover
+
+
+(background-image로 적용했을경우)
 -img
 background-size: cover;
 background-position: center;
 width: 100%;
 height: 100%;
 
-(img에 src로 적용했을경우)
--img
-width: 100%
-height: 100%
-object-fit: cover
