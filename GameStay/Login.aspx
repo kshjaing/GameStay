@@ -15,7 +15,7 @@
                  <img class="img_logo" src="Images/Logo_GameStay.png" />
              </div>
              <div class="login_square">
-
+                 <h1 class="txt_login">로그인</h1>
              </div>
         </div>
     </form>

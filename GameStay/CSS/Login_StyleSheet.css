@@ -38,4 +38,9 @@
     width: 30vw;
     height: 65vh;
     position: relative;
+    text-align: center;
+}
+
+.txt_login {
+
 }
