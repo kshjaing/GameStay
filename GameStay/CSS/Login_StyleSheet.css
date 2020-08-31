@@ -24,6 +24,7 @@
     height: 80px;
     left: 10px;
     position: absolute;
+    min-height: 100px;
 }
 
 .img_logo {
