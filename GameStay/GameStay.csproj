@@ -68,9 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\Login_StyleSheet.css" />
-    <Content Include="Images\Background\BG_TheDivision.jpg" />
-    <Content Include="Images\Icon\Icon_ID.png" />
-    <Content Include="Images\Icon\Icon_Password.png" />
+    <Content Include="Images\Background\BG_TheDivision2.jpg" />
     <Content Include="Images\Logo_GameStay.png" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
