@@ -20,14 +20,26 @@
                      <div class="wrap_input_id">
                         <input type="text" class="input_id" placeholder="아이디"/>
                         <img class="icon_id" src="Images/Icon/Icon_ID.png" />
-                     </div><br/><br/><br/>
+                     </div>
+                     <br/><br/><br/>
+
                      <div class="wrap_input_password">
                         <input type="password" class="input_password" placeholder="비밀번호"/>
-                        <img class="icon_id" src="Images/Icon/Icon_Password.png" />
-                     </div> <br /><br />
-                     <input type="button" class="button_confirm" value="로그인"/><br /><br /><br />
-                     <a class="a_register">회원이 아니신가요?</a><br /><br />
-                     <a class="a_find_password">비밀번호를 잊어버렸나요?</a>
+                        <img class="icon_password" src="Images/Icon/Icon_Password.png" />
+                     </div> 
+                     <br /><br />
+
+                     <div class="wrap_login">
+                         <input type="checkbox" class="check_autologin" />
+                         <a class="a_autologin" onclick="">자동 로그인</a>
+                         <div class="div_icon_login">
+                             <img class="imgbutton_login" src="Images/Icon/Icon_Login_NotHover.png" />
+                         </div>
+                     </div>
+                     <br /><br /><br /><br /><br /><br />
+
+                     <a class="a_register" href="Register.aspx">회원이 아니신가요?</a>
+                     <br /><br />
                  </div>
              </div>
         </div>

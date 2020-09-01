@@ -40,7 +40,6 @@
     width: 30vw;
     height: 65vh;
     position: relative;
-    text-align: center;
 }
 
 .txt_login {
@@ -100,15 +99,48 @@
     outline: none;
 }
 
-.button_confirm {
+.icon_password {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.wrap_login {
+    position: absolute;
+    width: 17vw;
+    height: 35px;
     margin-top: 30px;
-    
+    left: 50%;
+    margin-left: -8.5vw;
+    text-align: left;
+}
+
+.check_autologin {
+}
+
+.a_autologin {
+    color: #FFFFFF;
+    font-size: 12pt;
+}
+
+.div_icon_login {
+    position: absolute;
+    margin-left: 15.5vw;
+    margin-top: -25px;
+    width: 30px;
+    height: 30px;
+}
+
+.imgbutton_login {
+    color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .a_register {
     color: #FFFFFF;
-}
-
-.a_find_password {
-    color: #FFFFFF;
+    text-decoration: none;
 }
