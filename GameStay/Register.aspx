@@ -10,6 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <h1>회원가입</h1>
         </div>
     </form>
 </body>

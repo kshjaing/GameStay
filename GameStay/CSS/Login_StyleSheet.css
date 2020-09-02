@@ -143,11 +143,6 @@
     object-fit: cover;
 }
 
-.imgbutton_login:hover {
-    cursor: pointer;
-    pointer-events: none;
-}
-
 .a_register {
     color: #FFFFFF;
     text-decoration: none;
