@@ -33,7 +33,9 @@
                          <input type="checkbox" class="check_autologin" />
                          <a class="a_autologin" onclick="">자동 로그인</a>
                          <div class="div_icon_login">
-                             <img class="imgbutton_login" src="Images/Icon/Icon_Login_NotHover.png" />
+                             <img class="imgbutton_login" src="Images/Icon/Icon_Login_NotHover.png"
+                                 onmouseover="this.src='Images/Icon/Icon_Login_Hover.png'"
+                                 onmouseout="this.src='Images/Icon/Icon_Login_NotHover.png'"/>
                          </div>
                      </div>
                      <br /><br /><br /><br /><br /><br /><br /><br />
