@@ -18,25 +18,37 @@ namespace GameStay
             dbManager.DBOpen();
         }
 
-        public void Login_OnClick()
+        
+
+        public void OnClick()
         {
             if (Request["__EVENTTARGET"] == "login_Click")
             {
-                Response.Redirect("Store_Main.aspx");
-                //inputID.Value = "뭔데";
+                
             }
-            
-            isLogin = dbManager.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString());
-            
-
-            
-            if (isLogin == true)
-            {
-                Response.Redirect("Store_Main.aspx");
-            }
-            else
-                Response.Redirect("Register.aspx");
-            
         }
+
+
+        //로그인 버튼 클릭
+        protected void imgbtnLogin_Click(object sender, ImageClickEventArgs e)
+        {
+            isLogin = dbManager.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString());
+
+            if (inputID.Value.Length == 0 || inputPassword.Value.Length == 0)
+            {
+            }
+
+            else
+            {
+                if (isLogin == true)
+                {
+                }
+                else
+                {
+
+                }
+            }
+        }
+
     }
 }

@@ -40,13 +40,15 @@
                          <input type="checkbox" class="check_autologin" />
                          <a class="a_autologin" onclick="">자동 로그인</a>
                          <div class="div_icon_login" >
-                             <img class="imgbutton_login" src="Images/Icon/Icon_Login_NotHover.png"
-                                 onmouseover="this.src='Images/Icon/Icon_Login_Hover.png'"
-                                 onmouseout="this.src='Images/Icon/Icon_Login_NotHover.png'"
-                                 runat="server" id="loginButton" onclick="imgLogin_Click();" clinetidmode="Static"/>
+                             <asp:ImageButton runat="server" ID="imgbtnLogin" ImageUrl="Images/Icon/Icon_Login_NotHover.png" 
+                                 onMouseOver="this.src='Images/Icon/Icon_Login_Hover.png'"
+                                 onMouseOut="this.src='Images/Icon/Icon_Login_NotHover.png'"
+                                 CausesValidation="True" CssClass="imgbutton_login" OnClick="imgbtnLogin_Click" />
                          </div>
                      </div>
-                     <br /><br /><br /><br /><br /><br /><br /><br />
+                     <br /><br /><br /><br />
+                     <a runat="server" id="txtLoginCheck" cssclass="a_login_check" draggable="false">가입하지 않은 아이디이거나,<br /> 잘못된 비밀번호입니다.</a>
+                     <br /><br /><br /><br />
 
                      <a class="a_register" href="Register.aspx">회원이 아니신가요?</a>
                      <br /><br />

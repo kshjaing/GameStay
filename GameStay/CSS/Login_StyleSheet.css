@@ -143,6 +143,12 @@
     object-fit: cover;
 }
 
+.a_login_check {
+    color: #ff0000;
+    width:100px;
+    visibility: hidden;
+}
+
 .a_register {
     color: #FFFFFF;
     text-decoration: none;
