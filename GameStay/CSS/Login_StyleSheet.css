@@ -146,9 +146,16 @@
 .a_login_check {
     color: #FF0000;
     visibility: hidden;
+    user-select: none;
 }
 
 .a_register {
     color: #FFFFFF;
+    text-decoration: none;
+    user-select: none;
+}
+
+.a_register_link {
+    color: #115fff;
     text-decoration: none;
 }

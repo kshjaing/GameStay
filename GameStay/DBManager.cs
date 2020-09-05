@@ -48,6 +48,8 @@ namespace GameStay
         
 
         //======================로그인, 회원가입=========================
+
+        //로그인
         public bool Authenticate(string id, string pwd)
         {
             bool isAuthen = false;

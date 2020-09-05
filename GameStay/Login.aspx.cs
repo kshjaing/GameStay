@@ -47,6 +47,7 @@ namespace GameStay
                     txtLoginCheck.Attributes.Add("style", "visibility: visible");
                     txtLoginCheck.InnerText = "로그인 성공!";
                 }
+
                 else
                 {
                     txtLoginCheck.Attributes.Add("style", "visibility: visible");

@@ -33,3 +33,10 @@ background-position: center;
 width: 100%;
 height: 100%;
 
+
+4. *중요* 캐시가 쌓여서 css를 맞게써도 바로 적용이 안될때
+<link href="CSS/StyleSheet.css rel="stylesheet"/>
+여기서 css뒤에 버전을 붙여주고 실행한다
+href="CSS/StyleSheet.css?ver15
+이런식으로 실행하고 또 안될때마다 
+숫자를 임의대로 바꿔서 실행

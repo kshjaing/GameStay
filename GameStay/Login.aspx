@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="CSS/Login_StyleSheet.css?ver=2" rel="stylesheet" />
+    <link href="CSS/Login_StyleSheet.css?ver=15" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script type="text/javascript">
@@ -47,10 +47,11 @@
                          </div>
                      </div>
                      <br /><br /><br /><br />
-                     <a runat="server" id="txtLoginCheck" class="a_login_check" draggable="false">가입하지 않은 아이디이거나,<br /> 잘못된 비밀번호입니다.</a>
+                     <a runat="server" id="txtLoginCheck" class="a_login_check" draggable="false">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</a>
                      <br /><br /><br /><br />
 
-                     <a class="a_register" href="Register.aspx">회원이 아니신가요?</a>
+                     <a class="a_register" draggable="false">회원이 아니신가요?</a>
+                     <a class="a_register_link" href="Register.aspx">회원가입</a>
                      <br /><br />
                  </div>
              </div>

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="CSS/Register_StyleSheet.css" rel="stylesheet" />
+    <link href="CSS/Register_StyleSheet.css?ver15" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
@@ -26,23 +26,20 @@
                      <div class="wrap_input_password">
                         <input type="password" class="input_password" placeholder="비밀번호"/>
                         <img class="icon_password" src="Images/Icon/Icon_Password.png" />
-                     </div> 
-                     <br /><br />
-
-                     <div class="wrap_login">
-                         <input type="checkbox" class="check_autologin" />
-                         <a class="a_autologin" onclick="">자동 로그인</a>
-                         <div class="div_icon_login">
-                             <img class="imgbutton_login" src="Images/Icon/Icon_Login_NotHover.png"
-                                 onmouseover="this.src='Images/Icon/Icon_Login_Hover.png'"
-                                 onmouseout="this.src='Images/Icon/Icon_Login_NotHover.png'"/>
-                         </div>
                      </div>
-                     <br /><br /><br /><br /><br /><br /><br /><br />
 
-                     <a class="a_register" href="Register.aspx">회원이 아니신가요?</a>
-                     <br /><br />
+                     <div class="wrap_input_password_dupl">
+                        <input type="password" class="input_password" placeholder="비밀번호 확인"/>
+                        <img class="icon_password" src="Images/Icon/Icon_Password.png" />
+                     </div>
+
+                     <div class="wrap_input_email">
+                        <input type="email" class="input_email" placeholder="이메일"/>
+                        <img class="icon_email" src="Images/Icon/Icon_Email.png" />
+                     </div>
                  </div>
+
+                 <input type="button" class="button_register" value="가입"/>
              </div>
         </div>
     </form>
