@@ -36,16 +36,21 @@ namespace GameStay
 
             if (inputID.Value.Length == 0 || inputPassword.Value.Length == 0)
             {
+                txtLoginCheck.Attributes.Add("style", "visibility: visible");
+                txtLoginCheck.InnerText = "아이디와 비밀번호를 모두 입력해주세요.";
             }
 
             else
             {
                 if (isLogin == true)
                 {
+                    txtLoginCheck.Attributes.Add("style", "visibility: visible");
+                    txtLoginCheck.InnerText = "로그인 성공!";
                 }
                 else
                 {
-
+                    txtLoginCheck.Attributes.Add("style", "visibility: visible");
+                    txtLoginCheck.InnerText = "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.";
                 }
             }
         }
