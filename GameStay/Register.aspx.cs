@@ -11,7 +11,12 @@ namespace GameStay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void Register_OnClick(object sender, EventArgs e)
+        {
+            inputID.Value = "버튼작동";
         }
     }
 }

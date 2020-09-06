@@ -82,6 +82,7 @@
     height: 40px;
 }
 
+
 .wrap_input_password {
     left: 50%;
     margin-left: -8.5vw;
@@ -128,15 +129,19 @@
     font-size: 12pt;
 }
 
-.div_icon_login {
-    position: relative;
-    margin-left: 15.5vw;
-    margin-top: -25px;
+.button_login {
+    position: absolute;
+    margin-left: 10vw;
     width: 30px;
     height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
 }
 
-.imgbutton_login {
+.img_login {
+    position: relative;
     color: #FFFFFF;
     width: 100%;
     height: 100%;

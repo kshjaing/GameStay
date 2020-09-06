@@ -18,19 +18,8 @@ namespace GameStay
             dbManager.DBOpen();
         }
 
-        
 
-        public void OnClick()
-        {
-            if (Request["__EVENTTARGET"] == "login_Click")
-            {
-                
-            }
-        }
-
-
-        //로그인 버튼 클릭
-        protected void imgbtnLogin_Click(object sender, ImageClickEventArgs e)
+        protected void btnLogin_OnClick(object sender, EventArgs e)
         {
             isLogin = dbManager.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString());
 
@@ -55,6 +44,7 @@ namespace GameStay
                 }
             }
         }
+        
 
     }
 }

@@ -40,3 +40,14 @@ height: 100%;
 href="CSS/StyleSheet.css?ver15
 이런식으로 실행하고 또 안될때마다 
 숫자를 임의대로 바꿔서 실행
+
+
+5. html 태그에 클릭이벤트 적용방법(img태그는 안됨)
+<button runat="server" class="button_register" onserverclick="Register_OnClick">가입</button>
+
+cs파일에서는
+protected void Register_OnClick(object sender, EventArgs e)
+함수 생성해주면 됨
+
+input태그도 마찬가지
+<input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
