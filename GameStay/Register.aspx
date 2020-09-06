@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="CSS/Register_StyleSheet.css?ver2" rel="stylesheet" />
+    <link href="CSS/Register_StyleSheet.css?ver5" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
@@ -43,7 +43,7 @@
                      </div>
                  </div>
 
-                 <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
+                 <input type="button" runat="server" class="button_register hover_btn" onserverclick="Register_OnClick" value="가입"/>
              </div>
         </div>
     </form>

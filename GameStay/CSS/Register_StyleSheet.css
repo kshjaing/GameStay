@@ -158,4 +158,11 @@
     height: 50px;
     position: relative;
     margin-top: 28vh;
+    border-radius: 0 10px 0 10px;
+    transition: all 0.2s ;
+}
+
+.button_register:hover {
+    color: #FFFFFF;
+    background-color: #3dae7a;
 }
