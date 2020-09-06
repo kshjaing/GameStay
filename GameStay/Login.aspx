@@ -7,11 +7,6 @@
     <link href="CSS/Login_StyleSheet.css?ver=12" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <script type="text/javascript">
-        function imgLogin_Click() {
-            __doPostBack('login_Click', '');
-        }
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
