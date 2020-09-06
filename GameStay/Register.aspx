@@ -43,7 +43,7 @@
                      </div>
                  </div>
 
-                 <input type="button" runat="server" class="button_register hover_btn" onserverclick="Register_OnClick" value="가입"/>
+                 <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
              </div>
         </div>
     </form>
