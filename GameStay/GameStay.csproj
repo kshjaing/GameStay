@@ -68,8 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\Login_StyleSheet.css" />
+    <Content Include="CSS\Register_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
+    <Content Include="Images\Background\BG_Anthem.jpg" />
     <Content Include="Images\Background\BG_TheDivision.jpg" />
+    <Content Include="Images\Icon\Icon_Email.png" />
     <Content Include="Images\Icon\Icon_ID.png" />
     <Content Include="Images\Icon\Icon_Login_Hover.png" />
     <Content Include="Images\Icon\Icon_Login_NotHover.png" />
