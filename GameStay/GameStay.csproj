@@ -81,7 +81,6 @@
     <Content Include="Images\Logo_GameStay.png" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="Stoare_Main.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -108,13 +107,6 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stoare_Main.aspx.cs">
-      <DependentUpon>Stoare_Main.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stoare_Main.aspx.designer.cs">
-      <DependentUpon>Stoare_Main.aspx</DependentUpon>
     </Compile>
     <Compile Include="Store_Main.aspx.cs">
       <DependentUpon>Store_Main.aspx</DependentUpon>
