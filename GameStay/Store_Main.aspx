@@ -11,7 +11,6 @@
 <body>
     <form id="form1" runat="server">
         <div class="wrap">
-            <h1>상점 메인페이지(임시)</h1>
             <asp:HyperLink ID="HyperLink1" runat="server" CssClass="link_login"
                 href="Login.aspx">
                 로그인</asp:HyperLink>
