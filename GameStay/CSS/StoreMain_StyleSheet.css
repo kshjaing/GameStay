@@ -1,7 +1,23 @@
-﻿html, body {
+﻿@font-face {
+    font-family: 'NIXGONFONTS L';
+    src: url('../Fonts/NIXGONFONTS L 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+html, body {
     margin: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .wrap {

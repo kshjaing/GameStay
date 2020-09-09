@@ -67,25 +67,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Community.aspx" />
     <Content Include="CSS\Login_StyleSheet.css" />
     <Content Include="CSS\MasterPage_StyleSheet.css" />
     <Content Include="CSS\Register_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="Images\Background\BG_Anthem.jpg" />
     <Content Include="Images\Background\BG_TheDivision.jpg" />
-    <Content Include="Images\Icon\Icon_Email.png" />
-    <Content Include="Images\Icon\Icon_ID.png" />
-    <Content Include="Images\Icon\Icon_Login_Hover.png" />
-    <Content Include="Images\Icon\Icon_Login_NotHover.png" />
-    <Content Include="Images\Icon\Icon_Password.png" />
+    <Content Include="Images\Icon\Login\Icon_Email.png" />
+    <Content Include="Images\Icon\Login\Icon_ID.png" />
+    <Content Include="Images\Icon\Login\Icon_Login_Hover.png" />
+    <Content Include="Images\Icon\Login\Icon_Login_NotHover.png" />
+    <Content Include="Images\Icon\Login\Icon_Password.png" />
     <Content Include="Images\Logo_GameStay.png" />
+    <Content Include="Images\Menu\Menu_Select_BG.png" />
+    <Content Include="Images\Profile\Profile_Mongkka.png" />
+    <Content Include="Library.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Community.aspx.cs">
+      <DependentUpon>Community.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community.aspx.designer.cs">
+      <DependentUpon>Community.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DBManager.cs" />
+    <Compile Include="Library.aspx.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library.aspx.designer.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,6 +118,13 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">

@@ -20,26 +20,26 @@
                      <div class="wrap_input_id">
                         <input type="text" class="input_id" placeholder="아이디"
                             runat="server" id="inputID" autocomplete="off"/>
-                        <img class="icon_id" src="Images/Icon/Icon_ID.png" />
+                        <img class="icon_id" src="Images/Icon/Login/Icon_ID.png" />
                      </div>
                      <br/><br/><br/>
 
                      <div class="wrap_input_password">
                         <input type="password" class="input_password" placeholder="비밀번호"
                             runat="server" id="inputPassword" autocomplete="off"/>
-                        <img class="icon_password" src="Images/Icon/Icon_Password.png" />
+                        <img class="icon_password" src="Images/Icon/Login/Icon_Password.png" />
                      </div>
 
                      <div class="wrap_input_password_dupl">
                         <input type="password" class="input_password" placeholder="비밀번호 확인"
                             runat="server" id="inputPasswordDupl" autocomplete="off"/>
-                        <img class="icon_password" src="Images/Icon/Icon_Password.png" />
+                        <img class="icon_password" src="Images/Icon/Login/Icon_Password.png" />
                      </div>
 
                      <div class="wrap_input_email">
                         <input type="email" class="input_email" placeholder="이메일"
                             runat="server" id="inputEmail" autocomplete="off"/>
-                        <img class="icon_email" src="Images/Icon/Icon_Email.png" />
+                        <img class="icon_email" src="Images/Icon/Login/Icon_Email.png" />
                      </div>
                  </div>
 

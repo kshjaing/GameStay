@@ -20,14 +20,14 @@
                      <div class="wrap_input_id">
                         <input type="text" class="input_id" placeholder="아이디"
                              runat="server" id="inputID" autocomplete="off"/>
-                        <img class="icon_id" src="Images/Icon/Icon_ID.png" />
+                        <img class="icon_id" src="Images/Icon/Login/Icon_ID.png" />
                      </div>
                      <br/><br/><br/>
 
                      <div class="wrap_input_password">
                         <input type="password" class="input_password" placeholder="비밀번호"
                             runat="server" id="inputPassword" autocomplete="off"/>
-                        <img class="icon_password" src="Images/Icon/Icon_Password.png" />
+                        <img class="icon_password" src="Images/Icon/Login/Icon_Password.png" />
                      </div> 
                      <br /><br />
 
@@ -35,9 +35,9 @@
                          <input type="checkbox" class="check_autologin" />
                          <a class="a_autologin" onclick="">자동 로그인</a>
                              <button class="button_login" runat="server" onserverclick="btnLogin_OnClick">
-                                 <img class="img_login" src="Images/Icon/Icon_Login_NotHover.png" 
-                                     onmouseover="this.src='Images/Icon/Icon_Login_Hover.png'"
-                                     onmouseout="this.src='Images/Icon/Icon_Login_NotHover.png'"/>
+                                 <img class="img_login" src="Images/Icon/Login/Icon_Login_NotHover.png" 
+                                     onmouseover="this.src='Images/Icon/Login/Icon_Login_Hover.png'"
+                                     onmouseout="this.src='Images/Icon/Login/Icon_Login_NotHover.png'"/>
                              </button>
                      </div>
                      <br /><br /><br /><br />

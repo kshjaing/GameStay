@@ -51,3 +51,9 @@ protected void Register_OnClick(object sender, EventArgs e)
 
 input태그도 마찬가지
 <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
+
+
+6. div안에서 a태그 가운데 정렬하기
+top: 50%
+left: 50%
+transform: translate(-50%, -50%)

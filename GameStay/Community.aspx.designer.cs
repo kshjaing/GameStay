@@ -11,7 +11,7 @@ namespace GameStay
 {
 
 
-    public partial class Store_Main
+    public partial class Community
     {
     }
 }

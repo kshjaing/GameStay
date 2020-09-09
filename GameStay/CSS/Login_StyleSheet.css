@@ -1,4 +1,24 @@
-﻿html, body {
+﻿@font-face {
+    font-family: 'NIXGONFONTS L';
+    src: url('../Fonts/NIXGONFONTS L 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+input::placeholder {
+    font-family: 'NIXGONFONTS M';
+}
+
+
+html, body {
     margin: 0;
     width: 100%;
     height: 100%;
@@ -49,6 +69,7 @@
     margin-top: 100px;
     color: #FFFFFF;
     top: 30px;
+    font-family: 'NIXGONFONTS B';
 }
 
 .wrap_idpass {
@@ -72,6 +93,7 @@
     padding-bottom: 8px;
     padding-left: 3vw;
     outline: none;
+    font-family: 'NIXGONFONTS M';
 }
 
 .icon_id {
@@ -127,6 +149,7 @@
 .a_autologin {
     color: #FFFFFF;
     font-size: 12pt;
+    font-family: 'NIXGONFONTS M';
 }
 
 .button_login {
@@ -138,6 +161,8 @@
     border: none;
     outline: none;
     padding: 0;
+    margin-top: -6px;
+    font-family: 'NIXGONFONTS M';
 }
 
 .img_login {
@@ -152,15 +177,18 @@
     color: #FF0000;
     visibility: hidden;
     user-select: none;
+    font-family: 'NIXGONFONTS M';
 }
 
 .a_register {
     color: #FFFFFF;
     text-decoration: none;
     user-select: none;
+    font-family: 'NIXGONFONTS M';
 }
 
 .a_register_link {
     color: #115fff;
     text-decoration: none;
+    font-family: 'NIXGONFONTS M';
 }
