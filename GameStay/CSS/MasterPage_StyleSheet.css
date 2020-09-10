@@ -29,7 +29,7 @@ body, html {
     width: 14vw;
     height: 100vh;
     position: fixed;
-    background: #1b1c1e;
+    background: #1B1C1E;
     float: left;
     text-align: center;
 }
@@ -115,6 +115,6 @@ body, html {
 .contents {
     width: 86vw;
     height: 100vh;
-    background: #25262b;
+    background: #25262B;
     float: right;
 }
