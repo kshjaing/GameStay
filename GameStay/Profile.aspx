@@ -10,6 +10,17 @@
     
     <div class="profile_square" >
         <h1 class="txt_profile" >프로필</h1>
+        <h2>
+            <asp:Image ID="img_profile" runat="server" CssClass="img_profile" ImageUrl="~/Images/Profile/Profile_Mongkka.png"></asp:Image>
+            
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+
+        </h2>
+        
     </div>
 
 </asp:Content>
