@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="CSS/MasterPage_StyleSheet.css?ver=1" rel="stylesheet" />
+    <link href="CSS/MasterPage_StyleSheet.css?ver=13" rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -14,7 +14,43 @@
     <form id="form1" runat="server">
         <div class="wrap">
             <div class="menu">
-
+                <div class="div_logo">
+                   <img class="img_logo" src="Images/Logo_GameStay.png" />
+                </div>
+                <div class="div_menu_tabs">
+                    <div class="div_store">
+                        <button class="button button_store" runat="server" onserverclick="StoreMenu_OnClick">
+                            <img class="img_select_bg_store" src="Images/Menu/Menu_Select_BG.png" />
+                        </button>
+                        <div class="div_wrap_a div_wrap_a_store">
+                            <a class="menu_a a_store" runat="server" onserverclick="StoreMenu_OnClick">상점</a>
+                        </div>
+                    </div>
+                    <div class="div_library">
+                        <button class="button button_library" runat="server" onserverclick="LibraryMenu_OnClick">
+                            <img class="img_select_bg_library" src="Images/Menu/Menu_Select_BG.png"  hidden="hidden"/>
+                        </button>
+                        <div class="div_wrap_a div_wrap_a_library">
+                            <a class="menu_a a_library" runat="server" onserverclick="LibraryMenu_OnClick">라이브러리</a>
+                        </div>
+                    </div>
+                    <div class="div_community">
+                        <button class="button button_community" runat="server" onserverclick="CommunityMenu_OnClick">
+                            <img class="img_select_bg_community" src="Images/Menu/Menu_Select_BG.png" hidden="hidden"/>
+                        </button>
+                        <div class="div_wrap_a div_wrap_a_community">
+                            <a class="menu_a a_community" runat="server" onserverclick="CommunityMenu_OnClick">커뮤니티</a>
+                        </div>
+                    </div>
+                    <div class="div_profile">
+                        <button class="button button_profile" runat="server" onserverclick="ProfileMenu_OnClick">
+                            <img class="img_select_bg_profile" src="Images/Menu/Menu_Select_BG.png" hidden="hidden"/>
+                        </button>
+                        <div class="div_wrap_a div_wrap_a_profile">
+                            <a class="menu_a a_profile" runat="server" onserverclick="ProfileMenu_OnClick">프로필</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="contents">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

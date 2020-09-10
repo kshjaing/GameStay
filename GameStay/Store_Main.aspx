@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="link_login"
-                href="Login.aspx">
-                로그인</asp:HyperLink>
+    <h1 style="color:#FFFFFF">스토어 메인</h1>
+    <img src="Images/Background/BG_Anthem.jpg" />
 </asp:Content>

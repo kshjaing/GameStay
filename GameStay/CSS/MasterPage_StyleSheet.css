@@ -1,13 +1,28 @@
-﻿body, html {
+﻿@font-face {
+    font-family: 'NIXGONFONTS L';
+    src: url('../Fonts/NIXGONFONTS L 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+body, html {
     margin: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .wrap {
     width: 100vw;
     height: 100vh;
-    background: #ff6a00
 }
 
 .menu {
@@ -16,6 +31,85 @@
     position: fixed;
     background: #0f0f10;
     float: left;
+    text-align: center;
+}
+
+.button {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    vertical-align: central;
+    text-align: center;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.menu_a {
+    font-size: 15pt;
+    font-family: 'NIXGONFONTS M';
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.div_wrap_a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.div_logo {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin-top: 45px;
+}
+
+.img_logo {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.div_store {
+    width: 100%;
+    height: 55px;
+    position: relative;
+    margin-top: 20px;
+}
+
+
+.div_library {
+    width: 100%;
+    height: 55px;
+    position: relative;
+}
+
+
+
+.div_community {
+    width: 100%;
+    height: 55px;
+    position: relative;
+}
+
+
+
+.div_profile {
+    width: 100%;
+    height: 55px;
+    position: relative;
+}
+
+
+
+.img_select_bg_store {
+    width: 100%;
+    height: auto;
 }
 
 .contents {

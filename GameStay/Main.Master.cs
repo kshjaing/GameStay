@@ -13,5 +13,22 @@ namespace GameStay
         {
 
         }
+
+        protected void StoreMenu_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Store_Main.aspx");
+        }
+        protected void LibraryMenu_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Library.aspx");
+        }
+        protected void CommunityMenu_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Community.aspx");
+        }
+        protected void ProfileMenu_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Profile.aspx");
+        }
     }
 }
