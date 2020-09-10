@@ -70,6 +70,7 @@
     <Content Include="Community.aspx" />
     <Content Include="CSS\Login_StyleSheet.css" />
     <Content Include="CSS\MasterPage_StyleSheet.css" />
+    <Content Include="CSS\Profile_StyleSheet.css" />
     <Content Include="CSS\Register_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="Images\Background\BG_Anthem.jpg" />

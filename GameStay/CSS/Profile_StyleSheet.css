@@ -1,0 +1,34 @@
+﻿@font-face {
+    font-family: 'NIXGONFONTS L';
+    src: url('../Fonts/NIXGONFONTS L 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+.profile_square {
+    z-index: 2;
+
+    background-color: #0F0F10;
+    width: 1000px;
+    height: 30vh;
+    position: relative;
+    vertical-align:central;
+    margin:0 auto;
+    
+}
+
+.txt_profile {
+    margin-top: 200px;
+    color: #FFFFFF;
+    font-size: 25pt;
+
+    font-family: 'NIXGONFONTS B';
+}
