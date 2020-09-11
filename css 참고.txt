@@ -57,3 +57,6 @@ input태그도 마찬가지
 top: 50%
 left: 50%
 transform: translate(-50%, -50%)
+
+7. cs코드딴에서 html태그 스타일 바꾸기
+input_a.Style["visibility"] = "hidden"
