@@ -110,21 +110,25 @@ body, html {
 .img_select_bg_store {
     width: 100%;
     height: auto;
+    visibility: visible;
 }
 
 .img_select_bg_library {
     width: 100%;
     height: auto;
+    visibility: hidden;
 }
 
 .img_select_bg_community {
     width: 100%;
     height: auto;
+    visibility: hidden;
 }
 
 .img_select_bg_profile {
     width: 100%;
     height: auto;
+    visibility: hidden;
 }
 
 .contents {
