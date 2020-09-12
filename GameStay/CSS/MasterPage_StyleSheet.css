@@ -135,5 +135,6 @@ body, html {
     width: 86vw;
     height: 100vh;
     background: #25262B;
+    background-repeat: repeat-y;
     float: right;
 }

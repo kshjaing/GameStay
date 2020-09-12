@@ -74,6 +74,14 @@
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="Images\Background\BG_Anthem.jpg" />
     <Content Include="Images\Background\BG_TheDivision.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_Borderlands3.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Cyberpunk2077.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Firewatch.PNG" />
+    <Content Include="Images\GameTitleImages\TitleImage_FlightSimulator2020.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_HorizonZeroDawn.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Nier Automata.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_TheElderScrolls5Skyrim.JPG" />
     <Content Include="Images\Icon\Login\Icon_Email.png" />
     <Content Include="Images\Icon\Login\Icon_ID.png" />
     <Content Include="Images\Icon\Login\Icon_Login_Hover.png" />
