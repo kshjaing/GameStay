@@ -29,7 +29,7 @@ body, html {
     width: 14vw;
     height: 100vh;
     position: fixed;
-    background: #1b1c1e;
+    background: #1B1C1E;
     float: left;
     text-align: center;
 }
@@ -110,11 +110,31 @@ body, html {
 .img_select_bg_store {
     width: 100%;
     height: auto;
+    visibility: visible;
+}
+
+.img_select_bg_library {
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+}
+
+.img_select_bg_community {
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+}
+
+.img_select_bg_profile {
+    width: 100%;
+    height: auto;
+    visibility: hidden;
 }
 
 .contents {
     width: 86vw;
     height: 100vh;
-    background: #25262b;
+    background: #25262B;
+    background-repeat: repeat-y;
     float: right;
 }
