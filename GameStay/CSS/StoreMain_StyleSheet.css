@@ -32,8 +32,8 @@ html, body {
 }
 
 .div_wrap_features {
-    width: 70vw;
-    height: 40vh;
+    width: 100%;
+    height: 40%;
     background: #1B1C1E;
     position: relative;
 }
