@@ -60,7 +60,7 @@ body, html {
 .div_store {
     float: left;
     margin-left: 30px;
-    width: 10%;
+    width: 12%;
     height: 100%;
     position: relative;
     box-sizing: border-box;
@@ -69,28 +69,28 @@ body, html {
 
 .div_library {
     float: left;
-    width: 10%;
+    width: 12%;
     height: 100%;
     position: relative;
 }
 
 .div_community {
     float: left;
-    width: 10%;
+    width: 12%;
     height: 100%;
     position: relative;
 }
 
 .div_profile {
     float: left;
-    width: 10%;
+    width: 12%;
     height: 100%;
     position: relative;
 }
 
 .div_login {
     float: right;
-    width: 10%;
+    width: 12%;
     height: 100%;
     position: relative;
 }
@@ -112,9 +112,3 @@ body, html {
     cursor: pointer;
 }
 
-.contents {
-    width: 100vw;
-    height: 100%;
-    background: #25262B;
-    background-repeat: repeat-y;
-}
