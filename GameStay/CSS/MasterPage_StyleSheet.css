@@ -26,8 +26,8 @@ body, html {
 }
 
 .menu {
-    width: 14vw;
-    height: 100vh;
+    width: 100vw;
+    height: 8vh;
     position: fixed;
     background: #1B1C1E;
     float: left;

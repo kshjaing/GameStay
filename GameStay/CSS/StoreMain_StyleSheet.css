@@ -35,8 +35,8 @@ html, body {
 }
 
 .div_wrap_features {
-    width: 85%;
-    height: 53%;
+    width: 85vw;
+    height: 53vh;
     background: #1B1C1E;
     margin-left: 70px;
 }
@@ -84,7 +84,7 @@ html, body {
     font-family: 'NIXGONFONTS M';
     text-align: right;
     margin-right: 27px;
-    padding-top: 150px;
+    padding-top: 30%;
     margin-bottom: 0;
 }
 
