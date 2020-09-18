@@ -13,24 +13,112 @@
     src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
 }
 
+.wrap{
+    width:100%;
+    height:100%;
+}
+
+.p {
+    user-select: none;
+}
+
+/*프로필 상단부*/
+
 .profile_square {
     background-color: #1B1C1E;
-    width: 1000px;
-    height: 30vh;
+    width: 80%;
+    height: 35%;
     position: relative;
     vertical-align: central;
-    margin: 0 auto;
+    margin-left: 70px;
+    margin-top: 90px;
 }
 
-.txt_profile {
-    margin-top: 200px;
+.img_profile {
+    width: 250px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.txt_profile_detail {
+    color: #FFFFFF;
+    font-size: 20pt;
+    font-family: 'NIXGONFONTS M';
+}
+.txt_profile_nickname {
+    color: #FFFFFF;
+    font-size: 40pt;
+    font-family: 'NIXGONFONTS B';
+}
+.txt_profile_level {
+    font-size: 20pt;
+    font-family: 'NIXGONFONTS M';
+    color: #ff6a00;
+}
+.txt_profile_countgame {
+    font-size: 20pt;
+    font-family: 'NIXGONFONTS M';
+    color: cyan;
+}
+.div_profile_img{
+    width:30%;
+    float:left;
+    height:100%;
+}
+.div_profile_detail {
+    width: 60%;
+    height: 100%;
+    padding-top: 40px;
+    float:left;
+
+}
+.div_profile_edit {
+    width: 10%;
+    height: 100%;
+    float: right;
+}
+
+/*최근 구매한 게임*/
+
+.profile_square_game {
+    background-color: #1B1C1E;
+    width: 80%;
+    height: 55%;
+    position: relative;
+    vertical-align: central;
+    margin-left: 70px;
+    margin-top: 10px;
+}
+
+.txt_profile_game {
+    color: #FFFFFF;
+    font-size: 35pt;
+    font-family: 'NIXGONFONTS B';
+    padding-top:30px;
+    padding-left:50px;
+}
+
+.div_profile_game{
+    float:left;
+    width:32%;
+    height:90%;
+}
+.div_profile_game-1{
+    padding-left:50px;
+}
+
+.img_profile_game{
+    width:90%;
+
+}
+.txt_profile_game_title {
     color: #FFFFFF;
     font-size: 25pt;
-    font-family: 'NIXGONFONTS B';
-    padding: 30px 0px 10px 40px;
+    font-family: 'NIXGONFONTS M';
 }
-.img_profile{
-    width:150px;
-    margin-left:40px;
+.txt_profile_game_date {
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: 'NIXGONFONTS M';
+}
 
-}
+/*스크린샷*/
