@@ -13,50 +13,74 @@ namespace GameStay
         {
             if(Request.Url.ToString().Contains("Store_Main.aspx"))
             {
-                img_store.Style["visibility"] = "visible";
-                img_library.Style["visibility"] = "hidden";
-                img_community.Style["visibility"] = "hidden";
-                img_profile.Style["visibility"] = "hidden";
+                div_store.Style["box-sizing"] = "border-box";
+                div_store.Style["border-bottom"] = "5px solid #85cba5";
+                div_library.Style["box-sizing"] = "unset";
+                div_library.Style["border-bottom"] = "unset";
+                div_community.Style["box-sizing"] = "unset";
+                div_community.Style["border-bottom"] = "unset";
+                div_profile.Style["box-sizing"] = "unset";
+                div_profile.Style["border-bottom"] = "unset";
             }
             else if (Request.Url.ToString().Contains("Library.aspx"))
             {
-                img_store.Style["visibility"] = "hidden";
-                img_library.Style["visibility"] = "visible";
-                img_community.Style["visibility"] = "hidden";
-                img_profile.Style["visibility"] = "hidden";
+                div_library.Style["box-sizing"] = "border-box";
+                div_library.Style["border-bottom"] = "5px solid #85cba5";
+                div_store.Style["box-sizing"] = "unset";
+                div_store.Style["border-bottom"] = "unset";
+                div_community.Style["box-sizing"] = "unset";
+                div_community.Style["border-bottom"] = "unset";
+                div_profile.Style["box-sizing"] = "unset";
+                div_profile.Style["border-bottom"] = "unset";
             }
             else if (Request.Url.ToString().Contains("Community.aspx"))
             {
-                img_store.Style["visibility"] = "hidden";
-                img_library.Style["visibility"] = "hidden";
-                img_community.Style["visibility"] = "visible";
-                img_profile.Style["visibility"] = "hidden";
+                div_community.Style["box-sizing"] = "border-box";
+                div_community.Style["border-bottom"] = "5px solid #85cba5";
+                div_store.Style["box-sizing"] = "unset";
+                div_store.Style["border-bottom"] = "unset";
+                div_library.Style["box-sizing"] = "unset";
+                div_library.Style["border-bottom"] = "unset";
+                div_profile.Style["box-sizing"] = "unset";
+                div_profile.Style["border-bottom"] = "unset";
             }
             else if (Request.Url.ToString().Contains("Profile.aspx"))
             {
-                img_store.Style["visibility"] = "hidden";
-                img_library.Style["visibility"] = "hidden";
-                img_community.Style["visibility"] = "hidden";
-                img_profile.Style["visibility"] = "visible";
+                div_profile.Style["box-sizing"] = "border-box";
+                div_profile.Style["border-bottom"] = "5px solid #85cba5";
+                div_library.Style["box-sizing"] = "unset";
+                div_library.Style["border-bottom"] = "unset";
+                div_community.Style["box-sizing"] = "unset";
+                div_community.Style["border-bottom"] = "unset";
+                div_store.Style["box-sizing"] = "unset";
+                div_store.Style["border-bottom"] = "unset";
             }
         }
 
         protected void StoreMenu_OnClick(object sender, EventArgs e)
         {
             Response.Redirect("Store_Main.aspx");
-
+            button_store.Style["background"] = "#85cba5";
         }
         protected void LibraryMenu_OnClick(object sender, EventArgs e)
         {
             Response.Redirect("Library.aspx");
+            button_library.Style["background"] = "#85cba5";
         }
         protected void CommunityMenu_OnClick(object sender, EventArgs e)
         {
             Response.Redirect("Community.aspx");
+            button_community.Style["background"] = "#85cba5";
         }
         protected void ProfileMenu_OnClick(object sender, EventArgs e)
         {
             Response.Redirect("Profile.aspx");
+            button_profile.Style["background"] = "#85cba5";
+        }
+
+        protected void Login_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }
