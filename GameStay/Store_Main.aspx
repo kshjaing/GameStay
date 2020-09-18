@@ -3,7 +3,6 @@
     <link href="CSS/StoreMain_StyleSheet.css?ver=12" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
     <div class="wrap_total">
         <p class="p_features">특집 및 추천</p>
         <div class="div_wrap_features">
