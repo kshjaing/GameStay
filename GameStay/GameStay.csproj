@@ -157,6 +157,20 @@
     <Content Include="Fonts\NIXGONFONTS L 2.0.ttf" />
     <Content Include="Fonts\NIXGONFONTS M 2.0.ttf" />
     <Content Include="Main.Master" />
+    <Content Include="Fonts\NanumFontSetup_TTF_SQUARE\NanumSquareB.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_SQUARE\NanumSquareEB.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_SQUARE\NanumSquareL.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_SQUARE\NanumSquareR.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_SQUARE\NanumSquare_acB.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_SQUARE\NanumSquare_acEB.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_SQUARE\NanumSquare_acL.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_SQUARE\NanumSquare_acR.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_GOTHIC\NanumGothic.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_GOTHIC\NanumGothicBold.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_GOTHIC\NanumGothicExtraBold.ttf" />
+    <Content Include="Fonts\NanumFontSetup_TTF_GOTHIC\NanumGothicLight.ttf" />
+    <Content Include="Fonts\IBMPlexSansKR-Bold.ttf" />
+    <Content Include="Fonts\IBMPlexSansKR-Medium.ttf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

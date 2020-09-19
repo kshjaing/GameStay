@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=13" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=16" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -14,7 +14,7 @@
                 <p class="p p_title">사이버펑크 2077</p>
                 <p class="p p_status">출시예정 11/19</p>
                 <p class="p p_preorder">사전주문</p>
-                <p class="p p_price">\66,000</p>
+                <p class="p p_price">66,000원</p>
             </div>
         </div>
     </div>
