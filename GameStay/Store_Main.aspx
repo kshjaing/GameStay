@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=15" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=12" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -39,8 +39,8 @@
                          class="title_image"/></li>
                         <li><img src="Images/GameTitleImages/TitleImage_Borderlands3.JPG" 
                          class="title_image"/></li>
-                        <li><img src="Images/GameTitleImages/TitleImage_DeathStranding.JPG" 
-                         class="title_image"/></li>
+                        <li><img src="Images/GameTitleImages/TitleImage_DeathStranding.jpg" 
+                            class="title_image"/></li>
                         <li><img src="Images/GameTitleImages/TitleImage_FlightSimulator2020.JPG" 
                          class="title_image"/></li>
                     </ul>
@@ -54,16 +54,16 @@
             </div>
         </div>
         <div class="wrap_features_pagedot">
-            <button type="button" class="button_page button_page1">
+            <button type="button" class="button_page button_page0" id="button_page0">
                 <img class="img_pagedot" src="Images/Icon/PageDot_Selected.png" />
             </button>
-            <button type="button" class="button_page button_page2">
+            <button type="button" class="button_page button_page1" id="button_page1">
                 <img class="img_pagedot" src="Images/Icon/PageDot.png" />
             </button>
-            <button type="button" class="button_page button_page3">
+            <button type="button" class="button_page button_page2" id="button_page2">
                 <img class="img_pagedot" src="Images/Icon/PageDot.png" />
             </button>
-            <button type="button" class="button_page button_page4">
+            <button type="button" class="button_page button_page3" id="button_page3">
                 <img class="img_pagedot" src="Images/Icon/PageDot.png" />
             </button>
         </div>

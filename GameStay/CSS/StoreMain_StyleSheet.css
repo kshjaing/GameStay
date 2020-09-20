@@ -130,11 +130,13 @@ html, body {
     background: transparent;
     margin-left: 2px;
     margin-right: 2px;
+    
 }
 
 .img_pagedot {
     width: 15px;
     height: 15px;
+    cursor: pointer;
 }
 
 .div_wrap_features_button {
@@ -159,6 +161,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .button_features_right {
@@ -170,6 +173,7 @@ html, body {
     border: none;
     outline: none;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .btnimg_features_right {

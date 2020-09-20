@@ -82,7 +82,7 @@
     <Content Include="Images\Button\Arrow_Right.png" />
     <Content Include="Images\GameTitleImages\TitleImage_Borderlands3.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_Cyberpunk2077.JPG" />
-    <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Firewatch.PNG" />
     <Content Include="Images\GameTitleImages\TitleImage_FlightSimulator2020.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_HorizonZeroDawn.JPG" />
