@@ -76,9 +76,13 @@
     <Content Include="Images\Background\Background.png" />
     <Content Include="Images\Background\BG_Anthem.jpg" />
     <Content Include="Images\Background\BG_TheDivision.jpg" />
+    <Content Include="Images\Button\Arrow_Left_Hover.png" />
+    <Content Include="Images\Button\Arrow_Left.png" />
+    <Content Include="Images\Button\Arrow_Right_Hover.png" />
+    <Content Include="Images\Button\Arrow_Right.png" />
     <Content Include="Images\GameTitleImages\TitleImage_Borderlands3.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_Cyberpunk2077.JPG" />
-    <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Firewatch.PNG" />
     <Content Include="Images\GameTitleImages\TitleImage_FlightSimulator2020.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_HorizonZeroDawn.JPG" />
@@ -89,6 +93,8 @@
     <Content Include="Images\Icon\Login\Icon_Login_Hover.png" />
     <Content Include="Images\Icon\Login\Icon_Login_NotHover.png" />
     <Content Include="Images\Icon\Login\Icon_Password.png" />
+    <Content Include="Images\Icon\PageDot.png" />
+    <Content Include="Images\Icon\PageDot_Selected.png" />
     <Content Include="Images\Logo_GameStay.png" />
     <Content Include="Images\Menu\Menu_Select_BG.png" />
     <Content Include="Images\Profile\Profile_Mongkka.png" />
@@ -157,6 +163,8 @@
     <Content Include="Fonts\NIXGONFONTS L 2.0.ttf" />
     <Content Include="Fonts\NIXGONFONTS M 2.0.ttf" />
     <Content Include="Main.Master" />
+    <Content Include="Fonts\IBMPlexSansKR-Bold.ttf" />
+    <Content Include="Fonts\IBMPlexSansKR-Medium.ttf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

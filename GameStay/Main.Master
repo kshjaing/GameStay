@@ -5,9 +5,13 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="CSS/MasterPage_StyleSheet.css?ver=13" rel="stylesheet" />
+    <link href="CSS/MasterPage_StyleSheet.css?ver=12" rel="stylesheet" />
     <script>
         function onMouseOverStore() {
+            if (window.location.href.includes('Store_Main.aspx')) {
+                return;
+            }
+            else
             document.getElementById("button_store").style.background = "#85cba5";
         }
         function onMouseOutStore() {
@@ -22,6 +26,10 @@
         }
 
         function onMouseOverLibrary() {
+            if (window.location.href.includes('Library.aspx')) {
+                return;
+            }
+            else
             document.getElementById("button_library").style.background = "#85cba5";
         }
         function onMouseOutLibrary() {
@@ -36,6 +44,10 @@
         }
 
         function onMouseOverCommunity() {
+            if (window.location.href.includes('Community.aspx')) {
+                return;
+            }
+            else
             document.getElementById("button_community").style.background = "#85cba5";
         }
         function onMouseOutCommunity() {
@@ -50,6 +62,10 @@
         }
 
         function onMouseOverProfile() {
+            if (window.location.href.includes('Profile.aspx')) {
+                return;
+            }
+            else
             document.getElementById("button_profile").style.background = "#85cba5";
         }
         function onMouseOutProfile() {

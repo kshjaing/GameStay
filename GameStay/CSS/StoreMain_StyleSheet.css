@@ -1,23 +1,17 @@
 ﻿@font-face {
-    font-family: 'NIXGONFONTS L';
-    src: url('../Fonts/NIXGONFONTS L 2.0.ttf') format('truetype');
+    font-family: 'IBMPlexSansKR-Bold';
+    src: url('../Fonts/IBMPlexSansKR-Bold.ttf') format('truetype');
 }
-
 @font-face {
-    font-family: 'NIXGONFONTS M';
-    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'NIXGONFONTS B';
-    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
 }
 
 html, body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    font-family: 'NIXGONFONTS M';
+    font-family: IBMPlexSansKR-Medium;
 }
 
 .wrap_total {
@@ -28,33 +22,53 @@ html, body {
 
 .p_features {
     color: #FFFFFF;
-    font-size: 20pt;
+    font-size: 17pt;
+    margin-bottom: 0;
 }
 
 .div_wrap_features {
-    width: 70vw;
-    height: 40vh;
+    width: 100%;
+    height: 50%;
     background: #1B1C1E;
     position: relative;
+    margin-top: 10px;
 }
 
 .div_features_pic {
-    width: 65%;
+    width: 715px;
     height: 100%;
     background: #ff6a00;
     float: left;
+    overflow: hidden;
+    position: relative;
 }
+
+.div_wrap_image {
+    width: 2860px;
+    height: 100%;
+    position: relative;
+}
+
+.slider {
+    list-style : none;
+    margin: 0;
+    padding: 0;
+}
+
 
 .title_image {
-    width: 100%;
+    width: 715px;
     height: 100%;
-    object-fit: cover;
+    float: left;
+    position: relative;
 }
 
-.div_feautres_details {
+.div_features_details {
     width: 35%;
     height: 100%;
+    background: #1B1C1E;
     float: right;
+    position: relative;
 }
 
 .p {
@@ -62,28 +76,108 @@ html, body {
 }
 
 .p_title {
-    font-size: 20pt;
+    font-size: 29pt;
     color: #FFFFFF;
-    font-family: 'NIXGONFONTS B';
+    font-family: IBMPlexSansKR-Bold;
+    padding-left: 25px;
+    margin-bottom: 0;
 }
 
 .p_status {
-    font-size: 20pt;
-    color: #FFFFFF;
-    font-family: 'NIXGONFONTS M';
+    font-size: 18pt;
+    color: #696969;
+    font-family: IBMPlexSansKR-Medium;
+    margin-top: 0;
+    padding-left: 25px;
+    padding-top: 10px;
 }
 
 .p_preorder {
-    font-size: 20pt;
+    font-size: 16pt;
     color: #85cba5;
-    font-family: 'NIXGONFONTS M';
+    font-family: IBMPlexSansKR-Medium;
     text-align: right;
+    padding-top: 75px;
+    padding-right: 25px;
     margin-bottom: 0;
+    margin-top: 50px;
 }
 
 .p_price {
     font-size: 30pt;
     color: #FFFFFF;
-    font-family: 'NIXGONFONTS B';
+    font-family: IBMPlexSansKR-Bold;
     text-align: right;
+    padding-right: 25px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.wrap_features_pagedot {
+    width: 100px;
+    height: 15px;
+    margin-top: 20px;
+    float: left;
+    left: 50%;
+    transform:translateX(-50%);
+    position: relative;
+}
+
+.button_page {
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+    margin-left: 2px;
+    margin-right: 2px;
+    
+}
+
+.img_pagedot {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.div_wrap_features_button {
+    float: right;
+    width: 75px;
+    height: 35px;
+}
+
+.button_features_left {
+    width: 35px;
+    height: 35px;
+    float: right;
+    background: transparent;
+    padding: 0;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.btnimg_features_left {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.button_features_right {
+    width: 35px;
+    height: 35px;
+    float: right;
+    background: transparent;
+    padding: 0;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btnimg_features_right {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
