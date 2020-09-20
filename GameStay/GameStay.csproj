@@ -93,6 +93,8 @@
     <Content Include="Images\Icon\Login\Icon_Login_Hover.png" />
     <Content Include="Images\Icon\Login\Icon_Login_NotHover.png" />
     <Content Include="Images\Icon\Login\Icon_Password.png" />
+    <Content Include="Images\Icon\PageDot.png" />
+    <Content Include="Images\Icon\PageDot_Selected.png" />
     <Content Include="Images\Logo_GameStay.png" />
     <Content Include="Images\Menu\Menu_Select_BG.png" />
     <Content Include="Images\Profile\Profile_Mongkka.png" />

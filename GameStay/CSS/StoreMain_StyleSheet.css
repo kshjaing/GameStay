@@ -113,6 +113,30 @@ html, body {
     margin-top: 0;
 }
 
+.wrap_features_pagedot {
+    width: 100px;
+    height: 15px;
+    margin-top: 20px;
+    float: left;
+    left: 50%;
+    transform:translateX(-50%);
+    position: relative;
+}
+
+.button_page {
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.img_pagedot {
+    width: 15px;
+    height: 15px;
+}
+
 .div_wrap_features_button {
     float: right;
     width: 75px;
@@ -127,7 +151,7 @@ html, body {
     padding: 0;
     border: none;
     outline: none;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-right: 5px;
 }
 
@@ -145,7 +169,7 @@ html, body {
     padding: 0;
     border: none;
     outline: none;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .btnimg_features_right {

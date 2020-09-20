@@ -53,6 +53,20 @@
                 <p class="p p_price">66,000원</p>
             </div>
         </div>
+        <div class="wrap_features_pagedot">
+            <button type="button" class="button_page button_page1">
+                <img class="img_pagedot" src="Images/Icon/PageDot_Selected.png" />
+            </button>
+            <button type="button" class="button_page button_page2">
+                <img class="img_pagedot" src="Images/Icon/PageDot.png" />
+            </button>
+            <button type="button" class="button_page button_page3">
+                <img class="img_pagedot" src="Images/Icon/PageDot.png" />
+            </button>
+            <button type="button" class="button_page button_page4">
+                <img class="img_pagedot" src="Images/Icon/PageDot.png" />
+            </button>
+        </div>
         <div class="div_wrap_features_button">
             <button type="button" class="button_features_right">
             <img class="btnimg_features_right" id="btn_features_right"
