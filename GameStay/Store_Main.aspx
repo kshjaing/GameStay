@@ -8,12 +8,18 @@
 
         $(document).ready(function () {
             $("#btn_features_right").click(function () {
+                if (features_curIndex == 3) {
+                    return;
+                }
                 ++features_curIndex;
                 $("#div_wrap_image").animate({
                     left: features_curIndex * -715  + 'px'
                 }, 300);
             });
             $("#btn_features_left").click(function () {
+                if (features_curIndex == 0) {
+                    return;
+                }
                 --features_curIndex;
                 $("#div_wrap_image").animate({
                     left: features_curIndex * -715 + 'px'
