@@ -10,12 +10,13 @@
             $("#btn_features_right").click(function () {
                 ++features_curIndex;
                 $("#div_wrap_image").animate({
-                    left: '-715px'
+                    left: features_curIndex * -715  + 'px'
                 }, 300);
             });
             $("#btn_features_left").click(function () {
+                --features_curIndex;
                 $("#div_wrap_image").animate({
-                    left: '0px'
+                    left: features_curIndex * -715 + 'px'
                 }, 300);
             });
         });
@@ -27,14 +28,16 @@
         <div class="div_wrap_features">
             <div class="div_features_pic">
                 <div class="div_wrap_image" id="div_wrap_image">
-                    <img src="Images/GameTitleImages/TitleImage_Cyberpunk2077.JPG" 
-                         class="title_image"/>
-                    <img src="Images/GameTitleImages/TitleImage_Borderlands3.JPG" 
-                         class="title_image"/>
-                    <img src="Images/GameTitleImages/TitleImage_DeathStranding.JPG" 
-                         class="title_image"/>
-                    <img src="Images/GameTitleImages/TitleImage_FlightSimulator2020.JPG" 
-                         class="title_image"/>
+                    <ul class="slider">
+                        <li><img src="Images/GameTitleImages/TitleImage_Cyberpunk2077.JPG" 
+                         class="title_image"/></li>
+                        <li><img src="Images/GameTitleImages/TitleImage_Borderlands3.JPG" 
+                         class="title_image"/></li>
+                        <li><img src="Images/GameTitleImages/TitleImage_DeathStranding.JPG" 
+                         class="title_image"/></li>
+                        <li><img src="Images/GameTitleImages/TitleImage_FlightSimulator2020.JPG" 
+                         class="title_image"/></li>
+                    </ul>
                 </div>
             </div>
             <div class="div_features_details">
