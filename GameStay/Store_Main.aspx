@@ -1,11 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=13" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=15" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
+        var features_curIndex = 0;
+
         $(document).ready(function () {
             $("#btn_features_right").click(function () {
+                ++features_curIndex;
                 $("#div_wrap_image").animate({
                     left: '-715px'
                 }, 300);
