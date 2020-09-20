@@ -42,7 +42,7 @@
                         <li><img src="Images/GameTitleImages/TitleImage_DeathStranding.jpg" 
                             class="title_image"/></li>
                         <li><img src="Images/GameTitleImages/TitleImage_FlightSimulator2020.JPG" 
-                         class="title_image"/></li>
+                            class="title_image"/></li>
                     </ul>
                 </div>
             </div>
