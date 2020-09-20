@@ -47,10 +47,10 @@
                 </div>
             </div>
             <div class="div_features_details">
-                <p class="p p_title">사이버펑크 2077</p>
-                <p class="p p_status">출시예정 11/19</p>
-                <p class="p p_preorder">사전주문</p>
-                <p class="p p_price">66,000원</p>
+                <p class="p p_title" id="p_title" runat="server">사이버펑크 2077</p>
+                <p class="p p_release_date" id="p_release_date" runat="server">출시예정 11/19</p>
+                <p class="p p_status" id="p_status" runat="server">사전주문</p>
+                <p class="p p_price" id="p_price" runat="server">66,000원</p>
             </div>
         </div>
         <div class="wrap_features_pagedot">
