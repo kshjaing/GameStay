@@ -120,6 +120,7 @@ html, body {
     left: 50%;
     transform:translateX(-50%);
     position: relative;
+    user-select: none;
 }
 
 .button_page {
@@ -129,7 +130,7 @@ html, body {
     background: transparent;
     margin-left: 2px;
     margin-right: 2px;
-    
+    user-select: none;
 }
 
 .img_pagedot {
