@@ -31,7 +31,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
         <p class="p_features">특집 및 추천</p>
-        <div class="div_wrap_features">
+        <div class="div_wrap_features"> 
             <div class="div_features_pic">
                 <div class="div_wrap_image" id="div_wrap_image">
                     <ul class="slider">
@@ -42,15 +42,15 @@
                         <li><img src="Images/GameTitleImages/TitleImage_DeathStranding.jpg" 
                             class="title_image"/></li>
                         <li><img src="Images/GameTitleImages/TitleImage_FlightSimulator2020.JPG" 
-                         class="title_image"/></li>
+                            class="title_image"/></li>
                     </ul>
                 </div>
             </div>
             <div class="div_features_details">
-                <p class="p p_title">사이버펑크 2077</p>
-                <p class="p p_status">출시예정 11/19</p>
-                <p class="p p_preorder">사전주문</p>
-                <p class="p p_price">66,000원</p>
+                <p class="p p_title" id="p_title" runat="server">사이버펑크 2077</p>
+                <p class="p p_release_date" id="p_release_date" runat="server">출시예정 11/19</p>
+                <p class="p p_status" id="p_status" runat="server">사전주문</p>
+                <p class="p p_price" id="p_price" runat="server">66,000원</p>
             </div>
         </div>
         <div class="wrap_features_pagedot">

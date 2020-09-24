@@ -52,7 +52,6 @@ protected void Register_OnClick(object sender, EventArgs e)
 input태그도 마찬가지
 <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
 
-
 6. div안에서 a태그 가운데 정렬하기
 top: 50%
 left: 50%
@@ -64,7 +63,7 @@ Request.Url.ToString().Contains("Store_Main.aspx)
 8. 코드에서 css 스타일 변경하기
 img_store.Style["visibility"] = "visible"
 
-9.div 박스 안쪽에 테두리
+9. div 박스 안쪽에 테두리 만들기
 box-sizing: border-box
 border-bottom: 1px solid #000000
 

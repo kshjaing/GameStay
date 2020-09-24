@@ -37,7 +37,6 @@ html, body {
 .div_features_pic {
     width: 715px;
     height: 100%;
-    background: #ff6a00;
     float: left;
     overflow: hidden;
     position: relative;
@@ -83,7 +82,7 @@ html, body {
     margin-bottom: 0;
 }
 
-.p_status {
+.p_release_date {
     font-size: 18pt;
     color: #696969;
     font-family: IBMPlexSansKR-Medium;
@@ -92,7 +91,7 @@ html, body {
     padding-top: 10px;
 }
 
-.p_preorder {
+.p_status {
     font-size: 16pt;
     color: #85cba5;
     font-family: IBMPlexSansKR-Medium;
@@ -121,6 +120,7 @@ html, body {
     left: 50%;
     transform:translateX(-50%);
     position: relative;
+    user-select: none;
 }
 
 .button_page {
@@ -130,7 +130,6 @@ html, body {
     background: transparent;
     margin-left: 2px;
     margin-right: 2px;
-    
 }
 
 .img_pagedot {
