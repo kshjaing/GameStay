@@ -63,10 +63,24 @@ html, body {
 }
 
 .div_features_details {
-    width: 35%;
+    width: 385px;
     height: 100%;
     background: #1B1C1E;
-    float: right;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.div_wrap_details {
+    width: 1540px;
+    height: 100%;
+    position: relative;
+}
+
+.div_wrap_details2 {
+    width: 385px;
+    height: 100%;
+    float: left;
     position: relative;
 }
 
@@ -87,20 +101,10 @@ html, body {
     color: #696969;
     font-family: IBMPlexSansKR-Medium;
     margin-top: 0;
-    padding-left: 25px;
+    padding-left: 20px;
     padding-top: 10px;
 }
 
-.p_status {
-    font-size: 16pt;
-    color: #85cba5;
-    font-family: IBMPlexSansKR-Medium;
-    text-align: right;
-    padding-top: 75px;
-    padding-right: 25px;
-    margin-bottom: 0;
-    margin-top: 50px;
-}
 
 .p_price {
     font-size: 30pt;
@@ -108,8 +112,9 @@ html, body {
     font-family: IBMPlexSansKR-Bold;
     text-align: right;
     padding-right: 25px;
-    margin-bottom: 0;
-    margin-top: 0;
+    position: absolute;
+    right:10px;
+    bottom: 10px;
 }
 
 .wrap_features_pagedot {

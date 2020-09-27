@@ -45,6 +45,13 @@ namespace GameStay
             return sqlCommand.ExecuteReader();
         }
 
+        //특집 및 추천에 들어갈 게임들을 어댑터에 적용(어떤게임을 추천할지 그 로직은 추후 추가)
+        public SqlDataAdapter SetFeaturesAdapter(string tablename)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM " + tablename + " ORDER BY 번호", myConn);
+            return dataAdapter;
+        }
+
         
 
         //======================로그인, 회원가입=========================
@@ -65,5 +72,10 @@ namespace GameStay
             myReader.Close();
             return isAuthen;
         }
+
+
+
+        //메인 이미지명 가져오는 메서드
+        
     }
 }
