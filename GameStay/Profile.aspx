@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link href="CSS/Profile_StyleSheet.css?ver=11" rel="stylesheet" />
+    <link href="CSS/Profile_StyleSheet.css?ver=18" rel="stylesheet" />
     <div class="wrap">
 <div class="profile_square" >
         <div class="div_profile_img">
@@ -31,16 +31,21 @@
             <div class="div_profile_game" >
             <input type="image" src="Images/GameTitleImages/TitleImage_Borderlands3.JPG" class="img_profile_game"/>
                 <p class="txt_profile_game_title">보더랜드</p>
+                <p class="txt_profile_game_date">65,000원</p>
                 <p class="txt_profile_game_date">2020년 09월 16일</p>
+
         </div>
         <div class="div_profile_game">
             <input type="image" src="Images/GameTitleImages/TitleImage_DeathStranding.JPG" class="img_profile_game"/>
             <p class="txt_profile_game_title">데스스트랜딩</p>
+            <p class="txt_profile_game_date">65,000원</p>
             <p class="txt_profile_game_date">2020년 09월 16일</p>
+
         </div>
         <div class="div_profile_game">
             <input type="image" src="Images/GameTitleImages/TitleImage_FlightSimulator2020.JPG" class="img_profile_game"/>
             <p class="txt_profile_game_title">플라이트 시뮬레이터</p>
+            <p class="txt_profile_game_date">65,000원</p>
             <p class="txt_profile_game_date">2020년 09월 16일</p>
         </div>
         </div>
@@ -56,6 +61,8 @@
                 <input type="image" src="Images/GameTitleImages/TitleImage_Cyberpunk2077.JPG" class="img_profile_scs_sub"/>
             </div>
         </div>
+        <br />
+        <br />
     </div>
     
 
