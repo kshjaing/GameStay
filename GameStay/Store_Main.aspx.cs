@@ -25,15 +25,13 @@ namespace GameStay
             featuresRepeater2.DataBind();
             dbManager.DBClose();
 
+
+            //특집및추천 전체div 클릭 이벤트
             if (Request["__EVENTTARGET"] == "div_wrap_features")
             {
                 Response.Redirect("Store_ProductDetail.aspx");
             }
         }
 
-        protected void OnClickDivFeature(object sender, EventArgs e)
-        {
-            Response.Redirect("Store_ProductDetail.aspx");
-        }
     }
 }

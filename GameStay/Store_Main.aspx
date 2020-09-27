@@ -124,7 +124,6 @@
                                        class="title_image" id="features_image" runat="server"/>
                               </ItemTemplate>
                           </asp:Repeater>
-                          
                       </div>
                    </div>
                   <div class="div_features_details">
@@ -169,6 +168,8 @@
         <!------------------------------------------------------------------------------------------->
 
 
+
+        <!--------------------------------------할인중----------------------------------------------->
         <div class="div_wrap_discount">
             <p class="p_discount">할인중</p>
         </div>
