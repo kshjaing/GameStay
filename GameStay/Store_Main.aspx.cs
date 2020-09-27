@@ -25,5 +25,10 @@ namespace GameStay
             featuresRepeater2.DataBind();
             dbManager.DBClose();
         }
+
+        protected void OnClickDivFeature(object sender, EventArgs e)
+        {
+            Response.Redirect("Store_ProductDetail.aspx");
+        }
     }
 }

@@ -3,6 +3,10 @@
     <link href="CSS/StoreMain_StyleSheet.css?ver=11" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
+
+
+
+    <!-----------------------------------특집 및 추천 부분 클릭메서드 및 페이징 --------------------------------------->
     <script>
         var features_curIndex = 0;
 
@@ -81,11 +85,27 @@
             });
         });
     </script>
+    <!-------------------------------------------------------------------------------------------------------------->
+    
+
+    <script>
+        function onClickDivFeature() {
+            __doPostBack('div_wrap_features');
+        }
+    </script>
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
+
+
+
+        <!-----------------------------------특집 및 추천  --------------------------------------->
         <p class="p_features">특집 및 추천</p>
-                <div class="div_wrap_features">
+                <div class="div_wrap_features" id="div_wrap_features" runat="server"
+                    onmouseover="onMouseDivFeature();" onmouseout="onMouseoutDivFeature();"
+                    onclick="onClickDivFeature()">
                    <div class="div_features_pic">
                       <div class="div_wrap_image" id="div_wrap_image">
                           <asp:Repeater ID="featuresRepeater1" runat="server">
@@ -113,14 +133,14 @@
                </div>
         
         <div class="wrap_features_pagedot">
-                <img class="img_pagedot" src="Images/Icon/PageDot_Selected.png" 
-                     id="img_pagedot0"/>
-                <img class="img_pagedot" src="Images/Icon/PageDot.png"
-                     id="img_pagedot1"/>
-                <img class="img_pagedot" src="Images/Icon/PageDot.png"
-                     id="img_pagedot2"/>
-                <img class="img_pagedot" src="Images/Icon/PageDot.png"
-                     id="img_pagedot3"/>
+            <img class="img_pagedot" src="Images/Icon/PageDot_Selected.png" 
+                 id="img_pagedot0"/>
+            <img class="img_pagedot" src="Images/Icon/PageDot.png"
+                 id="img_pagedot1"/>
+            <img class="img_pagedot" src="Images/Icon/PageDot.png"
+                 id="img_pagedot2"/>
+            <img class="img_pagedot" src="Images/Icon/PageDot.png"
+                 id="img_pagedot3"/>
         </div>
         <div class="div_wrap_features_button">
             <button type="button" class="button_features_right">
@@ -136,6 +156,12 @@
                 onmouseout="this.src='Images/Button/Arrow_Left.png'"/>
             </button>
         </div>
+        <!------------------------------------------------------------------------------------------->
+
+
+
+
+
     </div>
 
 </asp:Content>
