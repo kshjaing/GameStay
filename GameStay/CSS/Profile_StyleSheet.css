@@ -29,14 +29,13 @@
     width: 80%;
     height: 35%;
     position: relative;
-    vertical-align: central;
+    
     margin-left: 70px;
     margin-top: 90px;
 }
 
 .img_profile {
-    width: 250px;
-    margin-left: 40px;
+    width: 200px;
     margin-top: 40px;
 }
 .txt_profile_detail {
@@ -63,11 +62,14 @@
     width:30%;
     float:left;
     height:100%;
+    text-align:center;
+    padding-left:20px;
 }
 .div_profile_detail {
-    width: 60%;
+    width: 55%;
     height: 100%;
-    padding-top: 40px;
+    padding-top: 10px;
+    text-align:left;
     float:left;
 
 }
@@ -85,6 +87,7 @@
     height: 55%;
     position: relative;
     vertical-align: central;
+
     margin-left: 70px;
     margin-top: 10px;
 }
@@ -94,7 +97,8 @@
     font-size: 35pt;
     font-family: 'NIXGONFONTS B';
     padding-top:30px;
-    padding-left:50px;
+    padding-left:55px;
+    text-align:left;
 }
 
 .div_profile_game{
@@ -103,7 +107,7 @@
     height:90%;
 }
 .div_profile_game-1{
-    padding-left:50px;
+    padding-left:40px;
 }
 
 .img_profile_game{
@@ -122,3 +126,41 @@
 }
 
 /*스크린샷*/
+
+.profile_square_screenshot {
+    background-color: #1B1C1E;
+    width: 80%;
+    height: 55%;
+    position: relative;
+    vertical-align: central;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+
+.txt_profile_screenshot {
+    color: #FFFFFF;
+    font-size: 35pt;
+    font-family: 'NIXGONFONTS B';
+    padding-top: 30px;
+    padding-left: 65px;
+    text-align: left;
+}
+
+.div_profile_scs_main{
+    width:50%;
+    float:left;
+    padding-left:65px;
+}
+
+.div_profile_scs_sub{
+    width:40%;
+    float:right;
+}
+
+.img_profile_scs_main{
+    width:450px;
+}
+
+.img_profile_scs_sub{
+    width:250px;
+}

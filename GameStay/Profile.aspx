@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link href="CSS/Profile_StyleSheet.css?ver=32" rel="stylesheet" />
+    <link href="CSS/Profile_StyleSheet.css?ver=11" rel="stylesheet" />
     <div class="wrap">
 <div class="profile_square" >
         <div class="div_profile_img">
@@ -45,6 +45,17 @@
         </div>
         </div>
     </div>
+
+        <div class="profile_square_screenshot">
+            <p class="txt_profile_screenshot">스크린샷</p>
+            <div class="div_profile_scs_main">
+                <input type="image" src="Images/GameTitleImages/TitleImage_TheElderScrolls5Skyrim.JPG" class="img_profile_scs_main" />
+            </div>
+            <div class="div_profile_scs_sub">
+                <input type="image" src="Images/GameTitleImages/TitleImage_Firewatch.PNG" class="img_profile_scs_sub"/><br />
+                <input type="image" src="Images/GameTitleImages/TitleImage_Cyberpunk2077.JPG" class="img_profile_scs_sub"/>
+            </div>
+        </div>
     </div>
     
 
