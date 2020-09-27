@@ -24,6 +24,11 @@ namespace GameStay
             featuresRepeater2.DataSource = ds.Tables["게임타이틀"];
             featuresRepeater2.DataBind();
             dbManager.DBClose();
+
+            if (Request["__EVENTTARGET"] == "div_wrap_features")
+            {
+                Response.Redirect("Store_ProductDetail.aspx");
+            }
         }
 
         protected void OnClickDivFeature(object sender, EventArgs e)

@@ -34,6 +34,10 @@ html, body {
     margin-top: 10px;
 }
 
+.div_wrap_features:hover {
+    cursor: pointer;
+}
+
 .div_features_pic {
     width: 715px;
     height: 100%;
