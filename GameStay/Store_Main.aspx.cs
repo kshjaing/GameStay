@@ -25,20 +25,5 @@ namespace GameStay
             featuresRepeater2.DataBind();
             dbManager.DBClose();
         }
-
-        public string GetImageURL(string gametitle)
-        {
-            DBManager dbManager = new DBManager();
-            string imageURL = "";
-            string sQuery = "SELECT 메인이미지 FROM 게임타이틀 WHERE 게임명 = '" + gametitle + "'";
-            SqlDataReader myReader = dbManager.ExecuteReader(sQuery);
-            if (myReader.Read())
-            {
-                imageURL = myReader.ToString().TrimEnd();
-
-            }
-            myReader.Close();
-            return imageURL;
-        }
     }
 }

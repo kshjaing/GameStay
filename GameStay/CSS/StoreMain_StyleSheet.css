@@ -129,19 +129,12 @@ html, body {
     user-select: none;
 }
 
-.button_page {
-    border: none;
-    outline: none;
-    padding: 0;
-    background: transparent;
-    margin-left: 2px;
-    margin-right: 2px;
-}
 
 .img_pagedot {
     width: 15px;
     height: 15px;
-    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .div_wrap_features_button {

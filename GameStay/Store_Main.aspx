@@ -18,6 +18,30 @@
                 $("#div_wrap_details").animate({
                     left: features_curIndex * -385 + 'px'
                 }, 400);
+
+                document.getElementById("img_pagedot" + features_curIndex).src = 'Images/Icon/PageDot_Selected.png';
+                switch (features_curIndex) {
+                    case 0:
+                        document.getElementById("img_pagedot1").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot2").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot3").src = 'Images/Icon/PageDot.png';
+                        break;
+                    case 1:
+                        document.getElementById("img_pagedot0").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot2").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot3").src = 'Images/Icon/PageDot.png';
+                        break;
+                    case 2:
+                        document.getElementById("img_pagedot0").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot1").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot3").src = 'Images/Icon/PageDot.png';
+                        break;
+                    case 3:
+                        document.getElementById("img_pagedot0").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot1").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot2").src = 'Images/Icon/PageDot.png';
+                        break;
+                }
             });
             $("#btn_features_left").click(function () {
                 if (features_curIndex == 0) {
@@ -30,6 +54,30 @@
                 $("#div_wrap_details").animate({
                     left: features_curIndex * -385 + 'px'
                 }, 400);
+
+                document.getElementById("img_pagedot" + features_curIndex).src = 'Images/Icon/PageDot_Selected.png';
+                switch (features_curIndex) {
+                    case 0:
+                        document.getElementById("img_pagedot1").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot2").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot3").src = 'Images/Icon/PageDot.png';
+                        break;
+                    case 1:
+                        document.getElementById("img_pagedot0").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot2").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot3").src = 'Images/Icon/PageDot.png';
+                        break;
+                    case 2:
+                        document.getElementById("img_pagedot0").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot1").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot3").src = 'Images/Icon/PageDot.png';
+                        break;
+                    case 3:
+                        document.getElementById("img_pagedot0").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot1").src = 'Images/Icon/PageDot.png';
+                        document.getElementById("img_pagedot2").src = 'Images/Icon/PageDot.png';
+                        break;
+                }
             });
         });
     </script>
@@ -65,18 +113,14 @@
                </div>
         
         <div class="wrap_features_pagedot">
-            <button type="button" class="button_page button_page0" id="button_page0">
-                <img class="img_pagedot" src="Images/Icon/PageDot_Selected.png" />
-            </button>
-            <button type="button" class="button_page button_page1" id="button_page1">
-                <img class="img_pagedot" src="Images/Icon/PageDot.png" />
-            </button>
-            <button type="button" class="button_page button_page2" id="button_page2">
-                <img class="img_pagedot" src="Images/Icon/PageDot.png" />
-            </button>
-            <button type="button" class="button_page button_page3" id="button_page3">
-                <img class="img_pagedot" src="Images/Icon/PageDot.png" />
-            </button>
+                <img class="img_pagedot" src="Images/Icon/PageDot_Selected.png" 
+                     id="img_pagedot0"/>
+                <img class="img_pagedot" src="Images/Icon/PageDot.png"
+                     id="img_pagedot1"/>
+                <img class="img_pagedot" src="Images/Icon/PageDot.png"
+                     id="img_pagedot2"/>
+                <img class="img_pagedot" src="Images/Icon/PageDot.png"
+                     id="img_pagedot3"/>
         </div>
         <div class="div_wrap_features_button">
             <button type="button" class="button_features_right">
