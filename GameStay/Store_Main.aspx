@@ -56,7 +56,6 @@
                                    <div class="div_wrap_details2">
                                        <p class="p p_title" id="p_title" runat="server"><%# Eval("게임명") %></p>
                                        <p class="p p_release_date" id="p_release_date" runat="server"><%# Eval("출시일","{0:yyyy/MM/dd}") %></p>
-                                       
                                        <p class="p p_price" id="p_price" runat="server"><%# Eval("게임가격") %>원</p>
                                    </div>
                                </ItemTemplate>
