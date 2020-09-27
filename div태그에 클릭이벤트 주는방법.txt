@@ -1,0 +1,14 @@
+div 태그
+onclick="onClick()" id="div"
+
+자바스크립트
+function  onClick() {
+   __doPostBack()("div");
+}
+
+cs코드
+Page_Load에
+if (Request["__EVENTTARGET"] == "div")
+{
+   //코드작성
+}

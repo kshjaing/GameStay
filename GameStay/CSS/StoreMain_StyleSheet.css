@@ -34,6 +34,10 @@ html, body {
     margin-top: 10px;
 }
 
+.div_wrap_features:hover {
+    cursor: pointer;
+}
+
 .div_features_pic {
     width: 715px;
     height: 100%;
@@ -63,10 +67,24 @@ html, body {
 }
 
 .div_features_details {
-    width: 35%;
+    width: 385px;
     height: 100%;
     background: #1B1C1E;
-    float: right;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.div_wrap_details {
+    width: 1540px;
+    height: 100%;
+    position: relative;
+}
+
+.div_wrap_details2 {
+    width: 385px;
+    height: 100%;
+    float: left;
     position: relative;
 }
 
@@ -79,11 +97,12 @@ html, body {
     color: #FFFFFF;
     font-family: IBMPlexSansKR-Bold;
     padding-left: 25px;
+    padding-right: 20px;
     margin-bottom: 0;
 }
 
 .p_release_date {
-    font-size: 18pt;
+    font-size: 15pt;
     color: #696969;
     font-family: IBMPlexSansKR-Medium;
     margin-top: 0;
@@ -91,16 +110,6 @@ html, body {
     padding-top: 10px;
 }
 
-.p_status {
-    font-size: 16pt;
-    color: #85cba5;
-    font-family: IBMPlexSansKR-Medium;
-    text-align: right;
-    padding-top: 75px;
-    padding-right: 25px;
-    margin-bottom: 0;
-    margin-top: 50px;
-}
 
 .p_price {
     font-size: 30pt;
@@ -108,8 +117,9 @@ html, body {
     font-family: IBMPlexSansKR-Bold;
     text-align: right;
     padding-right: 25px;
-    margin-bottom: 0;
-    margin-top: 0;
+    position: absolute;
+    right:10px;
+    bottom: 5px;
 }
 
 .wrap_features_pagedot {
@@ -123,19 +133,12 @@ html, body {
     user-select: none;
 }
 
-.button_page {
-    border: none;
-    outline: none;
-    padding: 0;
-    background: transparent;
-    margin-left: 2px;
-    margin-right: 2px;
-}
 
 .img_pagedot {
     width: 15px;
     height: 15px;
-    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .div_wrap_features_button {

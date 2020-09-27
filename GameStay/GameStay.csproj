@@ -103,6 +103,7 @@
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Store_Main.aspx" />
+    <Content Include="Store_ProductDetail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,13 @@
     </Compile>
     <Compile Include="Store_Main.aspx.designer.cs">
       <DependentUpon>Store_Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store_ProductDetail.aspx.cs">
+      <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store_ProductDetail.aspx.designer.cs">
+      <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
