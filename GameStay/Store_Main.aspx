@@ -92,6 +92,14 @@
         function onClickDivFeature() {
             __doPostBack('div_wrap_features');
         }
+
+        function onMouseDivFeature() {
+            document.getElementById("div_wrap_details").style.background = "#35373A"
+        }
+
+        function onMouseoutDivFeature() {
+            document.getElementById("div_wrap_details").style.background = "#1B1C1E"
+        }
     </script>
 
 
@@ -104,7 +112,7 @@
         <!-----------------------------------특집 및 추천  --------------------------------------->
         <p class="p_features">특집 및 추천</p>
                 <div class="div_wrap_features" id="div_wrap_features" runat="server"
-                    onmouseover="onMouseDivFeature();" onmouseout="onMouseoutDivFeature();"
+                    onmouseover="onMouseDivFeature()" onmouseout="onMouseoutDivFeature();"
                     onclick="onClickDivFeature()">
                    <div class="div_features_pic">
                       <div class="div_wrap_image" id="div_wrap_image">
