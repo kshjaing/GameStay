@@ -101,6 +101,7 @@
     <Content Include="Library.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Profile.aspx" />
+    <Content Include="ProfileEdit.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
@@ -142,6 +143,13 @@
     </Compile>
     <Compile Include="Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileEdit.aspx.cs">
+      <DependentUpon>ProfileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileEdit.aspx.designer.cs">
+      <DependentUpon>ProfileEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
