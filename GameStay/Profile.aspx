@@ -14,8 +14,7 @@
             <a class="txt_profile_detail">보유한 게임 :</a> <a class="txt_profile_countgame">21</a> <a class="txt_profile_detail">개</a>
         </div>
         <div class="div_profile_edit">
-            <asp:ImageButton ID="ImageButton1" runat="server" />
-            <asp:Button ID="Button1" runat="server" Text="EditProfileButton" />
+            <button runat="server" class="btn_profile_edit" onserverclick="editprofile_click">프로필 수정</button>
         </div>
     </div>
 
