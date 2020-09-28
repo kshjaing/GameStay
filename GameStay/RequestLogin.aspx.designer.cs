@@ -11,7 +11,7 @@ namespace GameStay
 {
 
 
-    public partial class ProfileEdit
+    public partial class RequestLogin
     {
     }
 }

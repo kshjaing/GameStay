@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace GameStay
 {
@@ -21,6 +23,19 @@ namespace GameStay
 
         protected void btnLogin_OnClick(object sender, EventArgs e)
         {
+
+            UserDao uDao = new UserDao();
+            if(uDao.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString()))
+            {
+                Session["아이디"] = inputID.Value.ToString();
+                Response.Redirect("Store_main.aspx");
+            }
+            else
+            {
+                txtLoginCheck.InnerText = "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.";
+            }
+
+            /*
             isLogin = dbManager.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString());
 
             if (inputID.Value.Length == 0 || inputPassword.Value.Length == 0)
@@ -42,7 +57,7 @@ namespace GameStay
                     txtLoginCheck.Attributes.Add("style", "visibility: visible");
                     txtLoginCheck.InnerText = "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.";
                 }
-            }
+            }*/
         }
         
 

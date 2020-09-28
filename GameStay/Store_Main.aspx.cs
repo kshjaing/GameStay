@@ -23,7 +23,7 @@ namespace GameStay
             featuresRepeater1.DataBind();
             featuresRepeater2.DataSource = ds.Tables["게임타이틀"];
             featuresRepeater2.DataBind();
-            dbManager.DBClose();
+            DBManager.DBClose();
 
 
             //특집및추천 전체div 클릭 이벤트
