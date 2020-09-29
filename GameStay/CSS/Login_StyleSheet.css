@@ -183,6 +183,11 @@ html, body {
     font-family: 'NIXGONFONTS M';
 }
 
+.div_wrap_register {
+    width: auto;
+    height: auto;
+}
+
 .a_register {
     color: #FFFFFF;
     text-decoration: none;
@@ -191,6 +196,25 @@ html, body {
 }
 
 .a_register_link {
+    color: #115fff;
+    text-decoration: none;
+    font-family: 'NIXGONFONTS M';
+}
+
+.div_wrap_devLogin {
+    width: auto;
+    height: auto;
+    margin-top: 5px;
+}
+
+.a_devLogin {
+    color: #FFFFFF;
+    text-decoration: none;
+    user-select: none;
+    font-family: 'NIXGONFONTS M';
+}
+
+.a_devLogin_link {
     color: #115fff;
     text-decoration: none;
     font-family: 'NIXGONFONTS M';

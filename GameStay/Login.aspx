@@ -47,11 +47,15 @@
                      </div>
                      <br /><br /><br /><br />
                      <a runat="server" id="txtLoginCheck" class="a_login_check" draggable="false">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</a>
-                     <br /><br /><br /><br />
-
-                     <a class="a_register" draggable="false">회원이 아니신가요?</a>
-                     <a class="a_register_link" href="Register.aspx">회원가입</a>
                      <br /><br />
+                     <div class="div_wrap_register">
+                         <a class="a_register">회원이 아니신가요?</a>
+                         <a class="a_register_link" href="Register.aspx">회원가입</a>
+                     </div>
+                     <div class="div_wrap_devLogin">
+                         <a class="a_devLogin">개발자이신가요?</a>
+                         <a class="a_devLogin_link" href="DevLogin.aspx">개발자 로그인</a>
+                     </div>
                  </div>
              </div>
         </div>

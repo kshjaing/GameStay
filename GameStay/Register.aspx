@@ -7,11 +7,16 @@
     <link href="CSS/Register_StyleSheet.css?ver5" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <script>
+        function onClickLogo() {
+            __doPostBack('div_logo');
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="wrap">
-             <div class="div_logo">
+             <div class="div_logo" id="div_logo" onclick="onClickLogo()" runat="server">
                  <img class="img_logo" src="Images/Logo_GameStay.png" />
              </div>
              <div class="login_square">
