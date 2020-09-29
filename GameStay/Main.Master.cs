@@ -55,6 +55,12 @@ namespace GameStay
                 div_store.Style["box-sizing"] = "unset";
                 div_store.Style["border-bottom"] = "unset";
             }
+
+
+            if (Request["__EVENTTARGET"] == "div_logo")
+            {
+                Response.Redirect("Store_Main.aspx");
+            }
         }
 
         protected void StoreMenu_OnClick(object sender, EventArgs e)

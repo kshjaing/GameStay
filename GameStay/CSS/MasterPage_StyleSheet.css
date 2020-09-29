@@ -60,6 +60,10 @@ body, html {
     float: left;
 }
 
+    .div_logo:hover {
+        cursor: pointer;
+    }
+
 .img_logo {
     width: 100%;
     height: auto;
