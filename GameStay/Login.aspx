@@ -4,14 +4,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="CSS/Login_StyleSheet.css?ver=15" rel="stylesheet" />
+    <link href="CSS/Login_StyleSheet.css?ver=11" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <script>
+        function onClickLogo() {
+            __doPostBack('div_logo');
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
        <div class="wrap">
-             <div class="div_logo">
+             <div class="div_logo" id="div_logo" onclick="onClickLogo()" runat="server">
                  <img class="img_logo" src="Images/Logo_GameStay.png" />
              </div>
              <div class="login_square">
@@ -42,11 +47,15 @@
                      </div>
                      <br /><br /><br /><br />
                      <a runat="server" id="txtLoginCheck" class="a_login_check" draggable="false">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</a>
-                     <br /><br /><br /><br />
-
-                     <a class="a_register" draggable="false">회원이 아니신가요?</a>
-                     <a class="a_register_link" href="Register.aspx">회원가입</a>
                      <br /><br />
+                     <div class="div_wrap_register">
+                         <a class="a_register">회원이 아니신가요?</a>
+                         <a class="a_register_link" href="Register.aspx">회원가입</a>
+                     </div>
+                     <div class="div_wrap_devLogin">
+                         <a class="a_devLogin">개발자이신가요?</a>
+                         <a class="a_devLogin_link" href="DevLogin.aspx">개발자 로그인</a>
+                     </div>
                  </div>
              </div>
         </div>

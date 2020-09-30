@@ -74,6 +74,7 @@
     <Content Include="CSS\Register_StyleSheet.css" />
     <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
+    <Content Include="DevLogin.aspx" />
     <Content Include="Images\Background\Background.png" />
     <Content Include="Images\Background\BG_Anthem.jpg" />
     <Content Include="Images\Background\BG_TheDivision.jpg" />
@@ -118,6 +119,13 @@
       <DependentUpon>Community.aspx</DependentUpon>
     </Compile>
     <Compile Include="DBManager.cs" />
+    <Compile Include="DevLogin.aspx.cs">
+      <DependentUpon>DevLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevLogin.aspx.designer.cs">
+      <DependentUpon>DevLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Library.aspx.cs">
       <DependentUpon>Library.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

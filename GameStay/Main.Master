@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="CSS/MasterPage_StyleSheet.css?ver=12" rel="stylesheet" />
+    <link href="CSS/MasterPage_StyleSheet.css?ver=14" rel="stylesheet" />
     <script>
         function onMouseOverStore() {
             if (window.location.href.includes('Store_Main.aspx')) {
@@ -85,6 +85,13 @@
         function onMouseOutLogin() {
             document.getElementById("button_login").style.background = "transparent";
         }
+
+
+
+
+        function onClickLogo() {
+            __doPostBack("div_logo");
+        }
     </script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -95,7 +102,7 @@
         <div class="wrap">
             <div class="menu">
                 <div class="div_menu_tabs">
-                    <div class="div_logo">
+                    <div class="div_logo" id="div_logo" onclick="onClickLogo()" runat="server">
                         <img class="img_logo" src="Images/Logo_GameStay.png" />
                     </div>
                     <div class="div_store" id="div_store" runat="server">

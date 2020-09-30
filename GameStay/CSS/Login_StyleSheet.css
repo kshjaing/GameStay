@@ -39,17 +39,20 @@ html, body {
 
 
 .div_logo {
-    z-index: 1;
-    width: 280px;
-    height: 80px;
+    width: 210px;
+    height: 60px;
     left: 10px;
     top: 10px;
     position: absolute;
 }
 
+      .div_logo:hover {
+          cursor: pointer;
+       }
+
 .img_logo {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -180,6 +183,11 @@ html, body {
     font-family: 'NIXGONFONTS M';
 }
 
+.div_wrap_register {
+    width: auto;
+    height: auto;
+}
+
 .a_register {
     color: #FFFFFF;
     text-decoration: none;
@@ -188,6 +196,25 @@ html, body {
 }
 
 .a_register_link {
+    color: #115fff;
+    text-decoration: none;
+    font-family: 'NIXGONFONTS M';
+}
+
+.div_wrap_devLogin {
+    width: auto;
+    height: auto;
+    margin-top: 5px;
+}
+
+.a_devLogin {
+    color: #FFFFFF;
+    text-decoration: none;
+    user-select: none;
+    font-family: 'NIXGONFONTS M';
+}
+
+.a_devLogin_link {
     color: #115fff;
     text-decoration: none;
     font-family: 'NIXGONFONTS M';

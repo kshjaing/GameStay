@@ -33,13 +33,16 @@ html, body {
 
 
 .div_logo {
-    z-index: 1;
-    width: 280px;
-    height: 80px;
+    width: 210px;
+    height: 60px;
     left: 10px;
     top: 10px;
     position: absolute;
 }
+
+   .div_logo {
+       cursor: pointer;
+   }
 
 .img_logo {
     width: 100%;
