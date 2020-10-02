@@ -54,20 +54,16 @@ html, body {
     object-fit: cover;
 }
 
-.div_wrap_square {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
 
 .login_square {
     background-color: #111213;
     width: 500px;
     height: 600px;
     float: left;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    position: relative;
+    transform: translate(-50%,-50%);
+    position: absolute;
 }
 
 .txt_login {
@@ -90,8 +86,8 @@ html, body {
     width: 240px;
     float: left;
     left: 50%;
-    transform: translateX(-160px);
-    margin-top: 50px;
+    transform: translateX(-170px);
+    margin-top: 30px;
     position: relative;
 }
 .input_id {
@@ -120,7 +116,7 @@ html, body {
     width: 240px;
     float: left;
     left: 50%;
-    transform: translateX(-160px);
+    transform: translateX(-170px);
     margin-top: 20px;
     position: relative;
 }
@@ -148,24 +144,21 @@ html, body {
 
 .wrap_login {
     position: relative;
-    width: 17vw;
+    width: 35px;
     height: 35px;
-    margin-top: 30px;
-    left: 50%;
-    margin-left: -8.5vw;
-    text-align: left;
+    margin-top: 50px;
+    margin-right: 70px;
+    float: right;
 }
 
 .button_login {
     position: relative;
-    margin-left: 10vw;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     background: transparent;
     border: none;
     outline: none;
     padding: 0;
-    margin-top: -6px;
     font-family: IBMPlexSansKR-Medium;
 }
 
@@ -187,7 +180,11 @@ html, body {
 .div_wrap_register {
     width: auto;
     height: auto;
+    float: left;
+    left: 50%;
+    transform:translateX(-60%);
     position: relative;
+    background: green;
 }
 
 .a_register {
@@ -206,8 +203,10 @@ html, body {
 .div_wrap_devLogin {
     width: auto;
     height: auto;
-    margin-top: 5px;
-    position: relative;
+    float: right;
+    margin-top: 35px;
+    background: yellow;
+    position: absolute;
 }
 
 .a_devLogin {

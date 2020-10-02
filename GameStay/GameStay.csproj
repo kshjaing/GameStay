@@ -77,6 +77,7 @@
     <Content Include="DevLogin.aspx" />
     <Content Include="Images\Background\Background.png" />
     <Content Include="Images\Background\BG_Anthem.jpg" />
+    <Content Include="Images\Background\BG_Cog.jpg" />
     <Content Include="Images\Background\BG_TheDivision.jpg" />
     <Content Include="Images\Button\Arrow_Left_Hover.png" />
     <Content Include="Images\Button\Arrow_Left.png" />

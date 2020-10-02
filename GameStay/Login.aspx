@@ -16,7 +16,6 @@
 <body>
     <form id="form1" runat="server">
        <div class="wrap">
-             <div class="div_wrap_logo">
                <div class="div_logo" id="div_logo" onclick="onClickLogo()" runat="server">
                  <img class="img_logo" src="Images/Logo_GameStay.png" />
                </div>
@@ -59,7 +58,6 @@
                      </div>
                  </div>
              </div>
-           </div>
         </div>
     </form>
 </body>
