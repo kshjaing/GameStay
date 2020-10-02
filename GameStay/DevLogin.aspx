@@ -24,7 +24,7 @@
                    <img class="icon_id" src="Images/Icon/Login/Icon_ID.png" />
                </div>
                <div class="div_wrap_password">
-                   <input type="text" class="input_password" placeholder="비밀번호"
+                   <input type="password" class="input_password" placeholder="비밀번호"
                       runat="server" id="inputPassword" autocomplete="off"/>
                    <img class="icon_password" src="Images/Icon/Login/Icon_Password.png" />
                </div>
@@ -40,8 +40,8 @@
                    <a class="a_register_link" href="Register.aspx">회원가입</a>
                </div>
                <div class="wrap_devLogin">
-                   <a class="a_devLogin">개발자이신가요?</a>
-                   <a class="a_devLogin_link" href="DevLogin.aspx">개발자 로그인</a>
+                   <a class="a_devLogin">일반회원이신가요?</a>
+                   <a class="a_devLogin_link" href="Login.aspx">일반 로그인</a>
                </div>
            </div>
        </div>
