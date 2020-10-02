@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="CSS/Login_StyleSheet.css?ver=11" rel="stylesheet" />
+    <link href="CSS/Login_StyleSheet.css?ver=13" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script>
@@ -16,10 +16,13 @@
 <body>
     <form id="form1" runat="server">
        <div class="wrap">
-             <div class="div_logo" id="div_logo" onclick="onClickLogo()" runat="server">
+             <div class="div_wrap_logo">
+               <div class="div_logo" id="div_logo" onclick="onClickLogo()" runat="server">
                  <img class="img_logo" src="Images/Logo_GameStay.png" />
+               </div>
              </div>
-             <div class="login_square">
+           <div class="div_wrap_square">
+               <div class="login_square">
                  <h1 class="txt_login">로그인</h1>
                  <div class="wrap_idpass">
                      <div class="wrap_input_id">
@@ -37,8 +40,6 @@
                      <br /><br />
 
                      <div class="wrap_login">
-                         <input type="checkbox" class="check_autologin" />
-                         <a class="a_autologin" onclick="">자동 로그인</a>
                              <button class="button_login" runat="server" onserverclick="btnLogin_OnClick">
                                  <img class="img_login" src="Images/Icon/Login/Icon_Login_NotHover.png" 
                                      onmouseover="this.src='Images/Icon/Login/Icon_Login_Hover.png'"
@@ -58,6 +59,7 @@
                      </div>
                  </div>
              </div>
+           </div>
         </div>
     </form>
 </body>

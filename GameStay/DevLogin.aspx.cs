@@ -13,5 +13,10 @@ namespace GameStay
         {
 
         }
+
+        protected void btnDevLogin_OnClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

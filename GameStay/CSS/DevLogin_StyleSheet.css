@@ -20,14 +20,17 @@ html, body {
 }
 
 .wrap {
+    display: table-cell;
     background-image: url('../Images/Background/BG_TheDivision.jpg');
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     position: relative;
-    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    top: 0px;
+    left: 0px;
 }
-
 
 .div_wrap_logo {
     width: 100%;
@@ -54,57 +57,45 @@ html, body {
     object-fit: cover;
 }
 
-.div_wrap_square {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
 .login_square {
     background-color: #111213;
     width: 500px;
     height: 600px;
-    float: left;
     left: 50%;
-    transform: translateX(-50%);
+    transform:translateX(-50%);
     position: relative;
 }
 
 .txt_login {
-    margin-top: 80px;
-    float: left;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 100px;
     color: #FFFFFF;
+    top: 30px;
     font-family: IBMPlexSansKR-Bold;
-    position: relative;
 }
 
 .wrap_idpass {
-    float: left;
-    margin-top: 150px;
-    position: relative;
+    margin-top: 50px;
 }
 
 .wrap_input_id {
-    width: 240px;
-    float: left;
     left: 50%;
-    transform: translateX(-160px);
-    margin-top: 50px;
-    position: relative;
+    transform:translateX(-50%);
+    margin-top: 0;
+    position: absolute;
+    width: 200px;
 }
+
 .input_id {
-    width: 100%;
+    width: 240px;
     border: 0;
     background: transparent;
     border-bottom: 1px solid #FFFFFF;
     font-size: 17pt;
     color: #FFFFFF;
+    padding-bottom: 8px;
+    padding-left: 3vw;
     outline: none;
     font-family: IBMPlexSansKR-Medium;
-    padding-left: 50px;
-    padding-bottom: 5px;
 }
 
 .icon_id {
@@ -117,25 +108,23 @@ html, body {
 
 
 .wrap_input_password {
-    width: 240px;
-    float: left;
     left: 50%;
-    transform: translateX(-160px);
-    margin-top: 20px;
-    position: relative;
+    margin-left: -8.5vw;
+    margin-top: 10px;
+    position: absolute;
+    width: 200px;
 }
 
 .input_password {
-    width: 100%;
+    width: 14vw;
     border: 0;
     background: transparent;
     border-bottom: 1px solid #FFFFFF;
     font-size: 17pt;
     color: #FFFFFF;
+    padding-bottom: 8px;
+    padding-left: 3vw;
     outline: none;
-    font-family: IBMPlexSansKR-Medium;
-    padding-left: 50px;
-    padding-bottom: 5px;
 }
 
 .icon_password {
@@ -147,7 +136,7 @@ html, body {
 }
 
 .wrap_login {
-    position: relative;
+    position: absolute;
     width: 17vw;
     height: 35px;
     margin-top: 30px;
@@ -156,8 +145,17 @@ html, body {
     text-align: left;
 }
 
+.check_autologin {
+}
+
+.a_autologin {
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: IBMPlexSansKR-Medium;
+}
+
 .button_login {
-    position: relative;
+    position: absolute;
     margin-left: 10vw;
     width: 30px;
     height: 30px;
@@ -187,7 +185,6 @@ html, body {
 .div_wrap_register {
     width: auto;
     height: auto;
-    position: relative;
 }
 
 .a_register {
@@ -207,7 +204,6 @@ html, body {
     width: auto;
     height: auto;
     margin-top: 5px;
-    position: relative;
 }
 
 .a_devLogin {
