@@ -120,7 +120,7 @@
                       <div class="div_wrap_image" id="div_wrap_image">
                           <asp:Repeater ID="featuresRepeater1" runat="server">
                               <ItemTemplate>
-                                  <img src='<%# Eval("메인이미지") %>'
+                                  <img src='<%# DataBinder.Eval(Container.DataItem, "메인이미지") %>'
                                        class="title_image" id="features_image" runat="server"/>
                               </ItemTemplate>
                           </asp:Repeater>
@@ -131,9 +131,9 @@
                            <asp:Repeater ID="featuresRepeater2" runat="server">
                                <ItemTemplate>
                                    <div class="div_wrap_details2">
-                                       <p class="p p_title" id="p_title" runat="server"><%# Eval("게임명") %></p>
-                                       <p class="p p_release_date" id="p_release_date" runat="server"><%# Eval("출시일","{0:yyyy/MM/dd}") %></p>
-                                       <p class="p p_price" id="p_price" runat="server">&#8361;<%# Eval("게임가격") %>원</p>
+                                       <p class="p p_title" id="p_title" runat="server"><%# DataBinder.Eval(Container.DataItem, "게임명") %></p>
+                                       <p class="p p_release_date" id="p_release_date" runat="server"><%# DataBinder.Eval(Container.DataItem, "출시일") %></p>
+                                       <p class="p p_price" id="p_price" runat="server">&#8361;<%# DataBinder.Eval(Container.DataItem, "게임가격") %>원</p>
                                    </div>
                                </ItemTemplate>
                            </asp:Repeater>

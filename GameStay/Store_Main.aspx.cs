@@ -15,13 +15,13 @@ namespace GameStay
         protected void Page_Load(object sender, EventArgs e)
         {
             DBManager dbManager = new DBManager();
-            SqlDataAdapter dataAdapter = dbManager.SetFeaturesAdapter("게임타이틀");
+            SqlDataAdapter dataAdapter = dbManager.SetFeaturesAdapter();
 
-            DataSet ds = new DataSet();
-            dataAdapter.Fill(ds, "게임타이틀");
-            featuresRepeater1.DataSource = ds.Tables["게임타이틀"];
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            featuresRepeater1.DataSource = dt;
             featuresRepeater1.DataBind();
-            featuresRepeater2.DataSource = ds.Tables["게임타이틀"];
+            featuresRepeater2.DataSource = dt;
             featuresRepeater2.DataBind();
             dbManager.DBClose();
 
