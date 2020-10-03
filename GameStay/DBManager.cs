@@ -56,6 +56,13 @@ namespace GameStay
             return dataAdapter;
         }
 
+        //할인중인 게임들 어댑터 적용
+        public SqlDataAdapter SetDiscountAdapter()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("", myConn);
+            return dataAdapter;
+        }
+
         
 
         //======================로그인, 회원가입=========================
