@@ -11,7 +11,10 @@ namespace GameStay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request["__EVENTTARGET"] == "div_logo")
+            {
+                Response.Redirect("Store_Main.aspx");
+            }
         }
 
         protected void btnDevLogin_OnClick(object sender, EventArgs e)

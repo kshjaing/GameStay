@@ -7,6 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="CSS/DevLogin_StyleSheet.css?ver=14" rel="stylesheet" />
     <title></title>
+    <script>
+        function onClickLogo() {
+            __doPostBack('div_logo');
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
