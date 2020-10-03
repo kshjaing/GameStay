@@ -51,8 +51,8 @@ namespace GameStay
         public SqlDataAdapter SetFeaturesAdapter()
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT 게임타이틀.게임명, 게임타이틀.게임가격, 게임타이틀.할인율, 게임타이틀.출시일, 게임타이틀.메인이미지 " +
-                "FROM 게임타이틀 INNER JOIN [유저별 추천게임] " +
-                "ON 게임타이틀.게임명 = [유저별 추천게임].게임명 ORDER BY [유저별 추천게임].번호", myConn);
+                "FROM 게임타이틀 INNER JOIN 추천게임 " +
+                "ON 게임타이틀.게임명 = 추천게임.게임명 ORDER BY 추천게임.번호", myConn);
             return dataAdapter;
         }
 
