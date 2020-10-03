@@ -49,9 +49,11 @@ namespace GameStay
 
 
         //특집 및 추천에 들어갈 게임들을 어댑터에 적용(어떤게임을 추천할지 그 로직은 추후 추가)
-        public SqlDataAdapter SetFeaturesAdapter(string tablename)
+        public SqlDataAdapter SetFeaturesAdapter()
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM " + tablename + " ORDER BY 번호", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT 게임타이틀.게임명, 게임타이틀.게임가격, 게임타이틀.할인율, 게임타이틀.출시일, 게임타이틀.메인이미지 " +
+                "FROM 게임타이틀 INNER JOIN 추천게임 " +
+                "ON 게임타이틀.게임명 = 추천게임.게임명 ORDER BY 추천게임.번호", myConn);
             return dataAdapter;
         }
 

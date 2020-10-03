@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Community.aspx" />
+    <Content Include="CSS\DevLogin_StyleSheet.css" />
     <Content Include="CSS\Login_StyleSheet.css" />
     <Content Include="CSS\MasterPage_StyleSheet.css" />
     <Content Include="CSS\Profile_StyleSheet.css" />
@@ -77,11 +78,13 @@
     <Content Include="DevLogin.aspx" />
     <Content Include="Images\Background\Background.png" />
     <Content Include="Images\Background\BG_Anthem.jpg" />
+    <Content Include="Images\Background\BG_Cog.jpg" />
     <Content Include="Images\Background\BG_TheDivision.jpg" />
     <Content Include="Images\Button\Arrow_Left_Hover.png" />
     <Content Include="Images\Button\Arrow_Left.png" />
     <Content Include="Images\Button\Arrow_Right_Hover.png" />
     <Content Include="Images\Button\Arrow_Right.png" />
+    <Content Include="Images\GameTitleImages\TitleImage_Assassin%27s Creed Origins.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Borderlands3.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_Cyberpunk2077.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.jpg" />

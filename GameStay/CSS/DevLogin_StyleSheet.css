@@ -1,0 +1,203 @@
+﻿@font-face {
+    font-family: 'NIXGONFONTS M 2.0';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NIXGONFONTS L 2.0';
+    src: url('../Fonts/NIXGONFONTS L 2.0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NIXGONFONTS B 2.0';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+input::placeholder {
+    font-family: 'NIXGONFONTS M 2.0';
+}
+
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap {
+    background-image: url('../Images/Background/BG_Cog.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.div_wrap_logo {
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+.div_logo {
+    width: 210px;
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 10px;
+    position: relative;
+    float: left;
+}
+
+    .div_logo:hover {
+        cursor: pointer;
+    }
+
+.img_logo {
+    width: 210px;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.login_square {
+    background-color: #111213;
+    width: 500px;
+    height: 550px;
+    float: left;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+    text-align: center;
+}
+
+.txt_login {
+    margin-top: 80px;
+    font-size: 25pt;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    position: relative;
+}
+
+.div_wrap_id {
+    width: 240px;
+    position: relative;
+    margin-left: 105px;
+    margin-top: 60px;
+}
+
+.input_id {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    padding-left: 50px;
+    padding-bottom: 5px;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 17pt;
+    font-family: 'NIXGONFONTS M 2.0';
+}
+
+.icon_id {
+    width: 45px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    float: left;
+    margin-top: -10px;
+    position: absolute;
+}
+
+.div_wrap_password {
+    width: 240px;
+    position: relative;
+    margin-left: 105px;
+    margin-top: 30px;
+}
+
+.input_password {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    padding-left: 50px;
+    padding-bottom: 5px;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 17pt;
+}
+
+.icon_password {
+    width: 45px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    float: left;
+    margin-top: -13px;
+    position: absolute;
+}
+
+
+.div_wrap_loginbutton {
+    width: 292px;
+    height: 45px;
+    margin-left: 105px;
+}
+
+.button_login {
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    float: right;
+}
+
+.img_login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wrap_register {
+    width: 290px;
+    height: 30px;
+    margin-left: 105px;
+    margin-top: 60px;
+}
+
+.a_register {
+    color: #FFFFFF;
+    user-select: none;
+    font-family: 'NIXGONFONTS M 2.0';
+}
+
+.a_register_link {
+    color: #115fff;
+    text-decoration: none;
+    font-family: 'NIXGONFONTS M 2.0';
+}
+
+.wrap_devLogin {
+    width: 290px;
+    height: 30px;
+    margin-left: 105px;
+    margin-top: 10px;
+}
+
+.a_devLogin {
+    color: #FFFFFF;
+    user-select: none;
+    font-family: 'NIXGONFONTS M 2.0';
+}
+
+.a_devLogin_link {
+    color: #115fff;
+    text-decoration: none;
+    font-family: 'NIXGONFONTS M 2.0';
+}
