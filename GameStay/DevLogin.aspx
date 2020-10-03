@@ -41,8 +41,8 @@
                    </button>
                </div>
                <div class="wrap_register">
-                   <a class="a_register">회원이 아니신가요?</a>
-                   <a class="a_register_link" href="Register.aspx">회원가입</a>
+                   <a class="a_register">개발자로 가입하시겠습니까?</a>
+                   <a class="a_register_link" href="Register.aspx">개발자 등록</a>
                </div>
                <div class="wrap_devLogin">
                    <a class="a_devLogin">일반회원이신가요?</a>
