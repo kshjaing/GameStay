@@ -23,7 +23,7 @@ namespace GameStay
             featuresRepeater1.DataBind();
             featuresRepeater2.DataSource = dt;
             featuresRepeater2.DataBind();
-            DBManager.DBClose();
+            dbManager.DBClose();
 
 
             //특집및추천 전체div 클릭 이벤트

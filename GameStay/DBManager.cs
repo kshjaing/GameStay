@@ -10,9 +10,9 @@ namespace GameStay
     public class DBManager
     {
         
-        static string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
+        string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
 
-        static SqlConnection myConn;
+        SqlConnection myConn;
 
         public DBManager()
         {
@@ -27,20 +27,19 @@ namespace GameStay
         }
 
         //DB닫기 메서드
-        public static void DBClose()
+        public void DBClose()
         {
             myConn.Close();
         }
 
         //반환값 없는 쿼리실행 (Insert, Update, Delete)
-        public static void ExecuteNonQuery(string sQuery)
+        public void ExecuteNonQuery(string sQuery)
         {
             SqlCommand sqlCommand = new SqlCommand(sQuery, myConn);
             sqlCommand.ExecuteNonQuery();
         }
 
-
-        public static SqlDataReader ExecuteReader(string sQuery)
+        public SqlDataReader ExecuteReader(string sQuery)
         {
             SqlCommand sqlCommand = new SqlCommand(sQuery, myConn);
             return sqlCommand.ExecuteReader();
@@ -69,7 +68,6 @@ namespace GameStay
         //======================로그인, 회원가입=========================
 
         //로그인
-        /*
         public bool Authenticate(string id, string pwd)
         {
             bool isAuthen = false;
@@ -84,6 +82,6 @@ namespace GameStay
 
             myReader.Close();
             return isAuthen;
-        }*/
+        }
     }
 }
