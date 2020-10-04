@@ -11,7 +11,17 @@ namespace GameStay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["아이디"] == null)
+                {
+                    Response.Redirect("RequestLogin.aspx");
+                }
+                else
+                {
 
+                }
+            }
         }
         protected void editprofile_click(object sender, EventArgs e)
         {

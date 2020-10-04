@@ -26,27 +26,16 @@ namespace GameStay
 
         protected void btnLogin_OnClick(object sender, EventArgs e)
         {
-            isLogin = dbManager.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString());
 
-            if (inputID.Value.Length == 0 || inputPassword.Value.Length == 0)
+            UserDao uDao = new UserDao();
+            if (uDao.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString()))
             {
-                txtLoginCheck.Attributes.Add("style", "visibility: visible");
-                txtLoginCheck.InnerText = "아이디와 비밀번호를 모두 \r\n입력해주세요.";
+                Session["아이디"] = inputID.Value.ToString();
+                Response.Redirect("Store_main.aspx");
             }
-
             else
             {
-                if (isLogin == true)
-                {
-                    txtLoginCheck.Attributes.Add("style", "visibility: visible");
-                    txtLoginCheck.InnerText = "로그인 성공!";
-                }
-
-                else
-                {
-                    txtLoginCheck.Attributes.Add("style", "visibility: visible");
-                    txtLoginCheck.InnerText = "가입하지 않은 아이디이거나," + "\r\n" +"잘못된 비밀번호입니다.";
-                }
+                txtLoginCheck.InnerText = "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.";
             }
         }
         

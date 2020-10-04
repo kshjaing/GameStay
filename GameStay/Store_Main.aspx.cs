@@ -32,8 +32,8 @@ namespace GameStay
             discountAdapter.Fill(dt2);
             discountRepeater1.DataSource = dt2;
             discountRepeater1.DataBind();
-            
-            dbManager.DBClose();
+
+            DBManager.DBClose();
 
 
             //특집및추천 전체div 클릭 이벤트

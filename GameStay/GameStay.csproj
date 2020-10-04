@@ -73,6 +73,7 @@
     <Content Include="CSS\MasterPage_StyleSheet.css" />
     <Content Include="CSS\Profile_StyleSheet.css" />
     <Content Include="CSS\Register_StyleSheet.css" />
+    <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="DevLogin.aspx" />
     <Content Include="Images\Background\Background.png" />
@@ -108,6 +109,7 @@
     <Content Include="Profile.aspx" />
     <Content Include="ProfileEdit.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="RequestLogin.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
     <Content Include="Web.config" />
@@ -171,6 +173,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RequestLogin.aspx.cs">
+      <DependentUpon>RequestLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestLogin.aspx.designer.cs">
+      <DependentUpon>RequestLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Store_Main.aspx.cs">
       <DependentUpon>Store_Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,6 +194,8 @@
     <Compile Include="Store_ProductDetail.aspx.designer.cs">
       <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserDao.cs" />
+    <Compile Include="UserDo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\NIXGONFONTS B 2.0.ttf" />
