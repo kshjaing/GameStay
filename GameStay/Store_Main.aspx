@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=11" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=17" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -173,9 +173,56 @@
         <!--------------------------------------할인게임파트----------------------------------------------->
         <div class="div_wrap_discount">
             <p class="p_discount">할인중</p>
+            <div class="div_wrap_contents">
+                <div class="div_contents_list">
+                        <asp:Repeater runat="server" ID="discountRepeater1">
+                            <ItemTemplate>
+                                <div class="div_discount_contentbox">
+                                   <div class="div_wrap_discount_image">
+                                       <img src='<%# Eval("메인이미지") %>'
+                                            class="discount_image" id="discount_image" runat="server" />
+                                   </div>
+                                   <div class="div_discount_title">
+                                       <p class="p p_discount_title"><%# Eval("게임명") %></p>
+                                   </div>
+                                   
+                                   <div class="div_discount_price">
+                                       <div class="div_wrap_discount_rate">
+                                          <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
+                                          <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
+                                       </div>
+                                       <div class="div_wrap_discount_price2">
+                                           <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
+                                           <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
+                                               - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                       </div>
+                                   </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                </div>
+            </div>
+            <div class="wrap_discount_pagedot">
+               <img class="img_pagedot" src="Images/Icon/PageDot_Selected.png"/>
+               <img class="img_pagedot" src="Images/Icon/PageDot.png"/>
+               <img class="img_pagedot" src="Images/Icon/PageDot.png"/>
+               <img class="img_pagedot" src="Images/Icon/PageDot.png"/>
+            </div>
+            <div class="div_wrap_discount_button">
+                <button type="button" class="button_discount_left">
+                   <img class="btnimg_features_left" id="btn_discount_left" 
+                        src="Images/Button/Arrow_Left.png" 
+                        onmouseover="this.src='Images/Button/Arrow_Left_Hover.png'"
+                        onmouseout="this.src='Images/Button/Arrow_Left.png'"/>
+                </button>
+                <button type="button" class="button_discount_right">
+                   <img class="btnimg_features_left" id="btn_discount_right" 
+                        src="Images/Button/Arrow_Right.png" 
+                        onmouseover="this.src='Images/Button/Arrow_Right_Hover.png'"
+                        onmouseout="this.src='Images/Button/Arrow_Right.png'"/>
+                </button>
+            </div>
         </div>
-        
-
     </div>
 
 </asp:Content>

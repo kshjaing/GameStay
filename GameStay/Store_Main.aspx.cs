@@ -15,14 +15,24 @@ namespace GameStay
         protected void Page_Load(object sender, EventArgs e)
         {
             DBManager dbManager = new DBManager();
-            SqlDataAdapter dataAdapter = dbManager.SetFeaturesAdapter();
+            SqlDataAdapter featureAdapter = dbManager.SetFeaturesAdapter();    //추천게임 어댑터
+            SqlDataAdapter discountAdapter = dbManager.SetDiscountAdapter();   //할인게임 어댑터
 
+            //추천게임 바인딩
             DataTable dt = new DataTable();
-            dataAdapter.Fill(dt);
+            featureAdapter.Fill(dt);
             featuresRepeater1.DataSource = dt;
             featuresRepeater1.DataBind();
             featuresRepeater2.DataSource = dt;
             featuresRepeater2.DataBind();
+
+
+            //할인게임 바인딩
+            DataTable dt2 = new DataTable();
+            discountAdapter.Fill(dt2);
+            discountRepeater1.DataSource = dt2;
+            discountRepeater1.DataBind();
+            
             dbManager.DBClose();
 
 
