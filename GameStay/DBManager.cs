@@ -20,7 +20,7 @@ namespace GameStay
         }*/
 
         //DB연결 메서드
-        public static SqlConnection Open()
+        public SqlConnection Open()
         {
             myConn = new SqlConnection(DBSource);
             myConn.Open();
@@ -28,19 +28,19 @@ namespace GameStay
         }
 
         //DB닫기 메서드
-        public static void DBClose()
+        public void DBClose()
         {
             myConn.Close();
         }
 
         //반환값 없는 쿼리실행 (Insert, Update, Delete)
-        public static void ExecuteNonQuery(string sQuery)
+        public void ExecuteNonQuery(string sQuery)
         {
             SqlCommand sqlCommand = new SqlCommand(sQuery, Open());
             sqlCommand.ExecuteNonQuery();
         }
 
-        public static SqlDataReader ExecuteReader(string sQuery)
+        public SqlDataReader ExecuteReader(string sQuery)
         {
             SqlCommand sqlCommand = new SqlCommand(sQuery, myConn);
             return sqlCommand.ExecuteReader();
@@ -65,7 +65,7 @@ namespace GameStay
         }
 
         //저장 프로시저 실행
-        public static int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
+        public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
         {
             myCommand.ExecuteNonQuery();
             int returnValue = (int)ParamOut.Value;
