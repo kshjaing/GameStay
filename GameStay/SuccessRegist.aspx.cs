@@ -13,5 +13,10 @@ namespace GameStay
 		{
 
 		}
+
+		protected void gologin_click(object sender, EventArgs e)
+		{
+			Response.Redirect("Login.aspx");
+		}
 	}
 }
