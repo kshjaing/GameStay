@@ -14,12 +14,16 @@ namespace GameStay
 
         SqlConnection myConn;
 
+        public DBManager()
+        {
+            DBOpen();
+        }
+
         //DB연결 메서드
-        public SqlConnection Open()
+        public void DBOpen()
         {
             myConn = new SqlConnection(DBSource);
             myConn.Open();
-            return myConn;
         }
 
         //DB닫기 메서드
@@ -31,7 +35,7 @@ namespace GameStay
         //반환값 없는 쿼리실행 (Insert, Update, Delete)
         public void ExecuteNonQuery(string sQuery)
         {
-            SqlCommand sqlCommand = new SqlCommand(sQuery, Open());
+            SqlCommand sqlCommand = new SqlCommand(sQuery, myConn);
             sqlCommand.ExecuteNonQuery();
         }
 
