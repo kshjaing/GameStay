@@ -37,40 +37,40 @@ html, body {
 
 .profile_square {
     background-color: #1B1C1E;
-    width: 900px;
-    height: 290px;
+    width: 100%;
+    height: 250px;
     position: relative;
     
-    margin-left: 70px;
+    
     margin-top: 90px;
 }
 
 .img_profile {
-    width: 200px;
+    width: 150px;
     margin-top: 40px;
 }
 .txt_profile_detail {
     color: #FFFFFF;
-    font-size: 20pt;
+    font-size: 15pt;
     font-family: 'NIXGONFONTS M';
 }
 .txt_profile_nickname {
     color: #FFFFFF;
-    font-size: 40pt;
+    font-size: 20pt;
     font-family: 'NIXGONFONTS B';
 }
 .txt_profile_level {
-    font-size: 20pt;
+    font-size: 15pt;
     font-family: 'NIXGONFONTS M';
     color: #ff6a00;
 }
 .txt_profile_countgame {
-    font-size: 20pt;
+    font-size: 15pt;
     font-family: 'NIXGONFONTS M';
     color: cyan;
 }
 .div_profile_img{
-    width:30%;
+    width:20%;
     float:left;
     height:100%;
     text-align:center;
@@ -99,24 +99,23 @@ html, body {
     text-align: center;
     color: #FFFFFF;
     font-family: IBMPlexSansKR-Medium;
-    font-size: 16pt;
+    font-size: 12pt;
 }
 
 /*최근 구매한 게임*/
 
 .profile_square_game {
     background-color: #1B1C1E;
-    width: 900px;
+    width: 100%;
     height: 480px;
     position: relative;
     vertical-align: central;
-    margin-left: 70px;
     margin-top: 10px;
 }
 
 .txt_profile_game {
     color: #FFFFFF;
-    font-size: 35pt;
+    font-size: 20pt;
     font-family: 'NIXGONFONTS B';
     padding-top:30px;
     padding-left:55px;
@@ -138,33 +137,35 @@ html, body {
 }
 .txt_profile_game_title {
     color: #FFFFFF;
-    font-size: 25pt;
+    font-size: 18pt;
     font-family: 'NIXGONFONTS M';
 }
 .txt_profile_game_date {
     color: #FFFFFF;
-    font-size: 15pt;
+    font-size: 12pt;
     font-family: 'NIXGONFONTS M';
 }
 .txt_profile_game_price {
     font-family: 'IBMPlexSansKR-Medium';
+    color: #FFFFFF;
+    font-size: 12pt;
 }
 
 /*스크린샷*/
 
 .profile_square_screenshot {
     background-color: #1B1C1E;
-    width: 900px;
+    width: 100%;
     height: 460px;
     position: relative;
     vertical-align: central;
-    margin-left: 70px;
+    
     margin-top: 50px;
 }
 
 .txt_profile_screenshot {
     color: #FFFFFF;
-    font-size: 35pt;
+    font-size: 20pt;
     font-family: 'NIXGONFONTS B';
     padding-top: 35px;
     padding-left: 65px;
