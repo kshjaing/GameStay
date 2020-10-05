@@ -86,16 +86,7 @@ namespace GameStay
 
         protected void Login_OnClick(object sender, EventArgs e)
         {
-            if (Session["아이디"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            else
-            {
-                //로그아웃
-                Session["아이디"] = null;
-
-            }
+            Response.Redirect("Login.aspx");
         }
     }
 }
