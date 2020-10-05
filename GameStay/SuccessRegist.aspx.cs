@@ -7,15 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace GameStay
 {
-    public partial class SuccessRegist : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class SuccessRegist : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
-        }
-        protected void gologin_click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
-        }
-    }
+		}
+	}
 }
