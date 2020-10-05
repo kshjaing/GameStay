@@ -15,7 +15,7 @@ namespace GameStay
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DBManager.Open();
+            dbManager.DBOpen();
             
             if (Request["__EVENTTARGET"] == "div_logo")
             {
@@ -35,6 +35,8 @@ namespace GameStay
             }
             else
             {
+                inputID.Value = "";
+                txtLoginCheck.Attributes.Add("style", "visibility: visible");
                 txtLoginCheck.InnerText = "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.";
             }
         }

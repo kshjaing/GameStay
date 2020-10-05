@@ -10,6 +10,7 @@ using GameStay;
 
 public class UserDao
 {
+    DBManager dbManager;
     public UserDao()
     {
 
@@ -17,13 +18,16 @@ public class UserDao
 
     public bool Authenticate(string id, string pw)
     {
+        dbManager = new DBManager();
+
         //리턴값 및 아웃 참조변수 초기화
         bool isAuthen = false; //리턴값 false - 미인증상태
         //뭐리문 이용하여 조건(id, pwd, 탈퇴하지 않음) 에 일치하는 자료를 불러옴. 비밀번호는 MD5로 암호화
         //string test = this.GetMd5(pwd);
         string sQuery = "SELECT * FROM 유저 WHERE 아이디='" + id + "' AND 비밀번호='" + this.GetMD5(pw) + "'";
+
         //dbman.executeReader() 메서드를 호출하여 결과를 가져옴
-        SqlDataReader mReader = DBManager.ExecuteReader(sQuery);
+        SqlDataReader mReader = dbManager.ExecuteReader(sQuery);
 
         //결과값이 존재하면 인증성공, 없으면 인증실패
         if (mReader.Read()) isAuthen = true;
@@ -32,7 +36,7 @@ public class UserDao
         //sqldatareader 객체를 닫음
         mReader.Close();
         //DB연결해제
-        DBManager.DBClose();
+        dbManager.DBClose();
         //결과값 반환
         return isAuthen;
     }
@@ -56,13 +60,16 @@ public class UserDao
             return sb.ToString();
         }
     }
-
+    
     public string GetNickname(string uid)
     {
+
+        dbManager = new DBManager();
+
         string nickname = null; //리턴값 초기회
         //쿼리문을 이용하여 닉네임을 읽어옴
         string sQuery = "SELECT 닉네임 FROM 유저 WHERE 아이디 = '" + uid + "'";
-        SqlDataReader mReader = DBManager.ExecuteReader(sQuery);
+        SqlDataReader mReader = dbManager.ExecuteReader(sQuery);
         //userid 존재 여부 확인 후 닉네임 지정
         if (mReader.Read())
         {
@@ -71,33 +78,45 @@ public class UserDao
         //mReader 닫기, 닫지 않으면 추후 sqldatareader를 만들 때 오류 발생
         mReader.Close();
         //DB 연결 해제
-        DBManager.DBClose();
+        dbManager.DBClose();
         //리턴값 반환
         return nickname;
     }
 
     public bool VerifyID(string id)
     {
+        dbManager = new DBManager();
+
         bool result = true;
         string sQuery = "SELECT * FROM 유저 WHERE 아이디 = '" + id + "'";
-        SqlDataReader myReader = DBManager.ExecuteReader(sQuery);
+        SqlDataReader myReader = dbManager.ExecuteReader(sQuery);
         if (myReader.Read()) result = false;
         myReader.Close();
-        DBManager.DBClose();
+        dbManager.DBClose();
         return result;
     }
 
     public void RegisterUserQry(UserDo uDo)
     {
+
+        dbManager = new DBManager();
         string sQuery = "INSERT INTO 유저 (아이디, 비밀번호, 닉네임, 이메일, 프로필사진, 레벨, 등급) VALUES ('" + uDo.Userid + "', '" + this.GetMD5(uDo.Passwd) + "', '" + uDo.Nickname + "', '" + uDo.Email + "', null , 1, 1)";
-        DBManager.ExecuteNonQuery(sQuery);
-        DBManager.DBClose();
+        dbManager.ExecuteNonQuery(sQuery);
+        dbManager.DBClose();
     }
 
     public int RegistUser(UserDo uDo)
     {
-        SqlCommand mCmd = new SqlCommand("procAddUser", DBManager.Open());
+        dbManager = new DBManager();
+
+        //모든메소드 dbManager = new DBManager(); 
+        //프로시저사용시 SqlCommand mCmd = new SqlCommand("procAddUser",dbManager.Open());
+        //메소드 처음에 해주기
+
+        SqlCommand mCmd = new SqlCommand("procAddUser",dbManager.Open());
+
         mCmd.CommandType = CommandType.StoredProcedure;
+        
 
         SqlParameter param;
         param = new SqlParameter("@아이디", SqlDbType.Char, 12);
@@ -117,12 +136,13 @@ public class UserDao
         mCmd.Parameters.Add(param);
 
         param = new SqlParameter("@프로필사진", SqlDbType.NChar, 50);
-        param.Value = uDo.Profileimg;
+        //param.Value = uDo.Profileimg;
+        param.Value = DBNull.Value;
         mCmd.Parameters.Add(param);
 
         SqlParameter paramOut = new SqlParameter("@result", SqlDbType.Int);
         paramOut.Direction = ParameterDirection.Output;
         mCmd.Parameters.Add(paramOut);
-        return DBManager.ExecuteStoredProcedure(mCmd, paramOut);
+        return dbManager.ExecuteStoredProcedure(mCmd, paramOut);
     }
 }

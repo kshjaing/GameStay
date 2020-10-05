@@ -10,43 +10,49 @@ namespace GameStay
     public class DBManager
     {
         
-        static string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
+        string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
 
-        static SqlConnection myConn;
+        SqlConnection myConn;
 
-        /*public DBManager()
+        public DBManager()
         {
             DBOpen();
-        }*/
+        }
 
         //DB연결 메서드
-        public static SqlConnection Open()
+        public void  DBOpen()
+        {
+            myConn = new SqlConnection(DBSource);
+            myConn.Open();
+        }
+
+        //DB닫기 메서드
+        public void DBClose()
+        {
+            myConn.Close();
+        }
+
+        //반환값 없는 쿼리실행 (Insert, Update, Delete)
+        public void ExecuteNonQuery(string sQuery)
+        {
+            SqlCommand sqlCommand = new SqlCommand(sQuery, Open()); //자동Open
+            sqlCommand.ExecuteNonQuery();
+        }
+
+        public SqlDataReader ExecuteReader(string sQuery)
+        {
+            SqlCommand sqlCommand = new SqlCommand(sQuery, myConn); //수동Open
+            return sqlCommand.ExecuteReader();
+        }
+
+        public SqlConnection Open()
         {
             myConn = new SqlConnection(DBSource);
             myConn.Open();
             return myConn;
         }
 
-        //DB닫기 메서드
-        public static void DBClose()
-        {
-            myConn.Close();
-        }
-
-        //반환값 없는 쿼리실행 (Insert, Update, Delete)
-        public static void ExecuteNonQuery(string sQuery)
-        {
-            SqlCommand sqlCommand = new SqlCommand(sQuery, Open());
-            sqlCommand.ExecuteNonQuery();
-        }
-
-        public static SqlDataReader ExecuteReader(string sQuery)
-        {
-            SqlCommand sqlCommand = new SqlCommand(sQuery, myConn);
-            return sqlCommand.ExecuteReader();
-        }
-
-
+        
 
         //특집 및 추천에 들어갈 게임들을 어댑터에 적용(어떤게임을 추천할지 그 로직은 추후 추가)
         public SqlDataAdapter SetFeaturesAdapter()
@@ -65,8 +71,11 @@ namespace GameStay
         }
 
         //저장 프로시저 실행
-        public static int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
+        public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
         {
+
+            
+
             myCommand.ExecuteNonQuery();
             int returnValue = (int)ParamOut.Value;
             DBClose();
