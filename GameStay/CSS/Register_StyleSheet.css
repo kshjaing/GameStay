@@ -55,8 +55,8 @@ html, body {
     display: table-cell;
     display: inline-block;
     background-color: #111213;
-    width: 30vw;
-    height: 70vh;
+    width: 500px;
+    height: 800px;
     min-width: 500px;
     min-height: 600px;
     position: relative;
@@ -71,6 +71,11 @@ html, body {
 
 .wrap_idpass {
     margin-top: 50px;
+}
+
+.txt_check {
+    visibility: hidden;
+    color: red;
 }
 
 .wrap_input_id {
@@ -159,6 +164,26 @@ html, body {
     font-family: 'NIXGONFONTS M';
 }
 
+.input_nickname {
+    width: 14vw;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 8px;
+    padding-left: 3vw;
+    outline: none;
+    font-family: 'NIXGONFONTS M';
+}
+
+.wrap_input_nickname {
+    left: 50%;
+    margin-left: -8.5vw;
+    margin-top: 160px;
+    position: absolute;
+    width: 200px;
+}
 
 .icon_email {
     position: absolute;

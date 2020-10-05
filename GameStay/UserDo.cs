@@ -55,12 +55,11 @@ public class UserDo
         set { profileimg = value; }
     }
 
-    public UserDo(string uid, string pwd, string nickname, string email, string profimg)
+    public UserDo(string uid, string pwd, string nickname, string email)
     {
         this.userid = uid;
         this.passwd = pwd;
         this.nickname = nickname;
         this.email = email;
-        this.profileimg = profimg;
     }
 }

@@ -15,11 +15,40 @@ namespace GameStay
             {
                 Response.Redirect("Store_Main.aspx");
             }
+
+  
         }
+
+        static bool isIdCheck = false;
+        UserDao uDao;
 
         protected void Register_OnClick(object sender, EventArgs e)
         {
-            inputID.Value = "버튼작동";
+            
+            uDao = new UserDao();
+
+            UserDo uDo = new UserDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString() , inputEmail.Value.ToString());
+
+
+            if (inputID.Value.Length <= 0)
+            {
+                inputID.Focus();
+            }
+            if(isIdCheck = uDao.VerifyID(inputID.Value.ToString()) || uDao.RegistUser(uDo) == 1)
+            {
+                
+
+                uDao = new UserDao();
+                uDao.RegisterUserQry(uDo);
+                Response.Redirect("SuccessRegist.aspx");
+            }
+            else
+            {
+                txtRegistCheck.Visible = true;
+                inputID.Value = "";
+                inputID.Focus();
+            }
+            
         }
     }
 }

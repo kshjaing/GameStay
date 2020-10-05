@@ -112,6 +112,7 @@
     <Content Include="RequestLogin.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
+    <Content Include="SuccessRegist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +194,13 @@
     </Compile>
     <Compile Include="Store_ProductDetail.aspx.designer.cs">
       <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessRegist.aspx.cs">
+      <DependentUpon>SuccessRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessRegist.aspx.designer.cs">
+      <DependentUpon>SuccessRegist.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserDao.cs" />
     <Compile Include="UserDo.cs" />

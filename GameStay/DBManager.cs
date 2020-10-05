@@ -14,16 +14,17 @@ namespace GameStay
 
         static SqlConnection myConn;
 
-        public DBManager()
+        /*public DBManager()
         {
             DBOpen();
-        }
+        }*/
 
         //DB연결 메서드
-        public void DBOpen()
+        public static SqlConnection Open()
         {
             myConn = new SqlConnection(DBSource);
             myConn.Open();
+            return myConn;
         }
 
         //DB닫기 메서드
@@ -35,7 +36,7 @@ namespace GameStay
         //반환값 없는 쿼리실행 (Insert, Update, Delete)
         public static void ExecuteNonQuery(string sQuery)
         {
-            SqlCommand sqlCommand = new SqlCommand(sQuery, myConn);
+            SqlCommand sqlCommand = new SqlCommand(sQuery, Open());
             sqlCommand.ExecuteNonQuery();
         }
 
@@ -63,7 +64,14 @@ namespace GameStay
             return dataAdapter;
         }
 
-        
+        //저장 프로시저 실행
+        public static int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
+        {
+            myCommand.ExecuteNonQuery();
+            int returnValue = (int)ParamOut.Value;
+            DBClose();
+            return returnValue;
+        }
 
         //======================로그인, 회원가입=========================
         /*

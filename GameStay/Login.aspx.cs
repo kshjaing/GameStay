@@ -15,7 +15,7 @@ namespace GameStay
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            dbManager.DBOpen();
+            DBManager.Open();
             
             if (Request["__EVENTTARGET"] == "div_logo")
             {

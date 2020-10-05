@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="CSS/Register_StyleSheet.css?ver5" rel="stylesheet" />
+    <link href="CSS/Register_StyleSheet.css?ver=21" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script>
@@ -26,6 +26,7 @@
                         <input type="text" class="input_id" placeholder="아이디"
                             runat="server" id="inputID" autocomplete="off"/>
                         <img class="icon_id" src="Images/Icon/Login/Icon_ID.png" />
+                         
                      </div>
                      <br/><br/><br/>
 
@@ -41,13 +42,24 @@
                         <img class="icon_password" src="Images/Icon/Login/Icon_Password.png" />
                      </div>
 
+                     <div class="wrap_input_nickname">
+                        <input type="text" class="input_nickname" placeholder="닉네임"
+                            runat="server" id="inputNickname" autocomplete="off"/>
+                        <img class="icon_email" src="Images/Icon/Login/Icon_Email.png" />
+                     </div>
+                     <br /><br/><br/>
                      <div class="wrap_input_email">
                         <input type="email" class="input_email" placeholder="이메일"
                             runat="server" id="inputEmail" autocomplete="off"/>
                         <img class="icon_email" src="Images/Icon/Login/Icon_Email.png" />
                      </div>
+                     
                  </div>
-
+<div>
+<a runat="server" id="txtRegistCheck" class="txt_check" draggable="false" visible="false">
+                            이미 가입되어있는 ID 입니다.
+                        </a>
+                     </div>
                  <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
              </div>
         </div>
