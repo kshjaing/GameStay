@@ -10,10 +10,14 @@ namespace GameStay
     public class DBManager
     {
         
-        string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
+        static string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
 
-        SqlConnection myConn;
+        static SqlConnection myConn;
 
+        /*public DBManager()
+        {
+            DBOpen();
+        }*/
 
         //DB연결 메서드
         public SqlConnection Open()
@@ -70,7 +74,7 @@ namespace GameStay
         }
 
         //======================로그인, 회원가입=========================
-
+        /*
         //로그인
         public bool Authenticate(string id, string pwd)
         {
@@ -86,6 +90,6 @@ namespace GameStay
 
             myReader.Close();
             return isAuthen;
-        }
+        }*/
     }
 }
