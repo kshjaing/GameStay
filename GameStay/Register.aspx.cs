@@ -19,6 +19,8 @@ namespace GameStay
   
         }
 
+        static bool isIdCheck = false;
+        UserDao uDao;
 
         protected void Register_OnClick(object sender, EventArgs e)
         {
