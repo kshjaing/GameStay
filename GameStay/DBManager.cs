@@ -10,14 +10,9 @@ namespace GameStay
     public class DBManager
     {
         
-        static string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
+        string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
 
-        static SqlConnection myConn;
-
-        /*public DBManager()
-        {
-            DBOpen();
-        }*/
+        SqlConnection myConn;
 
         //DB연결 메서드
         public SqlConnection Open()

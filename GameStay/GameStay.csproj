@@ -109,10 +109,8 @@
     <Content Include="Profile.aspx" />
     <Content Include="ProfileEdit.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="RequestLogin.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
-    <Content Include="SuccessRegist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -174,13 +172,6 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RequestLogin.aspx.cs">
-      <DependentUpon>RequestLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RequestLogin.aspx.designer.cs">
-      <DependentUpon>RequestLogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Store_Main.aspx.cs">
       <DependentUpon>Store_Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -195,15 +186,6 @@
     <Compile Include="Store_ProductDetail.aspx.designer.cs">
       <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SuccessRegist.aspx.cs">
-      <DependentUpon>SuccessRegist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SuccessRegist.aspx.designer.cs">
-      <DependentUpon>SuccessRegist.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserDao.cs" />
-    <Compile Include="UserDo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\NIXGONFONTS B 2.0.ttf" />
