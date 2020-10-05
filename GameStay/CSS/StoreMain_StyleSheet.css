@@ -217,7 +217,6 @@ html, body {
     float: left;
     position: relative;
     margin-top: 20px;
-    overflow-x: hidden;
 }
 
 .div_contents_list {
@@ -226,13 +225,20 @@ html, body {
     position: relative;
 }
 
+.div_wrap_disount_contentbox {
+    width: 25%;
+    height: 100%;
+    background: skyblue;
+    position: relative;
+    float: left;
+}
+
 
 .div_discount_contentbox {
     width: 350px;
     height: 260px;
     background: #1B1C1E;
     position: relative;
-    float: left;
 }
 
 .div_wrap_discount_image {
