@@ -60,15 +60,15 @@ public class UserDao
             return sb.ToString();
         }
     }
-    
+    /*
     public string GetNickname(string uid)
     {
 
         dbManager = new DBManager();
 
-        string nickname = null; //리턴값 초기회
+        string nickname = null; //리턴값 초기화
         //쿼리문을 이용하여 닉네임을 읽어옴
-        string sQuery = "SELECT 닉네임 FROM 유저 WHERE 아이디 = '" + uid + "'";
+        string sQuery = "SELECT * FROM 유저 WHERE 아이디 = '" + uid + "'";
         SqlDataReader mReader = dbManager.ExecuteReader(sQuery);
         //userid 존재 여부 확인 후 닉네임 지정
         if (mReader.Read())
@@ -81,6 +81,29 @@ public class UserDao
         dbManager.DBClose();
         //리턴값 반환
         return nickname;
+
+    }*/
+    
+    public UserDo GetUserInfo(string uid)
+    {
+        dbManager = new DBManager();
+
+        string qrySelect = "SELECT * FROM 유저 WHERE 아이디 =  "+ "'" + uid + "'";
+
+        SqlDataReader mReader = dbManager.ExecuteReader(qrySelect);
+
+        mReader.Read();
+
+        UserDo udo = new UserDo
+        (
+            mReader["닉네임"].ToString().TrimEnd(),
+            int.Parse(mReader["레벨"].ToString().TrimEnd()),
+            mReader["프로필사진"].ToString().TrimEnd()
+        );
+
+        mReader.Close();
+        dbManager.DBClose();
+        return udo;
     }
 
     public bool VerifyID(string id)
