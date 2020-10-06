@@ -1,0 +1,6 @@
+USE [GameStay]
+DROP USER [gsdev];
+
+ALTER AUTHORIZATION
+ON DATABASE::[GameStay]
+TO [gsdev]

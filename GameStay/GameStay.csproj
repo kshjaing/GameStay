@@ -67,15 +67,91 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Community.aspx" />
+    <Content Include="CSS\DevLogin_StyleSheet.css" />
     <Content Include="CSS\Login_StyleSheet.css" />
+    <Content Include="CSS\MasterPage_StyleSheet.css" />
+    <Content Include="CSS\Profile_StyleSheet.css" />
+    <Content Include="CSS\Register_StyleSheet.css" />
+    <Content Include="CSS\RequestLogin_StyleSheet.css" />
+    <Content Include="CSS\StoreMain_StyleSheet.css" />
+    <Content Include="DevLogin.aspx" />
+    <Content Include="Images\Background\Background.png" />
+    <Content Include="Images\Background\BG_Anthem.jpg" />
+    <Content Include="Images\Background\BG_Cog.jpg" />
     <Content Include="Images\Background\BG_TheDivision.jpg" />
-    <Content Include="Images\Icon\Icon_ID.png" />
-    <Content Include="Images\Icon\Icon_Password.png" />
+    <Content Include="Images\Button\Arrow_Left_Hover.png" />
+    <Content Include="Images\Button\Arrow_Left.png" />
+    <Content Include="Images\Button\Arrow_Right_Hover.png" />
+    <Content Include="Images\Button\Arrow_Right.png" />
+    <Content Include="Images\GameTitleImages\TitleImage_Assassin%27sCreedOrigins.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_Battlefield 1.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Battlefield 3.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Battlefield 4.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Battlefield 5.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Borderlands3.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_CallofDuty Modern Warfare Remastered.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Control.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_Cyberpunk2077.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_Fall Guys.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_Firewatch.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_FlightSimulator2020.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_GrandTheftAuto5.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_HorizonZeroDawn.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_HumanFallFlat.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_MonsterHunterWorld.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_NierAutomata.png" />
+    <Content Include="Images\GameTitleImages\TitleImage_Overcooked2.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Rainbow Six Siege.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Skyrim.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_Spelunky 2.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_TheWitcher3.JPG" />
+    <Content Include="Images\Icon\Icon_Discount.png" />
+    <Content Include="Images\Icon\Login\Icon_Email.png" />
+    <Content Include="Images\Icon\Login\Icon_ID.png" />
+    <Content Include="Images\Icon\Login\Icon_Login_Hover.png" />
+    <Content Include="Images\Icon\Login\Icon_Login_NotHover.png" />
+    <Content Include="Images\Icon\Login\Icon_Password.png" />
+    <Content Include="Images\Icon\PageDot.png" />
+    <Content Include="Images\Icon\PageDot_Selected.png" />
     <Content Include="Images\Logo_GameStay.png" />
+    <Content Include="Images\Menu\Menu_Select_BG.png" />
+    <Content Include="Images\Profile\Profile_Mongkka.png" />
+    <Content Include="Library.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="ProfileEdit.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="RequestLogin.aspx" />
+    <Content Include="Store_Main.aspx" />
+    <Content Include="Store_ProductDetail.aspx" />
+    <Content Include="SuccessRegist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Community.aspx.cs">
+      <DependentUpon>Community.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community.aspx.designer.cs">
+      <DependentUpon>Community.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DBManager.cs" />
+    <Compile Include="DevLogin.aspx.cs">
+      <DependentUpon>DevLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevLogin.aspx.designer.cs">
+      <DependentUpon>DevLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library.aspx.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library.aspx.designer.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -83,12 +159,73 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileEdit.aspx.cs">
+      <DependentUpon>ProfileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileEdit.aspx.designer.cs">
+      <DependentUpon>ProfileEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestLogin.aspx.cs">
+      <DependentUpon>RequestLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestLogin.aspx.designer.cs">
+      <DependentUpon>RequestLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store_Main.aspx.cs">
+      <DependentUpon>Store_Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store_Main.aspx.designer.cs">
+      <DependentUpon>Store_Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store_ProductDetail.aspx.cs">
+      <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store_ProductDetail.aspx.designer.cs">
+      <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessRegist.aspx.cs">
+      <DependentUpon>SuccessRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessRegist.aspx.designer.cs">
+      <DependentUpon>SuccessRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDao.cs" />
+    <Compile Include="UserDo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\NIXGONFONTS B 2.0.ttf" />
     <Content Include="Fonts\NIXGONFONTS L 2.0.ttf" />
     <Content Include="Fonts\NIXGONFONTS M 2.0.ttf" />
+    <Content Include="Main.Master" />
+    <Content Include="Fonts\IBMPlexSansKR-Bold.ttf" />
+    <Content Include="Fonts\IBMPlexSansKR-Medium.ttf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
