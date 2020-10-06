@@ -62,39 +62,8 @@ namespace GameStay
                 return sb.ToString();
             }
         }
-    }
-    /*
-    public string GetNickname(string uid)
-    {
 
-        public string GetNickname(string uid)
-        {
-
-            dbManager = new DBManager();
-
-            string nickname = null; //리턴값 초기회
-                                    //쿼리문을 이용하여 닉네임을 읽어옴
-            string sQuery = "SELECT 닉네임 FROM 유저 WHERE 아이디 = '" + uid + "'";
-            SqlDataReader mReader = dbManager.ExecuteReader(sQuery);
-            //userid 존재 여부 확인 후 닉네임 지정
-            if (mReader.Read())
-            {
-                nickname = mReader["닉네임"].ToString().TrimEnd();
-            }
-            //mReader 닫기, 닫지 않으면 추후 sqldatareader를 만들 때 오류 발생
-            mReader.Close();
-            //DB 연결 해제
-            dbManager.DBClose();
-            //리턴값 반환
-            return nickname;
-        }
-
-        string nickname = null; //리턴값 초기화
-        //쿼리문을 이용하여 닉네임을 읽어옴
-        string sQuery = "SELECT * FROM 유저 WHERE 아이디 = '" + uid + "'";
-        SqlDataReader mReader = dbManager.ExecuteReader(sQuery);
-        //userid 존재 여부 확인 후 닉네임 지정
-        if (mReader.Read())
+        public bool VerifyID(string id)
         {
             dbManager = new DBManager();
 
@@ -106,36 +75,28 @@ namespace GameStay
             dbManager.DBClose();
             return result;
         }
-        //mReader 닫기, 닫지 않으면 추후 sqldatareader를 만들 때 오류 발생
-        mReader.Close();
-        //DB 연결 해제
-        dbManager.DBClose();
-        //리턴값 반환
-        return nickname;
 
-    }*/
-    
-    public UserDo GetUserInfo(string uid)
-    {
-        dbManager = new DBManager();
+        public UserDo GetUserInfo(string uid)
+        {
+            dbManager = new DBManager();
 
-        string qrySelect = "SELECT * FROM 유저 WHERE 아이디 =  "+ "'" + uid + "'";
+            string qrySelect = "SELECT * FROM 유저 WHERE 아이디 =  " + "'" + uid + "'";
 
-        SqlDataReader mReader = dbManager.ExecuteReader(qrySelect);
+            SqlDataReader mReader = dbManager.ExecuteReader(qrySelect);
 
-        mReader.Read();
+            mReader.Read();
 
-        UserDo udo = new UserDo
-        (
-            mReader["닉네임"].ToString().TrimEnd(),
-            int.Parse(mReader["레벨"].ToString().TrimEnd()),
-            mReader["프로필사진"].ToString().TrimEnd()
-        );
+            UserDo udo = new UserDo
+            (
+                mReader["닉네임"].ToString().TrimEnd(),
+                int.Parse(mReader["레벨"].ToString().TrimEnd()),
+                mReader["프로필사진"].ToString().TrimEnd()
+            );
 
-        mReader.Close();
-        dbManager.DBClose();
-        return udo;
-    }
+            mReader.Close();
+            dbManager.DBClose();
+            return udo;
+        }
 
         public void RegisterUserQry(UserDo uDo)
         {

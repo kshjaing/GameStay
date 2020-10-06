@@ -63,12 +63,14 @@ namespace GameStay
             this.nickname = nickname;
             this.email = email;
         }
+
+        public UserDo(string nickname, int level, string profimg)
+        {
+            this.nickname = nickname;
+            this.level = level;
+            this.profileimg = profimg;
+        }
     }
 
-    public UserDo(string nickname, int level, string profimg)
-    {
-        this.nickname = nickname;
-        this.level = level;
-        this.profileimg = profimg;
-    }
+    
 }
