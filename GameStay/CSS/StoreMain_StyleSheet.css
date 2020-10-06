@@ -217,6 +217,7 @@ html, body {
     float: left;
     position: relative;
     margin-top: 20px;
+    overflow-x: hidden;
 }
 
 .div_contents_list {
@@ -228,7 +229,6 @@ html, body {
 .div_wrap_disount_contentbox {
     width: 25%;
     height: 100%;
-    background: skyblue;
     position: relative;
     float: left;
 }
@@ -239,6 +239,10 @@ html, body {
     height: 260px;
     background: #1B1C1E;
     position: relative;
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 
 .div_wrap_discount_image {
@@ -344,7 +348,6 @@ html, body {
 .wrap_discount_pagedot {
     width: 100px;
     height: 15px;
-    margin-top: 20px;
     float: left;
     left: 50%;
     transform: translateX(-50%);
@@ -354,8 +357,8 @@ html, body {
 
 .div_wrap_discount_button {
     float: right;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: -10px;
+    margin-right: 30px;
     width: 100px;
     height: 35px;
 }

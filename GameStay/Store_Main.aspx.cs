@@ -16,7 +16,7 @@ namespace GameStay
         {
             DBManager dbManager = new DBManager();
             SqlDataAdapter featureAdapter = dbManager.SetFeaturesAdapter();    //추천게임 어댑터
-            SqlDataAdapter discountAdapter = dbManager.SetDiscountAdapter();   //할인게임 어댑터
+            SqlDataAdapter discountAdapter1 = dbManager.SetDiscountAdapter1();   //할인게임 어댑터 1페이지
 
             //추천게임 바인딩
             DataTable dt = new DataTable();
@@ -28,9 +28,9 @@ namespace GameStay
 
 
             //할인게임 바인딩
-            DataTable dt2 = new DataTable();
-            discountAdapter.Fill(dt2);
-            discountRepeater1.DataSource = dt2;
+            DataTable dt1 = new DataTable();
+            discountAdapter1.Fill(dt1);
+            discountRepeater1.DataSource = dt1;
             discountRepeater1.DataBind();
 
             dbManager.DBClose();

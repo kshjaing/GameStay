@@ -57,9 +57,11 @@ namespace GameStay
         }
 
         //할인중인 게임들 어댑터 적용
-        public SqlDataAdapter SetDiscountAdapter()
+        public SqlDataAdapter SetDiscountAdapter1()
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 게임타이틀 WHERE 할인율 > 0;", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
+                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " WHERE dis.rownum BETWEEN 1 AND 6; ", myConn);
             return dataAdapter;
         }
 
