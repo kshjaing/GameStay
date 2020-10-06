@@ -9,7 +9,7 @@
             <input type="image" src="Images/Profile/Profile_Mongkka.png" class="img_profile" />
         </div>
         <div class="div_profile_detail">
-            <p class="txt_profile_nickname">Mongkka</p>
+            <p class="txt_profile_nickname" id="txt_nickname"><% %></p>
             <a class="txt_profile_detail">레벨 : </a> <a class="txt_profile_level">18</a> <br />
             <a class="txt_profile_detail">보유한 게임 :</a> <a class="txt_profile_countgame">21</a> <a class="txt_profile_detail">개</a>
         </div>

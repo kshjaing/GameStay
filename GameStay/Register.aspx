@@ -56,8 +56,8 @@
                      
                  </div>
 <div>
-<a runat="server" id="txtRegistCheck" class="txt_check" draggable="false" visible="false">
-                            이미 가입되어있는 ID 입니다.
+<a runat="server" id="txtRegistCheck" class="txt_check" draggable="false" >
+                            
                         </a>
                      </div>
                  <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
