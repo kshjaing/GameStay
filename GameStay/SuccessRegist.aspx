@@ -8,7 +8,7 @@
             <br />
             <div ><br />
                 <br />
-<a class="txt_request">회원가입을 진심으로 축하합니다! 로그인 후 이용하여 주시기 바랍니다.</a><br /><br />
+            <a class="txt_request">회원가입을 진심으로 축하합니다! 로그인 후 이용하여 주시기 바랍니다.</a><br /><br />
             <button runat="server" class="btn_gologin" onserverclick="gologin_click">로그인하기</button>
             </div>
             

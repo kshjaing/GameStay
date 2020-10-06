@@ -11,7 +11,6 @@ namespace GameStay
     public partial class Login : System.Web.UI.Page
     {
         DBManager dbManager = new DBManager();
-        Boolean isLogin = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -20,7 +20,7 @@ namespace GameStay
         }
 
         //DB연결 메서드
-        public void  DBOpen()
+        public void DBOpen()
         {
             myConn = new SqlConnection(DBSource);
             myConn.Open();
@@ -63,10 +63,46 @@ namespace GameStay
             return dataAdapter;
         }
 
-        //할인중인 게임들 어댑터 적용
-        public SqlDataAdapter SetDiscountAdapter()
+        //할인중인 게임들 총 개수 어댑터 적용
+        public SqlDataAdapter SetDiscountCountAdapter()
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 게임타이틀 WHERE 할인율 > 0;", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT COUNT(*) AS '총 할인게임 개수' FROM 게임타이틀 WHERE 할인율 > 0;", myConn);
+            return dataAdapter;
+        }
+
+        //할인중인 게임들 1페이지 어댑터 적용
+        public SqlDataAdapter SetDiscountAdapter1()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
+                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " WHERE dis.rownum BETWEEN 1 AND 6; ", myConn);
+            return dataAdapter;
+        }
+
+        //할인중인 게임들 2페이지 어댑터 적용
+        public SqlDataAdapter SetDiscountAdapter2()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
+                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " WHERE dis.rownum BETWEEN 7 AND 12; ", myConn);
+            return dataAdapter;
+        }
+
+        //할인중인 게임들 3페이지 어댑터 적용
+        public SqlDataAdapter SetDiscountAdapter3()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
+                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " WHERE dis.rownum BETWEEN 13 AND 18; ", myConn);
+            return dataAdapter;
+        }
+
+        //할인중인 게임들 4페이지 어댑터 적용
+        public SqlDataAdapter SetDiscountAdapter4()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
+                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " WHERE dis.rownum BETWEEN 19 AND 24; ", myConn);
             return dataAdapter;
         }
 

@@ -199,9 +199,10 @@ html, body {
 /*----------------------------------할인중 부분----------------------------*/
 .div_wrap_discount {
     width: 100%;
-    height: 90%;
+    height: 650px;
     position: relative;
     margin-top: 150px;
+    overflow: hidden;
 }
 
 .p_discount {
@@ -209,21 +210,27 @@ html, body {
     font-family: IBMPlexSansKR-Medium;
     font-size: 19pt;
     margin-bottom: 0;
+    margin-left: 5px;
 }
 
 .div_wrap_contents {
-    width: 100%;
-    height: 80%;
-    float: left;
+    width: 1100px;
+    height: 650px;
     position: relative;
     margin-top: 20px;
-    overflow-x: hidden;
 }
 
 .div_contents_list {
-    width: 400%;
+    width: 4400px;
     height: 100%;
     position: relative;
+}
+
+.div_wrap_discount_contentbox {
+    width: 1100px;
+    height: 100%;
+    position: relative;
+    float: left;
 }
 
 
@@ -233,7 +240,14 @@ html, body {
     background: #1B1C1E;
     position: relative;
     float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
+
+    .div_discount_contentbox:hover {
+        cursor: pointer;
+    }
 
 .div_wrap_discount_image {
     width: 100%;
@@ -338,7 +352,6 @@ html, body {
 .wrap_discount_pagedot {
     width: 100px;
     height: 15px;
-    margin-top: 20px;
     float: left;
     left: 50%;
     transform: translateX(-50%);
@@ -348,8 +361,8 @@ html, body {
 
 .div_wrap_discount_button {
     float: right;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: -10px;
+    margin-right: 30px;
     width: 100px;
     height: 35px;
 }
