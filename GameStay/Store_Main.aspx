@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=14" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=15" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -179,6 +179,24 @@
             
         });
     </script>
+
+    <script>
+        function onClickDivDiscount1() {
+            __doPostBack('div_discount_contentbox1');
+        }
+
+        function onClickDivDiscount2() {
+            __doPostBack('div_discount_contentbox2');
+        }
+
+        function onClickDivDiscount3() {
+            __doPostBack('div_discount_contentbox3');
+        }
+
+        function onClickDivDiscount4() {
+            __doPostBack('div_discount_contentbox4');
+        }
+    </script>
     
 
 
@@ -191,7 +209,7 @@
         <!-----------------------------------특집 및 추천  --------------------------------------->
         <p class="p_features">특집 및 추천</p>
                 <div class="div_wrap_features" id="div_wrap_features" runat="server"
-                    onmouseover="onMouseDivFeature()" onmouseout="onMouseoutDivFeature();"
+                    onmouseover="onMouseDivFeature()" onmouseout="onMouseoutDivFeature()"
                     onclick="onClickDivFeature()">
                    <div class="div_features_pic">
                       <div class="div_wrap_image" id="div_wrap_image">
@@ -261,7 +279,9 @@
                          id="div_wrap_discount_contentbox1">
                         <asp:Repeater runat="server" ID="discountRepeater1">
                             <ItemTemplate>
-                                <div class="div_discount_contentbox">
+                                <div class="div_discount_contentbox" id="div_discount_contentbox1"
+                                    onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
+                                    onclick="onClickDivDiscount1()" runat="server">
                                    <div class="div_wrap_discount_image">
                                        <img src='<%# Eval("메인이미지") %>'
                                             class="discount_image" id="discount_image" runat="server" />
@@ -289,7 +309,9 @@
                     <div class="div_wrap_discount_contentbox div_wrap_discount_contentbox2">
                         <asp:Repeater runat="server" ID="discountRepeater2">
                             <ItemTemplate>
-                                <div class="div_discount_contentbox">
+                                <div class="div_discount_contentbox" id="div_discount_contentbox2"
+                                    onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
+                                    onclick="onClickDivDiscount2()" runat="server">
                                    <div class="div_wrap_discount_image">
                                        <img src='<%# Eval("메인이미지") %>'
                                             class="discount_image" id="discount_image" runat="server" />
@@ -317,7 +339,9 @@
                     <div class="div_wrap_discount_contentbox div_wrap_discount_contentbox3">
                         <asp:Repeater runat="server" ID="discountRepeater3">
                             <ItemTemplate>
-                                <div class="div_discount_contentbox">
+                                <div class="div_discount_contentbox" id="div_discount_contentbox3"
+                                    onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
+                                    onclick="onClickDivDiscount3()" runat="server">
                                    <div class="div_wrap_discount_image">
                                        <img src='<%# Eval("메인이미지") %>'
                                             class="discount_image" id="discount_image" runat="server" />
@@ -345,7 +369,9 @@
                     <div class="div_wrap_discount_contentbox div_wrap_discount_contentbox4">
                         <asp:Repeater runat="server" ID="discountRepeater4">
                             <ItemTemplate>
-                                <div class="div_discount_contentbox">
+                                <div class="div_discount_contentbox" id="div_discount_contentbox4"
+                                    onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
+                                    onclick="onClickDivDiscount4()" runat="server">
                                    <div class="div_wrap_discount_image">
                                        <img src='<%# Eval("메인이미지") %>'
                                             class="discount_image" id="discount_image" runat="server" />

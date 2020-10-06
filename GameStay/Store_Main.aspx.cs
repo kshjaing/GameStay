@@ -69,6 +69,26 @@ namespace GameStay
             {
                 Response.Redirect("Store_ProductDetail.aspx");
             }
+
+            if (Request["__EVENTTARGET"] == "div_discount_contentbox1")
+            {
+                Response.Redirect("Store_ProductDetail.aspx");
+            }
+
+            if (Request["__EVENTTARGET"] == "div_discount_contentbox2")
+            {
+                Response.Redirect("Store_ProductDetail.aspx");
+            }
+
+            if (Request["__EVENTTARGET"] == "div_discount_contentbox3")
+            {
+                Response.Redirect("Store_ProductDetail.aspx");
+            }
+
+            if (Request["__EVENTTARGET"] == "div_discount_contentbox4")
+            {
+                Response.Redirect("Store_ProductDetail.aspx");
+            }
         }
 
     }
