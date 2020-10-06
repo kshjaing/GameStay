@@ -9,6 +9,7 @@ namespace GameStay
 {
     public partial class Profile : System.Web.UI.Page
     {
+        static UserDo userDo;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -19,6 +20,19 @@ namespace GameStay
                 }
                 else
                 {
+                    string uid = Session["아이디"].ToString();
+
+                    userDo = (new UserDao()).GetUserInfo(uid);
+                    txt_nickname.InnerText = userDo.Nickname;
+                    txt_level.InnerText = userDo.Level.ToString();
+                    if(userDo.Profileimg.Trim() != "")
+                    {
+                        img_profile.Src = userDo.Profileimg;
+                    }
+                    else
+                    {
+                        img_profile.Src = "/Images/Profile/Default_Profile.png";
+                    }
                     
                 }
             }
@@ -27,5 +41,7 @@ namespace GameStay
         {
             Response.Redirect("ProfileEdit.aspx");
         }
+
+        
     }
 }

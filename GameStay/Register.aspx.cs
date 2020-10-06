@@ -29,10 +29,6 @@ namespace GameStay
 
             UserDo uDo = new UserDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString() , inputEmail.Value.ToString());
 
-
-            
-
-
             if (isIdCheck = uDao.VerifyID(inputID.Value.ToString()))
             {
                 

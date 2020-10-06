@@ -118,6 +118,16 @@ namespace GameStay
             return returnValue;
         }
 
+        public DataSet DataAdapterFill(string strSql, string mytable)
+        {
+            DataSet myDs = new DataSet(mytable);
+            SqlDataAdapter myAdapter = new SqlDataAdapter(strSql, Open());
+            myAdapter.Fill(myDs, mytable);
+            myAdapter.Dispose();
+            DBClose();
+            return myDs;
+        }
+
         //======================로그인, 회원가입=========================
         /*
         //로그인
