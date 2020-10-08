@@ -110,41 +110,29 @@ namespace GameStay
         public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
         {
 
-            
-
             myCommand.ExecuteNonQuery();
             int returnValue = (int)ParamOut.Value;
             DBClose();
             return returnValue;
         }
 
-        public DataSet DataAdapterFill(string strSql, string mytable)
+        //최근 구매게임 1
+        public SqlDataAdapter SetRecentAdapter1(string uid)
         {
-            DataSet myDs = new DataSet(mytable);
-            SqlDataAdapter myAdapter = new SqlDataAdapter(strSql, Open());
-            myAdapter.Fill(myDs, mytable);
-            myAdapter.Dispose();
-            DBClose();
-            return myDs;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.게임명 = 거래목록.게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 1;", myConn);
+            return dataAdapter;
         }
-
-        //======================로그인, 회원가입=========================
-        /*
-        //로그인
-        public bool Authenticate(string id, string pwd)
+        //최근 구매게임 2
+        public SqlDataAdapter SetRecentAdapter2(string uid)
         {
-            bool isAuthen = false;
-            string sQuery = "SELECT 비밀번호 FROM 유저 WHERE 아이디 = '" + id + "'";
-            SqlDataReader myReader = this.ExecuteReader(sQuery);
-
-            if (myReader.Read())
-            {
-                if (pwd == myReader["비밀번호"].ToString().TrimEnd())
-                    isAuthen = true;
-            }
-
-            myReader.Close();
-            return isAuthen;
-        }*/
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.게임명 = 거래목록.게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 2 AND 2;", myConn);
+            return dataAdapter;
+        }
+        //최근 구매게임 3
+        public SqlDataAdapter SetRecentAdapter3(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.게임명 = 거래목록.게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3;", myConn);
+            return dataAdapter;
+        }
     }
 }

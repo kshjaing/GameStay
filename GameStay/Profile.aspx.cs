@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -33,7 +35,26 @@ namespace GameStay
                     {
                         img_profile.Src = "/Images/Profile/Default_Profile.png";
                     }
-                    
+
+                    DBManager dbManager = new DBManager();
+                    SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(uid);
+                    SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(uid);
+                    SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(uid);
+
+                    DataTable dt1 = new DataTable();
+                    recentAdapter1.Fill(dt1);
+                    RecentGame1.DataSource = dt1;
+                    RecentGame1.DataBind();
+
+                    DataTable dt2 = new DataTable();
+                    recentAdapter2.Fill(dt2);
+                    RecentGame2.DataSource = dt2;
+                    RecentGame2.DataBind();
+
+                    DataTable dt3 = new DataTable();
+                    recentAdapter3.Fill(dt3);
+                    RecentGame3.DataSource = dt3;
+                    RecentGame3.DataBind();
                 }
             }
         }

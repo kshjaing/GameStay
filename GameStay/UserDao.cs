@@ -18,13 +18,15 @@ namespace GameStay
 
         }
 
+        //로그인 판별
+
         public bool Authenticate(string id, string pw)
         {
             dbManager = new DBManager();
 
             //리턴값 및 아웃 참조변수 초기화
             bool isAuthen = false; //리턴값 false - 미인증상태
-                                   //뭐리문 이용하여 조건(id, pwd, 탈퇴하지 않음) 에 일치하는 자료를 불러옴. 비밀번호는 MD5로 암호화
+                                   //뭐리문 이용하여 조건(id, pwd) 에 일치하는 자료를 불러옴. 비밀번호는 MD5로 암호화
                                    //string test = this.GetMd5(pwd);
             string sQuery = "SELECT * FROM 유저 WHERE 아이디='" + id + "' AND 비밀번호='" + this.GetMD5(pw) + "'";
 
@@ -34,7 +36,6 @@ namespace GameStay
             //결과값이 존재하면 인증성공, 없으면 인증실패
             if (mReader.Read()) isAuthen = true;
 
-            //1학년 방식 : 쿼리문을 이용하여 암호와 현재상태 값을 가져옴
             //sqldatareader 객체를 닫음
             mReader.Close();
             //DB연결해제
@@ -63,6 +64,8 @@ namespace GameStay
             }
         }
 
+
+        //ID 중복검사
         public bool VerifyID(string id)
         {
             dbManager = new DBManager();
@@ -76,6 +79,7 @@ namespace GameStay
             return result;
         }
 
+        //유저 프로필 정보 
         public UserDo GetUserInfo(string uid)
         {
             dbManager = new DBManager();
@@ -98,6 +102,7 @@ namespace GameStay
             return udo;
         }
 
+        //쿼리 이용한 회원가입
         public void RegisterUserQry(UserDo uDo)
         {
 
@@ -107,6 +112,7 @@ namespace GameStay
             dbManager.DBClose();
         }
 
+        //저장 프로시저 이용한 회원가입
         public int RegistUser(UserDo uDo)
         {
             dbManager = new DBManager();

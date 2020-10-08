@@ -22,26 +22,34 @@
         <p class="txt_profile_game">최근에 구매한 게임</p>
 
         <div class="div_profile_game-1">
-
+            <
             <div class="div_profile_game" >
-            <input type="image" src="Images/GameTitleImages/TitleImage_Borderlands3.JPG" class="img_profile_game"/>
-                <p class="txt_profile_game_title">보더랜드</p>
-                <p class="txt_profile_game_date">65,000원</p>
-                <p class="txt_profile_game_date">2020년 09월 16일</p>
+                <asp:Repeater runat="server" ID="RecentGame1">
+                    <ItemTemplate>
+                        <img src='<%#Eval("메인이미지") %>' class="img_profile_game"/>
+                        <p class="txt_profile_game_title"><%#Eval("게임명") %></p>
+                        <p class="txt_profile_game_date"><%#Eval("거래일", "{0:yyyy년MM월dd일}") %></p>
+                    </ItemTemplate>
+                </asp:Repeater>
+        </div>
+        <div class="div_profile_game">
+            <asp:Repeater runat="server" ID="RecentGame2">
+                    <ItemTemplate>
+                        <img src='<%#Eval("메인이미지") %>' class="img_profile_game"/>
+                        <p class="txt_profile_game_title"><%#Eval("게임명") %></p>
+                        <p class="txt_profile_game_date"><%#Eval("거래일", "{0:yyyy년MM월dd일}") %></p>
+                    </ItemTemplate>
+                </asp:Repeater>
 
         </div>
         <div class="div_profile_game">
-            <input type="image" src="Images/GameTitleImages/TitleImage_DeathStranding.JPG" class="img_profile_game"/>
-            <p class="txt_profile_game_title">데스스트랜딩</p>
-            <p class="txt_profile_game_date">65,000원</p>
-            <p class="txt_profile_game_date">2020년 09월 16일</p>
-
-        </div>
-        <div class="div_profile_game">
-            <input type="image" src="Images/GameTitleImages/TitleImage_FlightSimulator2020.JPG" class="img_profile_game"/>
-            <p class="txt_profile_game_title">플라이트 시뮬레이터</p>
-            <p class="txt_profile_game_date">65,000원</p>
-            <p class="txt_profile_game_date">2020년 09월 16일</p>
+            <<asp:Repeater runat="server" ID="RecentGame3">
+                    <ItemTemplate>
+                        <img src='<%#Eval("메인이미지") %>' class="img_profile_game"/>
+                        <p class="txt_profile_game_title"><%#Eval("게임명") %></p>
+                        <p class="txt_profile_game_date"><%#Eval("거래일", "{0:yyyy년MM월dd일}") %></p>
+                    </ItemTemplate>
+                </asp:Repeater>
         </div>
         </div>
     </div>
