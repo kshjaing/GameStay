@@ -207,10 +207,36 @@ html, body {
 
 .p_discount {
     color: white;
-    font-family: IBMPlexSansKR-Medium;
-    font-size: 19pt;
+    font-family: IBMPlexSansKR-Bold;
+    font-size: 20pt;
     margin-bottom: 0;
     margin-left: 5px;
+}
+
+.div_wrap_p_discount_more {
+    display: table;
+    width: 80px;
+    height: 30px;
+    right: 15px;
+    transform:translateY(-25px);
+    background: transparent;
+    position: absolute;
+    text-align: center;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+}
+
+      .div_wrap_p_discount_more:hover {
+          cursor: pointer;
+      }
+
+.p_discount_more {
+    display: table-cell;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: IBMPlexSansKR-Bold;
+    position: relative;
 }
 
 .div_wrap_contents {

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=15" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=16" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -196,9 +196,18 @@
         function onClickDivDiscount4() {
             __doPostBack('div_discount_contentbox4');
         }
-    </script>
-    
 
+        function onMouseMore() {
+            document.getElementById("div_wrap_p_discount_more").style.background = "#FFFFFF";
+            document.getElementById("p_discount_more").style.color= "#000000";
+        }
+
+        function onMouseoutMore() {
+            document.getElementById("div_wrap_p_discount_more").style.background = "transparent";
+            document.getElementById("p_discount_more").style.color= "#FFFFFF";
+        }
+    </script>
+    <!-------------------------------------------------------------------------------------------------------------->
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -272,6 +281,10 @@
                     <p class="p_discount" id="p_discount" runat="server">할인중 (<%# Eval("총 할인게임 개수") %>)</p>
                 </ItemTemplate>
             </asp:Repeater>
+            <div class="div_wrap_p_discount_more" id="div_wrap_p_discount_more"
+                onmouseover="onMouseMore()" onmouseout="onMouseoutMore()">
+                <p class="p_discount_more" id="p_discount_more">더보기</p>
+            </div>
             <div class="div_wrap_contents">
                 <div class="div_contents_list" id="div_contents_list">
                     <!----------------------1페이지 ----------------------->
@@ -426,7 +439,8 @@
 
     <!------------------------------------------------------------------------------------------->
 
-    <!---------------------- -->
+    <!---------------------------------최고 인기 게임 리스트------------------------------------->
+        
     </div>
 
 </asp:Content>
