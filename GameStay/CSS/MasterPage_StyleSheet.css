@@ -69,8 +69,9 @@ body, html {
     height: auto;
     position: relative;
     top: 50%;
-    transform:translateY(-50%);
+    transform: translateY(-50%);
     object-fit: cover;
+    user-select: none;
 }
 
 .div_store {
@@ -81,6 +82,7 @@ body, html {
     position: relative;
     box-sizing: border-box;
     border-bottom: 5px solid #85cba5;
+    user-select: none;
 }
 
 .div_library {
@@ -88,6 +90,7 @@ body, html {
     width: 12%;
     height: 100%;
     position: relative;
+    user-select: none;
 }
 
 .div_community {
@@ -95,6 +98,7 @@ body, html {
     width: 12%;
     height: 100%;
     position: relative;
+    user-select: none;
 }
 
 .div_profile {
@@ -102,6 +106,7 @@ body, html {
     width: 12%;
     height: 100%;
     position: relative;
+    user-select: none;
 }
 
 .div_login {
@@ -109,6 +114,7 @@ body, html {
     width: 12%;
     height: 100%;
     position: relative;
+    user-select: none;
 }
 
 .button {
@@ -122,6 +128,7 @@ body, html {
     color: #FFFFFF;
     font-family: IBMPlexSansKR-Medium;
     font-size: 16pt;
+    user-select: none;
 }
 
 .button:hover {

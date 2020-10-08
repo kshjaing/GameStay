@@ -37,6 +37,7 @@ html, body {
     color: #FFFFFF;
     font-size: 19pt;
     margin-bottom: 0;
+    user-select: none;
 }
 
 .div_wrap_features {
@@ -71,6 +72,7 @@ html, body {
     height: 100%;
     float: left;
     position: relative;
+    user-select: none;
 }
 
 .div_features_details {
@@ -152,6 +154,7 @@ html, body {
     float: right;
     width: 75px;
     height: 35px;
+    user-select: none;
 }
 
 .button_features_left {
@@ -164,6 +167,7 @@ html, body {
     outline: none;
     margin-top: 10px;
     margin-right: 5px;
+    user-select: none;
 }
 
 .btnimg_features_left {
@@ -183,6 +187,7 @@ html, body {
     outline: none;
     margin-top: 10px;
     cursor: pointer;
+    user-select: none;
 }
 
 .btnimg_features_right {
@@ -207,10 +212,11 @@ html, body {
 
 .p_discount {
     color: white;
-    font-family: IBMPlexSansKR-Bold;
+    font-family: 'NIXGONFONTS B 2.0';
     font-size: 20pt;
     margin-bottom: 0;
     margin-left: 5px;
+    user-select: none;
 }
 
 .div_wrap_p_discount_more {
@@ -237,6 +243,7 @@ html, body {
     font-size: 12pt;
     font-family: IBMPlexSansKR-Bold;
     position: relative;
+    user-select: none;
 }
 
 .div_wrap_contents {
@@ -269,6 +276,7 @@ html, body {
     margin-left: 5px;
     margin-right: 10px;
     margin-bottom: 20px;
+    user-select: none;
 }
 
     .div_discount_contentbox:hover {
@@ -285,6 +293,7 @@ html, body {
     width: 100%;
     height: 100%;
     position: relative;
+    user-select: none;
 }
 
 .div_discount_title {
@@ -391,6 +400,7 @@ html, body {
     margin-right: 30px;
     width: 100px;
     height: 35px;
+    user-select: none;
 }
 
 .button_discount_left {
@@ -405,6 +415,7 @@ html, body {
     outline: none;
     cursor: pointer;
     position: relative;
+    user-select: none;
 }
 
 .button_discount_right {
@@ -420,4 +431,5 @@ html, body {
     outline: none;
     cursor: pointer;
     position: relative;
+    user-select: none;
 }
