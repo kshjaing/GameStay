@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace GameStay
 {
@@ -72,7 +73,11 @@ namespace GameStay
 
             if (Request["__EVENTTARGET"] == "div_discount_contentbox1")
             {
-                Response.Redirect("Store_ProductDetail.aspx");
+                foreach(RepeaterItem ri in discountRepeater1.Items)
+                {
+                    string title = ((TextBox)ri.FindControl("p_discount_title")).Text;
+                    Response.Redirect("Store_ProductDetail.aspx?title=" + title);
+                }
             }
 
             if (Request["__EVENTTARGET"] == "div_discount_contentbox2")
