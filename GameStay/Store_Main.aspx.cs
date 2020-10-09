@@ -73,11 +73,7 @@ namespace GameStay
 
             if (Request["__EVENTTARGET"] == "div_discount_contentbox1")
             {
-                foreach(RepeaterItem ri in discountRepeater1.Items)
-                {
-                    string title = ((TextBox)ri.FindControl("p_discount_title")).Text;
-                    Response.Redirect("Store_ProductDetail.aspx?title=" + title);
-                }
+                Response.Redirect("Store_ProductDetail.aspx");
             }
 
             if (Request["__EVENTTARGET"] == "div_discount_contentbox2")

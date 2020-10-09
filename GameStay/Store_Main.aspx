@@ -300,7 +300,7 @@
                                             class="discount_image" id="discount_image" runat="server" />
                                    </div>
                                    <div class="div_discount_title">
-                                       <asp:TextBox CssClass="p p_discount_title" ID="p_discount_title" Runat="server" Text='<%# Eval("게임명") %>'></asp:TextBox>
+                                       <p class="p p_discount_title" id="p_discount_title" runat="server"><%# Eval("게임명") %></p>
                                    </div>
                                    
                                    <div class="div_discount_price">
