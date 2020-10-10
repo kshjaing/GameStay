@@ -226,7 +226,7 @@
                               <ItemTemplate>
                                   <asp:HyperLink runat="server" NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'>
                                       <img src='<%# Eval("메인이미지") %>'
-                                       class="title_image" id="features_image" runat="server"/>
+                                           class="title_image" id="features_image" runat="server"/>
                                   </asp:HyperLink>
                               </ItemTemplate>
                           </asp:Repeater>
@@ -242,7 +242,7 @@
                                           <p class="p p_release_date" id="p_release_date" runat="server"><%# Eval("출시일") %></p>
                                           <p class="p p_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
                                              - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
-                                   </div>
+                                       </div>
                                    </asp:HyperLink>
                                </ItemTemplate>
                            </asp:Repeater>
