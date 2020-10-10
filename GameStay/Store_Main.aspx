@@ -292,29 +292,33 @@
                          id="div_wrap_discount_contentbox1">
                         <asp:Repeater runat="server" ID="discountRepeater1">
                             <ItemTemplate>
-                                <div class="div_discount_contentbox" id="div_discount_contentbox1"
-                                    onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
-                                    onclick="onClickDivDiscount1()" runat="server">
-                                   <div class="div_wrap_discount_image">
-                                       <img src='<%# Eval("메인이미지") %>'
-                                            class="discount_image" id="discount_image" runat="server" />
-                                   </div>
-                                   <div class="div_discount_title">
-                                       <p class="p p_discount_title" id="p_discount_title" runat="server"><%# Eval("게임명") %></p>
-                                   </div>
+                                <asp:HyperLink ID="discountLink1" 
+                                     NavigateUrl="~/Store_ProductDetail.aspx?title=<%# Eval("영어게임명") %>"
+                                               runat="server">
+                                    <div class="div_discount_contentbox" id="div_discount_contentbox1"
+                                         onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
+                                          runat="server">
+                                        <div class="div_wrap_discount_image">
+                                            <img src='<%# Eval("메인이미지") %>'
+                                                 class="discount_image" id="discount_image" runat="server" />
+                                        </div>
+                                        <div class="div_discount_title">
+                                           <p class="p p_discount_title" id="p_discount_title" runat="server"><%# Eval("게임명") %></p>
+                                        </div>
                                    
-                                   <div class="div_discount_price">
-                                       <div class="div_wrap_discount_rate">
-                                          <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
-                                          <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
-                                       </div>
-                                       <div class="div_wrap_discount_price2">
-                                           <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
-                                           <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                               - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
-                                       </div>
-                                   </div>
-                                </div>
+                                        <div class="div_discount_price">
+                                           <div class="div_wrap_discount_rate">
+                                              <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
+                                              <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
+                                           </div>
+                                           <div class="div_wrap_discount_price2">
+                                              <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
+                                              <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
+                                                 - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </asp:HyperLink>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
@@ -322,29 +326,33 @@
                     <div class="div_wrap_discount_contentbox div_wrap_discount_contentbox2">
                         <asp:Repeater runat="server" ID="discountRepeater2">
                             <ItemTemplate>
-                                <div class="div_discount_contentbox" id="div_discount_contentbox2"
-                                    onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
-                                    onclick="onClickDivDiscount2()" runat="server">
-                                   <div class="div_wrap_discount_image">
-                                       <img src='<%# Eval("메인이미지") %>'
-                                            class="discount_image" id="discount_image" runat="server" />
-                                   </div>
-                                   <div class="div_discount_title">
-                                       <p class="p p_discount_title"><%# Eval("게임명") %></p>
-                                   </div>
+                                <asp:HyperLink ID="discountLink1" 
+                                               NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
+                                               runat="server">
+                                    <div class="div_discount_contentbox" id="div_discount_contentbox2"
+                                         onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
+                                         runat="server">
+                                       <div class="div_wrap_discount_image">
+                                          <img src='<%# Eval("메인이미지") %>'
+                                               class="discount_image" id="discount_image" runat="server" />
+                                       </div>
+                                       <div class="div_discount_title">
+                                          <p class="p p_discount_title"><%# Eval("게임명") %></p>
+                                       </div>
                                    
-                                   <div class="div_discount_price">
-                                       <div class="div_wrap_discount_rate">
-                                          <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
-                                          <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
-                                       </div>
-                                       <div class="div_wrap_discount_price2">
-                                           <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
-                                           <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                               - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                       <div class="div_discount_price">
+                                          <div class="div_wrap_discount_rate">
+                                             <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
+                                             <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
+                                          </div>
+                                          <div class="div_wrap_discount_price2">
+                                             <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
+                                             <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
+                                                - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                          </div>
                                        </div>
                                    </div>
-                                </div>
+                                </asp:HyperLink>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
@@ -352,29 +360,33 @@
                     <div class="div_wrap_discount_contentbox div_wrap_discount_contentbox3">
                         <asp:Repeater runat="server" ID="discountRepeater3">
                             <ItemTemplate>
-                                <div class="div_discount_contentbox" id="div_discount_contentbox3"
-                                    onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
-                                    onclick="onClickDivDiscount3()" runat="server">
-                                   <div class="div_wrap_discount_image">
-                                       <img src='<%# Eval("메인이미지") %>'
-                                            class="discount_image" id="discount_image" runat="server" />
-                                   </div>
-                                   <div class="div_discount_title">
-                                       <p class="p p_discount_title"><%# Eval("게임명") %></p>
-                                   </div>
+                                <asp:HyperLink ID="discountLink1" 
+                                               NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
+                                               runat="server">
+                                    <div class="div_discount_contentbox" id="div_discount_contentbox3"
+                                         onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
+                                         runat="server">
+                                       <div class="div_wrap_discount_image">
+                                          <img src='<%# Eval("메인이미지") %>'
+                                               class="discount_image" id="discount_image" runat="server" />
+                                       </div>
+                                       <div class="div_discount_title">
+                                          <p class="p p_discount_title"><%# Eval("게임명") %></p>
+                                       </div>
                                    
-                                   <div class="div_discount_price">
-                                       <div class="div_wrap_discount_rate">
-                                          <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
-                                          <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
-                                       </div>
-                                       <div class="div_wrap_discount_price2">
-                                           <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
-                                           <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                               - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
-                                       </div>
+                                       <div class="div_discount_price">
+                                          <div class="div_wrap_discount_rate">
+                                             <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
+                                             <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
+                                          </div>
+                                          <div class="div_wrap_discount_price2">
+                                              <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
+                                              <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
+                                                 - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                          </div>
+                                      </div>
                                    </div>
-                                </div>
+                                </asp:HyperLink>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
@@ -382,35 +394,38 @@
                     <div class="div_wrap_discount_contentbox div_wrap_discount_contentbox4">
                         <asp:Repeater runat="server" ID="discountRepeater4">
                             <ItemTemplate>
-                                <div class="div_discount_contentbox" id="div_discount_contentbox4"
-                                    onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
-                                    onclick="onClickDivDiscount4()" runat="server">
-                                   <div class="div_wrap_discount_image">
-                                       <img src='<%# Eval("메인이미지") %>'
-                                            class="discount_image" id="discount_image" runat="server" />
-                                   </div>
-                                   <div class="div_discount_title">
-                                       <p class="p p_discount_title"><%# Eval("게임명") %></p>
-                                   </div>
+                                <asp:HyperLink ID="discountLink1" 
+                                               NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
+                                               runat="server">
+                                    <div class="div_discount_contentbox" id="div_discount_contentbox4"
+                                         onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
+                                         runat="server">
+                                       <div class="div_wrap_discount_image">
+                                          <img src='<%# Eval("메인이미지") %>'
+                                               class="discount_image" id="discount_image" runat="server" />
+                                       </div>
+                                       <div class="div_discount_title">
+                                          <p class="p p_discount_title"><%# Eval("게임명") %></p>
+                                       </div>
                                    
-                                   <div class="div_discount_price">
-                                       <div class="div_wrap_discount_rate">
-                                          <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
-                                          <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
-                                       </div>
-                                       <div class="div_wrap_discount_price2">
-                                           <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
-                                           <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                               - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                       <div class="div_discount_price">
+                                          <div class="div_wrap_discount_rate">
+                                             <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
+                                             <p class="p p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
+                                          </div>
+                                          <div class="div_wrap_discount_price2">
+                                             <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
+                                             <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
+                                                - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                          </div>
                                        </div>
                                    </div>
-                                </div>
+                                </asp:HyperLink>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
                 </div>
             </div>
-            
         </div>
         <div class="wrap_discount_pagedot">
                <img class="img_pagedot" src="Images/Icon/PageDot_Selected.png"

@@ -2,5 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 style="color: white">상품 상세페이지</h1>
+    <h1 style="color: white" runat="server" id="h1">상품 상세페이지</h1>
 </asp:Content>
