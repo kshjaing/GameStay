@@ -224,8 +224,10 @@
                       <div class="div_wrap_image" id="div_wrap_image">
                           <asp:Repeater ID="featuresRepeater1" runat="server">
                               <ItemTemplate>
-                                  <img src='<%# Eval("메인이미지") %>'
+                                  <asp:HyperLink runat="server" NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'>
+                                      <img src='<%# Eval("메인이미지") %>'
                                        class="title_image" id="features_image" runat="server"/>
+                                  </asp:HyperLink>
                               </ItemTemplate>
                           </asp:Repeater>
                       </div>
@@ -234,12 +236,14 @@
                       <div class="div_wrap_details" id="div_wrap_details">
                            <asp:Repeater ID="featuresRepeater2" runat="server">
                                <ItemTemplate>
-                                   <div class="div_wrap_details2">
-                                       <p class="p p_title" id="p_title" runat="server"><%# Eval("게임명") %></p>
-                                       <p class="p p_release_date" id="p_release_date" runat="server"><%# Eval("출시일") %></p>
-                                       <p class="p p_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                          - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                   <asp:HyperLink runat="server" NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'>
+                                       <div class="div_wrap_details2">
+                                          <p class="p p_title" id="p_title" runat="server"><%# Eval("게임명") %></p>
+                                          <p class="p p_release_date" id="p_release_date" runat="server"><%# Eval("출시일") %></p>
+                                          <p class="p p_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
+                                             - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
                                    </div>
+                                   </asp:HyperLink>
                                </ItemTemplate>
                            </asp:Repeater>
                       </div>
@@ -293,7 +297,7 @@
                         <asp:Repeater runat="server" ID="discountRepeater1">
                             <ItemTemplate>
                                 <asp:HyperLink ID="discountLink1" 
-                                     NavigateUrl="~/Store_ProductDetail.aspx?title=<%# Eval("영어게임명") %>"
+                                     NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
                                                runat="server">
                                     <div class="div_discount_contentbox" id="div_discount_contentbox1"
                                          onmouseover="this.style.backgroundColor='#35373A'" onmouseout="this.style.backgroundColor='#1B1C1E'"
