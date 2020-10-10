@@ -106,6 +106,14 @@ namespace GameStay
             return dataAdapter;
         }
 
+        //최고인기게임 8개 평점순으로 어댑터 적용
+        public SqlDataAdapter SetBestGamesAdapter()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) " +
+                "AS rownum, *FROM 게임타이틀) AS best WHERE best.rownum BETWEEN 1 AND 8", myConn);
+            return dataAdapter;
+        }
+
         //저장 프로시저 실행
         public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
         {

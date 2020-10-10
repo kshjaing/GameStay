@@ -22,6 +22,8 @@ namespace GameStay
             SqlDataAdapter discountAdapter2 = dbManager.SetDiscountAdapter2();           //할인게임 어댑터 2페이지
             SqlDataAdapter discountAdapter3 = dbManager.SetDiscountAdapter3();           //할인게임 어댑터 3페이지
             SqlDataAdapter discountAdapter4 = dbManager.SetDiscountAdapter4();           //할인게임 어댑터 4페이지
+            SqlDataAdapter bestgamesAdapter = dbManager.SetBestGamesAdapter();           //최고인기게임 어댑터
+
 
             //추천게임 바인딩
             DataTable dt = new DataTable();
@@ -68,6 +70,11 @@ namespace GameStay
 
 
             //---------------------인기게임 파트----------------------//
+            DataTable bestDT = new DataTable();
+            bestgamesAdapter.Fill(bestDT);
+            bestgamesRepeater.DataSource = bestDT;
+            bestgamesRepeater.DataBind();
+
 
             dbManager.DBClose();
 
