@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=11" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=14" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -209,6 +209,19 @@
     </script>
     <!-------------------------------------------------------------------------------------------------------------->
 
+
+    <!-----------------------------------인기게임파트 클릭메서드 및 페이징 --------------------------------------->
+    <script>
+        function onMouseBestMore() {
+            document.getElementById("div_wrap_p_moregames").style.background = "#FFFFFF";
+            document.getElementById("p_moregames").style.color = "#000000";
+        }
+
+        function onMouseoutBestMore() {
+            document.getElementById("div_wrap_p_moregames").style.background = "transparent";
+            document.getElementById("p_moregames").style.color = "#FFFFFF";
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -459,6 +472,104 @@
     <!------------------------------------------------------------------------------------------->
 
     <!---------------------------------최고 인기 게임 리스트------------------------------------->
-        <p class="p_bestgames"></p>
+        <div class="div_wrap_p_bestgames">
+            <p class="p_bestgames">최고인기</p>
+        </div>
+        <div class="div_wrap_p_newgames">
+            <p class="p_newgames">신규출시</p>
+        </div>
+        <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
+             id="div_wrap_p_moregames">
+            <p class="p_moregames" id="p_moregames">더보기</p>
+        </div>
+        
+        
+        <div class="div_wrap_list">
+            <div class="div_wrap_best_contentbox">
+                <div class="div_wrap_best_image">
+                    <img src="Images/GameWideImages/WideImage_FallGuys.jpg" class="best_image"/>
+                </div>
+                <div class="div_wrap_p_best_title">
+                    <p class="p_best_title">폴가이즈</p>
+                    <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>
+                </div>
+                <div class="div_wrap_p_best_price">
+                    <p class="p_best_price">\21000원</p>
+                </div>
+            </div>
+            <div class="div_wrap_best_contentbox">
+                <div class="div_wrap_best_image">
+                    <img src="Images/GameWideImages/WideImage_FallGuys.jpg" class="best_image"/>
+                </div>
+                <div class="div_wrap_p_best_title">
+                    <p class="p_best_title">폴가이즈</p>
+                    <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>
+                </div>
+                <div class="div_wrap_p_best_price">
+                    <p class="p_best_price">\21000원</p>
+                </div>
+            </div>
+            <div class="div_wrap_best_contentbox">
+                <div class="div_wrap_best_image">
+                    <img src="Images/GameWideImages/WideImage_FallGuys.jpg" class="best_image"/>
+                </div>
+                <div class="div_wrap_p_best_title">
+                    <p class="p_best_title">폴가이즈</p>
+                    <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>
+                </div>
+                <div class="div_wrap_p_best_price">
+                    <p class="p_best_price">\21000원</p>
+                </div>
+            </div>
+            <div class="div_wrap_best_contentbox">
+                <div class="div_wrap_best_image">
+                    <img src="Images/GameWideImages/WideImage_FallGuys.jpg" class="best_image"/>
+                </div>
+                <div class="div_wrap_p_best_title">
+                    <p class="p_best_title">폴가이즈</p>
+                    <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>
+                </div>
+                <div class="div_wrap_p_best_price">
+                    <p class="p_best_price">\21000원</p>
+                </div>
+            </div>
+            <div class="div_wrap_best_contentbox">
+                <div class="div_wrap_best_image">
+                    <img src="Images/GameWideImages/WideImage_FallGuys.jpg" class="best_image"/>
+                </div>
+                <div class="div_wrap_p_best_title">
+                    <p class="p_best_title">폴가이즈</p>
+                    <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>
+                </div>
+                <div class="div_wrap_p_best_price">
+                    <p class="p_best_price">\21000원</p>
+                </div>
+            </div>
+            <div class="div_wrap_best_contentbox">
+                <div class="div_wrap_best_image">
+                    <img src="Images/GameWideImages/WideImage_FallGuys.jpg" class="best_image"/>
+                </div>
+                <div class="div_wrap_p_best_title">
+                    <p class="p_best_title">폴가이즈</p>
+                    <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>
+                </div>
+                <div class="div_wrap_p_best_price">
+                    <p class="p_best_price">\21000원</p>
+                </div>
+            </div>
+            <div class="div_wrap_best_contentbox">
+                <div class="div_wrap_best_image">
+                    <img src="Images/GameWideImages/WideImage_FallGuys.jpg" class="best_image"/>
+                </div>
+                <div class="div_wrap_p_best_title">
+                    <p class="p_best_title">폴가이즈</p>
+                    <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>
+                </div>
+                <div class="div_wrap_p_best_price">
+                    <p class="p_best_price">\21000원</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </asp:Content>

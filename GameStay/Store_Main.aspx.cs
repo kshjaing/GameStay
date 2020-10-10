@@ -31,6 +31,9 @@ namespace GameStay
             featuresRepeater2.DataSource = dt;
             featuresRepeater2.DataBind();
 
+
+
+            //-------------------할인게임파트---------------------//
             //할인게임 개수 바인딩
             DataTable countDT = new DataTable();
             discountCountAdpater.Fill(countDT);
@@ -61,6 +64,10 @@ namespace GameStay
             discountAdapter4.Fill(dt4);
             discountRepeater4.DataSource = dt4;
             discountRepeater4.DataBind();
+
+
+
+            //---------------------인기게임 파트----------------------//
 
             dbManager.DBClose();
 

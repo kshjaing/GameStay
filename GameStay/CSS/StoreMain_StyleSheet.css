@@ -31,7 +31,7 @@ html, body {
 
 
 
-/*---------------------------특집 및 추천 부분--------------------------*/
+/*---------------------------특집 및 추천 파트--------------------------*/
 
 .p_features {
     color: #FFFFFF;
@@ -201,7 +201,7 @@ html, body {
 
 
 /**/
-/*----------------------------------할인중 부분----------------------------*/
+/*----------------------------------할인게임 파트----------------------------*/
 .div_wrap_discount {
     width: 100%;
     height: 650px;
@@ -376,14 +376,6 @@ html, body {
 }
 
 
-
-
-
-
-
-
-
-
 .wrap_discount_pagedot {
     width: 100px;
     height: 15px;
@@ -432,4 +424,154 @@ html, body {
     cursor: pointer;
     position: relative;
     user-select: none;
+}
+
+
+
+/**/
+/*---------------------------------------------------------------------------*/
+
+
+
+
+
+/**/
+/*----------------------------------인기게임 파트----------------------------*/
+
+.div_wrap_p_bestgames {
+    display: table;
+    width: 130px;
+    height: 40px;
+    float: left;
+    background: #1B1C1E;
+    position: relative;
+    margin-top: 150px;
+    margin-left: -100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.p_bestgames {
+    display: table-cell;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 14pt;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 3px;
+    user-select: none;
+}
+
+.div_wrap_p_newgames {
+    display: table;
+    width: 130px;
+    height: 40px;
+    float: left;
+    position: relative;
+    margin-top: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.p_newgames {
+    display: table-cell;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 14pt;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 3px;
+    user-select: none;
+}
+
+.div_wrap_p_moregames {
+    display: table;
+    width: 80px;
+    height: 30px;
+    float: right;
+    position: relative;
+    margin-top: 150px;
+    margin-right: -115px;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+}
+
+    .div_wrap_p_moregames {
+        cursor: pointer;
+    }
+
+.p_moregames {
+    display: table-cell;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    vertical-align: middle;
+    text-align: center;
+    user-select: none;
+}
+
+.div_wrap_list {
+    width: 1085px;
+    height: 776px;
+    float: left;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.div_wrap_best_contentbox {
+    width: 100%;
+    height: 90px;
+    background: #1B1C1E;
+    margin-bottom: 8px;
+}
+
+.div_wrap_best_image {
+    width: 200px;
+    height: 90px;
+    position: relative;
+    float: left;
+    user-select: none;
+}
+
+.best_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.div_wrap_p_best_title {
+    width: 700px;
+    height: 100%;
+    float: left;
+}
+
+.p_best_title {
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.p_best_tags {
+    color: #737373;
+    margin-top: 10px;
+    font-size: 10pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-left: 20px;
+}
+
+.div_wrap_p_best_price {
+    display: table;
+    width: 185px;
+    height: 100%;
+    float: left;
+}
+
+.p_best_price {
+    display: table-cell;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: IBMPlexSansKR-Bold;
 }

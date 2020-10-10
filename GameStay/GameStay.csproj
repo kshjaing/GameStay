@@ -107,6 +107,29 @@
     <Content Include="Images\GameTitleImages\TitleImage_Skyrim.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Spelunky2.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_TheWitcher3.JPG" />
+    <Content Include="Images\GameWideImages\WideImage_Assassin%27sCreedOrigins.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Battlefield1.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Battlefield3.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Battlefield4.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Battlefield5.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Borderlands3.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_CallofDutyModernWarfareRemastered.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Control.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Cyberpunk2077.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_DeathStranding.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_FallGuys.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Firewatch.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_FlightSimulator2020.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_GrandTheftAuto5.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_HorizonZeroDawn.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_HumanFallFlat.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_MonsterHunterWorld.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_NierAutomata.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Overcooked2.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_RainbowSixSiege.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Skyrim.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Spelunky2.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_TheWitcher3.jpg" />
     <Content Include="Images\Icon\Icon_Discount.png" />
     <Content Include="Images\Icon\Login\Icon_Email.png" />
     <Content Include="Images\Icon\Login\Icon_ID.png" />
@@ -235,6 +258,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
