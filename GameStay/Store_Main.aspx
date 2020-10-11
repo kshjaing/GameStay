@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=15" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=16" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -212,9 +212,19 @@
 
     <!-----------------------------------인기게임파트 클릭메서드 및 페이징 --------------------------------------->
     <script>
-        function onMouseBestGames() {
-            document.getElementById("").
+        function onClickBestGames() {
+            document.getElementById("div_wrap_p_bestgames").style.background = "#1B1C1E";
+            document.getElementById("div_wrap_p_newgames").style.background = "transparent";
+            
         }
+
+        function onClickNewGames() {
+
+            document.getElementById("div_wrap_p_newgames").style.background = "#1B1C1E";
+            document.getElementById("div_wrap_p_bestgames").style.background = "transparent";
+            
+        }
+
         function onMouseBestMore() {
             document.getElementById("div_wrap_p_moregames").style.background = "#FFFFFF";
             document.getElementById("p_moregames").style.color = "#000000";
@@ -224,6 +234,7 @@
             document.getElementById("div_wrap_p_moregames").style.background = "transparent";
             document.getElementById("p_moregames").style.color = "#FFFFFF";
         }
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -475,13 +486,13 @@
     <!------------------------------------------------------------------------------------------->
 
     <!---------------------------------최고 인기 게임 리스트------------------------------------->
-        <div class="div_wrap_p_bestgames" onmouseover="onMouseBestGames()" onmouseout="onMouseoutBestGames()"
-             id="div_wrap_p_bestgames">
-            <p class="p_bestgames" id="p_bestgames">최고인기</p>
+        <div class="div_wrap_p_bestgames" id="div_wrap_p_bestgames" runat="server">
+            <asp:Button ID="btn_bestgames" runat="server" Text="최고인기" CssClass="btn_bestgames"
+                OnClientClick="onClickBestGames();"/>
         </div>
-        <div class="div_wrap_p_newgames" onmouseover="onMouseNewGames()" onmouseout="onMouseoutNewGames()"
-             id="div_wrap_p_newgames">
-            <p class="p_newgames" id="p_newgames">신규출시</p>
+        <div class="div_wrap_p_newgames" id="div_wrap_p_newgames" runat="server">
+            <asp:Button ID="btn_newgames" runat="server" Text="신규출시" CssClass="btn_newgames"
+                OnClientClick="onClickNewGames();"/>
         </div>
         <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
              id="div_wrap_p_moregames">

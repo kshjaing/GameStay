@@ -439,11 +439,10 @@ html, body {
 /*----------------------------------인기게임 파트----------------------------*/
 
 .div_wrap_p_bestgames {
-    display: table;
     width: 130px;
     height: 40px;
     float: left;
-    background: #1B1C1E;
+    background-color: #1B1C1E;
     position: relative;
     margin-top: 150px;
     margin-left: -100px;
@@ -455,16 +454,23 @@ html, body {
          cursor: pointer;
      }
 
-.p_bestgames {
-    display: table-cell;
+.btn_bestgames {
+    width: 100%;
+    height: 100%;
     color: #FFFFFF;
     font-family: 'NIXGONFONTS B 2.0';
     font-size: 13pt;
-    vertical-align: middle;
-    text-align: center;
     padding-top: 3px;
     user-select: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
 }
+
+   .btn_bestgames:hover {
+       cursor: pointer;
+   }
 
 .div_wrap_p_newgames {
     display: table;
@@ -481,16 +487,23 @@ html, body {
            cursor: pointer;
      }
 
-.p_newgames {
-    display: table-cell;
-    color: #696969;
+.btn_newgames {
+    width: 100%;
+    height: 100%;
+    color: #FFFFFF;
     font-family: 'NIXGONFONTS B 2.0';
     font-size: 13pt;
-    vertical-align: middle;
-    text-align: center;
     padding-top: 3px;
     user-select: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
 }
+
+    .btn_newgames:hover {
+        cursor: pointer;
+    }
 
 .div_wrap_p_moregames {
     display: table;

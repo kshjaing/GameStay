@@ -12,17 +12,30 @@ namespace GameStay
 {
     public partial class Store_Main : System.Web.UI.Page
     {
+        SqlDataAdapter featureAdapter;
+        SqlDataAdapter discountCountAdpater;
+        SqlDataAdapter discountAdapter1;
+        SqlDataAdapter discountAdapter2;
+        SqlDataAdapter discountAdapter3;
+        SqlDataAdapter discountAdapter4;
+        SqlDataAdapter bestgamesAdapter;
+        SqlDataAdapter newgamesAdapter;
+        DBManager dbManager;
+        DataTable bestDT;
+        DataTable newDT;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DBManager dbManager = new DBManager();
-            SqlDataAdapter featureAdapter = dbManager.SetFeaturesAdapter();              //추천게임 어댑터
-            SqlDataAdapter discountCountAdpater = dbManager.SetDiscountCountAdapter();   //할인게임 총 개수 어댑터
-            SqlDataAdapter discountAdapter1 = dbManager.SetDiscountAdapter1();           //할인게임 어댑터 1페이지
-            SqlDataAdapter discountAdapter2 = dbManager.SetDiscountAdapter2();           //할인게임 어댑터 2페이지
-            SqlDataAdapter discountAdapter3 = dbManager.SetDiscountAdapter3();           //할인게임 어댑터 3페이지
-            SqlDataAdapter discountAdapter4 = dbManager.SetDiscountAdapter4();           //할인게임 어댑터 4페이지
-            SqlDataAdapter bestgamesAdapter = dbManager.SetBestGamesAdapter();           //최고인기게임 어댑터
+            dbManager = new DBManager();
+            featureAdapter = dbManager.SetFeaturesAdapter();              //추천게임 어댑터
+            discountCountAdpater = dbManager.SetDiscountCountAdapter();   //할인게임 총 개수 어댑터
+            discountAdapter1 = dbManager.SetDiscountAdapter1();           //할인게임 어댑터 1페이지
+            discountAdapter2 = dbManager.SetDiscountAdapter2();           //할인게임 어댑터 2페이지
+            discountAdapter3 = dbManager.SetDiscountAdapter3();           //할인게임 어댑터 3페이지
+            discountAdapter4 = dbManager.SetDiscountAdapter4();           //할인게임 어댑터 4페이지
+            bestgamesAdapter = dbManager.SetBestGamesAdapter();           //최고인기게임 어댑터
+            newgamesAdapter = dbManager.SetNewGamesAdapter();             //신규출시게임 어댑터
+            
 
 
             //추천게임 바인딩
@@ -70,7 +83,7 @@ namespace GameStay
 
 
             //---------------------인기게임 파트----------------------//
-            DataTable bestDT = new DataTable();
+            bestDT = new DataTable();
             bestgamesAdapter.Fill(bestDT);
             bestgamesRepeater.DataSource = bestDT;
             bestgamesRepeater.DataBind();
@@ -106,5 +119,25 @@ namespace GameStay
             }
         }
 
+        public void NewGames_Click()
+        {
+            newDT = new DataTable();
+            newgamesAdapter = dbManager.SetNewGamesAdapter();
+            newgamesAdapter.Fill(newDT);
+            bestgamesRepeater.DataSource = newDT;
+            bestgamesRepeater.DataBind();
+            div_wrap_p_bestgames.Style["background"] = "transparent";
+            div_wrap_p_newgames.Style["background"] = "1B1C1E";
+        }
+
+        public void BestGames_Click()
+        {
+            bestgamesAdapter = dbManager.SetBestGamesAdapter();
+            bestgamesAdapter.Fill(bestDT);
+            bestgamesRepeater.DataSource = bestDT;
+            bestgamesRepeater.DataBind();
+            div_wrap_p_bestgames.Style["background"] = "1B1C1E";
+            div_wrap_p_newgames.Style["background"] = "transparent";
+        }
     }
 }
