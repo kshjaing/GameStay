@@ -215,14 +215,12 @@
         function onClickBestGames() {
             document.getElementById("div_wrap_p_bestgames").style.background = "#1B1C1E";
             document.getElementById("div_wrap_p_newgames").style.background = "transparent";
-            
         }
 
         function onClickNewGames() {
 
             document.getElementById("div_wrap_p_newgames").style.background = "#1B1C1E";
             document.getElementById("div_wrap_p_bestgames").style.background = "transparent";
-            
         }
 
         function onMouseBestMore() {
@@ -488,11 +486,11 @@
     <!---------------------------------최고 인기 게임 리스트------------------------------------->
         <div class="div_wrap_p_bestgames" id="div_wrap_p_bestgames" runat="server">
             <asp:Button ID="btn_bestgames" runat="server" Text="최고인기" CssClass="btn_bestgames"
-                OnClientClick="onClickBestGames();"/>
+                OnClientClick="onClickBestGames(); return false;"/>
         </div>
         <div class="div_wrap_p_newgames" id="div_wrap_p_newgames" runat="server">
             <asp:Button ID="btn_newgames" runat="server" Text="신규출시" CssClass="btn_newgames"
-                OnClientClick="onClickNewGames();"/>
+                OnClientClick="onClickNewGames(); return false;"/>
         </div>
         <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
              id="div_wrap_p_moregames">
