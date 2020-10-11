@@ -451,11 +451,15 @@ html, body {
     border-top-right-radius: 10px;
 }
 
+     .div_wrap_p_bestgames:hover {
+         cursor: pointer;
+     }
+
 .p_bestgames {
     display: table-cell;
     color: #FFFFFF;
     font-family: 'NIXGONFONTS B 2.0';
-    font-size: 14pt;
+    font-size: 13pt;
     vertical-align: middle;
     text-align: center;
     padding-top: 3px;
@@ -473,11 +477,15 @@ html, body {
     border-top-right-radius: 10px;
 }
 
+     .div_wrap_p_newgames:hover {
+           cursor: pointer;
+     }
+
 .p_newgames {
     display: table-cell;
-    color: #FFFFFF;
+    color: #696969;
     font-family: 'NIXGONFONTS B 2.0';
-    font-size: 14pt;
+    font-size: 13pt;
     vertical-align: middle;
     text-align: center;
     padding-top: 3px;
@@ -499,6 +507,7 @@ html, body {
     .div_wrap_p_moregames {
         cursor: pointer;
     }
+
 
 .p_moregames {
     display: table-cell;
@@ -552,6 +561,7 @@ html, body {
     font-family: IBMPlexSansKR-Bold;
     margin-bottom: 0;
     margin-left: 20px;
+    user-select: none;
 }
 
 .p_best_tags {
@@ -560,6 +570,7 @@ html, body {
     font-size: 10pt;
     font-family: IBMPlexSansKR-Bold;
     margin-left: 20px;
+    user-select: none;
 }
 
 .div_wrap_p_best_price {
@@ -577,6 +588,7 @@ html, body {
     color: #FFFFFF;
     font-size: 15pt;
     font-family: IBMPlexSansKR-Bold;
+    user-select: none;
 }
 
 
@@ -607,4 +619,5 @@ html, body {
     color: #FFFFFF;
     font-family: 'NIXGONFONTS B 2.0';
     font-size: 12pt;
+    user-select: none;
 }

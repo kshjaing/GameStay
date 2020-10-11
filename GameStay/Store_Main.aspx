@@ -212,6 +212,9 @@
 
     <!-----------------------------------인기게임파트 클릭메서드 및 페이징 --------------------------------------->
     <script>
+        function onMouseBestGames() {
+            document.getElementById("").
+        }
         function onMouseBestMore() {
             document.getElementById("div_wrap_p_moregames").style.background = "#FFFFFF";
             document.getElementById("p_moregames").style.color = "#000000";
@@ -472,11 +475,13 @@
     <!------------------------------------------------------------------------------------------->
 
     <!---------------------------------최고 인기 게임 리스트------------------------------------->
-        <div class="div_wrap_p_bestgames">
-            <p class="p_bestgames">최고인기</p>
+        <div class="div_wrap_p_bestgames" onmouseover="onMouseBestGames()" onmouseout="onMouseoutBestGames()"
+             id="div_wrap_p_bestgames">
+            <p class="p_bestgames" id="p_bestgames">최고인기</p>
         </div>
-        <div class="div_wrap_p_newgames">
-            <p class="p_newgames">신규출시</p>
+        <div class="div_wrap_p_newgames" onmouseover="onMouseNewGames()" onmouseout="onMouseoutNewGames()"
+             id="div_wrap_p_newgames">
+            <p class="p_newgames" id="p_newgames">신규출시</p>
         </div>
         <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
              id="div_wrap_p_moregames">
@@ -491,7 +496,6 @@
                         runat="server">
                           <div class="div_wrap_best_contentbox" onmouseover="this.style.background='#35373A'"
                                onmouseout="this.style.background='#1B1C1E'" id="div_wrap_best_contentbox">
-                             
                              <div class="div_wrap_best_image">
                                 <img src='<%# Eval("와이드이미지") %>' class="best_image"/>
                              </div>
