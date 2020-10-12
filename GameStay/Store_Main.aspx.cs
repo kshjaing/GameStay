@@ -117,6 +117,8 @@ namespace GameStay
             {
                 Response.Redirect("Store_ProductDetail.aspx");
             }
+
+
         }
 
         public void NewGames_Click()
