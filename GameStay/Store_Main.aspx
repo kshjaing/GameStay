@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=16" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=15" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -484,14 +484,21 @@
     <!------------------------------------------------------------------------------------------->
 
     <!---------------------------------최고 인기 게임 리스트------------------------------------->
-        <div class="div_wrap_p_bestgames" id="div_wrap_p_bestgames" runat="server">
-            <asp:Button ID="btn_bestgames" runat="server" Text="최고인기" CssClass="btn_bestgames"
-                OnClientClick="onClickBestGames(); return false;"/>
-        </div>
-        <div class="div_wrap_p_newgames" id="div_wrap_p_newgames" runat="server">
-            <asp:Button ID="btn_newgames" runat="server" Text="신규출시" CssClass="btn_newgames"
-                OnClientClick="onClickNewGames(); return false;"/>
-        </div>
+        
+           <asp:ScriptManager ID="ScriptManager" runat="server" EnablePartialRendering="true" />
+           <asp:UpdatePanel ID="UpdatePanel" runat="server">
+               <ContentTemplate>
+                   <div class="div_wrap_p_bestgames" id="div_wrap_p_bestgames" runat="server">
+                      <asp:Button ID="btn_bestgames" runat="server" Text="최고인기" CssClass="btn_bestgames"
+                                  OnClick="BestGames_OnClick"/>
+                   </div>
+                   <div class="div_wrap_p_newgames" id="div_wrap_p_newgames" runat="server">
+                      <asp:Button ID="btn_newgames" runat="server" Text="신규출시" CssClass="btn_newgames"
+                                  OnClick="NewGames_OnClick"/>
+                   </div>
+               </ContentTemplate>
+           </asp:UpdatePanel>
+        
         <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
              id="div_wrap_p_moregames">
             <p class="p_moregames" id="p_moregames">더보기</p>

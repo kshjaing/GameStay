@@ -477,6 +477,7 @@ html, body {
     width: 130px;
     height: 40px;
     float: left;
+    background-color: transparent;
     position: relative;
     margin-top: 150px;
     border-top-left-radius: 10px;

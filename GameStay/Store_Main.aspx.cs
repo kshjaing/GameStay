@@ -21,8 +21,8 @@ namespace GameStay
         SqlDataAdapter bestgamesAdapter;
         SqlDataAdapter newgamesAdapter;
         DBManager dbManager;
-        DataTable bestDT;
-        DataTable newDT;
+        DataSet bestDS;
+        //DataTable newDT;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace GameStay
             discountAdapter3 = dbManager.SetDiscountAdapter3();           //할인게임 어댑터 3페이지
             discountAdapter4 = dbManager.SetDiscountAdapter4();           //할인게임 어댑터 4페이지
             bestgamesAdapter = dbManager.SetBestGamesAdapter();           //최고인기게임 어댑터
-            newgamesAdapter = dbManager.SetNewGamesAdapter();             //신규출시게임 어댑터
+            //newgamesAdapter = dbManager.SetNewGamesAdapter();             //신규출시게임 어댑터
             
 
 
@@ -83,13 +83,11 @@ namespace GameStay
 
 
             //---------------------인기게임 파트----------------------//
-            bestDT = new DataTable();
-            bestgamesAdapter.Fill(bestDT);
-            bestgamesRepeater.DataSource = bestDT;
-            bestgamesRepeater.DataBind();
+            
+            bestDS = new DataSet();
+            bestgamesAdapter.Fill(bestDS);
+            
 
-
-            dbManager.DBClose();
 
 
             //특집및추천 전체div 클릭 이벤트
@@ -121,24 +119,25 @@ namespace GameStay
 
         }
 
-        public void NewGames_Click()
-        {
-            newDT = new DataTable();
-            newgamesAdapter = dbManager.SetNewGamesAdapter();
-            newgamesAdapter.Fill(newDT);
-            bestgamesRepeater.DataSource = newDT;
-            bestgamesRepeater.DataBind();
-            div_wrap_p_bestgames.Style["background"] = "transparent";
-            div_wrap_p_newgames.Style["background"] = "1B1C1E";
-        }
-
-        public void BestGames_Click()
+        protected void NewGames_OnClick(object sender, EventArgs e)
         {
             bestgamesAdapter = dbManager.SetBestGamesAdapter();
-            bestgamesAdapter.Fill(bestDT);
-            bestgamesRepeater.DataSource = bestDT;
+            bestDS = new DataSet();
+            bestgamesAdapter.Fill(bestDS);
+            bestgamesRepeater.DataSource = bestDS.Tables[1];
             bestgamesRepeater.DataBind();
-            div_wrap_p_bestgames.Style["background"] = "1B1C1E";
+            div_wrap_p_bestgames.Style["background"] = "transparent";
+            div_wrap_p_newgames.Style["background"] = "#1B1C1E";
+        }
+
+        protected void BestGames_OnClick(object sender, EventArgs e)
+        {
+            bestgamesAdapter = dbManager.SetBestGamesAdapter();
+            bestDS = new DataSet();
+            bestgamesAdapter.Fill(bestDS);
+            bestgamesRepeater.DataSource = bestDS.Tables[0];
+            bestgamesRepeater.DataBind();
+            div_wrap_p_bestgames.Style["background"] = "#1B1C1E";
             div_wrap_p_newgames.Style["background"] = "transparent";
         }
     }
