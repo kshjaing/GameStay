@@ -22,6 +22,7 @@ namespace GameStay
         SqlDataAdapter newgamesAdapter;
         DBManager dbManager;
         DataSet bestDS;
+        int bestclick = 2;
         //DataTable newDT;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -121,24 +122,30 @@ namespace GameStay
 
         protected void NewGames_OnClick(object sender, EventArgs e)
         {
-            bestgamesAdapter = dbManager.SetBestGamesAdapter();
-            bestDS = new DataSet();
-            bestgamesAdapter.Fill(bestDS);
-            bestgamesRepeater.DataSource = bestDS.Tables[1];
-            bestgamesRepeater.DataBind();
+            bestclick = 1;
             div_wrap_p_bestgames.Style["background"] = "transparent";
             div_wrap_p_newgames.Style["background"] = "#1B1C1E";
         }
 
         protected void BestGames_OnClick(object sender, EventArgs e)
         {
-            bestgamesAdapter = dbManager.SetBestGamesAdapter();
-            bestDS = new DataSet();
-            bestgamesAdapter.Fill(bestDS);
-            bestgamesRepeater.DataSource = bestDS.Tables[0];
-            bestgamesRepeater.DataBind();
+            bestclick = 0;
             div_wrap_p_bestgames.Style["background"] = "#1B1C1E";
             div_wrap_p_newgames.Style["background"] = "transparent";
+        }
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            if (bestclick == 1)
+            {
+                bestgamesRepeater.DataSource = bestDS.Tables[1];
+                bestgamesRepeater.DataBind();
+            }
+            else if (bestclick == 0)
+            {
+                bestgamesRepeater.DataSource = bestDS.Tables[0];
+                bestgamesRepeater.DataBind();
+            }
+            
         }
     }
 }
