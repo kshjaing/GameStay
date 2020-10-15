@@ -122,30 +122,18 @@ namespace GameStay
 
         protected void NewGames_OnClick(object sender, EventArgs e)
         {
-            bestclick = 1;
+            bestgamesRepeater.DataSource = bestDS.Tables[1];
+            bestgamesRepeater.DataBind();
             div_wrap_p_bestgames.Style["background"] = "transparent";
             div_wrap_p_newgames.Style["background"] = "#1B1C1E";
         }
 
         protected void BestGames_OnClick(object sender, EventArgs e)
         {
-            bestclick = 0;
+            bestgamesRepeater.DataSource = bestDS.Tables[0];
+            bestgamesRepeater.DataBind();
             div_wrap_p_bestgames.Style["background"] = "#1B1C1E";
             div_wrap_p_newgames.Style["background"] = "transparent";
-        }
-        protected void Page_PreRender(object sender, EventArgs e)
-        {
-            if (bestclick == 1)
-            {
-                bestgamesRepeater.DataSource = bestDS.Tables[1];
-                bestgamesRepeater.DataBind();
-            }
-            else if (bestclick == 0)
-            {
-                bestgamesRepeater.DataSource = bestDS.Tables[0];
-                bestgamesRepeater.DataBind();
-            }
-            
         }
     }
 }
