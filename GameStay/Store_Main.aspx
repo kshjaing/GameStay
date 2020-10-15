@@ -212,17 +212,6 @@
 
     <!-----------------------------------인기게임파트 클릭메서드 및 페이징 --------------------------------------->
     <script>
-        function onClickBestGames() {
-            document.getElementById("div_wrap_p_bestgames").style.background = "#1B1C1E";
-            document.getElementById("div_wrap_p_newgames").style.background = "transparent";
-        }
-
-        function onClickNewGames() {
-
-            document.getElementById("div_wrap_p_newgames").style.background = "#1B1C1E";
-            document.getElementById("div_wrap_p_bestgames").style.background = "transparent";
-        }
-
         function onMouseBestMore() {
             document.getElementById("div_wrap_p_moregames").style.background = "#FFFFFF";
             document.getElementById("p_moregames").style.color = "#000000";
