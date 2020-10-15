@@ -87,7 +87,8 @@ namespace GameStay
             
             bestDS = new DataSet();
             bestgamesAdapter.Fill(bestDS);
-            
+            bestgamesRepeater.DataSource = bestDS.Tables[0];
+            bestgamesRepeater.DataBind();
 
 
 
