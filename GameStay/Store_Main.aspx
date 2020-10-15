@@ -485,9 +485,6 @@
 
     <!---------------------------------최고 인기 게임 리스트------------------------------------->
         
-           <asp:ScriptManager ID="ScriptManager" runat="server" EnablePartialRendering="true" />
-           <asp:UpdatePanel ID="UpdatePanel" runat="server">
-               <ContentTemplate>
                    <div class="div_wrap_p_bestgames" id="div_wrap_p_bestgames" runat="server">
                       <asp:Button ID="btn_bestgames" runat="server" Text="최고인기" CssClass="btn_bestgames"
                                   OnClick="BestGames_OnClick"/>
@@ -496,8 +493,6 @@
                       <asp:Button ID="btn_newgames" runat="server" Text="신규출시" CssClass="btn_newgames"
                                   OnClick="NewGames_OnClick"/>
                    </div>
-               </ContentTemplate>
-           </asp:UpdatePanel>
         
         <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
              id="div_wrap_p_moregames">
