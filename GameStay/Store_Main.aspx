@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=15" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=18" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -485,48 +485,53 @@
 
     <!---------------------------------최고 인기 게임 리스트------------------------------------->
         
-                   <div class="div_wrap_p_bestgames" id="div_wrap_p_bestgames" runat="server">
-                      <asp:Button ID="btn_bestgames" runat="server" Text="최고인기" CssClass="btn_bestgames"
-                                  OnClick="BestGames_OnClick"/>
-                   </div>
-                   <div class="div_wrap_p_newgames" id="div_wrap_p_newgames" runat="server">
-                      <asp:Button ID="btn_newgames" runat="server" Text="신규출시" CssClass="btn_newgames"
-                                  OnClick="NewGames_OnClick"/>
-                   </div>
-        
-        <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
-             id="div_wrap_p_moregames">
-            <p class="p_moregames" id="p_moregames">더보기</p>
-        </div>
-        
-        
-        <div class="div_wrap_list">
-            <asp:Repeater ID="bestgamesRepeater" runat="server">
-                <ItemTemplate>
-                    <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
-                        runat="server">
-                          <div class="div_wrap_best_contentbox" onmouseover="this.style.background='#35373A'"
-                               onmouseout="this.style.background='#1B1C1E'" id="div_wrap_best_contentbox">
-                             <div class="div_wrap_best_image">
-                                <img src='<%# Eval("와이드이미지") %>' class="best_image"/>
-                             </div>
-                             <div class="div_wrap_p_best_title">
-                                 <p class="p_best_title"><%# Eval("게임명") %></p>
-                                 <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>
-                                 
-                             </div>
-                             <div class="div_wrap_p_best_price">
-                                <p class="p_best_price">&#8361;<%# Eval("게임가격") %>원</p>
-                             </div>
-                             <div class="div_wrap_rating">
-                                 <div class="div_ratingbox">
-                                     <p class="p_rating"><%# Eval("평점") %></p>
+           <asp:ScriptManager ID="ScriptManager" runat="server" EnablePartialRendering="true" />
+              <div class="div_wrap_p_bestgames" id="div_wrap_p_bestgames" runat="server">
+                 <asp:Button ID="btn_bestgames" runat="server" Text="최고인기" CssClass="btn_bestgames"
+                             OnClick="BestGames_OnClick"/>
+              </div>
+              <div class="div_wrap_p_newgames" id="div_wrap_p_newgames" runat="server">
+                 <asp:Button ID="btn_newgames" runat="server" Text="신규출시" CssClass="btn_newgames"
+                             OnClick="NewGames_OnClick"/>
+              </div>
+              <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
+                   id="div_wrap_p_moregames">
+                  <p class="p_moregames" id="p_moregames">더보기</p>
+              </div>
+           <asp:UpdatePanel ID="UpdatePanel" runat="server">
+               <ContentTemplate>
+                   <div class="div_wrap_list">
+                      <asp:Repeater ID="bestgamesRepeater" runat="server">
+                         <ItemTemplate>
+                            <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
+                                runat="server">
+                                  <div class="div_wrap_best_contentbox" onmouseover="this.style.background='#35373A'"
+                                       onmouseout="this.style.background='#1B1C1E'" id="div_wrap_best_contentbox">
+                                       <div class="div_wrap_best_image">
+                                          <img src='<%# Eval("와이드이미지") %>' class="best_image"/>
+                                       </div>
+                                       <div class="div_wrap_p_best_title">
+                                          <p class="p_best_title"><%# Eval("게임명") %></p>
+                                          <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>       
+                                       </div>
+                                       <div class="div_wrap_p_best_price">
+                                          <p class="p_best_price">&#8361;<%# Eval("게임가격") %>원</p>
+                                       </div>
+                                       <div class="div_wrap_rating">
+                                          <div class="div_ratingbox">
+                                            <p class="p_rating"><%# Eval("평점") %></p>
+                                          </div>
+                                       </div>
                                  </div>
-                             </div>
-                          </div>
-                    </asp:HyperLink>
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
+                            </asp:HyperLink>
+                        </ItemTemplate>
+                     </asp:Repeater>
+                  </div>
+             </ContentTemplate>
+             <Triggers>
+                 <asp:AsyncPostBackTrigger ControlID="btn_newgames" />
+                 <asp:AsyncPostBackTrigger ControlID="btn_bestgames" />
+             </Triggers>
+        </asp:UpdatePanel>
     </div>
 </asp:Content>
