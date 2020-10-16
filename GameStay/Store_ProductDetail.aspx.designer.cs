@@ -15,12 +15,30 @@ namespace GameStay
     {
 
         /// <summary>
-        /// h1 컨트롤입니다.
+        /// detailTitleRepeater 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h1;
+        protected global::System.Web.UI.WebControls.Repeater detailTitleRepeater;
+
+        /// <summary>
+        /// detailImageRepeater 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater detailImageRepeater;
+
+        /// <summary>
+        /// detailVideoRepeater 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater detailVideoRepeater;
     }
 }

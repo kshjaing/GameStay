@@ -10,6 +10,14 @@
     font-family: 'IBMPlexSansKR-Medium';
     src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'HangeulNuriB';
+    src: url('../Fonts/HangeulNuriB.ttf') format('truetype'), url('../Fonts/HangeulNuriR.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'HangeulNuriR';
+    src: url('../Fonts/HangeulNuriR.ttf') format('truetype');
+}
 body, html {
     margin: 0;
     width: 100vw;
@@ -126,7 +134,7 @@ body, html {
     vertical-align: central;
     text-align: center;
     color: #FFFFFF;
-    font-family: IBMPlexSansKR-Medium;
+    font-family: HangeulNuriB;
     font-size: 16pt;
     user-select: none;
 }

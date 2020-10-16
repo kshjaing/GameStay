@@ -123,6 +123,27 @@ namespace GameStay
             return dataAdapter;
         }
 
+        //특정게임타이틀 레코드 어댑터
+        public SqlDataAdapter SetGameTitleAdapter(string gametitle)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 게임타이틀 WHERE 영어게임명='" + gametitle + "'", myConn);
+            return dataAdapter;
+        }
+
+        //특정게임 소개영상 어댑터
+        public SqlDataAdapter SetGameIntroVideoAdapter(string gametitle)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 게임소개영상 WHERE 영어게임명='" + gametitle + "'", myConn);
+            return dataAdapter;
+        }
+
+        //특정게임 소개스샷 어댑터
+        public SqlDataAdapter SetGameIntroImageAdapter(string gametitle)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 게임소개스샷 WHERE 영어게임명='" + gametitle + "'", myConn);
+            return dataAdapter;
+        }
+
         //저장 프로시저 실행
         public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
         {

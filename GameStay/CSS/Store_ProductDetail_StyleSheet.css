@@ -1,0 +1,72 @@
+﻿@font-face {
+    font-family: 'IBMPlexSansKR-Bold';
+    src: url('../Fonts/IBMPlexSansKR-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M 2.0';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B 2.0';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'HangeulNuriB';
+    src: url('../Fonts/HangeulNuriB.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'HangeulNuriR';
+    src: url('../Fonts/HangeulNuriR.ttf') format('truetype');
+}
+
+html, body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrap_total {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.wrap_total_images {
+    width: 800px;
+    height: 500px;
+    background: yellow;
+    float: left;
+    margin-top: 50px;
+    position: relative;
+}
+
+.p_title {
+    color: #FFFFFF;
+    font-size: 25pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin: 0;
+}
+
+.img {
+    width: 800px;
+    height: auto;
+    object-fit: cover;
+    float: left;
+    position: relative;
+}
+
+.wrap_total_infobox {
+    width: 300px;
+    height: 400px;
+    background: blue;
+    float: left;
+    margin-top: 50px;
+    position: relative;
+}

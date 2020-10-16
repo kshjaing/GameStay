@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,12 +11,38 @@ namespace GameStay
 {
     public partial class Store_ProductDetail : System.Web.UI.Page
     {
+        DBManager dbManager;
+        SqlDataAdapter detailTitleAdapter;
+        SqlDataAdapter detailImageAdapter;
+        SqlDataAdapter detailVideoAdapter;
         string gameTitle;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            dbManager = new DBManager();
             gameTitle = Request.Url.ToString().Substring(55);
-            h1.InnerText = gameTitle;
+
+            detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
+            detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
+            detailVideoAdapter = dbManager.SetGameIntroVideoAdapter(gameTitle);
+
+
+
+
+            DataTable titleDT = new DataTable();
+            detailTitleAdapter.Fill(titleDT);
+            detailTitleRepeater.DataSource = titleDT;
+            detailTitleRepeater.DataBind();
+
+            DataTable imageDT = new DataTable();
+            detailImageAdapter.Fill(imageDT);
+            detailImageRepeater.DataSource = imageDT;
+            detailImageRepeater.DataBind();
+
+            DataTable videoDT = new DataTable();
+            detailVideoAdapter.Fill(videoDT);
+            detailVideoRepeater.DataSource = videoDT;
+            detailVideoRepeater.DataBind();
         }
     }
 }

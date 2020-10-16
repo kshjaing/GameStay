@@ -75,6 +75,7 @@
     <Content Include="CSS\Register_StyleSheet.css" />
     <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
+    <Content Include="CSS\Store_ProductDetail_StyleSheet.css" />
     <Content Include="DevLogin.aspx" />
     <Content Include="Images\Background\Background.png" />
     <Content Include="Images\Background\BG_Anthem.jpg" />
@@ -84,6 +85,10 @@
     <Content Include="Images\Button\Arrow_Left.png" />
     <Content Include="Images\Button\Arrow_Right_Hover.png" />
     <Content Include="Images\Button\Arrow_Right.png" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman1.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman2.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman3.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman4.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Assassin%27sCreedOrigins.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Battlefield1.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_Battlefield3.JPG" />
@@ -94,6 +99,7 @@
     <Content Include="Images\GameTitleImages\TitleImage_Control.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Cyberpunk2077.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_DetroitBecomeHuman.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_FallGuys.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Firewatch.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_FlightSimulator2020.JPG" />
@@ -107,6 +113,7 @@
     <Content Include="Images\GameTitleImages\TitleImage_Skyrim.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Spelunky2.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_TheWitcher3.JPG" />
+    <Content Include="Images\GameWideImages\WideImage_DetroitBecomeHuman.jpg" />
     <Content Include="Images\GameWideImages\WideImage_Assassin%27sCreedOrigins.jpg" />
     <Content Include="Images\GameWideImages\WideImage_Battlefield1.jpg" />
     <Content Include="Images\GameWideImages\WideImage_Battlefield3.jpg" />
@@ -250,6 +257,8 @@
     <Content Include="Main.Master" />
     <Content Include="Fonts\IBMPlexSansKR-Bold.ttf" />
     <Content Include="Fonts\IBMPlexSansKR-Medium.ttf" />
+    <Content Include="Fonts\HangeulNuriB.ttf" />
+    <Content Include="Fonts\HangeulNuriR.ttf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
