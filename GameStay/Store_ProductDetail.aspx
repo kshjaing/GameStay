@@ -5,6 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
         <div class="wrap_total_images">
+            <div class="div_main_image">
+
+            </div>
+            <div class="div_wrap_small_images">
+                
+            </div>
             <asp:Repeater runat="server" ID="detailTitleRepeater">
                 <ItemTemplate>
                     <p class="p_title"><%# Eval("게임명") %></p>
