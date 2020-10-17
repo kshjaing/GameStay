@@ -14,8 +14,9 @@
                 <asp:Repeater runat="server" ID="detailVideoRepeater1">
                     <ItemTemplate>
                         <iframe width="750" height="422" src='<%# Eval("영상링크") %>'
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
@@ -24,7 +25,7 @@
                 <div class="div_wrap_small_boxes" id="div_wrap_small_boxes" runat="server">
                     <asp:Repeater runat="server" ID="detailVideoRepeater2" OnDataBinding="divSmallImages_Resize">
                        <ItemTemplate>
-                       <div class="div_wrap_placeholder" onclick="this.style.border='3px solid #FFFFFF;'">
+                       <div class="div_wrap_placeholder" >
                            <img src='<%# Eval("미리보기이미지") %>' class="img_placeholder"/>
                            <div class="div_wrap_playbutton">
                                <img src="Images/Img_Playbutton.png" class="img_playbutton"/>
