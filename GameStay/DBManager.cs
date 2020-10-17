@@ -144,6 +144,23 @@ namespace GameStay
             return dataAdapter;
         }
 
+        //특정게임의 스샷과 영상의 총 개수 추출
+        public int IntCountImgVid(string gametitle)
+        {
+            String querystring = "SELECT SUM(cnt) AS 스샷영상개수 FROM ( "
+             + "SELECT COUNT(*) AS cnt FROM 게임소개스샷 WHERE 영어게임명 = 'DetroitBecomeHuman' "
+             + "UNION ALL "
+             + "SELECT COUNT(*) AS cnt FROM 게임소개영상 WHERE 영어게임명 = 'DetroitBecomeHuman') a";
+            int count = 0;
+            SqlCommand command = new SqlCommand(querystring, myConn);
+            SqlDataReader dataReader = command.ExecuteReader();
+            while(dataReader.Read())
+            {
+                count = Convert.ToInt32(dataReader["스샷영상개수"]);
+            }
+            return count;
+        }
+
         //저장 프로시저 실행
         public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
         {

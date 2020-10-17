@@ -43,6 +43,15 @@ namespace GameStay
             detailVideoAdapter.Fill(videoDT);
             detailVideoRepeater.DataSource = videoDT;
             detailVideoRepeater.DataBind();
+
+
+        }
+
+        public void divSmallImages_Resize(object sender, EventArgs e)
+        {
+            //특정게임이 갖고있는 소개영상과 스샷의 총 개수
+            int mediaCount = dbManager.IntCountImgVid(gameTitle);
+            div_wrap_small_images.Style["width"] = 205 * mediaCount + "px";
         }
     }
 }

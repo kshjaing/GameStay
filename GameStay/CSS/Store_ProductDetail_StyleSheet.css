@@ -41,7 +41,6 @@ html, body {
 .wrap_total_images {
     width: 800px;
     height: 500px;
-    background: yellow;
     float: left;
     margin-top: 50px;
     position: relative;
@@ -52,13 +51,55 @@ html, body {
     font-size: 25pt;
     font-family: 'NIXGONFONTS B 2.0';
     margin: 0;
+    margin-bottom: 20px;
 }
 
-.img {
+.div_main_image {
     width: 800px;
-    height: auto;
-    object-fit: cover;
+    height: 460px;
     float: left;
+    position: relative;
+    background: skyblue;
+}
+
+.div_wrap_small_images {
+    width: auto;
+    height: 90px;
+    float: left;
+    position: relative;
+    overflow-x: scroll;
+    background: blue;
+}
+
+.div_wrap_placeholder {
+    width: 195px;
+    height: 90px;
+    float: left;
+    position: relative;
+    background: yellow;
+    margin-right: 5px;
+}
+
+.img_placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.div_wrap_screenshot {
+    width: 195px;
+    height: 90px;
+    float: left;
+    position: relative;
+    background: green;
+    margin-right: 5px;
+}
+
+.img_screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: relative;
 }
 
