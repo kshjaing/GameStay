@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=3" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=4" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -24,7 +24,7 @@
                 <div class="div_wrap_small_boxes" id="div_wrap_small_boxes" runat="server">
                     <asp:Repeater runat="server" ID="detailVideoRepeater2" OnDataBinding="divSmallImages_Resize">
                        <ItemTemplate>
-                       <div class="div_wrap_placeholder">
+                       <div class="div_wrap_placeholder" onclick="this.style.border='3px solid #FFFFFF;'">
                            <img src='<%# Eval("미리보기이미지") %>' class="img_placeholder"/>
                            <div class="div_wrap_playbutton">
                                <img src="Images/Img_Playbutton.png" class="img_playbutton"/>
@@ -46,6 +46,10 @@
             
             
         </div>
-        <div class="wrap_total_infobox"></div>
+        <div class="wrap_total_infobox">
+            <div class="div_infobox_image">
+                
+            </div>
+        </div>
     </div>
 </asp:Content>

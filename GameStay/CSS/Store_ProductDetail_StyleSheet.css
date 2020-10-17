@@ -94,7 +94,7 @@ html, body {
     background: yellow;
     margin-left: 3px;
     margin-right: 2px;
-    margin-top: 3px;
+    margin-top: 7px;
 }
 
     .div_wrap_placeholder {
@@ -132,7 +132,7 @@ html, body {
     background: green;
     margin-left: 3px;
     margin-right: 2px;
-    margin-top: 3px;
+    margin-top: 7px;
 }
 
    .div_wrap_screenshot {
@@ -148,7 +148,7 @@ html, body {
 
 .wrap_total_infobox {
     width: 300px;
-    height: 400px;
+    height: 422px;
     background: #1B1C1E;
     float: left;
     margin-top: 105px;

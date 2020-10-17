@@ -52,6 +52,7 @@ namespace GameStay
         public void divSmallImages_Resize(object sender, EventArgs e)
         {
             //특정게임이 갖고있는 소개영상과 스샷의 총 개수
+            //그 개수에 따라 동적으로 div의 너비를 적용
             int mediaCount = dbManager.IntCountImgVid(gameTitle);
             div_wrap_small_boxes.Style["width"] = 187.5 * mediaCount + "px";
         }

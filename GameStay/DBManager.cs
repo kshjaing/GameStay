@@ -53,6 +53,7 @@ namespace GameStay
         }
 
         
+        //-----------------------------------상점메인페이지관련----------------------------------------
 
         //특집 및 추천에 들어갈 게임들을 어댑터에 적용(어떤게임을 추천할지 그 로직은 추후 추가)
         public SqlDataAdapter SetFeaturesAdapter()
@@ -123,6 +124,12 @@ namespace GameStay
             return dataAdapter;
         }
 
+
+        //-------------------------------------------------------------------------------------------------
+
+
+        //--------------------------------------------게임상세페이지 관련-------------------------------------
+
         //특정게임타이틀 레코드 어댑터
         public SqlDataAdapter SetGameTitleAdapter(string gametitle)
         {
@@ -144,13 +151,13 @@ namespace GameStay
             return dataAdapter;
         }
 
-        //특정게임의 스샷과 영상의 총 개수 추출
+        //특정게임의 스샷과 영상의 총 개수 추출 메서드(사진, 영상 개수에 따른 동적인 div너비 적용)
         public int IntCountImgVid(string gametitle)
         {
             String querystring = "SELECT SUM(cnt) AS 스샷영상개수 FROM ( "
-             + "SELECT COUNT(*) AS cnt FROM 게임소개스샷 WHERE 영어게임명 = 'DetroitBecomeHuman' "
+             + "SELECT COUNT(*) AS cnt FROM 게임소개스샷 WHERE 영어게임명 = '" + gametitle + "'"
              + "UNION ALL "
-             + "SELECT COUNT(*) AS cnt FROM 게임소개영상 WHERE 영어게임명 = 'DetroitBecomeHuman') a";
+             + "SELECT COUNT(*) AS cnt FROM 게임소개영상 WHERE 영어게임명 = '" + gametitle + "') a";
             int count = 0;
             SqlCommand command = new SqlCommand(querystring, myConn);
             SqlDataReader dataReader = command.ExecuteReader();
@@ -160,6 +167,10 @@ namespace GameStay
             }
             return count;
         }
+
+
+
+        //--------------------------------------------------------------------------------------------------
 
         //저장 프로시저 실행
         public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
