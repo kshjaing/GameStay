@@ -53,7 +53,7 @@ namespace GameStay
         {
             //특정게임이 갖고있는 소개영상과 스샷의 총 개수
             int mediaCount = dbManager.IntCountImgVid(gameTitle);
-            div_wrap_small_images.Style["width"] = 205 * mediaCount + "px";
+            div_wrap_small_boxes.Style["width"] = 187.5 * mediaCount + "px";
         }
     }
 }

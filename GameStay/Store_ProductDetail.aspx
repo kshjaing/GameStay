@@ -13,7 +13,7 @@
             <div class="div_main_image">
                 <asp:Repeater runat="server" ID="detailVideoRepeater1">
                     <ItemTemplate>
-                        <iframe width="800" height="460" src='<%# Eval("영상링크") %>'
+                        <iframe width="750" height="422" src='<%# Eval("영상링크") %>'
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen></iframe>
                     </ItemTemplate>
@@ -21,12 +21,13 @@
             </div>
             
             <div class="div_wrap_small_images" id="div_wrap_small_images" runat="server">
-                <asp:Repeater runat="server" ID="detailVideoRepeater2" OnDataBinding="divSmallImages_Resize">
-                   <ItemTemplate>
+                <div class="div_wrap_small_boxes" id="div_wrap_small_boxes" runat="server">
+                    <asp:Repeater runat="server" ID="detailVideoRepeater2" OnDataBinding="divSmallImages_Resize">
+                       <ItemTemplate>
                        <div class="div_wrap_placeholder">
                            <img src='<%# Eval("미리보기이미지") %>' class="img_placeholder"/>
                            <div class="div_wrap_playbutton">
-                              <img src="Images/Img_Playbutton.png" class="img_playbutton"/>
+                               <img src="Images/Img_Playbutton.png" class="img_playbutton"/>
                            </div>
                        </div>
                    </ItemTemplate>
@@ -38,6 +39,8 @@
                        </div>
                    </ItemTemplate>
                 </asp:Repeater>
+                </div>
+                
             </div>
             
             

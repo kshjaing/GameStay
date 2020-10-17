@@ -55,43 +55,66 @@ html, body {
 }
 
 .div_main_image {
-    width: 800px;
-    height: 460px;
+    width: 750px;
+    height: 422px;
     float: left;
+    margin-right: 50px;
     position: relative;
-    background: skyblue;
 }
 
 .div_wrap_small_images {
-    width: auto;
-    height: 110px;
-    float: left;
+    width: 760px;
+    height: 130px;
     position: relative;
-    background: blue;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+    .div_wrap_small_images::-webkit-scrollbar {
+        height: 10px;
+        background: transparent;
+    }
+
+    .div_wrap_small_images::-webkit-scrollbar-thumb {
+        background: #48494d;
+        border-radius: 30px;
+    }
+
+.div_wrap_small_boxes {
+    width: auto;
+    height: 130px;
+    position: relative;
 }
 
 .div_wrap_placeholder {
-    width: 195px;
-    height: 90px;
+    width: 182.5px;
+    height: 80px;
     float: left;
     position: relative;
     background: yellow;
-    margin-right: 5px;
+    margin-left: 3px;
+    margin-right: 2px;
+    margin-top: 3px;
 }
+
+    .div_wrap_placeholder {
+        cursor: pointer;
+    }
 
 .img_placeholder {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     position: relative;
+    filter: brightness(80%);
 }
 
 .div_wrap_playbutton {
     width: 60px;
     height: 60px;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 52%;
+    top: 63%;
     transform: translate(-50%, -50%);
 }
 
@@ -102,17 +125,23 @@ html, body {
 }
 
 .div_wrap_screenshot {
-    width: 195px;
-    height: 90px;
+    width: 182.5px;
+    height: 80px;
     float: left;
     position: relative;
     background: green;
-    margin-right: 5px;
+    margin-left: 3px;
+    margin-right: 2px;
+    margin-top: 3px;
 }
+
+   .div_wrap_screenshot {
+       cursor: pointer;
+   }
 
 .img_screenshot {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     position: relative;
 }
@@ -120,8 +149,8 @@ html, body {
 .wrap_total_infobox {
     width: 300px;
     height: 400px;
-    background: blue;
+    background: #1B1C1E;
     float: left;
-    margin-top: 50px;
+    margin-top: 105px;
     position: relative;
 }
