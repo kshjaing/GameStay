@@ -41,8 +41,10 @@ namespace GameStay
 
             DataTable videoDT = new DataTable();
             detailVideoAdapter.Fill(videoDT);
-            detailVideoRepeater.DataSource = videoDT;
-            detailVideoRepeater.DataBind();
+            detailVideoRepeater1.DataSource = videoDT;
+            detailVideoRepeater1.DataBind();
+            detailVideoRepeater2.DataSource = videoDT;
+            detailVideoRepeater2.DataBind();
 
 
         }

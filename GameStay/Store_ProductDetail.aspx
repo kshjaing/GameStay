@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=1" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=3" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -11,13 +11,23 @@
                 </ItemTemplate>
             </asp:Repeater>
             <div class="div_main_image">
-
+                <asp:Repeater runat="server" ID="detailVideoRepeater1">
+                    <ItemTemplate>
+                        <iframe width="800" height="460" src='<%# Eval("영상링크") %>'
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
+            
             <div class="div_wrap_small_images" id="div_wrap_small_images" runat="server">
-                <asp:Repeater runat="server" ID="detailVideoRepeater" OnDataBinding="divSmallImages_Resize">
+                <asp:Repeater runat="server" ID="detailVideoRepeater2" OnDataBinding="divSmallImages_Resize">
                    <ItemTemplate>
                        <div class="div_wrap_placeholder">
                            <img src='<%# Eval("미리보기이미지") %>' class="img_placeholder"/>
+                           <div class="div_wrap_playbutton">
+                              <img src="Images/Img_Playbutton.png" class="img_playbutton"/>
+                           </div>
                        </div>
                    </ItemTemplate>
                 </asp:Repeater>

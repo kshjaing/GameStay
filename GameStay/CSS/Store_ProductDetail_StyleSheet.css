@@ -64,10 +64,9 @@ html, body {
 
 .div_wrap_small_images {
     width: auto;
-    height: 90px;
+    height: 110px;
     float: left;
     position: relative;
-    overflow-x: scroll;
     background: blue;
 }
 
@@ -85,6 +84,21 @@ html, body {
     height: 100%;
     object-fit: cover;
     position: relative;
+}
+
+.div_wrap_playbutton {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img_playbutton {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .div_wrap_screenshot {
