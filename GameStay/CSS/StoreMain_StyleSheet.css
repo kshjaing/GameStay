@@ -31,12 +31,13 @@ html, body {
 
 
 
-/*---------------------------특집 및 추천 부분--------------------------*/
+/*---------------------------특집 및 추천 파트--------------------------*/
 
 .p_features {
     color: #FFFFFF;
     font-size: 19pt;
     margin-bottom: 0;
+    user-select: none;
 }
 
 .div_wrap_features {
@@ -71,6 +72,7 @@ html, body {
     height: 100%;
     float: left;
     position: relative;
+    user-select: none;
 }
 
 .div_features_details {
@@ -152,6 +154,7 @@ html, body {
     float: right;
     width: 75px;
     height: 35px;
+    user-select: none;
 }
 
 .button_features_left {
@@ -164,6 +167,7 @@ html, body {
     outline: none;
     margin-top: 10px;
     margin-right: 5px;
+    user-select: none;
 }
 
 .btnimg_features_left {
@@ -183,6 +187,7 @@ html, body {
     outline: none;
     margin-top: 10px;
     cursor: pointer;
+    user-select: none;
 }
 
 .btnimg_features_right {
@@ -196,7 +201,7 @@ html, body {
 
 
 /**/
-/*----------------------------------할인중 부분----------------------------*/
+/*----------------------------------할인게임 파트----------------------------*/
 .div_wrap_discount {
     width: 100%;
     height: 650px;
@@ -211,6 +216,7 @@ html, body {
     font-size: 20pt;
     margin-bottom: 0;
     margin-left: 5px;
+    user-select: none;
 }
 
 .div_wrap_p_discount_more {
@@ -237,6 +243,7 @@ html, body {
     font-size: 12pt;
     font-family: IBMPlexSansKR-Bold;
     position: relative;
+    user-select: none;
 }
 
 .div_wrap_contents {
@@ -269,6 +276,7 @@ html, body {
     margin-left: 5px;
     margin-right: 10px;
     margin-bottom: 20px;
+    user-select: none;
 }
 
     .div_discount_contentbox:hover {
@@ -285,6 +293,7 @@ html, body {
     width: 100%;
     height: 100%;
     position: relative;
+    user-select: none;
 }
 
 .div_discount_title {
@@ -367,14 +376,6 @@ html, body {
 }
 
 
-
-
-
-
-
-
-
-
 .wrap_discount_pagedot {
     width: 100px;
     height: 15px;
@@ -391,6 +392,7 @@ html, body {
     margin-right: 30px;
     width: 100px;
     height: 35px;
+    user-select: none;
 }
 
 .button_discount_left {
@@ -405,6 +407,7 @@ html, body {
     outline: none;
     cursor: pointer;
     position: relative;
+    user-select: none;
 }
 
 .button_discount_right {
@@ -420,4 +423,215 @@ html, body {
     outline: none;
     cursor: pointer;
     position: relative;
+    user-select: none;
+}
+
+
+
+/**/
+/*---------------------------------------------------------------------------*/
+
+
+
+
+
+/**/
+/*----------------------------------인기게임 파트----------------------------*/
+
+.div_wrap_p_bestgames {
+    width: 130px;
+    height: 40px;
+    float: left;
+    background-color: #1B1C1E;
+    position: relative;
+    margin-top: 150px;
+    margin-left: -100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+     .div_wrap_p_bestgames:hover {
+         cursor: pointer;
+     }
+
+.btn_bestgames {
+    width: 100%;
+    height: 100%;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 13pt;
+    padding-top: 3px;
+    user-select: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+}
+
+   .btn_bestgames:hover {
+       cursor: pointer;
+   }
+
+.div_wrap_p_newgames {
+    display: table;
+    width: 130px;
+    height: 40px;
+    float: left;
+    background-color: transparent;
+    position: relative;
+    margin-top: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+     .div_wrap_p_newgames:hover {
+           cursor: pointer;
+     }
+
+.btn_newgames {
+    width: 100%;
+    height: 100%;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 13pt;
+    padding-top: 3px;
+    user-select: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+}
+
+    .btn_newgames:hover {
+        cursor: pointer;
+    }
+
+.div_wrap_p_moregames {
+    display: table;
+    width: 80px;
+    height: 30px;
+    float: right;
+    position: relative;
+    margin-top: 150px;
+    margin-right: -110px;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+}
+
+    .div_wrap_p_moregames {
+        cursor: pointer;
+    }
+
+
+.p_moregames {
+    display: table-cell;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    vertical-align: middle;
+    text-align: center;
+    user-select: none;
+}
+
+.div_wrap_list {
+    width: 1085px;
+    height: 776px;
+    float: left;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.div_wrap_best_contentbox {
+    width: 100%;
+    height: 90px;
+    background: #1B1C1E;
+    margin-bottom: 8px;
+}
+
+.div_wrap_best_image {
+    width: 200px;
+    height: 90px;
+    position: relative;
+    float: left;
+    user-select: none;
+}
+
+.best_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.div_wrap_p_best_title {
+    width: 650px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.p_best_title {
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-bottom: 0;
+    margin-left: 20px;
+    user-select: none;
+}
+
+.p_best_tags {
+    color: #737373;
+    margin-top: 5px;
+    font-size: 10pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-left: 20px;
+    user-select: none;
+}
+
+.div_wrap_p_best_price {
+    display: table;
+    width: 145px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.p_best_price {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: IBMPlexSansKR-Bold;
+    user-select: none;
+}
+
+
+.div_wrap_rating {
+    width: 90px;
+    height: 100%;
+    float: left;
+    position: relative;
+    background: #121314;
+}
+
+.div_ratingbox {
+    display: table;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 3px solid #18d737;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+}
+
+.p_rating {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    user-select: none;
 }

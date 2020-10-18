@@ -76,6 +76,7 @@
     <Content Include="CSS\Register_StyleSheet.css" />
     <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
+    <Content Include="CSS\Store_ProductDetail_StyleSheet.css" />
     <Content Include="DevLogin.aspx" />
     <Content Include="DevRegister.aspx" />
     <Content Include="Images\Background\Background.png" />
@@ -86,17 +87,22 @@
     <Content Include="Images\Button\Arrow_Left.png" />
     <Content Include="Images\Button\Arrow_Right_Hover.png" />
     <Content Include="Images\Button\Arrow_Right.png" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman1.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman2.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman3.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman4.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Assassin%27sCreedOrigins.jpg" />
-    <Content Include="Images\GameTitleImages\TitleImage_Battlefield 1.JPG" />
-    <Content Include="Images\GameTitleImages\TitleImage_Battlefield 3.JPG" />
-    <Content Include="Images\GameTitleImages\TitleImage_Battlefield 4.JPG" />
-    <Content Include="Images\GameTitleImages\TitleImage_Battlefield 5.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Battlefield1.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Battlefield3.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Battlefield4.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_Battlefield5.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_Borderlands3.JPG" />
-    <Content Include="Images\GameTitleImages\TitleImage_CallofDuty Modern Warfare Remastered.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_CallofDutyModernWarfareRemastered.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_Control.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Cyberpunk2077.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_DeathStranding.jpg" />
-    <Content Include="Images\GameTitleImages\TitleImage_Fall Guys.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_DetroitBecomeHuman.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_FallGuys.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Firewatch.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_FlightSimulator2020.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_GrandTheftAuto5.JPG" />
@@ -105,10 +111,34 @@
     <Content Include="Images\GameTitleImages\TitleImage_MonsterHunterWorld.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_NierAutomata.png" />
     <Content Include="Images\GameTitleImages\TitleImage_Overcooked2.JPG" />
-    <Content Include="Images\GameTitleImages\TitleImage_Rainbow Six Siege.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_RainbowSixSiege.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_Skyrim.jpg" />
-    <Content Include="Images\GameTitleImages\TitleImage_Spelunky 2.jpg" />
+    <Content Include="Images\GameTitleImages\TitleImage_Spelunky2.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_TheWitcher3.JPG" />
+    <Content Include="Images\GameWideImages\WideImage_DetroitBecomeHuman.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Assassin%27sCreedOrigins.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Battlefield1.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Battlefield3.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Battlefield4.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Battlefield5.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Borderlands3.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_CallofDutyModernWarfareRemastered.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Control.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Cyberpunk2077.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_DeathStranding.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_FallGuys.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Firewatch.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_FlightSimulator2020.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_GrandTheftAuto5.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_HorizonZeroDawn.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_HumanFallFlat.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_MonsterHunterWorld.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_NierAutomata.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Overcooked2.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_RainbowSixSiege.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Skyrim.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_Spelunky2.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_TheWitcher3.jpg" />
     <Content Include="Images\Icon\Icon_Discount.png" />
     <Content Include="Images\Icon\Login\Icon_Email.png" />
     <Content Include="Images\Icon\Login\Icon_ID.png" />
@@ -117,8 +147,10 @@
     <Content Include="Images\Icon\Login\Icon_Password.png" />
     <Content Include="Images\Icon\PageDot.png" />
     <Content Include="Images\Icon\PageDot_Selected.png" />
+    <Content Include="Images\Img_Playbutton.png" />
     <Content Include="Images\Logo_GameStay.png" />
     <Content Include="Images\Menu\Menu_Select_BG.png" />
+    <Content Include="Images\PlaceholderImages\PlaceholderImage_DetroitBecomeHuman.jpg" />
     <Content Include="Images\Profile\Default_Profile.png" />
     <Content Include="Images\Profile\Profile_Mongkka.png" />
     <Content Include="Library.aspx" />
@@ -237,6 +269,8 @@
     <Content Include="Main.Master" />
     <Content Include="Fonts\IBMPlexSansKR-Bold.ttf" />
     <Content Include="Fonts\IBMPlexSansKR-Medium.ttf" />
+    <Content Include="Fonts\HangeulNuriB.ttf" />
+    <Content Include="Fonts\HangeulNuriR.ttf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -245,6 +279,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

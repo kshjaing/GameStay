@@ -6,21 +6,38 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace GameStay
 {
     public partial class Store_Main : System.Web.UI.Page
     {
+        SqlDataAdapter featureAdapter;
+        SqlDataAdapter discountCountAdpater;
+        SqlDataAdapter discountAdapter1;
+        SqlDataAdapter discountAdapter2;
+        SqlDataAdapter discountAdapter3;
+        SqlDataAdapter discountAdapter4;
+        SqlDataAdapter bestgamesAdapter;
+        SqlDataAdapter newgamesAdapter;
+        DBManager dbManager;
+        DataSet bestDS;
+        int bestclick = 2;
+        //DataTable newDT;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DBManager dbManager = new DBManager();
-            SqlDataAdapter featureAdapter = dbManager.SetFeaturesAdapter();              //추천게임 어댑터
-            SqlDataAdapter discountCountAdpater = dbManager.SetDiscountCountAdapter();   //할인게임 총 개수 어댑터
-            SqlDataAdapter discountAdapter1 = dbManager.SetDiscountAdapter1();           //할인게임 어댑터 1페이지
-            SqlDataAdapter discountAdapter2 = dbManager.SetDiscountAdapter2();           //할인게임 어댑터 2페이지
-            SqlDataAdapter discountAdapter3 = dbManager.SetDiscountAdapter3();           //할인게임 어댑터 3페이지
-            SqlDataAdapter discountAdapter4 = dbManager.SetDiscountAdapter4();           //할인게임 어댑터 4페이지
+            dbManager = new DBManager();
+            featureAdapter = dbManager.SetFeaturesAdapter();              //추천게임 어댑터
+            discountCountAdpater = dbManager.SetDiscountCountAdapter();   //할인게임 총 개수 어댑터
+            discountAdapter1 = dbManager.SetDiscountAdapter1();           //할인게임 어댑터 1페이지
+            discountAdapter2 = dbManager.SetDiscountAdapter2();           //할인게임 어댑터 2페이지
+            discountAdapter3 = dbManager.SetDiscountAdapter3();           //할인게임 어댑터 3페이지
+            discountAdapter4 = dbManager.SetDiscountAdapter4();           //할인게임 어댑터 4페이지
+            bestgamesAdapter = dbManager.SetBestGamesAdapter();           //최고인기게임 어댑터
+            //newgamesAdapter = dbManager.SetNewGamesAdapter();             //신규출시게임 어댑터
+            
+
 
             //추천게임 바인딩
             DataTable dt = new DataTable();
@@ -30,6 +47,9 @@ namespace GameStay
             featuresRepeater2.DataSource = dt;
             featuresRepeater2.DataBind();
 
+
+
+            //-------------------할인게임파트---------------------//
             //할인게임 개수 바인딩
             DataTable countDT = new DataTable();
             discountCountAdpater.Fill(countDT);
@@ -61,7 +81,15 @@ namespace GameStay
             discountRepeater4.DataSource = dt4;
             discountRepeater4.DataBind();
 
-            dbManager.DBClose();
+
+
+            //---------------------인기게임 파트----------------------//
+            
+            bestDS = new DataSet();
+            bestgamesAdapter.Fill(bestDS);
+            bestgamesRepeater.DataSource = bestDS.Tables[0];
+            bestgamesRepeater.DataBind();
+
 
 
             //특집및추천 전체div 클릭 이벤트
@@ -89,7 +117,26 @@ namespace GameStay
             {
                 Response.Redirect("Store_ProductDetail.aspx");
             }
+
+
         }
 
+        protected void NewGames_OnClick(object sender, EventArgs e)
+        {
+            div_wrap_p_bestgames.Style["background-color"] = "transparent";
+            div_wrap_p_newgames.Style["background-color"] = "#1B1C1E";
+            bestgamesRepeater.DataSource = bestDS.Tables[1];
+            bestgamesRepeater.DataBind();
+            
+        }
+
+        protected void BestGames_OnClick(object sender, EventArgs e)
+        {
+            div_wrap_p_bestgames.Style["background-color"] = "#1B1C1E";
+            div_wrap_p_newgames.Style["background-color"] = "transparent";
+            bestgamesRepeater.DataSource = bestDS.Tables[0];
+            bestgamesRepeater.DataBind();
+            
+        }
     }
 }
