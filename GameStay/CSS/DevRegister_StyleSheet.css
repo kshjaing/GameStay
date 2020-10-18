@@ -1,0 +1,275 @@
+﻿@font-face {
+    font-family: 'NIXGONFONTS M';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+input::placeholder {
+    font-family: 'NIXGONFONTS M';
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap {
+    display: table-cell;
+    background-image: url('../Images/Background/BG_TheDivision.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    vertical-align: middle;
+    top: 0px;
+    left: 0px;
+}
+
+
+.div_logo {
+    width: 210px;
+    height: 60px;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+}
+
+.div_logo {
+    cursor: pointer;
+}
+
+.img_logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login_square {
+    z-index: 2;
+    display: table-cell;
+    display: inline-block;
+    background-color: #111213;
+    width: 1300px;
+    height: 800px;
+    min-width: 1300px;
+    min-height: 600px;
+    position: relative;
+
+}
+
+.txt_login {
+    margin-top: 70px;
+    color: #FFFFFF;
+    top: 35px;
+    font-family: 'NIXGONFONTS M';
+}
+
+.wrap_idpass {
+    border: 1px solid;
+    border-color: aliceblue;
+    margin-top: 50px;
+    width:300px;
+}
+
+.txt_check {
+    visibility: hidden;
+    color: red;
+}
+
+.wrap_input_id {
+
+    left: 10%;
+    margin-left: 10px;
+    position: absolute;
+    width: 200px;
+    margin-top: 0;
+}
+
+.input_id {
+    width: 14vw;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 8px;
+    outline: none;
+    padding-left: 3vw;
+    font-family: 'NIXGONFONTS M';
+}
+
+.icon_id {
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.wrap_input_password {
+    left: 10%;
+    margin-left: 10px;
+    margin-top: 50px;
+    position: absolute;
+    width: 200px;
+}
+
+.wrap_input_password_dupl {
+    left: 10%;
+    margin-left: 10px;
+    position: absolute;
+    width: 200px;
+    margin-top: 100px;
+}
+
+.input_password {
+    width: 14vw;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 8px;
+    padding-left: 3vw;
+    outline: none;
+}
+
+.icon_password {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.wrap_input_email {
+    margin-top: 150px;
+    left: 10%;
+    margin-left: 10px;
+    position: absolute;
+    width: 200px;
+}
+
+.input_email {
+    width: 14vw;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 8px;
+    padding-left: 3vw;
+    outline: none;
+    font-family: 'NIXGONFONTS M';
+}
+
+.input_name {
+    width: 14vw;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 8px;
+    padding-left: 3vw;
+    outline: none;
+    font-family: 'NIXGONFONTS M';
+}
+
+.wrap_input_nickname {
+    left: 10%;
+    margin-left: 10px;
+    position: absolute;
+    width: 200px;
+    margin-top: 210px;
+}
+
+.icon_email {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.wrap_input_explain {
+
+    left: 10%;
+    margin-left: 10px;
+    position: absolute;
+    width: 700px;
+    margin-top: 210px;
+}
+
+.input_explain {
+    width: 1030px;
+    height : 180px;
+
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 8px;
+    padding-left: 3vw;
+    outline: none;
+    
+    font-family: 'NIXGONFONTS M';
+}
+
+.wrap_input_img {
+
+    height: 300px;
+    float:right;
+    vertical-align:text-top;
+
+    margin-right:150px;
+    border:1px solid, white;
+}
+
+.txt_devreg_img {
+    font-size: 17pt;
+    color: #FFFFFF;
+    margin-right:400px;
+    font-family: 'NIXGONFONTS M';
+}
+
+.txt_devreg_imgselect {
+    font-size: 13pt;
+    color: #FFFFFF;
+    margin-right: 200px;
+    font-family: 'NIXGONFONTS M';
+    margin-top:10px;
+
+}
+
+.img_profile {
+    width: 200px;
+    margin-right: 300px;
+}
+
+.button_register {
+    border: 0;
+    outline: 0;
+    background-color: #25262B;
+    color: #FFFFFF;
+    font-size: 14pt;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    margin-top: 420px;
+    border-radius: 0 10px 0 10px;
+    transition: all 0.2s;
+    font-family: 'NIXGONFONTS M';
+}
+
+    .button_register:hover {
+        color: #FFFFFF;
+        background-color: #3dae7a;
+        font-family: 'NIXGONFONTS M';
+    }

@@ -23,11 +23,8 @@ namespace GameStay
                 else
                 {
                     string uid = Session["아이디"].ToString();
-
-                    userDo = (new UserDao()).GetUserInfo(uid);
-                    txt_nickname.InnerText = userDo.Nickname;
-                    txt_level.InnerText = userDo.Level.ToString();
-                    if(userDo.Profileimg.Trim() != "")
+                    userDo = (new UserDao()).Getprofileimg(uid);
+                    if (userDo.Profileimg.Trim() != "")
                     {
                         img_profile.Src = userDo.Profileimg;
                     }
@@ -40,6 +37,7 @@ namespace GameStay
                     SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(uid);
                     SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(uid);
                     SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(uid);
+                    SqlDataAdapter userinfo = dbManager.SetUserInfo(uid);
 
                     DataTable dt1 = new DataTable();
                     recentAdapter1.Fill(dt1);
@@ -55,6 +53,11 @@ namespace GameStay
                     recentAdapter3.Fill(dt3);
                     RecentGame3.DataSource = dt3;
                     RecentGame3.DataBind();
+
+                    DataTable dt4 = new DataTable();
+                    userinfo.Fill(dt4);
+                    UserInfo.DataSource = dt4;
+                    UserInfo.DataBind();
                 }
             }
         }

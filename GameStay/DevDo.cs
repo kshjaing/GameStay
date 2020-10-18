@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GameStay
 {
-    public class UserDo
+    public class DevDo
     {
         private string userid;
         public string Userid
@@ -21,32 +21,18 @@ namespace GameStay
             set { passwd = value; }
         }
 
-        private string nickname;
-        public string Nickname
+        private string name;
+        public string Name
         {
-            get { return nickname; }
-            set { nickname = value; }
+            get { return name; }
+            set { name = value; }
         }
 
-        private string email;
-        public string Email
+        private string devintr;
+        public string Devintr
         {
-            get { return email; }
-            set { email = value; }
-        }
-
-        private int level;
-        public int Level
-        {
-            get { return level; }
-            set { level = value; }
-        }
-
-        private int ugrade;
-        public int Ugrade
-        {
-            get { return ugrade; }
-            set { ugrade = value; }
+            get { return devintr; }
+            set { devintr = value; }
         }
 
         private string profileimg;
@@ -56,19 +42,18 @@ namespace GameStay
             set { profileimg = value; }
         }
 
-        public UserDo(string uid, string pwd, string nickname, string email)
+        public DevDo(string uid, string pwd, string name)
         {
             this.userid = uid;
             this.passwd = pwd;
-            this.nickname = nickname;
-            this.email = email;
+            this.name = name;
         }
 
-        public UserDo(string profimg)
+
+        public DevDo(string profimg, string devintr)
         {
             this.profileimg = profimg;
+            this.devintr = devintr;
         }
     }
-
-    
 }

@@ -15,7 +15,6 @@ namespace GameStay
         protected void Page_Load(object sender, EventArgs e)
         {
             dbManager.DBOpen();
-            
             if (Request["__EVENTTARGET"] == "div_logo")
             {
                 Response.Redirect("Store_Main.aspx");

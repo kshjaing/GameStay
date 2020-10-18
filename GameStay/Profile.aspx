@@ -5,17 +5,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
         <div class="profile_square" >
-        <div class="div_profile_img">
+                                <div class="div_profile_img">
             <input type="image" id="img_profile" runat="server" class="img_profile" />
         </div>
+            <asp:Repeater runat="server" ID="UserInfo">
+                <ItemTemplate>
         <div class="div_profile_detail">
-            <p class="txt_profile_nickname" id="txt_nickname" runat="server"></p>
-            <a class="txt_profile_detail">레벨 : </a> <a class="txt_profile_level" id="txt_level" runat="server"></a> <br />
+            <p class="txt_profile_nickname"><%#Eval("닉네임") %></p>
+            <a class="txt_profile_detail">레벨 : </a> <a class="txt_profile_level" ><%#Eval("레벨") %></a> <br />
             <a class="txt_profile_detail">보유한 게임 :</a> <a class="txt_profile_countgame">21</a> <a class="txt_profile_detail">개</a>
         </div>
         <div class="div_profile_edit">
             <button runat="server" class="btn_profile_edit" onserverclick="editprofile_click">프로필 수정</button>
         </div>
+                </ItemTemplate>
+            </asp:Repeater>
     </div>
 
     <div class="profile_square_game">

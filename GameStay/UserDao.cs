@@ -44,6 +44,30 @@ namespace GameStay
             return isAuthen;
         }
 
+        public bool DEVAuthenticate(string id, string pw)
+        {
+            dbManager = new DBManager();
+
+            //리턴값 및 아웃 참조변수 초기화
+            bool isAuthen = false; //리턴값 false - 미인증상태
+                                   //뭐리문 이용하여 조건(id, pwd) 에 일치하는 자료를 불러옴. 비밀번호는 MD5로 암호화
+                                   //string test = this.GetMd5(pwd);
+            string sQuery = "SELECT * FROM 개발사 WHERE 아이디='" + id + "' AND 비밀번호='" + pw + "'";
+
+            //dbman.executeReader() 메서드를 호출하여 결과를 가져옴
+            SqlDataReader mReader = dbManager.ExecuteReader(sQuery);
+
+            //결과값이 존재하면 인증성공, 없으면 인증실패
+            if (mReader.Read()) isAuthen = true;
+
+            //sqldatareader 객체를 닫음
+            mReader.Close();
+            //DB연결해제
+            dbManager.DBClose();
+            //결과값 반환
+            return isAuthen;
+        }
+
         //md5 알고리즘
         //구글링을 통하여 구한 코드
         private String GetMD5(String input)
@@ -80,11 +104,11 @@ namespace GameStay
         }
 
         //유저 프로필 정보 
-        public UserDo GetUserInfo(string uid)
+        public UserDo Getprofileimg(string uid)
         {
             dbManager = new DBManager();
 
-            string qrySelect = "SELECT * FROM 유저 WHERE 아이디 =  " + "'" + uid + "'";
+            string qrySelect = "SELECT 프로필사진 FROM 유저 WHERE 아이디 =  " + "'" + uid + "'";
 
             SqlDataReader mReader = dbManager.ExecuteReader(qrySelect);
 
@@ -92,8 +116,6 @@ namespace GameStay
 
             UserDo udo = new UserDo
             (
-                mReader["닉네임"].ToString().TrimEnd(),
-                int.Parse(mReader["레벨"].ToString().TrimEnd()),
                 mReader["프로필사진"].ToString().TrimEnd()
             );
 
