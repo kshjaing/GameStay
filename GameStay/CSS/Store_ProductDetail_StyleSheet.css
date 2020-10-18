@@ -66,11 +66,10 @@ html, body {
 
 }
 
-.img_iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
+.img_main {
+    width: 750px;
+    height: 422px;
+    position: relative;
 }
 
 .div_wrap_small_images {
@@ -112,7 +111,7 @@ html, body {
         cursor: pointer;
     }
 
-.img_placeholder {
+.img_small_placeholder {
     width: 100%;
     height: auto;
     object-fit: cover;

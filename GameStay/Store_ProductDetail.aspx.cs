@@ -36,8 +36,10 @@ namespace GameStay
 
             DataTable imageDT = new DataTable();
             detailImageAdapter.Fill(imageDT);
-            detailImageRepeater.DataSource = imageDT;
-            detailImageRepeater.DataBind();
+            detailImageRepeater1.DataSource = imageDT;
+            detailImageRepeater1.DataBind();
+            detailImageRepeater2.DataSource = imageDT;
+            detailImageRepeater2.DataBind();
 
             DataTable videoDT = new DataTable();
             detailVideoAdapter.Fill(videoDT);
@@ -56,5 +58,6 @@ namespace GameStay
             int mediaCount = dbManager.IntCountImgVid(gameTitle);
             div_wrap_small_boxes.Style["width"] = 187.5 * mediaCount + "px";
         }
+
     }
 }
