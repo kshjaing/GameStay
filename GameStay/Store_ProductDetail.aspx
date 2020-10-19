@@ -1,14 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=5" rel="stylesheet" />
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('img_small_screenshot').click(function () {
-                var imgsrc = $(this).attr('src');
-                $('img_screenshot').attr('src') = imgsrc;
-                $('main_video').attr('display') = "none";
-            });
-        });
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=6" rel="stylesheet" />
+    <script>
+        function onClickPlaceholder(_self) {
+            _sefl.style.border = "3px solid #FFFFFF";
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -40,7 +36,7 @@
                 <div class="div_wrap_small_boxes" id="div_wrap_small_boxes" runat="server">
                     <asp:Repeater runat="server" ID="detailVideoRepeater2" OnDataBinding="divSmallImages_Resize">
                        <ItemTemplate>
-                       <div class="div_wrap_placeholder" >
+                       <div class="div_wrap_placeholder" onclick="this.style.border='2px solid #FFFFFF'">
                            <img src='<%# Eval("미리보기이미지") %>' class="img_small_placeholder" onclick="onClickPlaceholder(this);"
                                 id="img_placeholder"/>
                            <div class="div_wrap_playbutton">
@@ -51,7 +47,7 @@
                 </asp:Repeater>
                 <asp:Repeater runat="server" ID="detailImageRepeater2">
                    <ItemTemplate>
-                       <div class="div_wrap_screenshot">
+                       <div class="div_wrap_screenshot" onclick="this.style.border='2px solid #FFFFFF'">
                            <img src='<%# Eval("스크린샷") %>' class="img_screenshot" onclick="onClickScreenshot(this);"
                                id="img_small_screenshot"/>
                        </div>
