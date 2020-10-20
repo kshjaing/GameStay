@@ -59,5 +59,9 @@ namespace GameStay
             div_wrap_small_boxes.Style["width"] = 187.5 * mediaCount + 4 * mediaCount + "px";
         }
 
+        public void SmallImage_OnBind(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -45,11 +45,12 @@
                        </div>
                    </ItemTemplate>
                 </asp:Repeater>
-                <asp:Repeater runat="server" ID="detailImageRepeater2">
+                <asp:Repeater runat="server" ID="detailImageRepeater2" OnDataBinding="SmallImage_OnBind">
                    <ItemTemplate>
-                       <div class="div_wrap_screenshot" onclick="this.style.border='2px solid #FFFFFF'">
+                       <div class="div_wrap_screenshot" onclick="this.style.border='2px solid #FFFFFF'"
+                            id="div_wrap_screenshot" runat="server">
                            <img src='<%# Eval("스크린샷") %>' class="img_screenshot" onclick="onClickScreenshot(this);"
-                               id="img_small_screenshot"/>
+                               id="img_small_screenshot" runat="server" alt="0"/>
                        </div>
                    </ItemTemplate>
                 </asp:Repeater>
