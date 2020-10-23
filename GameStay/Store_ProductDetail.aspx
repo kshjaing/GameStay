@@ -31,7 +31,7 @@
             <div class="div_main_image">
                 <iframe width="750" height="422" src="empty"
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen style="display: block" id="main_video" runat="server">
+                        allowfullscreen style="display: block" id="main_video">
                 </iframe>
                 <img src="empty" width="750" height="422" style="display: none" id="img_screenshot"/>
             </div>
