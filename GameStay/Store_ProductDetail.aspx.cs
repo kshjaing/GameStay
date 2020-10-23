@@ -24,7 +24,7 @@ namespace GameStay
         protected void Page_Load(object sender, EventArgs e)
         {
             dbManager = new DBManager();
-            gameTitle = Request.Url.ToString().Substring(55);
+            gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") +  1);
 
             detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
