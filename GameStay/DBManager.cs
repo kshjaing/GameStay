@@ -207,5 +207,12 @@ namespace GameStay
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 유저 WHERE 아이디 =  " + "'" + uid + "'", myConn);
             return dataAdapter;
         }
+
+        //개발사 정보
+        public SqlDataAdapter SetDevInfo(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 개발사 WHERE 아이디 =  " + "'" + uid + "'", myConn);
+            return dataAdapter;
+        }
     }
 }

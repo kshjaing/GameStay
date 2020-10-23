@@ -57,8 +57,6 @@ html, body {
     background-color: #111213;
     width: 1300px;
     height: 800px;
-    min-width: 1300px;
-    min-height: 600px;
     position: relative;
 
 }
@@ -71,10 +69,12 @@ html, body {
 }
 
 .wrap_idpass {
-    border: 1px solid;
-    border-color: aliceblue;
     margin-top: 50px;
-    width:300px;
+    width: 49%;
+    height: 40%;
+    float:left;
+    vertical-align:central;
+
 }
 
 .txt_check {
@@ -83,16 +83,17 @@ html, body {
 }
 
 .wrap_input_id {
-
-    left: 10%;
+    padding-top: 30px;
+    left: 17%;
     margin-left: 10px;
-    position: absolute;
-    width: 200px;
+    position: relative;
+    width: 300px;
     margin-top: 0;
+
 }
 
 .input_id {
-    width: 14vw;
+    width: 200px;
     border: 0;
     background: transparent;
     border-bottom: 1px solid #FFFFFF;
@@ -113,23 +114,23 @@ html, body {
 }
 
 .wrap_input_password {
-    left: 10%;
+    left: 17%;
     margin-left: 10px;
-    margin-top: 50px;
-    position: absolute;
-    width: 200px;
+    position: relative;
+    width: 300px;
+    margin-top: 10px;
 }
 
 .wrap_input_password_dupl {
-    left: 10%;
+    left: 17%;
     margin-left: 10px;
-    position: absolute;
-    width: 200px;
-    margin-top: 100px;
+    position: relative;
+    width: 300px;
+    margin-top: 10px;
 }
 
 .input_password {
-    width: 14vw;
+    width: 200px;
     border: 0;
     background: transparent;
     border-bottom: 1px solid #FFFFFF;
@@ -149,15 +150,15 @@ html, body {
 }
 
 .wrap_input_email {
-    margin-top: 150px;
-    left: 10%;
+    left: 17%;
     margin-left: 10px;
-    position: absolute;
-    width: 200px;
+    position: relative;
+    width: 300px;
+    margin-top: 10px;
 }
 
 .input_email {
-    width: 14vw;
+    width: 200px;
     border: 0;
     background: transparent;
     border-bottom: 1px solid #FFFFFF;
@@ -170,7 +171,7 @@ html, body {
 }
 
 .input_name {
-    width: 14vw;
+    width: 200px;
     border: 0;
     background: transparent;
     border-bottom: 1px solid #FFFFFF;
@@ -183,11 +184,11 @@ html, body {
 }
 
 .wrap_input_nickname {
-    left: 10%;
+    left: 17%;
     margin-left: 10px;
-    position: absolute;
-    width: 200px;
-    margin-top: 210px;
+    position: relative;
+    width: 300px;
+    margin-top:10px;
 }
 
 .icon_email {
@@ -199,12 +200,12 @@ html, body {
 }
 
 .wrap_input_explain {
-
-    left: 10%;
-    margin-left: 10px;
-    position: absolute;
-    width: 700px;
-    margin-top: 210px;
+    padding-top: 20px;
+    width: 99%;
+    height: 30%;
+    float: left;
+    left: 17%;
+    vertical-align: central;
 }
 
 .input_explain {
@@ -218,18 +219,17 @@ html, body {
     padding-bottom: 8px;
     padding-left: 3vw;
     outline: none;
-    
+   
     font-family: 'NIXGONFONTS M';
 }
 
 .wrap_input_img {
+    margin-top: 50px;
+    width: 49%;
+    height: 40%;
+    float: left;
+    vertical-align: central;
 
-    height: 300px;
-    float:right;
-    vertical-align:text-top;
-
-    margin-right:150px;
-    border:1px solid, white;
 }
 
 .txt_devreg_img {
@@ -262,7 +262,6 @@ html, body {
     width: 100px;
     height: 50px;
     position: relative;
-    margin-top: 420px;
     border-radius: 0 10px 0 10px;
     transition: all 0.2s;
     font-family: 'NIXGONFONTS M';

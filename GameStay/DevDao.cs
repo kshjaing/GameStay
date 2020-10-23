@@ -1,26 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using GameStay;
+using System.Web;
 
 namespace GameStay
 {
-    public class UserDao
+    
+    public class DevDao
     {
         DBManager dbManager;
-        public UserDao()
-        {
 
-        }
-
-        //로그인 판별
-
-        public bool Authenticate(string id, string pw)
+        public bool DEVAuthenticate(string id, string pw)
         {
             dbManager = new DBManager();
 
@@ -28,7 +22,7 @@ namespace GameStay
             bool isAuthen = false; //리턴값 false - 미인증상태
                                    //뭐리문 이용하여 조건(id, pwd) 에 일치하는 자료를 불러옴. 비밀번호는 MD5로 암호화
                                    //string test = this.GetMd5(pwd);
-            string sQuery = "SELECT * FROM 유저 WHERE 아이디='" + id + "' AND 비밀번호='" + this.GetMD5(pw) + "'";
+            string sQuery = "SELECT * FROM 개발사 WHERE 아이디='" + id + "' AND 비밀번호='" + this.GetMD5(pw) + "'";
 
             //dbman.executeReader() 메서드를 호출하여 결과를 가져옴
             SqlDataReader mReader = dbManager.ExecuteReader(sQuery);
@@ -64,14 +58,13 @@ namespace GameStay
             }
         }
 
-
         //ID 중복검사
         public bool VerifyID(string id)
         {
             dbManager = new DBManager();
 
             bool result = true;
-            string sQuery = "SELECT * FROM 유저 WHERE 아이디 = '" + id + "'";
+            string sQuery = "SELECT * FROM 개발사 WHERE 아이디 = '" + id + "'";
             SqlDataReader myReader = dbManager.ExecuteReader(sQuery);
             if (myReader.Read()) result = false;
             myReader.Close();
@@ -79,39 +72,7 @@ namespace GameStay
             return result;
         }
 
-        //유저 프로필 정보 
-        public UserDo Getprofileimg(string uid)
-        {
-            dbManager = new DBManager();
-
-            string qrySelect = "SELECT 프로필사진 FROM 유저 WHERE 아이디 =  " + "'" + uid + "'";
-
-            SqlDataReader mReader = dbManager.ExecuteReader(qrySelect);
-
-            mReader.Read();
-
-            UserDo udo = new UserDo
-            (
-                mReader["프로필사진"].ToString().TrimEnd()
-            );
-
-            mReader.Close();
-            dbManager.DBClose();
-            return udo;
-        }
-
-        //쿼리 이용한 회원가입
-        public void RegisterUserQry(UserDo uDo)
-        {
-
-            dbManager = new DBManager();
-            string sQuery = "INSERT INTO 유저 (아이디, 비밀번호, 닉네임, 이메일, 프로필사진, 레벨, 등급) VALUES ('" + uDo.Userid + "', '" + this.GetMD5(uDo.Passwd) + "', '" + uDo.Nickname + "', '" + uDo.Email + "', null , 1, 1)";
-            dbManager.ExecuteNonQuery(sQuery);
-            dbManager.DBClose();
-        }
-
-        //저장 프로시저 이용한 회원가입
-        public int RegistUser(UserDo uDo)
+        public int RegistDev(DevDo dDo)
         {
             dbManager = new DBManager();
 
@@ -119,31 +80,35 @@ namespace GameStay
             //프로시저사용시 SqlCommand mCmd = new SqlCommand("procAddUser",dbManager.Open());
             //메소드 처음에 해주기
 
-            SqlCommand mCmd = new SqlCommand("procAddUser", dbManager.Open());
+            SqlCommand mCmd = new SqlCommand("procAddDevAcc", dbManager.Open());
 
             mCmd.CommandType = CommandType.StoredProcedure;
 
 
             SqlParameter param;
             param = new SqlParameter("@아이디", SqlDbType.Char, 12);
-            param.Value = uDo.Userid;
+            param.Value = dDo.Userid;
             mCmd.Parameters.Add(param);
 
             param = new SqlParameter("@비밀번호", SqlDbType.Char, 32);
-            param.Value = this.GetMD5(uDo.Passwd);
+            param.Value = this.GetMD5(dDo.Passwd);
             mCmd.Parameters.Add(param);
 
-            param = new SqlParameter("@닉네임", SqlDbType.NVarChar, 25);
-            param.Value = uDo.Nickname;
+            param = new SqlParameter("@개발사", SqlDbType.NVarChar, 25);
+            param.Value = dDo.Name;
+            mCmd.Parameters.Add(param);
+
+            param = new SqlParameter("@개발사로고", SqlDbType.NChar, 50);
+            //param.Value = uDo.Profileimg;
+            param.Value = dDo.Profileimg;
+            mCmd.Parameters.Add(param);
+
+            param = new SqlParameter("개발사소개", SqlDbType.NVarChar, 150);
+            param.Value = dDo.Devintro;
             mCmd.Parameters.Add(param);
 
             param = new SqlParameter("@이메일", SqlDbType.VarChar, 30);
-            param.Value = uDo.Email;
-            mCmd.Parameters.Add(param);
-
-            param = new SqlParameter("@프로필사진", SqlDbType.NChar, 50);
-            //param.Value = uDo.Profileimg;
-            param.Value = DBNull.Value;
+            param.Value = dDo.Email;
             mCmd.Parameters.Add(param);
 
             SqlParameter paramOut = new SqlParameter("@result", SqlDbType.Int);

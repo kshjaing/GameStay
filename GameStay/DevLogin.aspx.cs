@@ -22,10 +22,11 @@ namespace GameStay
 
         protected void btnDevLogin_OnClick(object sender, EventArgs e)
         {
-            UserDao uDao = new UserDao();
-            if (uDao.DEVAuthenticate(inputID.Value.ToString(), inputPassword.Value.ToString()))
+            DevDao dDao = new DevDao();
+            if (dDao.DEVAuthenticate(inputID.Value.ToString(), inputPassword.Value.ToString()))
             {
                 Session["아이디"] = inputID.Value.ToString();
+                Session["접속경로"] = "DEV";
                 Response.Redirect("Store_main.aspx");
             }
             else

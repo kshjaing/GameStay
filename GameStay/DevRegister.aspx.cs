@@ -20,21 +20,41 @@ namespace GameStay
         }
 
         static bool isIdCheck = false;
-        UserDao uDao;
+        DevDao dDao;
+
+
 
         protected void Register_OnClick(object sender, EventArgs e)
         {
 
-            uDao = new UserDao();
-
-            UserDo uDo = new UserDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString(), inputEmail.Value.ToString());
-
-            if (isIdCheck = uDao.VerifyID(inputID.Value.ToString()))
+            string fname = "";
+            if (uploadImg_dev.HasFile) fname = this.GetFilename(uploadImg_dev.FileName);
+            else
             {
+                return;
+            }
 
+            string fileExt = fname.Substring(fname.LastIndexOf(".")).ToLower();
+            bool isFig = (fileExt == ".jpg" || fileExt == ".gif" || fileExt == ".png" || fileExt == ".bmp" || fileExt == ".jpeg");
+            
+            if (!isFig)
+            {
+                txtRegistCheck.Attributes.Add("style", "visibility: visible");
+                txtRegistCheck.InnerText = "그림 형식의 파일을 선택해 주세요.";
+                return;
+            }
 
-                uDao = new UserDao();
-                uDao.RegistUser(uDo);
+            dDao = new DevDao();
+
+            DevDo dDo = new DevDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString(), fname, txt_explain.Text.ToString(), inputEmail.Value.ToString());
+            //파일 경로
+            string ufname = Server.MapPath(@"Images\Profile\" + dDo.Name.ToString() + fileExt);
+            uploadImg_dev.SaveAs(ufname);
+
+            if (isIdCheck = dDao.VerifyID(inputID.Value.ToString()))
+            {
+                dDao = new DevDao();
+                dDao.RegistDev(dDo);
                 Response.Redirect("SuccessRegist.aspx");
             }
             else if (inputID.Value.Length <= 0)
@@ -62,7 +82,7 @@ namespace GameStay
             {
                 inputEmail.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "개발사 설명을 입력해주세요.";
+                txtRegistCheck.InnerText = "개발사 이메일을 입력해주세요.";
                 return;
             }
             else if (inputNickname.Value.Length <= 0)
@@ -74,10 +94,16 @@ namespace GameStay
             }
             else if (txt_explain.Text.Length <= 0)
             {
-                inputNickname.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
                 txtRegistCheck.InnerText = "개발사 설명을 입력해주세요.";
                 return;
+            }
+            else if (uploadImg_dev.FileName.Length <=0)
+            {
+                txtRegistCheck.Attributes.Add("style", "visibility: visible");
+                txtRegistCheck.InnerText = "개발사 로고를 입력해주세요.";
+                return;
+
             }
             else
             {
@@ -87,6 +113,11 @@ namespace GameStay
                 inputID.Focus();
                 return;
             }
+        }
+
+        private string GetFilename(string path)
+        {
+            return path.Substring(path.LastIndexOf(@"\") + 1);
         }
     }
 }

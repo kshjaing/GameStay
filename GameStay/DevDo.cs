@@ -28,11 +28,11 @@ namespace GameStay
             set { name = value; }
         }
 
-        private string devintr;
-        public string Devintr
+        private string devintro;
+        public string Devintro
         {
-            get { return devintr; }
-            set { devintr = value; }
+            get { return devintro; }
+            set { devintro = value; }
         }
 
         private string profileimg;
@@ -42,18 +42,21 @@ namespace GameStay
             set { profileimg = value; }
         }
 
-        public DevDo(string uid, string pwd, string name)
+        private string email;
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public DevDo(string uid, string pwd, string name, string profimg, string devintro, string email)
         {
             this.userid = uid;
             this.passwd = pwd;
             this.name = name;
-        }
-
-
-        public DevDo(string profimg, string devintr)
-        {
             this.profileimg = profimg;
-            this.devintr = devintr;
+            this.devintro = devintro;
+            this.email = email;
         }
     }
 }

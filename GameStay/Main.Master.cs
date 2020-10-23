@@ -80,8 +80,24 @@ namespace GameStay
         }
         protected void ProfileMenu_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("Profile.aspx");
+            if(Session["아이디"] == null)
+            {
+                Response.Redirect("RequestLogin.aspx");
+            }
+            else if(Session["접속경로"].ToString() == "DEV")
+                {
+                Response.Redirect("DevProfile.aspx");
+            }
+            else if(Session["접속경로"].ToString() == "USER")
+            {
+                Response.Redirect("Profile.aspx");
+            }
             button_profile.Style["background"] = "#85cba5";
+            
+        }
+        public void isDevCheck()
+        {
+            
         }
 
         protected void Login_OnClick(object sender, EventArgs e)

@@ -29,6 +29,7 @@ namespace GameStay
             if (uDao.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString()))
             {
                 Session["아이디"] = inputID.Value.ToString();
+                Session["접속경로"] = "USER";
                 Response.Redirect("Store_main.aspx");
             }
             else

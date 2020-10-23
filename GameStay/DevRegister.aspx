@@ -19,7 +19,7 @@
              </div>
              <div class="login_square">
                  <h1 class="txt_login">개발사 계정등록</h1>
-
+                 <div class="wrap_idpass">
                      <div class="wrap_input_id">
                         <input type="text" class="input_id" placeholder="아이디"
                             runat="server" id="inputID" autocomplete="off"/>
@@ -47,27 +47,29 @@
                             runat="server" id="inputNickname" autocomplete="off"/>
                         <img class="icon_email" src="Images/Icon/Login/Icon_Email.png" />
                      </div>                     
-
+                 </div>
                  <div class="wrap_input_img">
                      <p class="txt_devreg_img">개발사 이미지 등록</p>
                      <asp:Image ID="Image1" runat="server" ImageUrl="FileUpload1.text" CssClass="img_profile" />
                      <br />
-                     <asp:FileUpload ID="FileUpload1" runat="server" CssClass="txt_devreg_imgselect" />
+                     <asp:FileUpload ID="uploadImg_dev" runat="server" CssClass="txt_devreg_imgselect" />
                  </div>
+
                  <br /><br /><br />
 
                      <div class="wrap_input_explain">
                         
                          <asp:TextBox ID="txt_explain" runat="server" CssClass="input_explain" TextMode="MultiLine" placeholder="개발사 설명" autocomplete="off"></asp:TextBox>
-                        <img class="icon_email" src="Images/Icon/Login/Icon_Email.png" />
-                     </div>
-                     
-                 
-<div>
-<a runat="server" id="txtRegistCheck" class="txt_check" draggable="false" >
+                         <br />
+                         <a runat="server" id="txtRegistCheck" class="txt_check" draggable="false" >
                             
                         </a>
                      </div>
+                     
+                 
+
+
+                     
                  <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
              </div>
         </div>
