@@ -168,6 +168,20 @@ namespace GameStay
             return count;
         }
 
+        //특정게임의 대표영상링크 추출 메서드
+        public string GetMainVideoLink(string gametitle)
+        {
+            String querystring = "SELECT 대표영상링크 FROM 게임타이틀 WHERE 영어게임명 = '" + gametitle + "'";
+            String link = "";
+            SqlCommand command = new SqlCommand(querystring, myConn);
+            SqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader.Read())
+            {
+                link = dataReader["대표영상링크"].ToString();
+            }
+            return link;
+        }
+
 
 
         //--------------------------------------------------------------------------------------------------
