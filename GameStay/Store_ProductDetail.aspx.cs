@@ -55,7 +55,8 @@ namespace GameStay
         protected void Page_PreRender(object sender, EventArgs e)
         {
             mainVidLink = GetMainVideo();
-
+            Control control = FindControl("main_video") as System.Web.UI.HtmlControls.HtmlGenericControl;
+            
         }
 
 
