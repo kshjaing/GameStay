@@ -18,6 +18,7 @@ namespace GameStay
         SqlDataAdapter detailImageAdapter;
         SqlDataAdapter detailVideoAdapter;
         string gameTitle;
+        string mainVidLink;
         int mediaCount;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -48,6 +49,12 @@ namespace GameStay
             detailVideoRepeater.DataBind();
 
             dbManager.DBClose();
+
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            mainVidLink = GetMainVideo();
 
         }
 

@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
+
         function onClickPlaceholder(link) {
             document.getElementById("img_screenshot").style.display = "none";
             document.getElementById("main_video").src = link;
@@ -30,7 +31,7 @@
             <div class="div_main_image">
                 <iframe width="750" height="422" src="empty"
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen style="display: block" id="main_video">
+                        allowfullscreen style="display: block" id="main_video" runat="server">
                 </iframe>
                 <img src="empty" width="750" height="422" style="display: none" id="img_screenshot"/>
             </div>
