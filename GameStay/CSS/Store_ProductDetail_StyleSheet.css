@@ -82,7 +82,7 @@ html, body {
 
     .div_wrap_small_images::-webkit-scrollbar {
         height: 10px;
-        background: transparent;
+        background: #1B1C1E;
     }
 
     .div_wrap_small_images::-webkit-scrollbar-thumb {
