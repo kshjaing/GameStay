@@ -41,8 +41,8 @@ html, body {
     height: 290px;
     position: relative;
     
-    margin-left: 70px;
-    margin-top: 90px;
+    margin-left: 100px;
+    margin-top: 40px;
 }
 
 .img_profile {
@@ -110,7 +110,7 @@ html, body {
     height: 480px;
     position: relative;
     vertical-align: central;
-    margin-left: 70px;
+    margin-left: 100px;
     margin-top: 10px;
 }
 
@@ -158,7 +158,7 @@ html, body {
     height: 460px;
     position: relative;
     vertical-align: central;
-    margin-left: 70px;
+    margin-left: 100px;
     margin-top: 50px;
 }
 
