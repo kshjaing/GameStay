@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=14" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=7" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -71,7 +71,7 @@
             </div>
         </div>
 
-
+        <div class="div_wrap_searchbutton"></div>
         <!--게임정보파트-->
         <div class="wrap_total_infobox">
             <asp:Repeater ID="detailTitleRepeater3" runat="server">
@@ -94,10 +94,12 @@
                </ItemTemplate>
             </asp:Repeater>
         </div>
-
         <div class="div_empty"></div>
 
         <!--게임소개 및 구매파트-->
         <p class="p_purchase">게임 구매</p>
+        <div class="div_wrap_total_purchase">
+
+        </div>
     </div>
 </asp:Content>
