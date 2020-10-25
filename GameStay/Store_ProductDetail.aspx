@@ -124,24 +124,24 @@
             <div class="div_wrap_minimun">
               <asp:Repeater ID="detailMinRequireRepeater" runat="server">
                 <ItemTemplate>
-                   <p class="p_require_title">최소</p> <br />
-                   <p class="p_require_os"><%# Eval("운영체제") %></p><br />
-                   <p class="p_require_cpu"><%# Eval("CPU") %></p><br />
-                   <p class="p_require_ram"><%# Eval("메모리") %></p><br />
-                   <p class="p_require_vga"><%# Eval("그래픽카드") %></p><br />
-                   <p class="p_require_hdd"><%# Eval("저장공간") %></p>
+                   <p class="p_require_title">최소사양</p> <br />
+                   <p class="p_require1">운영체제: </p><p class="p_require2 p_require_os"><%# Eval("운영체제") %></p><br /><br />
+                   <p class="p_require1">CPU: </p><p class="p_require2 p_require_cpu"><%# Eval("CPU") %></p><br /><br />
+                   <p class="p_require1">그래픽카드: </p><p class="p_require2 p_require_vga"><%# Eval("그래픽카드") %></p><br /><br />
+                   <p class="p_require1">메모리: </p><p class="p_require2 p_require_ram"><%# Eval("메모리") %></p><br /><br />
+                   <p class="p_require1">저장공간: </p><p class="p_require2 p_require_hdd"><%# Eval("저장공간") %></p>
                 </ItemTemplate>
               </asp:Repeater>
             </div>
             <div class="div_wrap_recommend">
                 <asp:Repeater ID="detailRecRequireRepeater" runat="server">
                     <ItemTemplate>
-                        <p class="p_require_title">권장</p>
-                        <p class="p_require_os"><%# Eval("운영체제") %></p><br />
-                        <p class="p_require_cpu"><%# Eval("CPU") %></p><br />
-                        <p class="p_require_ram"><%# Eval("메모리") %></p><br />
-                        <p class="p_require_vga"><%# Eval("그래픽카드") %></p><br />
-                        <p class="p_require_hdd"><%# Eval("저장공간") %></p>
+                        <p class="p_require_title">권장사양</p> <br />
+                        <p class="p_require1">운영체제: </p><p class="p_require2 p_require_os"><%# Eval("운영체제") %></p><br /><br />
+                        <p class="p_require1">CPU: </p><p class="p_require2 p_require_cpu"><%# Eval("CPU") %></p><br /><br />
+                        <p class="p_require1">그래픽카드: </p><p class="p_require2 p_require_vga"><%# Eval("그래픽카드") %></p><br /><br />
+                        <p class="p_require1">메모리: </p><p class="p_require2 p_require_ram"><%# Eval("메모리") %></p><br /><br />
+                        <p class="p_require1">저장공간: </p><p class="p_require2 p_require_hdd"><%# Eval("저장공간") %></p>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>

@@ -295,6 +295,7 @@ html, body {
     height: 400px;
     background: #1B1C1E;
     float: left;
+    padding-right: 40px;
 }
 
 .div_wrap_minimun {
@@ -312,9 +313,30 @@ html, body {
 .p_require_title {
     color: #FFFFFF;
     font-family: 'NIXGONFONTS B 2.0';
-    font-size: 20pt;
+    font-size: 22pt;
+    margin-bottom: 0;
     margin-left: 40px;
     margin-top: 40px;
+    user-select: none;
+}
+
+.p_require1 {
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    margin: 0;
+    margin-left: 40px;
+    user-select: none;
+}
+
+.p_require2 {
+    color: #888888;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    margin: 0;
+    float: left;
+    margin-left: 40px;
+    user-select: none;
 }
 
 
