@@ -192,7 +192,7 @@ html, body {
 
 .p_info1 {
     color: #48494d;
-    font-family: HangeulNuriB;
+    font-family: 'NIXGONFONTS B 2.0';
     font-size: 12pt;
     margin-top: 0;
     margin-bottom: 5px;
@@ -201,7 +201,7 @@ html, body {
 
 .p_info2 {
     color: #b3b3b3;
-    font-family: HangeulNuriB;
+    font-family: 'NIXGONFONTS B 2.0';
     font-size: 12pt;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -209,7 +209,7 @@ html, body {
 }
 
 .p_info_rating {
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 .div_empty {
