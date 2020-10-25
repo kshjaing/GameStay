@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=13" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=14" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -25,9 +25,11 @@
             <asp:Repeater runat="server" ID="detailTitleRepeater1">
                 <ItemTemplate>
                     <p class="p_title"><%# Eval("게임명") %></p>
-                    <p class="p_title" id="text"></p>
                 </ItemTemplate>
             </asp:Repeater>
+
+
+            <!--메인이미지 파트-->
             <div class="div_main_image">
                 <asp:Repeater ID="detailTitleRepeater2" runat="server">
                     <ItemTemplate>
@@ -41,6 +43,8 @@
                 <img src="empty" width="750" height="422" style="display: none" id="img_screenshot"/>
             </div>
             
+
+            <!--작은 크기의 미리보기 이미지 파트-->
             <div class="div_wrap_small_images" id="div_wrap_small_images" runat="server">
                 <div class="div_wrap_small_boxes" id="div_wrap_small_boxes" runat="server">
                     <asp:Repeater runat="server" ID="detailVideoRepeater" OnDataBinding="divSmallImages_Resize">
@@ -65,21 +69,35 @@
                 </asp:Repeater>
                 </div>
             </div>
-            
-            
-            
         </div>
+
+
+        <!--게임정보파트-->
         <div class="wrap_total_infobox">
-            <div class="div_infobox_image">
-                <asp:Repeater ID="detailTitleRepeater3" runat="server">
-                    <ItemTemplate>
-                        <img src='<%# Eval("이미지4대3") %>' class="img_title"/>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </div>
-            <div class="div_rating"></div>
-            <div class="div_releasedate"></div>
-            <div class="div_developer"></div>
+            <asp:Repeater ID="detailTitleRepeater3" runat="server">
+               <ItemTemplate>
+                   <div class="div_infobox_image">
+                      <img src='<%# Eval("이미지4대3") %>' class="img_title"/>
+                   </div>
+                   <div class="div_info div_rating">
+                       <p class="p_info1 p_info_rating">유저평점</p>
+                       <p class="p_info2"><%# Eval("평점") %></p>
+                   </div>
+                   <div class="div_info div_releasedate">
+                       <p class="p_info1">출시일</p>
+                       <p class="p_info2"><%# DataBinder.Eval(Container.DataItem, "출시일", "{0:D}") %></p>
+                   </div>
+                   <div class="div_info div_developer">
+                       <p class="p_info1">개발사</p>
+                       <p class="p_info2"><%# Eval("개발사") %></p>
+                   </div>
+               </ItemTemplate>
+            </asp:Repeater>
         </div>
+
+        <div class="div_empty"></div>
+
+        <!--게임소개 및 구매파트-->
+        <p class="p_purchase">게임 구매</p>
     </div>
 </asp:Content>

@@ -178,23 +178,50 @@ html, body {
     position: relative;
 }
 
-.div_rating {
+.div_info {
     width: 300px;
-    height: 64px;
+    height: 60px;
     position: relative;
+}
+
+.p_info1 {
+    color: #48494d;
+    font-family: HangeulNuriB;
+    font-size: 12pt;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.p_info2 {
+    color: #b3b3b3;
+    font-family: HangeulNuriB;
+    font-size: 12pt;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
+
+.p_info_rating {
+    margin-top: 8px;
+}
+
+.div_empty {
+    width: 300px;
+    height: 208px;
     background: yellow;
+    position: relative;
+    float: left;
 }
 
-.div_releasedate {
-    width: 300px;
-    height: 64px;
-    position: relative;
-    background: blue;
-}
 
-.div_developer {
-    width: 300px;
-    height: 64px;
+
+
+.p_purchase {
+    color: #FFFFFF;
+    font-size: 25pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin-top: 100px;
+    margin-bottom: 20px;
     position: relative;
-    background: green;
 }
