@@ -25,23 +25,20 @@
             <asp:Repeater runat="server" ID="detailTitleRepeater1">
                 <ItemTemplate>
                     <p class="p_title"><%# Eval("게임명") %></p>
+
+                    <!--메인이미지 파트-->
+                    <div class="div_main_image">
+                       <iframe width="750" height="422" src='<%# Eval("대표영상링크") %>'
+                               frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                               allowfullscreen style="display: block" id="main_video">
+                       </iframe>
+                       <img src="empty" width="750" height="422" style="display: none" id="img_screenshot"/>
+                    </div>
                 </ItemTemplate>
             </asp:Repeater>
 
 
-            <!--메인이미지 파트-->
-            <div class="div_main_image">
-                <asp:Repeater ID="detailTitleRepeater2" runat="server">
-                    <ItemTemplate>
-                        <iframe width="750" height="422" src='<%# Eval("대표영상링크") %>'
-                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen style="display: block" id="main_video">
-                        </iframe>
-                    </ItemTemplate>
-                </asp:Repeater>
-                
-                <img src="empty" width="750" height="422" style="display: none" id="img_screenshot"/>
-            </div>
+            
             
 
             <!--작은 크기의 미리보기 이미지 파트-->
@@ -71,11 +68,21 @@
             </div>
         </div>
 
-        <div class="div_wrap_searchbutton"></div>
+
+        
+
+
+
+
         <!--게임정보파트-->
-        <div class="wrap_total_infobox">
-            <asp:Repeater ID="detailTitleRepeater3" runat="server">
-               <ItemTemplate>
+        <asp:Repeater ID="detailTitleRepeater2" runat="server">
+            <ItemTemplate>
+                <!--검색기능(추후추가예정)-->
+                <div class="div_wrap_searchbutton"></div>
+
+
+
+                <div class="wrap_total_infobox">
                    <div class="div_infobox_image">
                       <img src='<%# Eval("이미지4대3") %>' class="img_title"/>
                    </div>
@@ -91,15 +98,58 @@
                        <p class="p_info1">개발사</p>
                        <p class="p_info2"><%# Eval("개발사") %></p>
                    </div>
-               </ItemTemplate>
-            </asp:Repeater>
-        </div>
-        <div class="div_empty"></div>
+               </div>
+               <div class="div_empty"></div>
 
-        <!--게임소개 및 구매파트-->
-        <p class="p_purchase">게임 구매</p>
-        <div class="div_wrap_total_purchase">
+               <!--게임소개 및 구매파트-->
+               <p class="p_purchase">게임 구매</p>
+               <div class="div_wrap_total_purchase">
+                   <div class="div_wrap_purchase_text">
+                       <p class="p_purchase_title"><%# Eval("게임명") %></p>
+                       <p class="p_purchase_introduce_text"><%# Eval("게임소개") %></p>
+                   </div>
+                   <div class="div_wrap_purchase_buttons">
 
+                   </div>
+               </div>
+            </ItemTemplate>
+        </asp:Repeater>
+
+        <!--시스템 요구사양파트-->
+        
+
+            
+        <p class="p_requirement">시스템 요구사양</p>
+        <div class="div_wrap_total_requirement">
+            <div class="div_wrap_minimun">
+              <asp:Repeater ID="detailMinRequireRepeater" runat="server">
+                <ItemTemplate>
+                   <p class="p_require_title">최소</p> <br />
+                   <p class="p_require_os"><%# Eval("운영체제") %></p><br />
+                   <p class="p_require_cpu"><%# Eval("CPU") %></p><br />
+                   <p class="p_require_ram"><%# Eval("메모리") %></p><br />
+                   <p class="p_require_vga"><%# Eval("그래픽카드") %></p><br />
+                   <p class="p_require_hdd"><%# Eval("저장공간") %></p>
+                </ItemTemplate>
+              </asp:Repeater>
+            </div>
+            <div class="div_wrap_recommend">
+                <asp:Repeater ID="detailRecRequireRepeater" runat="server">
+                    <ItemTemplate>
+                        <p class="p_require_title">권장</p>
+                        <p class="p_require_os"><%# Eval("운영체제") %></p><br />
+                        <p class="p_require_cpu"><%# Eval("CPU") %></p><br />
+                        <p class="p_require_ram"><%# Eval("메모리") %></p><br />
+                        <p class="p_require_vga"><%# Eval("그래픽카드") %></p><br />
+                        <p class="p_require_hdd"><%# Eval("저장공간") %></p>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
         </div>
+
+
+
+
+       <div class="footer"></div>
     </div>
 </asp:Content>

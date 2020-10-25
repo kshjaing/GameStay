@@ -17,18 +17,22 @@ namespace GameStay
         SqlDataAdapter detailTitleAdapter;
         SqlDataAdapter detailImageAdapter;
         SqlDataAdapter detailVideoAdapter;
+        SqlDataAdapter detailMinRequireAdapter;
+        SqlDataAdapter detailRecRequireAdapter;
         string gameTitle;
-        string mainVidLink;
         int mediaCount;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             dbManager = new DBManager();
+            //주소창에서 영어게임명 추출
             gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") +  1);
 
             detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
             detailVideoAdapter = dbManager.SetGameIntroVideoAdapter(gameTitle);
+            detailMinRequireAdapter = dbManager.SetMinReqAdapter(gameTitle);
+            detailRecRequireAdapter = dbManager.SetRecReqAdapter(gameTitle);
 
             DataTable titleDT = new DataTable();
             detailTitleAdapter.Fill(titleDT);
@@ -36,8 +40,6 @@ namespace GameStay
             detailTitleRepeater1.DataBind();
             detailTitleRepeater2.DataSource = titleDT;
             detailTitleRepeater2.DataBind();
-            detailTitleRepeater3.DataSource = titleDT;
-            detailTitleRepeater3.DataBind();
 
             DataTable imageDT = new DataTable();
             detailImageAdapter.Fill(imageDT);
@@ -53,7 +55,16 @@ namespace GameStay
             HtmlControl mainframe = (HtmlControl)this.FindControl("main_video");
             mainframe.Attributes["src"] = GetMainVideo();*/
 
-            
+
+            DataTable minreqDT = new DataTable();
+            detailMinRequireAdapter.Fill(minreqDT);
+            detailMinRequireRepeater.DataSource = minreqDT;
+            detailMinRequireRepeater.DataBind();
+
+            DataTable recreqDT = new DataTable();
+            detailRecRequireAdapter.Fill(recreqDT);
+            detailRecRequireRepeater.DataSource = recreqDT;
+            detailRecRequireRepeater.DataBind();
 
             dbManager.DBClose();
 

@@ -165,6 +165,7 @@ namespace GameStay
             {
                 count = Convert.ToInt32(dataReader["스샷영상개수"]);
             }
+            dataReader.Close();
             return count;
         }
 
@@ -182,6 +183,20 @@ namespace GameStay
             return link;
         }
 
+
+        //특정게임의 최소요구사양 어댑터
+        public SqlDataAdapter SetMinReqAdapter(string gametitle)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM 최소사양 WHERE 영어게임명 = '" + gametitle + "'", myConn);
+            return adapter;
+        }
+
+        //특정게임의 권장사양 어댑터
+        public SqlDataAdapter SetRecReqAdapter(string gametitle)
+        {
+            SqlDataAdapter adpater = new SqlDataAdapter("SELECT * FROM 권장사양 WHERE 영어게임명 = '" + gametitle + "'", myConn);
+            return adpater;
+        }
 
 
         //--------------------------------------------------------------------------------------------------

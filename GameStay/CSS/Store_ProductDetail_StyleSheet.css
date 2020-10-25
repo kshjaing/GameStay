@@ -52,6 +52,7 @@ html, body {
     font-family: 'NIXGONFONTS B 2.0';
     margin: 0;
     margin-bottom: 20px;
+    user-select: none;
 }
 
 .div_main_image {
@@ -197,6 +198,7 @@ html, body {
     margin-top: 0;
     margin-bottom: 5px;
     margin-left: 20px;
+    user-select: none;
 }
 
 .p_info2 {
@@ -206,10 +208,12 @@ html, body {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 20px;
+    user-select: none;
 }
 
 .p_info_rating {
     margin-top: 12px;
+    user-select: none;
 }
 
 .div_empty {
@@ -225,16 +229,101 @@ html, body {
 
 .p_purchase {
     color: #FFFFFF;
-    font-size: 25pt;
+    font-size: 20pt;
     font-family: 'NIXGONFONTS B 2.0';
     margin-top: 100px;
     margin-bottom: 20px;
     float: left;
+    user-select: none;
 }
 
 .div_wrap_total_purchase {
     width: 100%;
-    height: 150px;
+    height: 180px;
     background: #1B1C1E;
+    float: left;
+}
+
+.div_wrap_purchase_text {
+    width: 800px;
+    height: 100%;
+    float: left;
+}
+
+.p_purchase_title {
+    color: #FFFFFF;
+    font-size: 25pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+    user-select: none;
+}
+
+.p_purchase_introduce_text {
+    color: #888888;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    padding-left: 30px;
+    padding-right: 30px;
+    user-select: none;
+}
+
+.div_wrap_purchase_buttons {
+    width: 300px;
+    height: 100%;
+    float:left;
+    background: green;
+}
+
+
+
+
+
+.p_requirement {
+    color: #FFFFFF;
+    font-size: 20pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin-top: 80px;
+    margin-bottom: 20px;
+    float: left;
+    user-select: none;
+}
+
+.div_wrap_total_requirement {
+    width: 100%;
+    height: 400px;
+    background: #1B1C1E;
+    float: left;
+}
+
+.div_wrap_minimun {
+    width: 550px;
+    height: 100%;
+    float: left;
+}
+
+.div_wrap_recommend {
+    width: 550px;
+    height: 100%;
+    float: left;
+}
+
+.p_require_title {
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 20pt;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+
+
+
+
+
+.footer {
+    width: 100%;
+    height: 100px;
     float: left;
 }
