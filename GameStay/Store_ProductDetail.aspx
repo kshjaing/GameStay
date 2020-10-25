@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=12" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=13" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -22,17 +22,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
         <div class="wrap_total_images">
-            <asp:Repeater runat="server" ID="detailTitleRepeater">
+            <asp:Repeater runat="server" ID="detailTitleRepeater1">
                 <ItemTemplate>
                     <p class="p_title"><%# Eval("게임명") %></p>
                     <p class="p_title" id="text"></p>
                 </ItemTemplate>
             </asp:Repeater>
             <div class="div_main_image">
-                <iframe width="750" height="422" src="empty"
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen style="display: block" id="main_video">
-                </iframe>
+                <asp:Repeater ID="detailTitleRepeater2" runat="server">
+                    <ItemTemplate>
+                        <iframe width="750" height="422" src='<%# Eval("대표영상링크") %>'
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen style="display: block" id="main_video">
+                        </iframe>
+                    </ItemTemplate>
+                </asp:Repeater>
+                
                 <img src="empty" width="750" height="422" style="display: none" id="img_screenshot"/>
             </div>
             
@@ -50,7 +55,7 @@
                        </div>
                    </ItemTemplate>
                 </asp:Repeater>
-                <asp:Repeater runat="server" ID="detailImageRepeater" OnDataBinding="SmallImage_OnBind">
+                <asp:Repeater runat="server" ID="detailImageRepeater">
                    <ItemTemplate>
                        <div class="div_wrap_screenshot" id="div_wrap_screenshot" runat="server">
                            <img src='<%# Eval("스크린샷") %>' class="img_screenshot" onclick="onClickScreenshot(this);"
@@ -66,8 +71,15 @@
         </div>
         <div class="wrap_total_infobox">
             <div class="div_infobox_image">
-                
+                <asp:Repeater ID="detailTitleRepeater3" runat="server">
+                    <ItemTemplate>
+                        <img src='<%# Eval("이미지4대3") %>' class="img_title"/>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
+            <div class="div_rating"></div>
+            <div class="div_releasedate"></div>
+            <div class="div_developer"></div>
         </div>
     </div>
 </asp:Content>

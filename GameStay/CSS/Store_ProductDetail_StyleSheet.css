@@ -62,9 +62,6 @@ html, body {
     position: relative;
 }
 
-.iframe {
-
-}
 
 .img_main {
     width: 750px;
@@ -154,6 +151,12 @@ html, body {
     position: relative;
 }
 
+
+
+
+
+
+
 .wrap_total_infobox {
     width: 300px;
     height: 422px;
@@ -161,4 +164,37 @@ html, body {
     float: left;
     margin-top: 105px;
     position: relative;
+}
+
+.div_infobox_image {
+    width: 300px;
+    height: auto;
+    position: relative;
+}
+
+.img_title {
+    width: 300px;
+    height: auto;
+    position: relative;
+}
+
+.div_rating {
+    width: 300px;
+    height: 64px;
+    position: relative;
+    background: yellow;
+}
+
+.div_releasedate {
+    width: 300px;
+    height: 64px;
+    position: relative;
+    background: blue;
+}
+
+.div_developer {
+    width: 300px;
+    height: 64px;
+    position: relative;
+    background: green;
 }

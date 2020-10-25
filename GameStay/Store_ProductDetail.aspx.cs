@@ -30,13 +30,14 @@ namespace GameStay
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
             detailVideoAdapter = dbManager.SetGameIntroVideoAdapter(gameTitle);
 
-            
-
-
             DataTable titleDT = new DataTable();
             detailTitleAdapter.Fill(titleDT);
-            detailTitleRepeater.DataSource = titleDT;
-            detailTitleRepeater.DataBind();
+            detailTitleRepeater1.DataSource = titleDT;
+            detailTitleRepeater1.DataBind();
+            detailTitleRepeater2.DataSource = titleDT;
+            detailTitleRepeater2.DataBind();
+            detailTitleRepeater3.DataSource = titleDT;
+            detailTitleRepeater3.DataBind();
 
             DataTable imageDT = new DataTable();
             detailImageAdapter.Fill(imageDT);
@@ -48,17 +49,15 @@ namespace GameStay
             detailVideoRepeater.DataSource = videoDT;
             detailVideoRepeater.DataBind();
 
+            /*
+            HtmlControl mainframe = (HtmlControl)this.FindControl("main_video");
+            mainframe.Attributes["src"] = GetMainVideo();*/
+
+            
+
             dbManager.DBClose();
 
         }
-
-        protected void Page_PreRender(object sender, EventArgs e)
-        {
-            mainVidLink = GetMainVideo();
-            Control control = FindControl("main_video") as System.Web.UI.HtmlControls.HtmlGenericControl;
-            
-        }
-
 
         public void divSmallImages_Resize(object sender, EventArgs e)
         {
@@ -68,16 +67,6 @@ namespace GameStay
             div_wrap_small_boxes.Style["width"] = 187.5 * mediaCount + 4 * mediaCount + "px";
         }
 
-        public void SmallImage_OnBind(object sender, EventArgs e)
-        {
-        }
 
-        public string GetMainVideo()
-        {
-            dbManager = new DBManager();
-            String link;
-            link = dbManager.GetMainVideoLink(gameTitle);
-            return link;
-        }
     }
 }
