@@ -51,7 +51,8 @@
                                onclick='<%# String.Format("onClickPlaceholder(\"{0}\");", Eval("영상링크").ToString()) %>'
                                 id="img_placeholder"/>
                            <div class="div_wrap_playbutton">
-                               <img src="Images/Img_Playbutton.png" class="img_playbutton"/>
+                               <img src="Images/Img_Playbutton.png" class="img_playbutton"
+                                   onclick='<%# String.Format("onClickPlaceholder(\"{0}\");", Eval("영상링크").ToString()) %>'/>
                            </div>
                        </div>
                    </ItemTemplate>
