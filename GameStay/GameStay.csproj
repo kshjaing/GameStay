@@ -87,6 +87,10 @@
     <Content Include="Images\Button\Arrow_Left.png" />
     <Content Include="Images\Button\Arrow_Right_Hover.png" />
     <Content Include="Images\Button\Arrow_Right.png" />
+    <Content Include="Images\GameIntroImages\IntroImage_Cyberpunk2077_1.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_Cyberpunk2077_2.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_Cyberpunk2077_3.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_Cyberpunk2077_4.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman1.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman2.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman3.jpg" />
@@ -150,7 +154,8 @@
     <Content Include="Images\Img_Playbutton.png" />
     <Content Include="Images\Logo_GameStay.png" />
     <Content Include="Images\Menu\Menu_Select_BG.png" />
-    <Content Include="Images\PlaceholderImages\PlaceholderImage_Cyberpunk2077.jpg" />
+    <Content Include="Images\PlaceholderImages\PlaceholderImage_Cyberpunk2077_1.jpg" />
+    <Content Include="Images\PlaceholderImages\PlaceholderImage_Cyberpunk2077_2.jpg" />
     <Content Include="Images\PlaceholderImages\PlaceholderImage_DetroitBecomeHuman.jpg" />
     <Content Include="Images\Profile\Default_Profile.png" />
     <Content Include="Images\Profile\Profile_Mongkka.png" />

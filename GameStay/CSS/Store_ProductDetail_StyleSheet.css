@@ -254,8 +254,8 @@ html, body {
     color: #FFFFFF;
     font-size: 25pt;
     font-family: 'NIXGONFONTS B 2.0';
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 40px;
+    margin-left: 40px;
     margin-bottom: 0px;
     user-select: none;
 }
@@ -264,7 +264,7 @@ html, body {
     color: #888888;
     font-size: 12pt;
     font-family: 'NIXGONFONTS B 2.0';
-    padding-left: 30px;
+    padding-left: 40px;
     padding-right: 30px;
     user-select: none;
 }
