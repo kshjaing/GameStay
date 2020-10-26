@@ -32,6 +32,10 @@ html, body {
     overflow: hidden;
 }
 
+.a_login_check {
+    visibility: hidden;
+    color: red;
+}
 
 .div_wrap_logo {
     width: 100%;

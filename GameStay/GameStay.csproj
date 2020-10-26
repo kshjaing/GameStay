@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="Community.aspx" />
     <Content Include="CSS\DevLogin_StyleSheet.css" />
+    <Content Include="CSS\DevProfile_StyleSheet.css" />
+    <Content Include="CSS\DevRegister_StyleSheet.css" />
     <Content Include="CSS\Login_StyleSheet.css" />
     <Content Include="CSS\MasterPage_StyleSheet.css" />
     <Content Include="CSS\Profile_StyleSheet.css" />
@@ -79,6 +81,8 @@
     <Content Include="DevLogin.aspx" />
     <Content Include="Images\Game4vs3Images\4vs3_Cyberpunk2077.jpg" />
     <Content Include="Images\Game4vs3Images\4vs3_DetroitBecomeHuman.jpg" />
+    <Content Include="DevProfile.aspx" />
+    <Content Include="DevRegister.aspx" />
     <Content Include="Images\Background\Background.png" />
     <Content Include="Images\Background\BG_Anthem.jpg" />
     <Content Include="Images\Background\BG_Cog.jpg" />
@@ -179,12 +183,28 @@
       <DependentUpon>Community.aspx</DependentUpon>
     </Compile>
     <Compile Include="DBManager.cs" />
+    <Compile Include="DevDao.cs" />
+    <Compile Include="DevDo.cs" />
     <Compile Include="DevLogin.aspx.cs">
       <DependentUpon>DevLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DevLogin.aspx.designer.cs">
       <DependentUpon>DevLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DevProfile.aspx.cs">
+      <DependentUpon>DevProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevProfile.aspx.designer.cs">
+      <DependentUpon>DevProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DevRegister.aspx.cs">
+      <DependentUpon>DevRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevRegister.aspx.designer.cs">
+      <DependentUpon>DevRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="Library.aspx.cs">
       <DependentUpon>Library.aspx</DependentUpon>

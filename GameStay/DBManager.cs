@@ -229,5 +229,19 @@ namespace GameStay
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.게임명 = 거래목록.게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3;", myConn);
             return dataAdapter;
         }
+        
+        //유저 정보
+        public SqlDataAdapter SetUserInfo(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 유저 WHERE 아이디 =  " + "'" + uid + "'", myConn);
+            return dataAdapter;
+        }
+
+        //개발사 정보
+        public SqlDataAdapter SetDevInfo(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 개발사 WHERE 아이디 =  " + "'" + uid + "'", myConn);
+            return dataAdapter;
+        }
     }
 }
