@@ -34,22 +34,18 @@ namespace GameStay
                 return;
             }
 
+            fname = "~/Images/Profile/" + inputNickname.Value.ToString() + ".jpg";
+
             string fileExt = fname.Substring(fname.LastIndexOf(".")).ToLower();
-            bool isFig = (fileExt == ".jpg" || fileExt == ".gif" || fileExt == ".png" || fileExt == ".bmp" || fileExt == ".jpeg");
-            
-            if (!isFig)
-            {
-                txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "그림 형식의 파일을 선택해 주세요.";
-                return;
-            }
 
             dDao = new DevDao();
 
             DevDo dDo = new DevDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString(), fname, txt_explain.Text.ToString(), inputEmail.Value.ToString());
             //파일 경로
-            string ufname = Server.MapPath(@"Images\Profile\" + dDo.Name.ToString() + fileExt);
-            uploadImg_dev.SaveAs(ufname);
+            
+                string ufname = Server.MapPath(@"~\Images\Profile\" + dDo.Name.ToString() + fileExt);
+                uploadImg_dev.SaveAs(ufname);
+            
 
             if (isIdCheck = dDao.VerifyID(inputID.Value.ToString()))
             {

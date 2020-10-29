@@ -16,86 +16,62 @@ namespace GameStay
         {
             if (!IsPostBack)
             {
-                if (Request["아이디"] != null)
+                if (Session["아이디"] == null)
                 {
-                    string uid = Request["아이디"];
-
-                    userDo = (new UserDao()).Getprofileimg(uid);
-                    if (userDo.Profileimg.Trim() != "")
-                    {
-                        img_profile.Src = userDo.Profileimg;
-                    }
-                    else
-                    {
-                        img_profile.Src = "/Images/Profile/Default_Profile.png";
-                    }
-                    DBManager dbManager = new DBManager();
-                    SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(uid);
-                    SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(uid);
-                    SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(uid);
-                    SqlDataAdapter userinfo = dbManager.SetUserInfo(uid);
-
-                    DataTable dt1 = new DataTable();
-                    recentAdapter1.Fill(dt1);
-                    RecentGame1.DataSource = dt1;
-                    RecentGame1.DataBind();
-
-                    DataTable dt2 = new DataTable();
-                    recentAdapter2.Fill(dt2);
-                    RecentGame2.DataSource = dt2;
-                    RecentGame2.DataBind();
-
-                    DataTable dt3 = new DataTable();
-                    recentAdapter3.Fill(dt3);
-                    RecentGame3.DataSource = dt3;
-                    RecentGame3.DataBind();
-
-                    DataTable dt4 = new DataTable();
-                    userinfo.Fill(dt4);
-                    UserInfo.DataSource = dt4;
-                    UserInfo.DataBind();
+                    Response.Redirect("RequestLogin.aspx");
                 }
                 else
                 {
-                    btn_profile_edit.Attributes.Add("style", "visibility: visible");
-                    string uid = Session["아이디"].ToString();
-                    userDo = (new UserDao()).Getprofileimg(uid);
-                    if (userDo.Profileimg.Trim() != "")
+                    if (Request["id"] != null)
                     {
-                        img_profile.Src = userDo.Profileimg;
+
+                        userDo = (new UserDao()).Getprofileimg(Request["id"].ToString().TrimEnd());
+                        if (userDo.Profileimg.Trim() != "")
+                        {
+                            img_profile.Src = userDo.Profileimg;
+                        }
+                        else
+                        {
+                            img_profile.Src = "/Images/Profile/Default_Profile.png";
+                        }
+                        if(Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
+                        {
+                            btn_profile_edit.Attributes.Add("style", "visibility: visible");
+                        }
+                        else
+                        {
+                            btn_profile_edit.Attributes.Add("style", "visibility: hidden");
+                        }
+                        DBManager dbManager = new DBManager();
+                        SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(Request["id"].ToString().TrimEnd());
+                        SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(Request["id"].ToString().TrimEnd());
+                        SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(Request["id"].ToString().TrimEnd());
+                        SqlDataAdapter userinfo = dbManager.SetUserInfo(Request["id"].ToString().TrimEnd());
+
+                        DataTable dt1 = new DataTable();
+                        recentAdapter1.Fill(dt1);
+                        RecentGame1.DataSource = dt1;
+                        RecentGame1.DataBind();
+
+                        DataTable dt2 = new DataTable();
+                        recentAdapter2.Fill(dt2);
+                        RecentGame2.DataSource = dt2;
+                        RecentGame2.DataBind();
+
+                        DataTable dt3 = new DataTable();
+                        recentAdapter3.Fill(dt3);
+                        RecentGame3.DataSource = dt3;
+                        RecentGame3.DataBind();
+
+                        DataTable dt4 = new DataTable();
+                        userinfo.Fill(dt4);
+                        UserInfo.DataSource = dt4;
+                        UserInfo.DataBind();
                     }
                     else
                     {
-                        img_profile.Src = "/Images/Profile/Default_Profile.png";
+                        Response.Redirect("Profile.aspx?id=" + Session["아이디"]);
                     }
-
-                    DBManager dbManager = new DBManager();
-                    SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(uid);
-                    SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(uid);
-                    SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(uid);
-                    SqlDataAdapter userinfo = dbManager.SetUserInfo(uid);
-
-                    DataTable dt1 = new DataTable();
-                    recentAdapter1.Fill(dt1);
-                    RecentGame1.DataSource = dt1;
-                    RecentGame1.DataBind();
-
-                    DataTable dt2 = new DataTable();
-                    recentAdapter2.Fill(dt2);
-                    RecentGame2.DataSource = dt2;
-                    RecentGame2.DataBind();
-
-                    DataTable dt3 = new DataTable();
-                    recentAdapter3.Fill(dt3);
-                    RecentGame3.DataSource = dt3;
-                    RecentGame3.DataBind();
-
-                    DataTable dt4 = new DataTable();
-                    userinfo.Fill(dt4);
-                    UserInfo.DataSource = dt4;
-                    UserInfo.DataBind();
-
-
                 }
             }
         }

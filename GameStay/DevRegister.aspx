@@ -50,9 +50,9 @@
                  </div>
                  <div class="wrap_input_img">
                      <p class="txt_devreg_img">개발사 이미지 등록</p>
-                     <asp:Image ID="Image1" runat="server" ImageUrl="FileUpload1.text" CssClass="img_profile" />
+                     <input type="image" id="img_profile" runat="server" class="img_profile" />
                      <br />
-                     <asp:FileUpload ID="uploadImg_dev" runat="server" CssClass="txt_devreg_imgselect" />
+                     <asp:FileUpload ID="uploadImg_dev" runat="server" CssClass="txt_devreg_imgselect" OnPropertyChanged="Image1" />
                  </div>
 
                  <br /><br /><br />
@@ -65,10 +65,6 @@
                             
                         </a>
                      </div>
-                     
-                 
-
-
                      
                  <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
              </div>
