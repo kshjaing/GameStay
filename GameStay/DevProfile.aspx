@@ -46,10 +46,8 @@
                 <asp:Repeater runat="server" ID="NewGame2">
                     <ItemTemplate>
                         <div class="div_newgames2">
-                            <input type="image" id="Img2" runat="server" class="img_newgame" src='<%# Eval("메인이미지") %>' />
-                            <div class="div_newgame_intitle">
-                                <p class="txt_profile_game_title"><%#Eval("게임명") %></p>
-                            </div>
+                            <img id="Img2" class="img_newgame" src='<%# Eval("메인이미지") %>' />
+                            <p class="txt_profile_game_title"><%#Eval("게임명") %></p>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>

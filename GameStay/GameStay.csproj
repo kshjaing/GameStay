@@ -162,6 +162,8 @@
     <Content Include="Images\PlaceholderImages\PlaceholderImage_Cyberpunk2077_2.jpg" />
     <Content Include="Images\PlaceholderImages\PlaceholderImage_DetroitBecomeHuman.jpg" />
     <Content Include="Images\Profile\Default_Profile.png" />
+    <Content Include="Images\Profile\Developer\DevImage_Activision.png" />
+    <Content Include="Images\Profile\Developer\DevImage_Electronic Arts.png" />
     <Content Include="Images\Profile\Profile_Mongkka.png" />
     <Content Include="Library.aspx" />
     <Content Include="Login.aspx" />

@@ -40,6 +40,9 @@ namespace GameStay
             detailTitleRepeater1.DataBind();
             detailTitleRepeater2.DataSource = titleDT;
             detailTitleRepeater2.DataBind();
+            //임시 3
+            detailTitleRepeater3.DataSource = titleDT;
+            detailTitleRepeater3.DataBind();
 
             DataTable imageDT = new DataTable();
             detailImageAdapter.Fill(imageDT);
