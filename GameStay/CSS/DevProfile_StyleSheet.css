@@ -38,61 +38,69 @@ html, body {
 
 .profile_square {
     background-color: #1B1C1E;
-    width: 900px;
-    height: 290px;
+    width: 1100px;
+    height: 500px;
     position: relative;
-    margin-left: 70px;
-    margin-top: 90px;
+    vertical-align: central;
+    margin-top: 20px;
+    text-align:center;
+
 }
 
 .img_profile {
-    width: 200px;
+    width: 230px;
     margin-top: 40px;
 }
 
-.txt_profile_detail {
-    color: #FFFFFF;
-    font-size: 20pt;
-    font-family: 'NIXGONFONTS M';
-}
 
 .txt_profile_nickname {
     color: #FFFFFF;
     font-size: 40pt;
+    text-align: left;
     font-family: 'NIXGONFONTS B';
 }
 
-.txt_profile_countgame {
+.txt_profile_Link {
     font-size: 20pt;
+    text-align: left;
     font-family: 'NIXGONFONTS M';
-    color: cyan;
+    color: #FFFFFF;
 }
 
 .div_profile_img {
-    width: 30%;
     float: left;
+    width: 28%;
     height: 100%;
-    text-align: center;
+    display: inline-block
 }
 
 .div_profile_detail {
-    width: 55%;
-    height: 100%;
-    padding-top: 10px;
-    text-align: left;
     float: left;
+    width: 49%;
+    height: 100%;
+    display: inline-block
 }
 
 .div_profile_edit {
-    width: 15%;
+    float: left;
+    width: 22%;
     height: 100%;
-    float: right;
+    display: inline-block
+}
+
+.div_profile_top {
+    width: 100%;
+    height: 59%;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+
 }
 
 .btn_profile_edit {
     background: transparent;
-    width: 100%;
-    height: 100%;
+    width: 120px;
+    height: 100px;
     border: none;
     outline: none;
     vertical-align: central;
@@ -100,83 +108,97 @@ html, body {
     color: #FFFFFF;
     font-family: IBMPlexSansKR-Medium;
     font-size: 16pt;
-    visibility: hidden;
+    visibility:visible;
 }
 
 /*개발사 설명*/
 
-.profile_square_explain {
-    background-color: #1B1C1E;
-    width: 900px;
-    height: 480px;
+.div_explain {
+    width: 90%;
+    height: 40%;
+    text-align: center;
+    vertical-align: middle;
     position: relative;
-    vertical-align: central;
-    margin-left: 70px;
-    margin-top: 10px;
+    border-top: 1px solid;
+    border-color: aliceblue;
+    display: inline-block
 }
 
 .txt_profile_explain {
     color: #FFFFFF;
-    font-size: 35pt;
-    font-family: 'NIXGONFONTS B';
-    padding-top: 30px;
-    padding-left: 55px;
+    font-size: 20pt;
+    font-family: 'IBMPlexSansKR-Medium';
+    padding-left: 50px;
+    padding-top: 10px;
     text-align: left;
 }
 
-.div_profile_game {
+/*최근 발매 게임*/
+
+.profile_newgame {
+    width: 1100px;
+    height: 700px;
+    position: relative;
+    vertical-align: central;
+    margin-top: 50px;
+    text-align: center;
+}
+.txt_newgame_title {
+    color: #FFFFFF;
+    font-size: 35pt;
+    font-family: 'NIXGONFONTS B';
+    text-align: left
+}
+.div_newgames1 {
     float: left;
-    width: 32%;
-    height: 90%;
-}
+    width: 48%;
+    height: 48%;
+    position:relative;
 
-.div_profile_game-1 {
-    padding-left: 40px;
 }
-
-.txt_profile_explain_1 {
+.div_newgames2 {
+    float: left;
+    width: 48%;
+    height: 48%;
+    margin-left: 3%;
+    position: relative;
+}
+.div_newgames3 {
+    float: left;
+    width: 48%;
+    height: 48%;
+    margin-top: 3%;
+    position: relative;
+}
+.div_newgames4 {
+    float: left;
+    width: 48%;
+    height: 48%;
+    margin-top: 3%;
+    margin-left: 3%;
+    position: relative;
+}
+.img_newgame {
+    width: 99%;
+    height: 99%;
+    position: relative;
+}
+.div_newgame_intitle {
+    border: 1px solid;
+    border-color: aliceblue;
+    position: absolute;
+    text-align: center;
+    width: 99%;
+    height: 99%;
+}
+.txt_profile_game_title {
     color: #FFFFFF;
     font-size: 25pt;
     font-family: 'NIXGONFONTS M';
+    text-align: center;
+    z-index: 100;
+    position: absolute;
 }
 
 
-/*스크린샷*/
 
-.profile_square_screenshot {
-    background-color: #1B1C1E;
-    width: 900px;
-    height: 460px;
-    position: relative;
-    vertical-align: central;
-    margin-left: 70px;
-    margin-top: 50px;
-}
-
-.txt_profile_screenshot {
-    color: #FFFFFF;
-    font-size: 35pt;
-    font-family: 'NIXGONFONTS B';
-    padding-top: 35px;
-    padding-left: 65px;
-    text-align: left;
-}
-
-.div_profile_scs_main {
-    width: 50%;
-    float: left;
-    padding-left: 65px;
-}
-
-.div_profile_scs_sub {
-    width: 40%;
-    float: right;
-}
-
-.img_profile_scs_main {
-    width: 500px;
-}
-
-.img_profile_scs_sub {
-    width: 250px;
-}

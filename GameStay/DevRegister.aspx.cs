@@ -34,22 +34,18 @@ namespace GameStay
                 return;
             }
 
+            fname = "~/Images/Profile/" + inputNickname.Value.ToString() + ".jpg";
+
             string fileExt = fname.Substring(fname.LastIndexOf(".")).ToLower();
-            bool isFig = (fileExt == ".jpg" || fileExt == ".gif" || fileExt == ".png" || fileExt == ".bmp" || fileExt == ".jpeg");
-            
-            if (!isFig)
-            {
-                txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "그림 형식의 파일을 선택해 주세요.";
-                return;
-            }
 
             dDao = new DevDao();
 
             DevDo dDo = new DevDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString(), fname, txt_explain.Text.ToString(), inputEmail.Value.ToString());
             //파일 경로
-            string ufname = Server.MapPath(@"Images\Profile\" + dDo.Name.ToString() + fileExt);
-            uploadImg_dev.SaveAs(ufname);
+            
+                string ufname = Server.MapPath(@"~\Images\Profile\" + dDo.Name.ToString() + fileExt);
+                uploadImg_dev.SaveAs(ufname);
+            
 
             if (isIdCheck = dDao.VerifyID(inputID.Value.ToString()))
             {
@@ -57,14 +53,14 @@ namespace GameStay
                 dDao.RegistDev(dDo);
                 Response.Redirect("SuccessRegist.aspx");
             }
-            else if (inputID.Value.Length <= 0)
+            else if (inputID.Value.Length < 1)
             {
                 inputID.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
                 txtRegistCheck.InnerText = "아이디를 입력해주세요.";
                 return;
             }
-            else if (inputPassword.Value.Length <= 0)
+            else if (inputPassword.Value.Length < 1)
             {
                 inputPassword.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
@@ -78,27 +74,27 @@ namespace GameStay
                 txtRegistCheck.InnerText = "비밀번호가 일치하지 않습니다.";
                 return;
             }
-            else if (inputEmail.Value.Length <= 0)
+            else if (inputEmail.Value.Length < 1)
             {
                 inputEmail.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
                 txtRegistCheck.InnerText = "개발사 이메일을 입력해주세요.";
                 return;
             }
-            else if (inputNickname.Value.Length <= 0)
+            else if (inputNickname.Value.Length < 1)
             {
                 inputNickname.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
                 txtRegistCheck.InnerText = "개발사 이름을 입력해주세요.";
                 return;
             }
-            else if (txt_explain.Text.Length <= 0)
+            else if (txt_explain.Text.Length < 1)
             {
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
                 txtRegistCheck.InnerText = "개발사 설명을 입력해주세요.";
                 return;
             }
-            else if (uploadImg_dev.FileName.Length <=0)
+            else if (uploadImg_dev.FileName.Length < 1)
             {
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
                 txtRegistCheck.InnerText = "개발사 로고를 입력해주세요.";

@@ -86,14 +86,13 @@ namespace GameStay
             }
             else if(Session["접속경로"].ToString() == "DEV")
                 {
-                Response.Redirect("DevProfile.aspx");
+                Response.Redirect("DevProfile.aspx?uid=" + Session["아이디"]);
             }
             else if(Session["접속경로"].ToString() == "USER")
             {
-                Response.Redirect("Profile.aspx");
+                Response.Redirect("Profile.aspx?uid=" + Session["아이디"]);
             }
             button_profile.Style["background"] = "#85cba5";
-            
         }
         public void isDevCheck()
         {

@@ -99,7 +99,6 @@ namespace GameStay
             mCmd.Parameters.Add(param);
 
             param = new SqlParameter("@개발사로고", SqlDbType.NChar, 50);
-            //param.Value = uDo.Profileimg;
             param.Value = dDo.Profileimg;
             mCmd.Parameters.Add(param);
 

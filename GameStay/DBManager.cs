@@ -243,5 +243,27 @@ namespace GameStay
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 개발사 WHERE 아이디 =  " + "'" + uid + "'", myConn);
             return dataAdapter;
         }
+
+        //개발사 최근발매 게임
+        public SqlDataAdapter SetDevNewGame1(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 1", myConn);
+            return dataAdapter;
+        }
+        public SqlDataAdapter SetDevNewGame2(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 2 AND 2", myConn);
+            return dataAdapter;
+        }
+        public SqlDataAdapter SetDevNewGame3(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3", myConn);
+            return dataAdapter;
+        }
+        public SqlDataAdapter SetDevNewGame4(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 4 AND 4", myConn);
+            return dataAdapter;
+        }
     }
 }
