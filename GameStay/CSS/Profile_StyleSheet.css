@@ -38,56 +38,67 @@ html, body {
 .profile_square {
     background-color: #1B1C1E;
     width: 900px;
-    height: 290px;
+    height: 230px;
     position: relative;
-    
-    margin-left: 100px;
+    left: 50%;
+    transform:translateX(-50%);
     margin-top: 40px;
 }
 
 .img_profile {
-    width: 200px;
-    margin-top: 40px;
+    top: 50%;
+    transform:translateY(-50%);
+    width: 150px;
+    height: 150px;
+    margin-left: 30px;
+    position: relative;
 }
 .txt_profile_detail {
     color: #FFFFFF;
-    font-size: 20pt;
+    font-size: 15pt;
     font-family: 'NIXGONFONTS M';
+    position: relative;
+    margin-left: 5px;
 }
 .txt_profile_nickname {
     color: #FFFFFF;
-    font-size: 40pt;
+    font-size: 30pt;
     font-family: 'NIXGONFONTS B';
+    position: relative;
+    margin-left: 20px;
 }
 .txt_profile_level {
-    font-size: 20pt;
+    font-size: 15pt;
     font-family: 'NIXGONFONTS M';
     color: #ff6a00;
+    position: relative;
+    margin-left: 5px;
 }
 .txt_profile_countgame {
-    font-size: 20pt;
+    font-size: 15pt;
     font-family: 'NIXGONFONTS M';
     color: cyan;
+    position: relative;
+    margin-left: 5px;
 }
 .div_profile_img{
-    width:30%;
+    width: 190px;
+    height: 100%;
     float:left;
-    height:100%;
-    text-align:center;
-    
+    position: relative;
 }
 .div_profile_detail {
-    width: 55%;
+    width: 570px;
     height: 100%;
-    padding-top: 10px;
-    text-align:left;
-    float:left;
-
+    text-align: left;
+    float: left;
+    position: relative;
 }
 .div_profile_edit {
-    width: 15%;
+    width: 140px;
     height: 100%;
-    float: right;
+    float: left;
+    position: relative;
 }
 .btn_profile_edit {
     background: transparent;
