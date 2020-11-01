@@ -201,6 +201,15 @@ namespace GameStay
 
         //--------------------------------------------------------------------------------------------------
 
+
+        //--------------------------------------------게임상세페이지 리뷰파트-------------------------------------
+        //특정게임의 리뷰 어댑터
+        public SqlDataAdapter SetReviewAdapter(string gametitle)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM 리뷰 WHERE 영어게임명 = '" + gametitle + "'", myConn);
+            return adapter;
+        }
+
         //저장 프로시저 실행
         public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
         {

@@ -19,6 +19,7 @@ namespace GameStay
         SqlDataAdapter detailVideoAdapter;
         SqlDataAdapter detailMinRequireAdapter;
         SqlDataAdapter detailRecRequireAdapter;
+        SqlDataAdapter detailReviewAdapter;
         string gameTitle;
         int mediaCount;
 
@@ -33,6 +34,7 @@ namespace GameStay
             detailVideoAdapter = dbManager.SetGameIntroVideoAdapter(gameTitle);
             detailMinRequireAdapter = dbManager.SetMinReqAdapter(gameTitle);
             detailRecRequireAdapter = dbManager.SetRecReqAdapter(gameTitle);
+            detailReviewAdapter = dbManager.SetReviewAdapter(gameTitle);
 
             DataTable titleDT = new DataTable();
             detailTitleAdapter.Fill(titleDT);
@@ -65,6 +67,11 @@ namespace GameStay
             detailRecRequireAdapter.Fill(recreqDT);
             detailRecRequireRepeater.DataSource = recreqDT;
             detailRecRequireRepeater.DataBind();
+
+            DataTable reviewDT = new DataTable();
+            detailReviewAdapter.Fill(reviewDT);
+            detailReviewRepeater.DataSource = reviewDT;
+            detailReviewRepeater.DataBind();
 
             dbManager.DBClose();
 

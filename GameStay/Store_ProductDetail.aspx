@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=10" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=11" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -152,7 +152,16 @@
 
 
         <!--리뷰파트-->
-
+        <p class="p_review">유저 평가</p>
+        <div class="wrap_total_review">
+            <asp:Repeater runat="server" ID="detailReviewRepeater">
+                <ItemTemplate>
+                    <div class="div_wrap_review">
+                        <p class="p_review_contents"><%# Eval("내용") %></p>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
 
 
 
