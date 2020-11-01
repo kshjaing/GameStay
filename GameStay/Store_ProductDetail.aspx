@@ -157,6 +157,7 @@
             <asp:Repeater runat="server" ID="detailReviewRepeater">
                 <ItemTemplate>
                     <div class="div_wrap_review">
+                        <p class="p_review_nickname"></p>
                         <p class="p_review_contents"><%# Eval("내용") %></p>
                     </div>
                 </ItemTemplate>
