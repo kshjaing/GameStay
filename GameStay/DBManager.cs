@@ -195,7 +195,7 @@ namespace GameStay
             DBClose();
             return returnValue;
         }
-
+        //----------------------------------------------유저 프로필----------------------------------------------
         //최근 구매게임 1
         public SqlDataAdapter SetRecentAdapter1(string uid)
         {
@@ -222,6 +222,8 @@ namespace GameStay
             return dataAdapter;
         }
 
+        //-----------------------------------------------개발사 프로필----------------------------------------------
+
         //개발사 정보
         public SqlDataAdapter SetDevInfo(string uid)
         {
@@ -229,25 +231,41 @@ namespace GameStay
             return dataAdapter;
         }
 
-        //개발사 최근발매 게임
+        //개발사 최근발매 게임1
         public SqlDataAdapter SetDevNewGame1(string uid)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 1", myConn);
             return dataAdapter;
         }
+        //개발사 최근발매 게임2
         public SqlDataAdapter SetDevNewGame2(string uid)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 2 AND 2", myConn);
             return dataAdapter;
         }
+        //개발사 최근발매 게임3
         public SqlDataAdapter SetDevNewGame3(string uid)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3", myConn);
             return dataAdapter;
         }
+        //개발사 최근발매 게임4
         public SqlDataAdapter SetDevNewGame4(string uid)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 4 AND 4", myConn);
+            return dataAdapter;
+        }
+        //개발사 게임 리스트
+        public SqlDataAdapter SetDevGameList(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "' ORDER BY 출시일 DESC", myConn);
+            return dataAdapter;
+        }
+
+        //개발사 매출
+        public SqlDataAdapter SetDevIncome(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT SUM(구매금액) AS 매출액 FROM 거래목록 WHERE 개발사 in (SELECT 개발사 FROM 개발사 WHERE 아이디 = '"+ uid + "')" + "SELECT 개발사 FROM 개발사 WHERE 아이디 = '" + uid + "'", myConn);
             return dataAdapter;
         }
     }

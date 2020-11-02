@@ -8,14 +8,21 @@
     src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
 }
 
-input::placeholder {
+input:placeholder {
     font-family: 'NIXGONFONTS M';
 }
 
 html, body {
     margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.wrap_total {
     width: 100%;
     height: 100%;
+    text-align: left;
 }
 
 .wrap {
@@ -27,8 +34,7 @@ html, body {
     height: 100vh;
     text-align: center;
     vertical-align: middle;
-    top: 0px;
-    left: 0px;
+    position: relative;
 }
 
 
@@ -56,7 +62,7 @@ html, body {
     display: inline-block;
     background-color: #111213;
     width: 1300px;
-    height: 800px;
+    height: 880px;
     position: relative;
 
 }

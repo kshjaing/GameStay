@@ -12,6 +12,24 @@
     font-family: 'NIXGONFONTS B';
     src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'NIXGONFONTS M 2.0';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B 2.0';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'IBMPlexSansKR-Bold';
+    src: url('../Fonts/IBMPlexSansKR-Bold.ttf') format('truetype');
+}
 
 @font-face {
     font-family: 'IBMPlexSansKR-Medium';
@@ -84,8 +102,8 @@ html, body {
 .div_profile_edit {
     float: left;
     width: 22%;
-    height: 100%;
-    display: inline-block
+    height: 80%;
+    padding-top:30px;
 }
 
 .div_profile_top {
@@ -97,18 +115,27 @@ html, body {
 
 }
 
-.btn_profile_edit {
-    background: transparent;
-    width: 120px;
-    height: 100px;
-    border: none;
-    outline: none;
-    vertical-align: central;
-    text-align: center;
+/*기타 수정 및 등록 버튼*/
+
+.button_profile {
+    border: 0;
+    outline: 0;
+    background-color: #25262B;
     color: #FFFFFF;
-    font-family: IBMPlexSansKR-Medium;
-    font-size: 16pt;
-    visibility:visible;
+    font-size: 14pt;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    margin-top: 2vh;
+    border-radius: 0 10px 0 10px;
+    transition: all 0.2s;
+    visibility: visible;
+    font-family: 'NIXGONFONTS M';
+}
+.button_profile:hover {
+        color: #FFFFFF;
+        background-color: #3dae7a;
+        font-family: 'NIXGONFONTS M';
 }
 
 /*개발사 설명*/
@@ -150,55 +177,156 @@ html, body {
     text-align: left
 }
 .div_newgames1 {
-    float: left;
-    width: 48%;
-    height: 48%;
-    position:relative;
-
+    width: 530px;
+    height: 350px;
+    vertical-align: central;
+    position: relative;
+    float:left;
 }
 .div_newgames2 {
-    float: left;
-    width: 48%;
-    height: 48%;
-    margin-left: 3%;
+    width: 530px;
+    height: 350px;
+    vertical-align: central;
     position: relative;
+    float: left;
+    margin-left: 40px;
 }
 .div_newgames3 {
-    float: left;
-    width: 48%;
-    height: 48%;
-    margin-top: 3%;
+    width: 530px;
+    height: 350px;
+    vertical-align: central;
     position: relative;
+    float: left;
+    
 }
 .div_newgames4 {
-    float: left;
-    width: 48%;
-    height: 48%;
-    margin-top: 3%;
-    margin-left: 3%;
+    width: 530px;
+    height: 350px;
+    vertical-align: central;
     position: relative;
+    float: left;
+    margin-left: 40px;
 }
 .img_newgame {
     width: 99%;
-    height: 99%;
-    position: relative;
+    height: auto;
+    object-fit:cover;
+    filter:brightness(70%);
 }
-.div_newgame_intitle {
-    border: 1px solid;
-    border-color: aliceblue;
-    position: absolute;
-    text-align: center;
-    width: 99%;
-    height: 99%;
-}
+
 .txt_profile_game_title {
     color: #FFFFFF;
     font-size: 25pt;
-    font-family: 'NIXGONFONTS M';
-    text-align: center;
-    z-index: 100;
+    font-family: 'NIXGONFONTS B 2.0';
     position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100px);
+    margin: 0;
+    text-shadow: 5px 1px 2px black;
+}
+
+/*개발사 게임 목록*/
+.div_wrap_list {
+    width: 1100px;
+    height: auto;
+    float: left;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.div_wrap_best_contentbox {
+    width: 100%;
+    height: 110px;
+    background: #1B1C1E;
+    margin-bottom: 8px;
+}
+
+.div_wrap_best_image {
+    width: 220px;
+    height: 110px;
+    position: relative;
+    float: left;
+    user-select: none;
+}
+
+.best_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.div_wrap_p_best_title {
+    width: 645px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.p_best_title {
+    color: #FFFFFF;
+    font-size: 17pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-bottom: 0;
+    margin-left: 20px;
+    user-select: none;
+    text-align:left
+}
+
+.p_best_tags {
+    color: #737373;
+    margin-top: 5px;
+    font-size: 12pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-left: 20px;
+    user-select: none;
+    text-align: left
+}
+
+.div_wrap_p_best_price {
+    display: table;
+    width: 145px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.p_best_price {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: IBMPlexSansKR-Bold;
+    user-select: none;
 }
 
 
+.div_wrap_rating {
+    width: 90px;
+    height: 100%;
+    float: left;
+    position: relative;
+    background: #121314;
+}
 
+.div_ratingbox {
+    display: table;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 3px solid #18d737;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+}
+
+.p_rating {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    user-select: none;
+}

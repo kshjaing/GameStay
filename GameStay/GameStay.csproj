@@ -75,6 +75,7 @@
     <Content Include="CSS\MasterPage_StyleSheet.css" />
     <Content Include="CSS\Profile_StyleSheet.css" />
     <Content Include="CSS\Register_StyleSheet.css" />
+    <Content Include="CSS\ManageGame_StyleSheet.css" />
     <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="CSS\Store_ProductDetail_StyleSheet.css" />
@@ -160,6 +161,7 @@
     <Content Include="Profile.aspx" />
     <Content Include="ProfileEdit.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="ManageGame.aspx" />
     <Content Include="RequestLogin.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
@@ -240,6 +242,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageGame.aspx.cs">
+      <DependentUpon>ManageGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageGame.aspx.designer.cs">
+      <DependentUpon>ManageGame.aspx</DependentUpon>
     </Compile>
     <Compile Include="RequestLogin.aspx.cs">
       <DependentUpon>RequestLogin.aspx</DependentUpon>

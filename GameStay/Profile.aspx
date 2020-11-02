@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="GameStay.Profile" %>
+﻿r<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="GameStay.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/Profile_StyleSheet.css?ver=13" rel="stylesheet" />
 </asp:Content>

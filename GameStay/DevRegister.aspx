@@ -2,13 +2,28 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="CSS/DevRegister_StyleSheet.css?ver=15" rel="stylesheet" />
+    <link href="CSS/DevRegister_StyleSheet.css?ver=19" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script>
         function onClickLogo() {
             __doPostBack('div_logo');
         }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#uploadImg_dev").change(function () {
+            readURL(this);
+        });
     </script>
 </head>
 <body>
@@ -50,7 +65,7 @@
                  </div>
                  <div class="wrap_input_img">
                      <p class="txt_devreg_img">개발사 이미지 등록</p>
-                     <input type="image" id="img_profile" runat="server" class="img_profile" />
+                     <img id="blah" src="#" alt="your image" class="img_profile"/>
                      <br />
                      <asp:FileUpload ID="uploadImg_dev" runat="server" CssClass="txt_devreg_imgselect" OnPropertyChanged="Image1" />
                  </div>
