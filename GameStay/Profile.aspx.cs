@@ -24,16 +24,6 @@ namespace GameStay
                 {
                     if (Request["id"] != null)
                     {
-
-                        userDo = (new UserDao()).Getprofileimg(Request["id"].ToString().TrimEnd());
-                        if (userDo.Profileimg.Trim() != "")
-                        {
-                            img_profile.Src = userDo.Profileimg;
-                        }
-                        else
-                        {
-                            img_profile.Src = "/Images/Profile/Default_Profile.png";
-                        }
                         if(Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
                         {
                             btn_profile_edit.Attributes.Add("style", "visibility: visible");
@@ -47,6 +37,7 @@ namespace GameStay
                         SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(Request["id"].ToString().TrimEnd());
                         SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(Request["id"].ToString().TrimEnd());
                         SqlDataAdapter userinfo = dbManager.SetUserInfo(Request["id"].ToString().TrimEnd());
+                        SqlDataAdapter hasGameCount = dbManager.GetHasGameCount(Request["id"].ToString().TrimEnd());
 
                         DataTable dt1 = new DataTable();
                         recentAdapter1.Fill(dt1);
@@ -67,6 +58,11 @@ namespace GameStay
                         userinfo.Fill(dt4);
                         UserInfo.DataSource = dt4;
                         UserInfo.DataBind();
+
+                        DataTable countDT = new DataTable();
+                        hasGameCount.Fill(countDT);
+                        HasGameCountRepeater.DataSource = countDT;
+                        HasGameCountRepeater.DataBind();
                     }
                     else
                     {

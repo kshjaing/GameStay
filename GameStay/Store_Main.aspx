@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=18" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=11" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -253,7 +253,7 @@
                                    <asp:HyperLink runat="server" NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'>
                                        <div class="div_wrap_details2">
                                           <p class="p p_title" id="p_title" runat="server"><%# Eval("게임명") %></p>
-                                          <p class="p p_release_date" id="p_release_date" runat="server"><%# Eval("출시일") %></p>
+                                          <p class="p p_release_date" id="p_release_date" runat="server"><%# DataBinder.Eval(Container.DataItem, "출시일", "{0:D}") %></p>
                                           <p class="p p_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
                                              - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
                                        </div>

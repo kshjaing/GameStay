@@ -165,6 +165,7 @@ namespace GameStay
             {
                 count = Convert.ToInt32(dataReader["스샷영상개수"]);
             }
+            dataReader.Close();
             return count;
         }
 
@@ -183,8 +184,31 @@ namespace GameStay
         }
 
 
+        //특정게임의 최소요구사양 어댑터
+        public SqlDataAdapter SetMinReqAdapter(string gametitle)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM 최소사양 WHERE 영어게임명 = '" + gametitle + "'", myConn);
+            return adapter;
+        }
+
+        //특정게임의 권장사양 어댑터
+        public SqlDataAdapter SetRecReqAdapter(string gametitle)
+        {
+            SqlDataAdapter adpater = new SqlDataAdapter("SELECT * FROM 권장사양 WHERE 영어게임명 = '" + gametitle + "'", myConn);
+            return adpater;
+        }
+
 
         //--------------------------------------------------------------------------------------------------
+
+
+        //--------------------------------------------게임상세페이지 리뷰파트-------------------------------------
+        //특정게임의 리뷰 어댑터
+        public SqlDataAdapter SetReviewAdapter(string gametitle)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM 리뷰 WHERE 영어게임명 = '" + gametitle + "'", myConn);
+            return adapter;
+        }
 
         //저장 프로시저 실행
         public int ExecuteStoredProcedure(SqlCommand myCommand, SqlParameter ParamOut)
@@ -199,19 +223,19 @@ namespace GameStay
         //최근 구매게임 1
         public SqlDataAdapter SetRecentAdapter1(string uid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.게임명 = 거래목록.게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 1;", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.영어게임명 = 거래목록.영어게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 1;", myConn);
             return dataAdapter;
         }
         //최근 구매게임 2
         public SqlDataAdapter SetRecentAdapter2(string uid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.게임명 = 거래목록.게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 2 AND 2;", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.영어게임명 = 거래목록.영어게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 2 AND 2;", myConn);
             return dataAdapter;
         }
         //최근 구매게임 3
         public SqlDataAdapter SetRecentAdapter3(string uid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.게임명 = 거래목록.게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3;", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.영어게임명 = 거래목록.영어게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3;", myConn);
             return dataAdapter;
         }
         
@@ -222,7 +246,11 @@ namespace GameStay
             return dataAdapter;
         }
 
-        //-----------------------------------------------개발사 프로필----------------------------------------------
+        public SqlDataAdapter GetHasGameCount(string userid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT COUNT(*) AS '소유한 게임 수' FROM 거래목록 WHERE 구매자='" + userid + "'", myConn);
+            return dataAdapter;
+        }
 
         //개발사 정보
         public SqlDataAdapter SetDevInfo(string uid)

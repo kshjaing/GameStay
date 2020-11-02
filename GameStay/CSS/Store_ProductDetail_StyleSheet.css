@@ -39,8 +39,8 @@ html, body {
 }
 
 .wrap_total_images {
-    width: 800px;
-    height: 500px;
+    width: 750px;
+    height: 610px;
     float: left;
     margin-top: 50px;
     position: relative;
@@ -52,6 +52,7 @@ html, body {
     font-family: 'NIXGONFONTS B 2.0';
     margin: 0;
     margin-bottom: 20px;
+    user-select: none;
 }
 
 .div_main_image {
@@ -62,9 +63,6 @@ html, body {
     position: relative;
 }
 
-.iframe {
-
-}
 
 .img_main {
     width: 750px;
@@ -82,7 +80,7 @@ html, body {
 
     .div_wrap_small_images::-webkit-scrollbar {
         height: 10px;
-        background: transparent;
+        background: #1B1C1E;
     }
 
     .div_wrap_small_images::-webkit-scrollbar-thumb {
@@ -154,11 +152,230 @@ html, body {
     position: relative;
 }
 
+
+.div_wrap_searchbutton {
+    width: 300px;
+    height:56px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+
+
+
 .wrap_total_infobox {
     width: 300px;
     height: 422px;
     background: #1B1C1E;
     float: left;
-    margin-top: 105px;
     position: relative;
+    margin-left: 50px;
+}
+
+.div_infobox_image {
+    width: 300px;
+    height: auto;
+    position: relative;
+}
+
+.img_title {
+    width: 300px;
+    height: auto;
+    position: relative;
+}
+
+.div_info {
+    width: 300px;
+    height: 60px;
+    position: relative;
+}
+
+.p_info1 {
+    color: #48494d;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    user-select: none;
+}
+
+.p_info2 {
+    color: #b3b3b3;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    user-select: none;
+}
+
+.p_info_rating {
+    margin-top: 12px;
+    user-select: none;
+}
+
+.div_empty {
+    width: 300px;
+    height: 135px;
+    position: relative;
+    float: left;
+    margin-left: 50px;
+}
+
+
+
+
+.p_purchase {
+    color: #FFFFFF;
+    font-size: 20pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin-top: 100px;
+    margin-bottom: 20px;
+    float: left;
+    user-select: none;
+}
+
+.div_wrap_total_purchase {
+    width: 100%;
+    height: 200px;
+    background: #1B1C1E;
+    float: left;
+}
+
+.div_wrap_purchase_text {
+    width: 800px;
+    height: 100%;
+    float: left;
+}
+
+.p_purchase_title {
+    color: #FFFFFF;
+    font-size: 25pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 0px;
+    user-select: none;
+}
+
+.p_purchase_introduce_text {
+    color: #888888;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    padding-left: 40px;
+    padding-right: 30px;
+    user-select: none;
+}
+
+.div_wrap_purchase_buttons {
+    width: 300px;
+    height: 100%;
+    float:left;
+}
+
+
+
+
+
+.p_requirement {
+    color: #FFFFFF;
+    font-size: 20pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin-top: 80px;
+    margin-bottom: 20px;
+    float: left;
+    user-select: none;
+}
+
+.div_wrap_total_requirement {
+    width: 1100px;
+    height: 400px;
+    background: #1B1C1E;
+    float: left;
+}
+
+.div_wrap_minimun {
+    width: 550px;
+    height: 100%;
+    float: left;
+}
+
+.div_wrap_recommend {
+    width: 550px;
+    height: 100%;
+    float: left;
+}
+
+.p_require_title {
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 22pt;
+    margin-bottom: 0;
+    margin-left: 40px;
+    margin-top: 40px;
+    user-select: none;
+}
+
+.p_require1 {
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    margin: 0;
+    margin-left: 40px;
+    margin-right: 40px;
+    user-select: none;
+}
+
+.p_require2 {
+    color: #888888;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    margin: 0;
+    float: left;
+    margin-left: 40px;
+    margin-right: 40px;
+    user-select: none;
+}
+
+
+
+
+
+.p_review {
+    color: #FFFFFF;
+    font-size: 20pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin-top: 80px;
+    margin-bottom: 20px;
+    float: left;
+    user-select: none;
+}
+
+.wrap_total_review {
+    width: 1100px;
+    height: 900px;
+    background: #3c3e42;
+    float: left;
+}
+
+.div_wrap_review {
+    width: 100%;
+    height: 300px;
+    background: #1B1C1E;
+}
+
+.p_review_contents {
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS M 2.0';
+}
+
+
+
+.footer {
+    width: 100%;
+    height: 100px;
+    float: left;
 }

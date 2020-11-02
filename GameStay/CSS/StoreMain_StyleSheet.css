@@ -18,7 +18,6 @@ html, body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    font-family: IBMPlexSansKR-Medium;
 }
 
 .wrap_total {
@@ -35,9 +34,10 @@ html, body {
 
 .p_features {
     color: #FFFFFF;
-    font-size: 19pt;
+    font-size: 20pt;
     margin-bottom: 0;
     user-select: none;
+    font-family: 'NIXGONFONTS B 2.0';
 }
 
 .div_wrap_features {
@@ -102,21 +102,22 @@ html, body {
 }
 
 .p_title {
-    font-size: 29pt;
+    font-size: 30pt;
     color: #FFFFFF;
-    font-family: IBMPlexSansKR-Bold;
+    font-family: 'NIXGONFONTS B 2.0';
     padding-left: 25px;
     padding-right: 20px;
+    padding-top: 20px;
     margin-bottom: 0;
 }
 
 .p_release_date {
     font-size: 15pt;
     color: #696969;
-    font-family: IBMPlexSansKR-Medium;
+    font-family: 'NIXGONFONTS B 2.0';
     margin-top: 0;
     padding-left: 25px;
-    padding-top: 10px;
+    padding-top: 25px;
 }
 
 
@@ -212,7 +213,7 @@ html, body {
 
 .p_discount {
     color: white;
-    font-family: IBMPlexSansKR-Bold;
+    font-family: 'NIXGONFONTS B 2.0';
     font-size: 20pt;
     margin-bottom: 0;
     margin-left: 5px;
