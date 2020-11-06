@@ -1,0 +1,1 @@
+(this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
