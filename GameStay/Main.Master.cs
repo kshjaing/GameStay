@@ -110,6 +110,7 @@ namespace GameStay
                 //로그아웃
                 Session["아이디"] = null;
                 button_login.InnerText = "로그인";
+                Response.Redirect(Request.RawUrl);
             }
         }
     }

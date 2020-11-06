@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace GameStay
@@ -23,6 +24,8 @@ namespace GameStay
                 }
                 else
                 {
+                    (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
+
                     if (Request["id"] != null)
                     {
                         if(Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
@@ -59,6 +62,7 @@ namespace GameStay
                         UserInfo.DataSource = dt4;
                         UserInfo.DataBind();
 
+                        //소유한 게임 수
                         txt_profile_countgame.InnerText = dbManager.GetHasGameCount(Request["id"].ToString()).ToString();
                     }
                     else
