@@ -476,7 +476,7 @@ html, body {
     }
 
 
-.div_rating {
+.div_review_write_rating {
     width: 100px;
     height: 40px;
     position: absolute;
@@ -484,7 +484,7 @@ html, body {
     bottom: 6px;
 }
 
-.p_rating {
+.p_review_write_rating {
     color: #FFFFFF;
     font-size: 12pt;
     font-family: 'NIXGONFONTS B 2.0';

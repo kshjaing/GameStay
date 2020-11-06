@@ -177,8 +177,8 @@
                        <textarea class="textarea_review"></textarea>
                    </div>
                </div>
-               <div class="div_rating">
-                   <p class="p_rating">내 평점: </p>
+               <div class="div_review_write_rating">
+                   <p class="p_review_write_rating">내 평점: </p>
                    <input class="input_rating" placeholder="100" type="number" min="0" max="100"/>
                </div>
                <div class="div_post" id="div_post" onmouseover="this.style.backgroundColor='#4caccf'"
