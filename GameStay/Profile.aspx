@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="GameStay.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/Profile_StyleSheet.css?ver=10" rel="stylesheet" />
+    <script>
+        function profileEditOnClick() {
+            __doPostBack('wrap_edit_p');
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -19,7 +24,8 @@
         </div> 
         <div class="div_profile_edit">
             <div class="wrap_edit_p" runat="server" id="wrap_edit_p"
-                onmouseover="this.style.backgroundColor='#70d0a4'" onmouseout="this.style.backgroundColor='#25262b'">
+                onmouseover="this.style.backgroundColor='#70d0a4'" onmouseout="this.style.backgroundColor='#25262b'"
+                onclick="profileEditOnClick();">
                 <p class="p_profile_edit">프로필 수정</p>
             </div>
         </div>

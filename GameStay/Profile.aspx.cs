@@ -28,7 +28,7 @@ namespace GameStay
 
                     if (Request["id"] != null)
                     {
-                        if(Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
+                        if (Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
                         {
                             wrap_edit_p.Style["visibility"] = "visible";
                         }
@@ -72,12 +72,11 @@ namespace GameStay
                     }
                 }
             }
-        }
-        protected void editprofile_click(object sender, EventArgs e)
-        {
-            Response.Redirect("ProfileEdit.aspx");
-        }
 
-        
+            if (Request["__EVENTTARGET"] == "wrap_edit_p")
+            {
+                Response.Redirect("ProfileEdit.aspx");
+            }
+        }
     }
 }
