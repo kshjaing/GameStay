@@ -434,9 +434,8 @@ html, body {
 
 .wrap_textarea {
     background: #25262B;
-    width: 840px;
-    height: 250px;
-    margin-left: 50px;
+    width: 890px;
+    height: 290px;
     margin-top: 30px;
     float: left;
     position: relative;
@@ -445,7 +444,7 @@ html, body {
 
 .textarea_review {
     background: #25262b;
-    width: 810px;
+    width: 860px;
     height: 220px;
     float: left;
     left: 50%;
@@ -475,6 +474,41 @@ html, body {
         background: #48494d;
         border-radius: 30px;
     }
+
+
+.div_rating {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 180px;
+    bottom: 6px;
+}
+
+.p_rating {
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    margin: 0;
+    float: left;
+}
+
+.input_rating {
+    float: left;
+    position: relative;
+    background: #1B1C1E;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 11pt;
+    margin-left: 7px;
+    border: none;
+    position: relative;
+    text-align: center;
+}
+
+   .input_rating::-webkit-outer-spin-button,
+   .input_rating::-webkit-inner-spin-button{
+       -webkit-appearance: none;
+   }
 
 
 .div_post {

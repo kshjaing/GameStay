@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=14" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=15" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -168,6 +168,10 @@
                    <div class="wrap_textarea">
                        <textarea class="textarea_review"></textarea>
                    </div>
+               </div>
+               <div class="div_rating">
+                   <p class="p_rating">내 평점: </p>
+                   <input class="input_rating" placeholder="100" type="number" min="0" max="100"/>
                </div>
                <div class="div_post" id="div_post" onmouseover="this.style.backgroundColor='#4caccf'"
                    onmouseout="this.style.backgroundColor='#48494D'" onclick="">
