@@ -17,6 +17,14 @@
             document.getElementById("img_screenshot").src = imagename.substring(imagename.indexOf("Images"));
             document.getElementById("img_screenshot").style.display = "block";
         }
+
+        $(document).ready(function () {
+            $('input[type="number"]').keydown(function () {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                };
+            });
+        });
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
