@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=13" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=14" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -158,13 +158,20 @@
                 <div class="div_wrap_profile">
                    <div class="div_review_write_profile_image">
                       <img class="img_review_write_profile" src='' runat="server" id="img_review_write_profile"/>
-                   </div><br />
+                   </div><div class="empty_review_write"></div>
                    <p class="p_review_write_nickname" runat="server" id="p_review_write_nickname"></p> <br />
-                   <p class="p_review_write_gamecount" runat="server" id="p_review_write_gamecount"></p><br />
-                   <p class="p_review_write_reviewcount" runat="server" id="p_review_write_reviewcount"></p>
+                   <p class="p_review_write_gamecount" runat="server" id="p_review_write_gamecount">보유한 게임 20개</p><br />
+                   <p class="p_review_write_reviewcount" runat="server" id="p_review_write_reviewcount">작성한 리뷰 4개</p>
                </div>
+
                <div class="div_review_write_text">
-                
+                   <div class="wrap_textarea">
+                       <textarea class="textarea_review"></textarea>
+                   </div>
+               </div>
+               <div class="div_post" id="div_post" onmouseover="this.style.backgroundColor='#4caccf'"
+                   onmouseout="this.style.backgroundColor='#48494D'" onclick="">
+                   <p class="p_post">게시</p>
                </div>
             </div>
         </div>

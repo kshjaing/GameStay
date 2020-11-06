@@ -355,7 +355,7 @@ html, body {
 
 .wrap_total_review_write {
     width: 100%;
-    height: 300px;
+    height: 350px;
     float: left;
     margin-top: 80px;
 }
@@ -365,10 +365,11 @@ html, body {
     height: 100%;
     float: left;
     position: relative;
+    background: #1B1C1E;
 }
 
 .div_wrap_profile {
-    width: 150px;
+    width: 180px;
     height: 100%;
     float: left;
 }
@@ -378,6 +379,8 @@ html, body {
     height: 60px;
     float: left;
     text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
 }
 
 .img_review_write_profile {
@@ -386,33 +389,122 @@ html, body {
     object-fit: cover;
 }
 
+.empty_review_write {
+    width: 70px;
+    height: 60px;
+    float: left;
+    position: relative;
+    margin-top: 30px;
+}
+
 .p_review_write_nickname {
     color: #FFFFFF;
     font-size: 12pt;
-    font-family: 'NIXGONFONTS M 2.0';
+    font-family: 'NIXGONFONTS B 2.0';
     float: left;
+    margin-left: 30px;
 }
 
 .p_review_write_gamecount {
-    color: #FFFFFF;
+    color: #7b7b7b;
     font-size: 12pt;
     font-family: 'NIXGONFONTS M 2.0';
     float: left;
+    margin: 0;
+    margin-left: 30px;
 }
 
 .p_review_write_reviewcount {
-    color: #FFFFFF;
+    color: #7b7b7b;
     font-size: 12pt;
     font-family: 'NIXGONFONTS M 2.0';
     float: left;
+    margin: 0;
+    margin-left: 30px;
 }
 
+
+
 .div_review_write_text {
-    width: 950px;
+    width: 920px;
     height: 100%;
     float: left;
-    background: blue;
+    background: #1B1C1E;
 }
+
+.wrap_textarea {
+    background: #25262B;
+    width: 840px;
+    height: 250px;
+    margin-left: 50px;
+    margin-top: 30px;
+    float: left;
+    position: relative;
+    border-radius: 3px;
+}
+
+.textarea_review {
+    background: #25262b;
+    width: 810px;
+    height: 220px;
+    float: left;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    border: 0;
+    resize: none;
+    color: #FFFFFF;
+    overflow-wrap: break-word;
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-size: 13pt;
+    font-family: 'NIXGONFONTS M 2.0';
+}
+
+    .textarea_review:focus {
+        outline: none;
+    }
+
+    .textarea_review::-webkit-scrollbar {
+        width: 5px;
+        background: transparent;
+    }
+
+    .textarea_review::-webkit-scrollbar-thumb {
+        background: #48494d;
+        border-radius: 30px;
+    }
+
+
+.div_post {
+    display: table;
+    width: 90px;
+    height: 40px;
+    background: #48494D;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.p_post {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 11pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    cursor: pointer;
+}
+
+
+
+
+
 
 .p_review {
     color: #FFFFFF;
