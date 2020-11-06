@@ -79,6 +79,7 @@
     <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="CSS\Store_ProductDetail_StyleSheet.css" />
+    <Content Include="CSS\UploadGame_StyleSheet.css" />
     <Content Include="DevLogin.aspx" />
     <Content Include="Images\Game4vs3Images\4vs3_Cyberpunk2077.jpg" />
     <Content Include="Images\Game4vs3Images\4vs3_DetroitBecomeHuman.jpg" />
@@ -176,6 +177,7 @@
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
     <Content Include="SuccessRegist.aspx" />
+    <Content Include="UploadGame.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -287,6 +289,13 @@
     </Compile>
     <Compile Include="SuccessRegist.aspx.designer.cs">
       <DependentUpon>SuccessRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadGame.aspx.cs">
+      <DependentUpon>UploadGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadGame.aspx.designer.cs">
+      <DependentUpon>UploadGame.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserDao.cs" />
     <Compile Include="UserDo.cs" />

@@ -293,7 +293,7 @@ namespace GameStay
         //개발사 매출
         public SqlDataAdapter SetDevIncome(string uid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT SUM(구매금액) AS 매출액 FROM 거래목록 WHERE 개발사 in (SELECT 개발사 FROM 개발사 WHERE 아이디 = '"+ uid + "')" + "SELECT 개발사 FROM 개발사 WHERE 아이디 = '" + uid + "'", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT SUM(구매금액) AS 매출액 FROM Transaction_detail_view WHERE 아이디  = '" + uid + "'", myConn);
             return dataAdapter;
         }
     }

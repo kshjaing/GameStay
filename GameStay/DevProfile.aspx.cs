@@ -30,12 +30,10 @@ namespace GameStay
                     {
                         if(Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))//주소창 아이디와 사용자 아이디 같을 때
                         {
-                            btn_profile_edit.Attributes.Add("style", "visibility: visible");
                             btn_registgame.Attributes.Add("style", "visibility: visible");
                         }
                         else//주소창 아이디와 사용자 아이디 다를때
                         {
-                            btn_profile_edit.Attributes.Add("style", "visibility: hidden");
                             btn_registgame.Attributes.Add("style", "visibility: hidden");
                         }
                         DBManager dbManager = new DBManager();
@@ -96,10 +94,7 @@ namespace GameStay
             return @"~\Images\Profile\" + dDo.Userid.Substring(fname.ToString().IndexOf("."));
         }
 
-        protected void editprofile_click(object sender, EventArgs e)
-        {
-            Response.Redirect("ProfileEdit.aspx");
-        }
+
         protected void registGame_click(object sender, EventArgs e)
         {
             Response.Redirect("ManageGame.aspx?uid=" + Session["아이디"]);

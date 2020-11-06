@@ -73,3 +73,166 @@ html, body {
     height: 90%;
     text-align:left;
 }
+
+/*개발사 게임 목록*/
+
+.div_list_title {
+    width: 500px;
+    height: 150px;
+    float: left;
+    position: relative;
+
+}
+.div_list_btn {
+    width: 550px;
+    height: 150px;
+    float: left;
+    text-align: right;
+    display: table-cell;
+    position: relative;
+
+}
+.txt_newgame_title {
+    color: #FFFFFF;
+    font-size: 35pt;
+    font-family: 'NIXGONFONTS B';
+    text-align: left;
+}
+
+.button_resist {
+    margin-top: 70px;
+    border: 0;
+    outline: 0;
+    background-color: #1B1C1E;
+    color: #FFFFFF;
+    font-size: 14pt;
+    width: 100px;
+    height: 45px;
+    border-radius: 8px 8px 8px 8px;
+    transition: all 0.2s;
+    display: inline-block;
+    font-family: 'NIXGONFONTS M';
+}
+
+.div_wrap_list {
+    width: 1100px;
+    height: auto;
+    float: left;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.div_wrap_best_contentbox {
+    width: 100%;
+    height: 112px;
+    background: #1B1C1E;
+    margin-bottom: 8px;
+}
+
+.div_wrap_best_image {
+    width: 220px;
+    height: 110px;
+    position: relative;
+    float: left;
+    user-select: none;
+}
+
+.best_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.div_wrap_p_best_title {
+    width: 515px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.p_best_title {
+    color: #FFFFFF;
+    font-size: 17pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-bottom: 0;
+    margin-left: 20px;
+    user-select: none;
+    text-align: left
+}
+
+.p_best_tags {
+    color: #737373;
+    margin-top: 5px;
+    font-size: 12pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-left: 20px;
+    user-select: none;
+    text-align: left
+}
+
+.div_wrap_p_best_price {
+    display: table;
+    width: 175px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.p_best_price {
+
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: IBMPlexSansKR-Bold;
+    user-select: none;
+}
+
+
+.div_wrap_rating {
+    width: 90px;
+    height: 100%;
+    float: left;
+    position: relative;
+
+}
+
+.div_ratingbox {
+    display: table;
+    width: 30px;
+    height: 30px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+}
+
+.p_rating {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS B 2.0';
+    font-size: 12pt;
+    user-select: none;
+}
+.div_wrap_edit {
+    width: 90px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.button_edit {
+    border: 0;
+    outline: 0;
+    background-color: #25262B;
+    color: #FFFFFF;
+    font-size: 14pt;
+    width: 70px;
+    height: 35px;
+    position: relative;
+    margin-top: 4vh;
+    border-radius: 8px 8px 8px 8px;
+    transition: all 0.2s;
+    font-family: 'NIXGONFONTS M';
+}

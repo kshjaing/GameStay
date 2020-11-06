@@ -11,79 +11,97 @@ namespace GameStay
 {
 
 
-    public partial class DevProfile
+    public partial class UploadGame
     {
 
         /// <summary>
-        /// DevInfo 컨트롤입니다.
+        /// inputTitleKor 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater DevInfo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleKor;
 
         /// <summary>
-        /// btn_registgame 컨트롤입니다.
+        /// inputTitleEng 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btn_registgame;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleEng;
 
         /// <summary>
-        /// DevInfo1 컨트롤입니다.
+        /// inputPrice 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater DevInfo1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputPrice;
 
         /// <summary>
-        /// NewGame1 컨트롤입니다.
+        /// inputDiscount 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater NewGame1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputDiscount;
 
         /// <summary>
-        /// NewGame2 컨트롤입니다.
+        /// inputDate 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater NewGame2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputDate;
 
         /// <summary>
-        /// NewGame3 컨트롤입니다.
+        /// txt_explain 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater NewGame3;
+        protected global::System.Web.UI.WebControls.TextBox txt_explain;
 
         /// <summary>
-        /// NewGame4 컨트롤입니다.
+        /// FileUpload1 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater NewGame4;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
-        /// Devgamelist 컨트롤입니다.
+        /// FileUpload2 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Devgamelist;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
+
+        /// <summary>
+        /// FileUpload3 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload3;
+
+        /// <summary>
+        /// ListBox1 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="DevProfile.aspx.cs" Inherits="GameStay.DevProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/DevProfile_StyleSheet.css?ver=13" rel="stylesheet" />
+    <link href="CSS/DevProfile_StyleSheet.css?ver=16" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -12,13 +12,12 @@
                             <input type="image" id="Image1" runat="server" class="img_profile" src='<%# Eval("개발사로고") %>'/>
                         </div>
                         <div class="div_profile_detail">
-                            <p class="txt_profile_nickname"><%#Eval("개발사") %></p>
+                            <p class="txt_profile_nickname"><%#Eval("개발사이름") %></p>
                             <p class="txt_profile_Link">링크</p>
                         </div>
                         </ItemTemplate>
             </asp:Repeater>
                         <div class="div_profile_edit">
-                            <input type="button" runat="server" class="button_profile" onserverclick="editprofile_click" id="btn_profile_edit" value="프로필 수정"/><br />
                             <input type="button" runat="server" class="button_profile" onserverclick="registGame_click" id="btn_registgame" value="게임 등록"/>
                         </div>
                     </div>

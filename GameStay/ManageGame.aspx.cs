@@ -39,8 +39,26 @@ namespace GameStay
                     devinfo.Fill(dt4);
                     Devname.DataSource = dt4;
                     Devname.DataBind();
+
+                    SqlDataAdapter gamelist = dbManager.SetDevGameList(id);
+                    DataTable gldt = new DataTable();
+                    gamelist.Fill(gldt);
+                    Devgamelist.DataSource = gldt;
+                    Devgamelist.DataBind();
                 }
             }
+        }
+
+        //editGame_click
+        protected void editGame_click(object sender, EventArgs e)
+        {
+            //게임  등록 수정페이지
+            return;
+        }
+        protected void resistGame_click(object sender, EventArgs e)
+        {
+            //게임  등록 수정페이지
+            return;
         }
     }
 }

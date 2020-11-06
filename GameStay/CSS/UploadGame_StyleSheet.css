@@ -1,0 +1,152 @@
+﻿@font-face {
+    font-family: 'IBMPlexSansKR-Bold';
+    src: url('../Fonts/IBMPlexSansKR-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M 2.0';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B 2.0';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HangeulNuriB';
+    src: url('../Fonts/HangeulNuriB.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HangeulNuriR';
+    src: url('../Fonts/HangeulNuriR.ttf') format('truetype');
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrap_total {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.p {
+    user-select: none;
+}
+
+/*등록페이지 상자*/
+
+.square {
+    background-color: #1B1C1E;
+    width: 1100px;
+    height: 2000px;
+    position: relative;
+    vertical-align: middle;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/*등록페이지 상단 제목*/
+.div_upload_title{
+    width:90%;
+    height:70px;
+    padding-top:10px;
+    text-align:left;
+
+}
+.txt_upload_title {
+    color: #FFFFFF;
+    font-size: 35pt;
+    font-family: 'NIXGONFONTS B';
+    text-align: left;
+    margin-left:15px;
+
+}
+
+.txt_upload_subtitle {
+    color: #FFFFFF;
+    font-size: 25pt;
+    font-family: 'NIXGONFONTS M 2.0';
+}
+
+/*등록 기본정보*/
+.div_upload_data {
+    width: 90%;
+    height: 500px;
+    border-bottom : 1px solid;
+    border-color: aliceblue;
+    display: inline-block;
+    text-align: left;
+    margin-top:15px;
+}
+.input_data {
+    width: 500px;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 5px;
+    margin-bottom:20px;
+    outline: none;
+    font-family: 'NIXGONFONTS M';
+    text-align: left;
+}
+.input_explain {
+    width: 800px;
+    height: 180px;
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    outline: none;
+    font-family: 'NIXGONFONTS M';
+    text-align: left;
+}
+/*게임 이미지 등록*/
+.div_upload_img {
+    width: 90%;
+    height: 500px;
+    border-bottom: 1px solid;
+    border-color: #FFFFFF;
+    display: inline-block;
+    margin-top: 15px;
+}
+.div_upload_subimg {
+    width: 600px;
+    border-bottom: 1px solid;
+    border-color: aliceblue;
+    margin-left:5%;
+    margin-top: 15px;
+    text-align:left;
+}
+.txt_upload_imgselect {
+    font-size: 13pt;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS M';
+    margin-top: 10px;
+    width:450px;
+    text-align:left;
+}
+.txt_upload_imgtitle {
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: 'NIXGONFONTS M 2.0';
+    text-align: left;
+}
+.lbox_imglist{
+    width:300px;
+    height:500px;
+}
