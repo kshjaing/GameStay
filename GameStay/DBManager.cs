@@ -9,7 +9,7 @@ namespace GameStay
 {
     public class DBManager
     {
-        
+
         string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
 
         SqlConnection myConn;
@@ -52,7 +52,7 @@ namespace GameStay
             return myConn;
         }
 
-        
+
         //-----------------------------------상점메인페이지관련----------------------------------------
 
         //특집 및 추천에 들어갈 게임들을 어댑터에 적용(어떤게임을 추천할지 그 로직은 추후 추가)
@@ -161,7 +161,7 @@ namespace GameStay
             int count = 0;
             SqlCommand command = new SqlCommand(querystring, myConn);
             SqlDataReader dataReader = command.ExecuteReader();
-            while(dataReader.Read())
+            while (dataReader.Read())
             {
                 count = Convert.ToInt32(dataReader["스샷영상개수"]);
             }
@@ -238,7 +238,7 @@ namespace GameStay
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.영어게임명 = 거래목록.영어게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3;", myConn);
             return dataAdapter;
         }
-        
+
         //유저 정보
         public SqlDataAdapter SetUserInfo(string uid)
         {
@@ -246,9 +246,39 @@ namespace GameStay
             return dataAdapter;
         }
 
+        //유저의 닉네임
+        public String GetNickName(string userid)
+        {
+            String querystring = "SELECT 닉네임 FROM 유저 WHERE 아이디 = '" + userid + "'";
+            String nickname = "";
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            while (dataReader.Read())
+            {
+                nickname = dataReader["닉네임"].ToString();
+            }
+            dataReader.Close();
+            return nickname;
+        }
+
+        //유저의 프로필사진
+        public String GetProfileImage(string userid)
+        {
+            SqlDataReader dataReader = this.ExecuteReader("SELECT 프로필사진 FROM 유저 WHERE 아이디 = '" + userid + "'");
+            return dataReader.ToString();
+        }
+
+        //유저가 소유한 게임 수
         public SqlDataAdapter GetHasGameCount(string userid)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT COUNT(*) AS '소유한 게임 수' FROM 거래목록 WHERE 구매자='" + userid + "'", myConn);
+            return dataAdapter;
+        }
+
+        //유저가 작성한 리뷰 수
+        public SqlDataAdapter GetReviewCount(string userid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT COUNT(*) AS '작성한 리뷰 수' FROM 리뷰 WHERE 작성자 ='" + userid + "'", myConn);
             return dataAdapter;
         }
 

@@ -87,6 +87,51 @@ namespace GameStay
         protected global::System.Web.UI.WebControls.Repeater detailRecRequireRepeater;
 
         /// <summary>
+        /// wrap_total_review_write 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wrap_total_review_write;
+
+        /// <summary>
+        /// img_review_write_profile 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage img_review_write_profile;
+
+        /// <summary>
+        /// p_review_write_nickname 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl p_review_write_nickname;
+
+        /// <summary>
+        /// p_review_write_gamecount 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl p_review_write_gamecount;
+
+        /// <summary>
+        /// p_review_write_reviewcount 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl p_review_write_reviewcount;
+
+        /// <summary>
         /// detailReviewRepeater 컨트롤입니다.
         /// </summary>
         /// <remarks>

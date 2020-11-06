@@ -152,6 +152,21 @@
 
 
         <!--리뷰파트-->
+        <div class="wrap_total_review_write" runat="server" id="wrap_total_review_write">
+            <p class="p_review" runat="server" id="p_review">평가 작성</p>
+            <div class="div_wrap_review_write">
+               <div class="div_review_write_profile">
+                  <img class="img_review_write_profile" src='<%# Eval("프로필사진") %>'/>
+                  <p class="p_review_write_nickname" runat="server" id="p_review_write_nickname"></p>
+                  <p class="p_review_write_gamecount" runat="server" id="p_review_write_gamecount"></p>
+                  <p class="p_review_write_reviewcount" runat="server" id="p_review_write_reviewcount"></p>
+               </div>
+               <div class="div_review_write_text">
+                
+               </div>
+            </div>
+        </div>
+        
         <p class="p_review">유저 평가</p>
         <div class="wrap_total_review">
             <asp:Repeater runat="server" ID="detailReviewRepeater">

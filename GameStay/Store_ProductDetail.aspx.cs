@@ -27,7 +27,7 @@ namespace GameStay
         {
             dbManager = new DBManager();
             //주소창에서 영어게임명 추출
-            gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") +  1);
+            gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") + 1);
 
             detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
@@ -73,8 +73,18 @@ namespace GameStay
             detailReviewRepeater.DataSource = reviewDT;
             detailReviewRepeater.DataBind();
 
+            
+
             dbManager.DBClose();
 
+            if (Session["아이디"] == null)
+            {
+
+            }
+            else
+            {
+                p_review.InnerText = dbManager.GetNickName(Session["아이디"].ToString());
+            }
         }
 
         public void divSmallImages_Resize(object sender, EventArgs e)
