@@ -70,6 +70,10 @@ namespace GameStay
         }
         protected void LibraryMenu_OnClick(object sender, EventArgs e)
         {
+            if (Session["아이디"] == null)
+            {
+                Response.Redirect("RequestLogin.aspx?before=Library");
+            }
             Response.Redirect("Library.aspx");
             button_library.Style["background"] = "#85cba5";
         }
@@ -82,7 +86,7 @@ namespace GameStay
         {
             if(Session["아이디"] == null)
             {
-                Response.Redirect("RequestLogin.aspx");
+                Response.Redirect("RequestLogin.aspx?before=Profile");
             }
             else if(Session["접속경로"].ToString() == "DEV")
                 {
@@ -110,6 +114,8 @@ namespace GameStay
                 //로그아웃
                 Session["아이디"] = null;
                 button_login.InnerText = "로그인";
+
+                //페이지 새로고침
                 Response.Redirect(Request.RawUrl);
             }
         }

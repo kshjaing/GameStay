@@ -20,7 +20,7 @@ namespace GameStay
             {
                 if (Session["아이디"] == null)
                 {
-                    Response.Redirect("RequestLogin.aspx");
+                    Response.Redirect("RequestLogin.aspx?before=Profile");
                 }
                 else
                 {
