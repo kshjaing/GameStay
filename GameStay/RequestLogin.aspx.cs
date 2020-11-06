@@ -36,13 +36,13 @@ namespace GameStay
 				(this.Master.FindControl("div_community") as HtmlControl).Style["border-bottom"] = "unset";
 				(this.Master.FindControl("div_store") as HtmlControl).Style["box-sizing"] = "unset";
 				(this.Master.FindControl("div_store") as HtmlControl).Style["border-bottom"] = "unset";
+			}
 
+			if (Request["__EVENTTARGET"] == "p_goLogin")
+			{
+				Response.Redirect("Login.aspx");
 			}
 		}
 
-		protected void gologin_click(object sender, EventArgs e)
-		{
-			Response.Redirect("Login.aspx");
-		}
 	}
 }
