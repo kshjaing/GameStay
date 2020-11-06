@@ -80,11 +80,12 @@ namespace GameStay
 
             if (Session["아이디"] == null)
             {
-
+                wrap_total_review_write.Attributes["display"] = "none";
             }
             else
             {
-                dbManager.GetNickName(Session["아이디"].ToString());
+                (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
+                wrap_total_review_write.Attributes["display"] = "block";
             }
         }
 

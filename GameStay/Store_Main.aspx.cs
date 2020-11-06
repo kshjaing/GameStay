@@ -19,11 +19,8 @@ namespace GameStay
         SqlDataAdapter discountAdapter3;
         SqlDataAdapter discountAdapter4;
         SqlDataAdapter bestgamesAdapter;
-        SqlDataAdapter newgamesAdapter;
         DBManager dbManager;
         DataSet bestDS;
-        int bestclick = 2;
-        //DataTable newDT;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,8 +36,7 @@ namespace GameStay
             discountAdapter2 = dbManager.SetDiscountAdapter2();           //할인게임 어댑터 2페이지
             discountAdapter3 = dbManager.SetDiscountAdapter3();           //할인게임 어댑터 3페이지
             discountAdapter4 = dbManager.SetDiscountAdapter4();           //할인게임 어댑터 4페이지
-            bestgamesAdapter = dbManager.SetBestGamesAdapter();           //최고인기게임 어댑터
-            //newgamesAdapter = dbManager.SetNewGamesAdapter();             //신규출시게임 어댑터
+            bestgamesAdapter = dbManager.SetBestGamesAdapter();           //최고인기, 신규출시게임 어댑터
             
 
 

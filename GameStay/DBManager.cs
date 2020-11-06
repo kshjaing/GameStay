@@ -107,7 +107,7 @@ namespace GameStay
             return dataAdapter;
         }
 
-        //최고인기게임 8개 평점순으로 어댑터 적용
+        //최고인기게임, 신규인기게임 8개씩 어댑터 적용
         public SqlDataAdapter SetBestGamesAdapter()
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) " +
