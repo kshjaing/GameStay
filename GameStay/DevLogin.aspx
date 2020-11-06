@@ -22,7 +22,7 @@
                </div>
            </div>
            <div class="login_square">
-               <p class="txt_login">개발자 로그인</p>
+               <p class="txt_login">개발사 로그인</p>
                <div class="div_wrap_id">
                    <input type="text" class="input_id" placeholder="아이디"
                       runat="server" id="inputID" autocomplete="off"/>
@@ -46,7 +46,7 @@
                         </a>
                     </div>
                <div class="wrap_register">
-                   <a class="a_register">개발자로 가입하시겠습니까?</a>
+                   <a class="a_register">개발사로 가입하시겠습니까?</a>
                    <a class="a_register_link" href="DevRegister.aspx">개발자 등록</a>
                </div>
                <div class="wrap_devLogin">

@@ -105,7 +105,7 @@
                    </div>
                    <div class="div_info div_developer">
                        <p class="p_info1">개발사</p>
-                       <p class="p_info2"><%# Eval("개발사") %></p>
+                       <p class="p_info2"><%# Eval("개발사이름") %></p>
                    </div>
                </div>
                <div class="div_empty"></div>

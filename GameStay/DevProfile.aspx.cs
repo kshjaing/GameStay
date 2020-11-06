@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 /* application 변수는 웹사이트 실행중일때 모두 공유되는 객체
  * request 사용자가 사이트에 존제하는 객체
@@ -22,13 +23,15 @@ namespace GameStay
             {
                 if (Session["아이디"] == null)
                 {
-
+                    Response.Redirect("RequestLogin.aspx?before=DevProfile");
                 }
                 else
                 {
                     if (Request["id"] != null)//주소창에 아이디 있을때
                     {
-                        if(Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))//주소창 아이디와 사용자 아이디 같을 때
+                        (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
+
+                        if (Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))//주소창 아이디와 사용자 아이디 같을 때
                         {
                             btn_profile_edit.Attributes.Add("style", "visibility: visible");
                         }

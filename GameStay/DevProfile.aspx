@@ -12,7 +12,7 @@
                             <input type="image" id="Image1" runat="server" class="img_profile" src='<%# Eval("개발사로고") %>'/>
                         </div>
                         <div class="div_profile_detail">
-                            <p class="txt_profile_nickname"><%#Eval("개발사") %></p>
+                            <p class="txt_profile_nickname"><%#Eval("개발사이름") %></p>
                             <p class="txt_profile_Link">링크</p>
                         </div>
                         </ItemTemplate>
