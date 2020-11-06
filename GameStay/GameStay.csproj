@@ -164,7 +164,11 @@
     <Content Include="Images\Profile\Default_Profile.png" />
     <Content Include="Images\Profile\Developer\DevImage_Activision.png" />
     <Content Include="Images\Profile\Developer\DevImage_Electronic Arts.png" />
-    <Content Include="Images\Profile\Profile_Mongkka.png" />
+    <Content Include="Images\Profile\User\Profile_tester.png" />
+    <Content Include="Images\Profile\User\Profile_user.png" />
+    <Content Include="Images\Profile\User\Profile_user3.png" />
+    <Content Include="Images\Profile\User\Profile_user4.png" />
+    <Content Include="Images\Profile\User\Profile_user5.png" />
     <Content Include="Library.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Profile.aspx" />

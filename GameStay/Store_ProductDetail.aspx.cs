@@ -76,16 +76,21 @@ namespace GameStay
 
             
 
+
+
             dbManager.DBClose();
 
+            //로그인이 되어있고 게임을 소유해야만 평가작성 가능
             if (Session["아이디"] == null)
             {
-                wrap_total_review_write.Attributes["display"] = "none";
+                wrap_total_review_write.Style["display"] = "none";
             }
             else
             {
                 (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
-                wrap_total_review_write.Attributes["display"] = "block";
+                wrap_total_review_write.Style["display"] = "block";
+                img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
+                p_review_write_nickname.InnerText = Session["닉네임"].ToString();
             }
         }
 

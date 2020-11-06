@@ -343,6 +343,77 @@ html, body {
 
 
 
+.p_review_write {
+    color: #FFFFFF;
+    font-size: 20pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    float: left;
+    user-select: none;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.wrap_total_review_write {
+    width: 100%;
+    height: 300px;
+    float: left;
+    margin-top: 80px;
+}
+
+.wrap_review_write {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.div_wrap_profile {
+    width: 150px;
+    height: 100%;
+    float: left;
+}
+
+.div_review_write_profile_image {
+    width: 60px;
+    height: 60px;
+    float: left;
+    text-align: center;
+}
+
+.img_review_write_profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p_review_write_nickname {
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS M 2.0';
+    float: left;
+}
+
+.p_review_write_gamecount {
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS M 2.0';
+    float: left;
+}
+
+.p_review_write_reviewcount {
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS M 2.0';
+    float: left;
+}
+
+.div_review_write_text {
+    width: 950px;
+    height: 100%;
+    float: left;
+    background: blue;
+}
+
 .p_review {
     color: #FFFFFF;
     font-size: 20pt;

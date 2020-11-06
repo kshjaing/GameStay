@@ -30,11 +30,12 @@ namespace GameStay
                     {
                         if(Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
                         {
-                            btn_profile_edit.Attributes.Add("style", "visibility: visible");
+                            wrap_edit_p.Style["visibility"] = "visible";
                         }
+
                         else
                         {
-                            btn_profile_edit.Attributes.Add("style", "visibility: hidden");
+                            wrap_edit_p.Style["visibility"] = "hidden";
                         }
                         DBManager dbManager = new DBManager();
                         SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(Request["id"].ToString().TrimEnd());

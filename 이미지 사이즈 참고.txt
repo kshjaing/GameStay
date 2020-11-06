@@ -11,3 +11,4 @@
 
 *프로필 이미지
 128x128 or 512x512
+정사각형이면 상관없음(width/height == 1 && width%height == 0)

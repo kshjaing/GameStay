@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="GameStay.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Profile_StyleSheet.css?ver=12" rel="stylesheet" />
+    <link href="CSS/Profile_StyleSheet.css?ver=10" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -15,14 +15,15 @@
                       <a class="txt_profile_detail">레벨 : </a> <a class="txt_profile_level" ><%#Eval("레벨") %></a> <br />
                       </ItemTemplate>
             </asp:Repeater>
-            <a class="txt_profile_detail">보유한 게임 :</a> <a class="txt_profile_countgame" runat="server" id="txt_profile_countgame"></a> <a class="txt_profile_detail">개</a>
-        </div>
-                      
-                
-            <div class="div_profile_edit">
-                <input type="button" runat="server" class="btn_profile_edit" onserverclick="editprofile_click" id="btn_profile_edit" value="프로필 수정"/>
+            <a class="txt_profile_detail">보유한 게임 :</a> <a class="txt_profile_countgame" runat="server" id="txt_profile_countgame"></a> <a class="txt_profile_detail2">개</a>
+        </div> 
+        <div class="div_profile_edit">
+            <div class="wrap_edit_p" runat="server" id="wrap_edit_p"
+                onmouseover="this.style.backgroundColor='#70d0a4'" onmouseout="this.style.backgroundColor='#25262b'">
+                <p class="p_profile_edit">프로필 수정</p>
             </div>
         </div>
+    </div>
 
     <div class="profile_square_game">
         <p class="txt_profile_game">최근에 구매한 게임</p>
