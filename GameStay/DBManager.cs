@@ -159,6 +159,7 @@ namespace GameStay
              + "UNION ALL "
              + "SELECT COUNT(*) AS cnt FROM 게임소개영상 WHERE 영어게임명 = '" + gametitle + "') a";
             int count = 0;
+            DBOpen();
             SqlCommand command = new SqlCommand(querystring, myConn);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -174,6 +175,7 @@ namespace GameStay
         {
             String querystring = "SELECT 대표영상링크 FROM 게임타이틀 WHERE 영어게임명 = '" + gametitle + "'";
             String link = "";
+            DBOpen();
             SqlCommand command = new SqlCommand(querystring, myConn);
             SqlDataReader dataReader = command.ExecuteReader();
             if (dataReader.Read())
@@ -264,22 +266,46 @@ namespace GameStay
         //유저의 프로필사진
         public String GetProfileImage(string userid)
         {
-            SqlDataReader dataReader = this.ExecuteReader("SELECT 프로필사진 FROM 유저 WHERE 아이디 = '" + userid + "'");
-            return dataReader.ToString();
+            String querystring = "SELECT 프로필사진 FROM 유저 WHERE 아이디 = '" + userid + "'";
+            String profileimage = "";
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            while (dataReader.Read())
+            {
+                profileimage = dataReader["프로필사진"].ToString();
+            }
+            dataReader.Close();
+            return profileimage;
         }
 
         //유저가 소유한 게임 수
-        public SqlDataAdapter GetHasGameCount(string userid)
+        public int GetHasGameCount(string userid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT COUNT(*) AS '소유한 게임 수' FROM 거래목록 WHERE 구매자='" + userid + "'", myConn);
-            return dataAdapter;
+            String querystring = "SELECT COUNT(*) AS '소유한 게임 수' FROM 거래목록 WHERE 구매자='" + userid + "'";
+            int count = 0;
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            while (dataReader.Read())
+            {
+                count = Convert.ToInt32(dataReader["소유한 게임 수"]);
+            }
+            dataReader.Close();
+            return count;
         }
 
         //유저가 작성한 리뷰 수
-        public SqlDataAdapter GetReviewCount(string userid)
+        public int GetReviewCount(string userid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT COUNT(*) AS '작성한 리뷰 수' FROM 리뷰 WHERE 작성자 ='" + userid + "'", myConn);
-            return dataAdapter;
+            String querystring = "SELECT COUNT(*) AS '작성한 리뷰 수' FROM 리뷰 WHERE 작성자 ='" + userid + "'";
+            int count = 0;
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            while (dataReader.Read())
+            {
+                count = Convert.ToInt32(dataReader["작성한 리뷰 수"]);
+            }
+            dataReader.Close();
+            return count;
         }
 
         //개발사 정보

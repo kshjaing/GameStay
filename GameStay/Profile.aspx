@@ -15,12 +15,8 @@
                       <a class="txt_profile_detail">레벨 : </a> <a class="txt_profile_level" ><%#Eval("레벨") %></a> <br />
                       </ItemTemplate>
             </asp:Repeater>
-            <asp:Repeater runat="server" ID="HasGameCountRepeater">
-                <ItemTemplate>
-                      <a class="txt_profile_detail">보유한 게임 :</a> <a class="txt_profile_countgame"><%# Eval("소유한 게임 수") %></a> <a class="txt_profile_detail">개</a>
-                  </div>
-                </ItemTemplate>
-            </asp:Repeater>
+            <a class="txt_profile_detail">보유한 게임 :</a> <a class="txt_profile_countgame" runat="server" id="txt_profile_countgame"></a> <a class="txt_profile_detail">개</a>
+        </div>
                       
                 
             <div class="div_profile_edit">

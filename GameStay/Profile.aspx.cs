@@ -12,6 +12,7 @@ namespace GameStay
     public partial class Profile : System.Web.UI.Page
     {
         static UserDo userDo;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -37,7 +38,6 @@ namespace GameStay
                         SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(Request["id"].ToString().TrimEnd());
                         SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(Request["id"].ToString().TrimEnd());
                         SqlDataAdapter userinfo = dbManager.SetUserInfo(Request["id"].ToString().TrimEnd());
-                        SqlDataAdapter hasGameCount = dbManager.GetHasGameCount(Request["id"].ToString().TrimEnd());
 
                         DataTable dt1 = new DataTable();
                         recentAdapter1.Fill(dt1);
@@ -59,10 +59,7 @@ namespace GameStay
                         UserInfo.DataSource = dt4;
                         UserInfo.DataBind();
 
-                        DataTable countDT = new DataTable();
-                        hasGameCount.Fill(countDT);
-                        HasGameCountRepeater.DataSource = countDT;
-                        HasGameCountRepeater.DataBind();
+                        txt_profile_countgame.InnerText = dbManager.GetHasGameCount(Request["id"].ToString()).ToString();
                     }
                     else
                     {

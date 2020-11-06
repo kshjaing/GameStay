@@ -27,7 +27,8 @@ namespace GameStay
         {
             dbManager = new DBManager();
             //주소창에서 영어게임명 추출
-            gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") + 1);
+            gameTitle = Request["title"];
+            //gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") + 1);
 
             detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
@@ -83,7 +84,7 @@ namespace GameStay
             }
             else
             {
-                p_review.InnerText = dbManager.GetNickName(Session["아이디"].ToString());
+                dbManager.GetNickName(Session["아이디"].ToString());
             }
         }
 
@@ -95,6 +96,9 @@ namespace GameStay
             div_wrap_small_boxes.Style["width"] = 187.5 * mediaCount + 4 * mediaCount + "px";
         }
 
-
+        public void SetProfileImage()
+        {
+            img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
+        }
     }
 }

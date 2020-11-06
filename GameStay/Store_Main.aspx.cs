@@ -27,6 +27,11 @@ namespace GameStay
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["아이디"] != null)
+            {
+                (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
+            }
+
             dbManager = new DBManager();
             featureAdapter = dbManager.SetFeaturesAdapter();              //추천게임 어댑터
             discountCountAdpater = dbManager.SetDiscountCountAdapter();   //할인게임 총 개수 어댑터
