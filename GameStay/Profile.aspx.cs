@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace GameStay
@@ -12,32 +13,35 @@ namespace GameStay
     public partial class Profile : System.Web.UI.Page
     {
         static UserDo userDo;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 if (Session["아이디"] == null)
                 {
-                    Response.Redirect("RequestLogin.aspx");
+                    Response.Redirect("RequestLogin.aspx?before=Profile");
                 }
                 else
                 {
+                    (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
+
                     if (Request["id"] != null)
                     {
-                        if(Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
+                        if (Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
                         {
-                            btn_profile_edit.Attributes.Add("style", "visibility: visible");
+                            wrap_edit_p.Style["visibility"] = "visible";
                         }
+
                         else
                         {
-                            btn_profile_edit.Attributes.Add("style", "visibility: hidden");
+                            wrap_edit_p.Style["visibility"] = "hidden";
                         }
                         DBManager dbManager = new DBManager();
                         SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(Request["id"].ToString().TrimEnd());
                         SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(Request["id"].ToString().TrimEnd());
                         SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(Request["id"].ToString().TrimEnd());
                         SqlDataAdapter userinfo = dbManager.SetUserInfo(Request["id"].ToString().TrimEnd());
-                        SqlDataAdapter hasGameCount = dbManager.GetHasGameCount(Request["id"].ToString().TrimEnd());
 
                         DataTable dt1 = new DataTable();
                         recentAdapter1.Fill(dt1);
@@ -59,10 +63,8 @@ namespace GameStay
                         UserInfo.DataSource = dt4;
                         UserInfo.DataBind();
 
-                        DataTable countDT = new DataTable();
-                        hasGameCount.Fill(countDT);
-                        HasGameCountRepeater.DataSource = countDT;
-                        HasGameCountRepeater.DataBind();
+                        //소유한 게임 수
+                        txt_profile_countgame.InnerText = dbManager.GetHasGameCount(Request["id"].ToString()).ToString();
                     }
                     else
                     {
@@ -70,12 +72,11 @@ namespace GameStay
                     }
                 }
             }
-        }
-        protected void editprofile_click(object sender, EventArgs e)
-        {
-            Response.Redirect("ProfileEdit.aspx");
-        }
 
-        
+            if (Request["__EVENTTARGET"] == "wrap_edit_p")
+            {
+                Response.Redirect("ProfileEdit.aspx");
+            }
+        }
     }
 }

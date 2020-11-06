@@ -58,7 +58,15 @@ html, body {
     font-size: 15pt;
     font-family: 'NIXGONFONTS M';
     position: relative;
-    margin-left: 5px;
+    margin-left: 20px;
+}
+
+.txt_profile_detail2 {
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: 'NIXGONFONTS M';
+    position: relative;
+    margin-left: 3px;
 }
 .txt_profile_nickname {
     color: #FFFFFF;
@@ -88,7 +96,7 @@ html, body {
     position: relative;
 }
 .div_profile_detail {
-    width: 570px;
+    width: 560px;
     height: 100%;
     text-align: left;
     float: left;
@@ -99,19 +107,32 @@ html, body {
     height: 100%;
     float: left;
     position: relative;
+    padding-right: 10px;
 }
-.btn_profile_edit {
-    background: transparent;
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    vertical-align: central;
-    text-align: center;
+
+.wrap_edit_p {
+    display: table;
+    width: 120px;
+    height: 50px;
+    background: #25262b;
+    position: relative;
+    float: left;
+    visibility: hidden;
+    top: 50%;
+    transform: translateY(15px);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.p_profile_edit {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
     color: #FFFFFF;
-    font-family: IBMPlexSansKR-Medium;
-    font-size: 16pt;
-    visibility:hidden;
+    font-family: 'NIXGONFONTS B';
+    font-size: 13pt;
+    user-select: none;
+    cursor: pointer;
 }
 
 /*최근 구매한 게임*/

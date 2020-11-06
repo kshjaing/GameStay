@@ -27,7 +27,8 @@ namespace GameStay
         {
             dbManager = new DBManager();
             //주소창에서 영어게임명 추출
-            gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") +  1);
+            gameTitle = Request["title"];
+            //gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") + 1);
 
             detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
@@ -73,8 +74,24 @@ namespace GameStay
             detailReviewRepeater.DataSource = reviewDT;
             detailReviewRepeater.DataBind();
 
+            
+
+
+
             dbManager.DBClose();
 
+            //로그인이 되어있고 게임을 소유해야만 평가작성 가능
+            if (Session["아이디"] == null)
+            {
+                wrap_total_review_write.Style["display"] = "none";
+            }
+            else
+            {
+                (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
+                wrap_total_review_write.Style["display"] = "block";
+                img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
+                p_review_write_nickname.InnerText = Session["닉네임"].ToString();
+            }
         }
 
         public void divSmallImages_Resize(object sender, EventArgs e)
@@ -85,6 +102,9 @@ namespace GameStay
             div_wrap_small_boxes.Style["width"] = 187.5 * mediaCount + 4 * mediaCount + "px";
         }
 
-
+        public void SetProfileImage()
+        {
+            img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
+        }
     }
 }
