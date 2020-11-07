@@ -106,5 +106,12 @@ namespace GameStay
         {
             img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
         }
+
+        public int SetHasGameCount(string userid)
+        {
+            int count = 0;
+            count = dbManager.GetHasGameCount(userid);
+            return count;
+        }
     }
 }

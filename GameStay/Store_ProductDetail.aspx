@@ -170,7 +170,7 @@
                    <p class="p_review_write_nickname" runat="server" id="p_review_write_nickname"></p> <br />
                    <p class="p_review_write_gamecount" runat="server" id="p_review_write_gamecount">보유한 게임 20개</p><br />
                    <p class="p_review_write_reviewcount" runat="server" id="p_review_write_reviewcount">작성한 리뷰 4개</p>
-               </div>
+                </div>
 
                <div class="div_review_write_text">
                    <div class="wrap_textarea">
@@ -193,8 +193,21 @@
             <asp:Repeater runat="server" ID="detailReviewRepeater">
                 <ItemTemplate>
                     <div class="div_wrap_review">
-                        <p class="p_review_nickname"></p>
-                        <p class="p_review_contents"><%# Eval("내용") %></p>
+                        <div class="div_wrap_profile">
+                            <div class="div_review_write_profile_image">
+                               <img class="img_review_write_profile" src='<%# Eval("프로필사진") %>'/>
+                            </div><div class="empty_review_write"></div>
+                            <p class="p_review_write_nickname"><%# Eval("닉네임") %></p> <br />
+                            <p class="p_review_write_gamecount">보유한 게임 <%# SetHasGameCount(Eval("아이디").ToString()); %>개</p><br />
+                            <p class="p_review_write_reviewcount">작성한 리뷰 4개</p>
+                            <div class="div_review_rating">
+                                <p class="p_review_rating">평점: <%# Eval("평점") %></p>
+                            </div>
+                        </div>
+                        <div class="div_wrap_review_contents">
+                            <p class="p_review_date"><%# DataBinder.Eval(Container.DataItem, "작성일", "{0:D}") %></p>
+                            <p class="p_review_contents"><%# Eval("내용") %></p>
+                        </div>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>

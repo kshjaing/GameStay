@@ -208,8 +208,8 @@ namespace GameStay
         //특정게임의 리뷰 어댑터
         public SqlDataAdapter SetReviewAdapter(string gametitle)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM 리뷰 WHERE 영어게임명 = '" + gametitle + "'", myConn);
-            return adapter;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM User_Review_view WHERE 영어게임명='" + gametitle + "' ORDER BY '평점' DESC", myConn);
+            return dataAdapter;
         }
 
         //저장 프로시저 실행
