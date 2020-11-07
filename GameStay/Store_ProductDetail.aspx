@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=15" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=10" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -18,6 +18,10 @@
             document.getElementById("img_screenshot").style.display = "block";
         }
 
+        function onClickReviewMore() {
+            __doPostBack('div_wrap_p_review_more');
+        }
+
         $(document).ready(function () {
             $('input[type="number"]').keydown(function () {
                 if (event.keyCode === 13) {
@@ -25,6 +29,16 @@
                 };
             });
         });
+
+        function onMouseMore() {
+            document.getElementById("div_wrap_p_review_more").style.background = "#FFFFFF";
+            document.getElementById("p_review_more").style.color = "#000000";
+        }
+
+        function onMouseoutMore() {
+            document.getElementById("div_wrap_p_review_more").style.background = "transparent";
+            document.getElementById("p_review_more").style.color = "#FFFFFF";
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -167,9 +181,7 @@
                    <div class="div_review_write_profile_image">
                       <img class="img_review_write_profile" src='' runat="server" id="img_review_write_profile"/>
                    </div><div class="empty_review_write"></div>
-                   <p class="p_review_write_nickname" runat="server" id="p_review_write_nickname"></p> <br />
-                   <p class="p_review_write_gamecount" runat="server" id="p_review_write_gamecount">보유한 게임 20개</p><br />
-                   <p class="p_review_write_reviewcount" runat="server" id="p_review_write_reviewcount">작성한 리뷰 4개</p>
+                   <p class="p_review_write_nickname" runat="server" id="p_review_write_nickname"></p>
                 </div>
 
                <div class="div_review_write_text">
@@ -197,20 +209,21 @@
                             <div class="div_review_write_profile_image">
                                <img class="img_review_write_profile" src='<%# Eval("프로필사진") %>'/>
                             </div><div class="empty_review_write"></div>
-                            <p class="p_review_write_nickname"><%# Eval("닉네임") %></p> <br />
-                            <p class="p_review_write_gamecount">보유한 게임 <%# SetHasGameCount(Eval("아이디").ToString()); %>개</p><br />
-                            <p class="p_review_write_reviewcount">작성한 리뷰 4개</p>
+                            <p class="p_review_write_nickname"><%# Eval("닉네임") %></p><br />
+                            <p class="p_review_write_gamecount">보유한 게임 <%# Eval("소유한 게임 수") %>개</p><br />
+                            <p class="p_review_write_reviewcount">작성한 리뷰 <%# Eval("작성한 리뷰 수") %>개</p>
                             <div class="div_review_rating">
                                 <p class="p_review_rating">평점: <%# Eval("평점") %></p>
                             </div>
                         </div>
                         <div class="div_wrap_review_contents">
-                            <p class="p_review_date"><%# DataBinder.Eval(Container.DataItem, "작성일", "{0:D}") %></p>
+                            <p class="p_review_date"><%# DataBinder.Eval(Container.DataItem, "작성일", "{0:D}") %> 작성</p>
                             <p class="p_review_contents"><%# Eval("내용") %></p>
                         </div>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+            <p class="p_review_total" onclick="TotalReview_OnClick" runat="server" id="p_review_total">모든 리뷰 보기</p>
         </div>
 
 

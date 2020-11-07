@@ -21,7 +21,8 @@ namespace GameStay
         SqlDataAdapter detailRecRequireAdapter;
         SqlDataAdapter detailReviewAdapter;
         string gameTitle;
-        int mediaCount;
+        int mediaCount, totalGameReviewCount;
+        bool checkHasGame;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -74,24 +75,43 @@ namespace GameStay
             detailReviewRepeater.DataSource = reviewDT;
             detailReviewRepeater.DataBind();
 
-            
+
+            //로그인한 유저가 게임을 갖고있는지 체크
+            if (Session["아이디"] != null)
+                checkHasGame = dbManager.CheckHasGame(Session["아이디"].ToString(), Request["title"]);
 
 
-
-            dbManager.DBClose();
 
             //로그인이 되어있고 게임을 소유해야만 평가작성 가능
             if (Session["아이디"] == null)
             {
                 wrap_total_review_write.Style["display"] = "none";
             }
-            else
+
+            else if (Session["아이디"] != null && checkHasGame == false)
+            {
+                wrap_total_review_write.Style["display"] = "none";
+            }
+            else if (Session["아이디"] != null && checkHasGame == true)
             {
                 (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
                 wrap_total_review_write.Style["display"] = "block";
                 img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
                 p_review_write_nickname.InnerText = Session["닉네임"].ToString();
             }
+
+            //게임의 총 리뷰수가 8개 초과일때 모든 리뷰 보기 버튼 활성화(상점에선 최대 8개까지 보여줌)
+            totalGameReviewCount = dbManager.GetGameReviewCount(gameTitle);
+            if (totalGameReviewCount > 8)
+            {
+                p_review_total.Style["display"] = "block";
+            }
+
+            else
+                p_review_total.Style["display"] = "none";
+
+            dbManager.DBClose();
+
         }
 
         public void divSmallImages_Resize(object sender, EventArgs e)
@@ -107,11 +127,12 @@ namespace GameStay
             img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
         }
 
-        public int SetHasGameCount(string userid)
+
+        //모든 리뷰 보기 누르면 커뮤니티로 넘어가서 해당게임의 리뷰만 바인딩해서 보여줌
+        protected void TotalReview_OnClick(object sender, EventArgs e)
         {
-            int count = 0;
-            count = dbManager.GetHasGameCount(userid);
-            return count;
+            Response.Redirect("Community.aspx");
         }
+
     }
 }

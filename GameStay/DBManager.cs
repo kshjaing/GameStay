@@ -208,7 +208,8 @@ namespace GameStay
         //특정게임의 리뷰 어댑터
         public SqlDataAdapter SetReviewAdapter(string gametitle)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM User_Review_view WHERE 영어게임명='" + gametitle + "' ORDER BY '평점' DESC", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) AS rownum, *FROM(SELECT * FROM 뷰_유저리뷰 WHERE 영어게임명 = '"+ gametitle +"') AS review1) AS review2 "
+             + "WHERE review2.rownum BETWEEN 1 AND 8", myConn);
             return dataAdapter;
         }
 
@@ -278,6 +279,20 @@ namespace GameStay
             return profileimage;
         }
 
+        //유저가 게임을 보유하고 있는지 체크(true=보유, false=미보유)
+        public bool CheckHasGame(string userid, string gametitle)
+        {
+            bool isHave = false;
+            String querystring = "SELECT * FROM 거래목록 WHERE 구매자='" + userid + "' AND 영어게임명='" + gametitle + "'";
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            if (dataReader.Read())
+                isHave = true;
+            else
+                isHave = false;
+            return isHave;
+        }
+
         //유저가 소유한 게임 수
         public int GetHasGameCount(string userid)
         {
@@ -303,6 +318,24 @@ namespace GameStay
             while (dataReader.Read())
             {
                 count = Convert.ToInt32(dataReader["작성한 리뷰 수"]);
+            }
+            dataReader.Close();
+            return count;
+        }
+
+        //특정 게임이 갖고있는 총 리뷰의 수
+        public int GetGameReviewCount(string gametitle)
+        {
+            String querystring = "SELECT  COUNT(rownum) AS '게임의 총 리뷰 수' " 
+               + "FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) AS rownum, * " 
+               + "FROM(SELECT * FROM 리뷰 WHERE 영어게임명 = '"+ gametitle +"') AS review1) AS review "
+               + "WHERE review.rownum BETWEEN 1 AND 8";
+            int count = 0;
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            while (dataReader.Read())
+            {
+                count = Convert.ToInt32(dataReader["게임의 총 리뷰 수"]);
             }
             dataReader.Close();
             return count;
