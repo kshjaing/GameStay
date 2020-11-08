@@ -525,6 +525,19 @@ html, body {
     cursor: pointer;
 }
 
+.button_post {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    color: #FFFFFF;
+    font-size: 11pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    cursor: pointer;
+}
+
 .p_post {
     display: table-cell;
     vertical-align: middle;
@@ -590,14 +603,7 @@ html, body {
     margin-bottom: 20px;
 }
 
-.div_review_rating {
-    display: table;
-    width: 150px;
-    height: 50px;
-    left: 0;
-    bottom: 0;
-    position: relative;
-}
+
 
 .p_review_rating {
     display: table-cell;
@@ -615,7 +621,7 @@ html, body {
     width: 920px;
     height: 250px;
     float: left;
-    background: #3a3c40;
+    background: transparent;
     overflow-y: scroll;
 }
 
@@ -634,12 +640,30 @@ html, body {
     }
 
 
-.p_review_date {
+
+.div_review_rating {
+    width: 75px;
+    height: 15px;
     margin-left: 30px;
     margin-top: 30px;
-    color: #dadada;
-    font-size: 12pt;
+    position: relative;
+}
+
+.img_star {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p_review_date {
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: #5a5a5a;
+    font-size: 10pt;
     font-family: 'NIXGONFONTS M 2.0';
+    float: left;
+    position: relative;
 }
 
 
@@ -647,8 +671,10 @@ html, body {
     color: #FFFFFF;
     font-size: 12pt;
     font-family: 'NIXGONFONTS M 2.0';
+    left: 0;
     margin-left: 30px;
     word-break: break-all;
+    position: relative;
 }
 
 .div_p_review_total {
@@ -659,7 +685,6 @@ html, body {
     transform: translateX(-50%);
     float: left;
     position: relative;
-    background: yellow;
 }
 
 .p_review_total {

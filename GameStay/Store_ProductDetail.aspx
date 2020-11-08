@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
+﻿<%@ Page ValidateRequest="false" Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=14" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=16" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -25,6 +25,7 @@
         function onClickReviewTotal() {
             __doPostBack('div_p_review_total');
         }
+
 
         $(document).ready(function () {
             $('input[type="number"]').keydown(function () {
@@ -190,16 +191,17 @@
 
                <div class="div_review_write_text">
                    <div class="wrap_textarea">
-                       <textarea class="textarea_review"></textarea>
+                       <textarea class="textarea_review" id="textarea_review" name="textarea_review"></textarea>
                    </div>
                </div>
                <div class="div_review_write_rating">
                    <p class="p_review_write_rating">내 평점: </p>
-                   <input class="input_rating" placeholder="100" type="number" min="0" max="100"/>
+                   <input class="input_rating" placeholder="100" type="number" min="0" max="100"
+                       runat="server" id="input_rating"/>
                </div>
                <div class="div_post" id="div_post" onmouseover="this.style.backgroundColor='#4caccf'"
-                   onmouseout="this.style.backgroundColor='#48494D'" onclick="">
-                   <p class="p_post">게시</p>
+                   onmouseout="this.style.backgroundColor='#48494D'">
+                   <button class="button_post" runat="server" id="button_post" onserverclick="ButtonPost_OnClick">게시</button>
                </div>
             </div>
         </div>
@@ -216,12 +218,13 @@
                             <p class="p_review_write_nickname"><%# Eval("닉네임") %></p><br />
                             <p class="p_review_write_gamecount">보유한 게임 <%# Eval("소유한 게임 수") %>개</p><br />
                             <p class="p_review_write_reviewcount">작성한 리뷰 <%# Eval("작성한 리뷰 수") %>개</p>
-                            <div class="div_review_rating">
-                                <p class="p_review_rating">평점: <%# Eval("평점") %></p>
-                            </div>
+                            
                         </div>
                         <div class="div_wrap_review_contents">
-                            <p class="p_review_date"><%# DataBinder.Eval(Container.DataItem, "작성일", "{0:D}") %> 작성</p>
+                            <div class="div_review_rating">
+                                <img class="img_star" src='<%# Eval("평점이미지") %>' />
+                            </div>
+                            <p class="p_review_date"><%# DataBinder.Eval(Container.DataItem, "작성일", "{0:D}") %> 작성</p><br />
                             <p class="p_review_contents"><%# Eval("내용") %></p>
                         </div>
                     </div>
