@@ -44,7 +44,7 @@
                         <a runat="server" id="txtLoginCheck" class="a_login_check" draggable="false">
                             가입하지 않은 아이디이거나,<br /> 잘못된 비밀번호입니다.
                         </a>
-                    </div>
+               </div>
                <div class="wrap_register">
                    <a class="a_register">개발사로 가입하시겠습니까?</a>
                    <a class="a_register_link" href="DevRegister.aspx">개발자 등록</a>

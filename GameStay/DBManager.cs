@@ -205,11 +205,21 @@ namespace GameStay
 
 
         //--------------------------------------------게임상세페이지 리뷰파트-------------------------------------
-        //특정게임의 리뷰 어댑터
+        //평균평점 계산한 게임타이틀뷰
+        public SqlDataAdapter SetGameTitleViewAdapter(string gametitle)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_게임타이틀 WHERE 영어게임명='" + gametitle + "'", myConn);
+            return dataAdapter;
+        }
+
+
+
+        //특정 게임의 리뷰를 1~8개까지 보여줌
         public SqlDataAdapter SetReviewAdapter(string gametitle)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM 리뷰 WHERE 영어게임명 = '" + gametitle + "'", myConn);
-            return adapter;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) AS rownum, *FROM(SELECT * FROM 뷰_유저리뷰 WHERE 영어게임명 = '"+ gametitle +"') AS review1) AS review2 "
+             + "WHERE review2.rownum BETWEEN 1 AND 8", myConn);
+            return dataAdapter;
         }
 
         //저장 프로시저 실행
@@ -278,6 +288,20 @@ namespace GameStay
             return profileimage;
         }
 
+        //유저가 게임을 보유하고 있는지 체크(true=보유, false=미보유)
+        public bool CheckHasGame(string userid, string gametitle)
+        {
+            bool isHave = false;
+            String querystring = "SELECT * FROM 거래목록 WHERE 구매자='" + userid + "' AND 영어게임명='" + gametitle + "'";
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            if (dataReader.Read())
+                isHave = true;
+            else
+                isHave = false;
+            return isHave;
+        }
+
         //유저가 소유한 게임 수
         public int GetHasGameCount(string userid)
         {
@@ -306,6 +330,85 @@ namespace GameStay
             }
             dataReader.Close();
             return count;
+        }
+
+        //특정 게임의 리뷰 수
+        public int SetGameReview(string gametitle)
+        {
+            String querystring = "SELECT  COUNT(rownum) AS '게임의 총 리뷰 수' " 
+               + "FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) AS rownum, * " 
+               + "FROM(SELECT * FROM 리뷰 WHERE 영어게임명 = '"+ gametitle +"') AS review1) AS review ";
+            int count = 0;
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            while (dataReader.Read())
+            {
+                count = Convert.ToInt32(dataReader["게임의 총 리뷰 수"]);
+            }
+            dataReader.Close();
+            return count;
+        }
+
+        //로그인한 유저의 특정게임 평점
+        public int GetRating(string userid, string gametitle)
+        {
+            String querystring = "SELECT 평점 FROM 리뷰 WHERE 작성자='" + userid + "' AND 영어게임명='" + gametitle + "'";
+            int count = 0;
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            while (dataReader.Read())
+            {
+                count = Convert.ToInt32(dataReader["평점"]);
+            }
+            dataReader.Close();
+            return count;
+        }
+
+        //특정게임에서 이미 쓴 자신의 리뷰를 가져옴
+        public String GetMyReview(string userid, string gametitle)
+        {
+            String querystring = "SELECT 내용 FROM 리뷰 WHERE 작성자='" + userid +"' AND 영어게임명='" + gametitle + "'";
+            String myReview = "";
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            while (dataReader.Read())
+            {
+                myReview = dataReader["내용"].ToString().Replace("<br>", "");
+            }
+            dataReader.Close();
+            return myReview;
+        }
+
+        //리뷰 게시
+        public void PostReview(string userid, string gametitle, string contents, int rating)
+        {
+            String querystring1 = "SELECT COUNT(*) AS 확인 FROM 리뷰 WHERE 작성자='" + userid + "' AND 영어게임명='" + gametitle + "'";
+            String querystring2 = "";
+
+            //평점을 20으로 나눈 몫으로 별 개수 선정
+            int star = 1;
+            if (rating / 20 == 5)
+                star = 5;
+            else
+                star = rating / 20 + 1;
+
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring1);
+            dataReader.Read();
+            //dataReader가 읽히면 이미 이 게임에 이 유저가 작성한 리뷰가 있는것
+            if (Convert.ToInt32(dataReader["확인"]) == 1)
+            {
+                querystring2 = "UPDATE 리뷰 SET 내용='" + contents + "', 평점=" + rating + " WHERE 작성자='" + userid + "' AND 영어게임명='" + gametitle + "'";
+            }
+            //읽히지 않으면 새로 삽입
+            else if (Convert.ToInt32(dataReader["확인"]) == 0)
+            {
+                querystring2 = "INSERT INTO 리뷰(작성자, 영어게임명, 내용, 평점, 평점이미지, 좋아요, 작성일) "
+                  + "VALUES('" + userid + "', '" + gametitle + "', '" + contents + "', '" + rating + "', "
+                  + "'Images/Icon/Star/Star_" + star + ".png', 0, '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+            }
+            this.ExecuteNonQuery(querystring2);
+            dataReader.Close();
         }
 
         //개발사 정보

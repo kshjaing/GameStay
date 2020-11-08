@@ -525,6 +525,19 @@ html, body {
     cursor: pointer;
 }
 
+.button_post {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    color: #FFFFFF;
+    font-size: 11pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    cursor: pointer;
+}
+
 .p_post {
     display: table-cell;
     vertical-align: middle;
@@ -544,29 +557,142 @@ html, body {
     color: #FFFFFF;
     font-size: 20pt;
     font-family: 'NIXGONFONTS B 2.0';
-    margin-top: 80px;
+    margin-top: 130px;
     margin-bottom: 20px;
     float: left;
     user-select: none;
 }
 
+.div_wrap_p_review_more {
+    display: table;
+    width: 80px;
+    height: 30px;
+    margin-top: 130px;
+    background: transparent;
+    float: right;
+    position: relative;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+}
+
+    .div_wrap_p_review_more:hover {
+        cursor: pointer;
+    }
+
+.p_review_more {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    position: relative;
+    user-select: none;
+}
+
 .wrap_total_review {
     width: 1100px;
-    height: 900px;
-    background: #3c3e42;
+    height: 810px;
     float: left;
 }
 
 .div_wrap_review {
     width: 100%;
-    height: 300px;
+    height: 250px;
     background: #1B1C1E;
+    margin-bottom: 20px;
 }
+
+
+
+.p_review_rating {
+    display: table-cell;
+    color: #f5521e;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS M 2.0';
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 30px;
+}
+
+
+
+.div_wrap_review_contents {
+    width: 920px;
+    height: 250px;
+    float: left;
+    background: transparent;
+    overflow-y: scroll;
+}
+
+    .div_wrap_review_contents::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+    }
+
+    .div_wrap_review_contents::-webkit-scrollbar-thumb {
+        background: #666666;
+        border-radius: 30px;
+    }
+
+    .div_wrap_review_contents::-webkit-scrollbar-button {
+        display: none;
+    }
+
+
+
+.div_review_rating {
+    width: 75px;
+    height: 15px;
+    margin-left: 30px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.img_star {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p_review_date {
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: #5a5a5a;
+    font-size: 10pt;
+    font-family: 'NIXGONFONTS M 2.0';
+    float: left;
+    position: relative;
+}
+
 
 .p_review_contents {
     color: #FFFFFF;
     font-size: 12pt;
     font-family: 'NIXGONFONTS M 2.0';
+    left: 0;
+    margin-left: 30px;
+    word-break: break-all;
+    position: relative;
+}
+
+.div_p_review_total {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    float: left;
+    position: relative;
+}
+
+.p_review_total {
+    color: #115fff;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    user-select: none;
+    cursor: pointer;
 }
 
 

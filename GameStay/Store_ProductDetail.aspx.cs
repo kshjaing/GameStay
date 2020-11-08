@@ -21,7 +21,8 @@ namespace GameStay
         SqlDataAdapter detailRecRequireAdapter;
         SqlDataAdapter detailReviewAdapter;
         string gameTitle;
-        int mediaCount;
+        int mediaCount, totalGameReviewCount;
+        bool checkHasGame;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +31,7 @@ namespace GameStay
             gameTitle = Request["title"];
             //gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") + 1);
 
-            detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
+            detailTitleAdapter = dbManager.SetGameTitleViewAdapter(gameTitle);
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
             detailVideoAdapter = dbManager.SetGameIntroVideoAdapter(gameTitle);
             detailMinRequireAdapter = dbManager.SetMinReqAdapter(gameTitle);
@@ -54,11 +55,6 @@ namespace GameStay
             detailVideoRepeater.DataSource = videoDT;
             detailVideoRepeater.DataBind();
 
-            /*
-            HtmlControl mainframe = (HtmlControl)this.FindControl("main_video");
-            mainframe.Attributes["src"] = GetMainVideo();*/
-
-
             DataTable minreqDT = new DataTable();
             detailMinRequireAdapter.Fill(minreqDT);
             detailMinRequireRepeater.DataSource = minreqDT;
@@ -74,24 +70,55 @@ namespace GameStay
             detailReviewRepeater.DataSource = reviewDT;
             detailReviewRepeater.DataBind();
 
-            
+            //로그인한 유저가 게임을 갖고있는지 체크
+            if (Session["아이디"] != null)
+            {
+                (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
+                checkHasGame = dbManager.CheckHasGame(Session["아이디"].ToString(), Request["title"]);
+            }
 
-
-
-            dbManager.DBClose();
 
             //로그인이 되어있고 게임을 소유해야만 평가작성 가능
             if (Session["아이디"] == null)
             {
                 wrap_total_review_write.Style["display"] = "none";
             }
-            else
+
+            else if (Session["아이디"] != null && checkHasGame == false)
+            {
+                (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
+                wrap_total_review_write.Style["display"] = "none";
+            }
+            else if (Session["아이디"] != null && checkHasGame == true)
             {
                 (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
                 wrap_total_review_write.Style["display"] = "block";
+
                 img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
                 p_review_write_nickname.InnerText = Session["닉네임"].ToString();
+                textarea_review.InnerText = dbManager.GetMyReview(Session["아이디"].ToString(), gameTitle);
+                input_rating.Value = dbManager.GetRating(Session["아이디"].ToString(), gameTitle).ToString();
             }
+
+            //게임의 총 리뷰수가 8개 초과일때 모든 리뷰 보기 버튼 활성화(상점에선 최대 8개까지 보여줌)
+            if (totalGameReviewCount > 8)
+                p_review_total.Style["display"] = "block";
+            else
+                p_review_total.Style["display"] = "none";
+
+
+            //모든 리뷰 보기 누르면 커뮤니티로 넘어가서 해당게임의 리뷰만 바인딩해서 보여줌
+            if (Request["__EVENTTARGET"] == "div_p_review_total")
+            {
+                Response.Redirect("Community.aspx");
+            }
+
+            //리뷰 게시버튼 클릭이벤트
+            
+
+
+            dbManager.DBClose();
+
         }
 
         public void divSmallImages_Resize(object sender, EventArgs e)
@@ -106,5 +133,27 @@ namespace GameStay
         {
             img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
         }
+
+
+        //리뷰 개수에 따라 리뷰전체를 감싸는 div 높이 변경
+        //**Page_Load보다 Repeater 바인딩이 더 먼저 실행됨**
+        public void divTotalReview_Resize(object sender, EventArgs e)
+        {
+            totalGameReviewCount = dbManager.SetGameReview(gameTitle);
+            if (totalGameReviewCount <= 8)
+                wrap_total_review.Style["height"] = 250 * totalGameReviewCount + 20 * totalGameReviewCount + "px";
+            else
+                wrap_total_review.Style["height"] = 2160 + "px";
+        }
+
+        protected void ButtonPost_OnClick(object sender, EventArgs e)
+        {
+            String textarea = Request.Form["textarea_review"];
+            int rating = Convert.ToInt32(input_rating.Value);
+            dbManager.PostReview(Session["아이디"].ToString(), gameTitle,
+                    textarea, rating);
+        }
+
+        
     }
 }

@@ -150,6 +150,13 @@
     <Content Include="Images\GameWideImages\WideImage_Spelunky2.jpg" />
     <Content Include="Images\GameWideImages\WideImage_TheWitcher3.jpg" />
     <Content Include="Images\Icon\Icon_Discount.png" />
+    <Content Include="Images\Icon\Star\Star_1.png" />
+    <Content Include="Images\Icon\Star\Star_2.png" />
+    <Content Include="Images\Icon\Star\Star_3.png" />
+    <Content Include="Images\Icon\Star\Star_4.png" />
+    <Content Include="Images\Icon\Star\Star_5.png" />
+    <Content Include="Images\Icon\Star\Icon_Star.png" />
+    <Content Include="Images\Icon\Star\Icon_Star_Colored.png" />
     <Content Include="Images\Icon\Login\Icon_Email.png" />
     <Content Include="Images\Icon\Login\Icon_ID.png" />
     <Content Include="Images\Icon\Login\Icon_Login_Hover.png" />
