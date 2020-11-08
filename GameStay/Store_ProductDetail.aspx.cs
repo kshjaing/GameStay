@@ -31,7 +31,7 @@ namespace GameStay
             gameTitle = Request["title"];
             //gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") + 1);
 
-            detailTitleAdapter = dbManager.SetGameTitleViewAdapter(gameTitle);
+            detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
             detailVideoAdapter = dbManager.SetGameIntroVideoAdapter(gameTitle);
             detailMinRequireAdapter = dbManager.SetMinReqAdapter(gameTitle);
