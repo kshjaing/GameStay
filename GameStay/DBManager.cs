@@ -205,6 +205,15 @@ namespace GameStay
 
 
         //--------------------------------------------게임상세페이지 리뷰파트-------------------------------------
+        //평균평점 계산한 게임타이틀뷰
+        public SqlDataAdapter SetGameTitleViewAdapter(string gametitle)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_게임타이틀 WHERE 영어게임명='" + gametitle + "'", myConn);
+            return dataAdapter;
+        }
+
+
+
         //특정 게임의 리뷰를 1~8개까지 보여줌
         public SqlDataAdapter SetReviewAdapter(string gametitle)
         {
