@@ -29,7 +29,7 @@ namespace GameStay
             dbManager = new DBManager();
             //주소창에서 영어게임명 추출
             gameTitle = Request["title"];
-            //gameTitle = Request.Url.ToString().Substring(Request.Url.ToString().IndexOf("=") + 1);
+            //gameTitle = Request.Url.ToStri`ng().Substring(Request.Url.ToString().IndexOf("=") + 1);
 
             detailTitleAdapter = dbManager.SetGameTitleAdapter(gameTitle);
             detailImageAdapter = dbManager.SetGameIntroImageAdapter(gameTitle);
