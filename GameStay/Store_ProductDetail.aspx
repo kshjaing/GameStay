@@ -191,7 +191,7 @@
 
                <div class="div_review_write_text">
                    <div class="wrap_textarea">
-                       <textarea class="textarea_review" id="textarea_review" name="textarea_review"></textarea>
+                       <textarea class="textarea_review" runat="server" id="textarea_review" name="textarea_review"></textarea>
                    </div>
                </div>
                <div class="div_review_write_rating">
