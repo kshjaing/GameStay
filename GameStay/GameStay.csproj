@@ -216,6 +216,8 @@
     <Compile Include="DevRegister.aspx.designer.cs">
       <DependentUpon>DevRegister.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GameTitleDao.cs" />
+    <Compile Include="GameTitleDo.cs" />
     <Compile Include="Library.aspx.cs">
       <DependentUpon>Library.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

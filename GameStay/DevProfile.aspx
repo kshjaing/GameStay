@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="DevProfile.aspx.cs" Inherits="GameStay.DevProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/DevProfile_StyleSheet.css?ver=16" rel="stylesheet" />
+    <link href="CSS/DevProfile_StyleSheet.css?ver=12" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">

@@ -79,7 +79,7 @@ namespace GameStay
             return result;
         }
 
-        //유저 프로필 정보 
+        //유저 프로필 사진
         public UserDo Getprofileimg(string uid)
         {
             dbManager = new DBManager();

@@ -49,11 +49,12 @@ html, body {
 .square {
     background-color: #1B1C1E;
     width: 1100px;
-    height: 2000px;
+    height: 1700px;
     position: relative;
     vertical-align: middle;
     margin-top: 30px;
     text-align: center;
+    margin-bottom:12px;
 }
 
 /*등록페이지 상단 제목*/
@@ -149,4 +150,48 @@ html, body {
 .lbox_imglist{
     width:300px;
     height:500px;
+}
+.div_upload_subimg1 {
+    overflow: auto;
+    width: 630px;
+    margin-top: 10px;
+    margin-left: 5%;
+    height: 300px;
+}
+.div_upload_subimg2 {
+    width: 600px;
+    border-bottom: 1px solid;
+    border-color: aliceblue;
+    margin-top: 15px;
+    text-align: left;
+}
+/*게임 요구사항*/
+.div_system {
+    width: 90%;
+    height: 500px;
+    border-bottom: 1px solid;
+    border-color: #FFFFFF;
+    
+    margin-top: 15px;
+    text-align: center;
+}
+.div_require1 {
+    width: 45%;
+    height: 300px;
+    margin-top:10px;
+    display:inline-block;
+
+}
+.input_data1 {
+    width: 400px;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 17pt;
+    color: #FFFFFF;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    outline: none;
+    font-family: 'NIXGONFONTS M';
+    text-align: left;
 }
