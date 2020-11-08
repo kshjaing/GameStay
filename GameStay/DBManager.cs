@@ -205,7 +205,7 @@ namespace GameStay
 
 
         //--------------------------------------------게임상세페이지 리뷰파트-------------------------------------
-        //특정게임의 리뷰 어댑터
+        //특정 게임의 리뷰를 1~8개까지 보여줌
         public SqlDataAdapter SetReviewAdapter(string gametitle)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) AS rownum, *FROM(SELECT * FROM 뷰_유저리뷰 WHERE 영어게임명 = '"+ gametitle +"') AS review1) AS review2 "
@@ -323,13 +323,12 @@ namespace GameStay
             return count;
         }
 
-        //특정 게임이 갖고있는 총 리뷰의 수
-        public int GetGameReviewCount(string gametitle)
+        //특정 게임의 리뷰 수
+        public int SetGameReview(string gametitle)
         {
             String querystring = "SELECT  COUNT(rownum) AS '게임의 총 리뷰 수' " 
                + "FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) AS rownum, * " 
-               + "FROM(SELECT * FROM 리뷰 WHERE 영어게임명 = '"+ gametitle +"') AS review1) AS review "
-               + "WHERE review.rownum BETWEEN 1 AND 8";
+               + "FROM(SELECT * FROM 리뷰 WHERE 영어게임명 = '"+ gametitle +"') AS review1) AS review ";
             int count = 0;
             DBOpen();
             SqlDataReader dataReader = this.ExecuteReader(querystring);

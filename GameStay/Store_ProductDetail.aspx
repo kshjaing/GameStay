@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=10" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=13" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -201,8 +201,8 @@
         </div>
         
         <p class="p_review">유저 평가</p>
-        <div class="wrap_total_review">
-            <asp:Repeater runat="server" ID="detailReviewRepeater">
+        <div class="wrap_total_review" runat="server" id="wrap_total_review">
+            <asp:Repeater runat="server" ID="detailReviewRepeater" OnDataBinding="divTotalReview_Resize">
                 <ItemTemplate>
                     <div class="div_wrap_review">
                         <div class="div_wrap_profile">
@@ -223,8 +223,8 @@
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
-            <p class="p_review_total" onclick="TotalReview_OnClick" runat="server" id="p_review_total">모든 리뷰 보기</p>
         </div>
+        <p class="p_review_total" onclick="TotalReview_OnClick" runat="server" id="p_review_total">모든 리뷰 보기</p>
 
 
 

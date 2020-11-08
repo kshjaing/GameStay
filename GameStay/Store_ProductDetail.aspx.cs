@@ -101,7 +101,7 @@ namespace GameStay
             }
 
             //게임의 총 리뷰수가 8개 초과일때 모든 리뷰 보기 버튼 활성화(상점에선 최대 8개까지 보여줌)
-            totalGameReviewCount = dbManager.GetGameReviewCount(gameTitle);
+            totalGameReviewCount = dbManager.SetGameReview(gameTitle);
             if (totalGameReviewCount > 8)
             {
                 p_review_total.Style["display"] = "block";
@@ -109,7 +109,6 @@ namespace GameStay
 
             else
                 p_review_total.Style["display"] = "none";
-
             dbManager.DBClose();
 
         }
@@ -132,6 +131,20 @@ namespace GameStay
         protected void TotalReview_OnClick(object sender, EventArgs e)
         {
             Response.Redirect("Community.aspx");
+        }
+
+        public void divTotalReview_Resize(object sender, EventArgs e)
+        {
+            totalGameReviewCount = dbManager.SetGameReview(gameTitle);
+            if (totalGameReviewCount <= 8)
+            {
+                wrap_total_review.Style["height"] = 250 * totalGameReviewCount + 20 * totalGameReviewCount + "px";
+            }
+
+            else
+            {
+                wrap_total_review.Style["height"] = 2160 + "px";
+            }
         }
 
     }
