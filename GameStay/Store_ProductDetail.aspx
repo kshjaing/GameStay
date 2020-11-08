@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=13" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=14" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -20,6 +20,10 @@
 
         function onClickReviewMore() {
             __doPostBack('div_wrap_p_review_more');
+        }
+
+        function onClickReviewTotal() {
+            __doPostBack('div_p_review_total');
         }
 
         $(document).ready(function () {
@@ -224,9 +228,9 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <p class="p_review_total" onclick="TotalReview_OnClick" runat="server" id="p_review_total">모든 리뷰 보기</p>
-
-
+        <div class="div_p_review_total" onclick="onClickReviewTotal()">
+            <p class="p_review_total" runat="server" id="p_review_total">모든 리뷰 보기</p>
+        </div>
 
        <div class="footer"></div>
     </div>

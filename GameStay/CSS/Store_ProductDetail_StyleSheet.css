@@ -581,7 +581,6 @@ html, body {
     width: 1100px;
     height: 810px;
     float: left;
-    background: yellow;
 }
 
 .div_wrap_review {
@@ -652,14 +651,21 @@ html, body {
     word-break: break-all;
 }
 
+.div_p_review_total {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    float: left;
+    position: relative;
+    background: yellow;
+}
+
 .p_review_total {
     color: #115fff;
     font-size: 12pt;
     font-family: 'NIXGONFONTS B 2.0';
-    left: 50%;
-    transform:translateX(-50%);
-    float: left;
-    position: relative;
     user-select: none;
     cursor: pointer;
 }
