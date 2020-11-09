@@ -153,7 +153,7 @@ namespace GameStay
         //리뷰 게시버튼 클릭이벤트
         protected void ButtonPost_OnClick(object sender, EventArgs e)
         {
-            String textarea = textarea_review.InnerText;
+            String textarea = textarea_review.InnerText.Replace("\n", "<br>");
             int rating = Convert.ToInt32(input_rating.Value);
             dbManager.PostReview(Session["아이디"].ToString(), gameTitle,
                     textarea, rating);
