@@ -50,15 +50,15 @@ namespace GameStay
         }
 
         //editGame_click
+        protected void uploadGame_click(object sender, EventArgs e)
+        {
+            //게임  등록 수정페이지
+            Response.Redirect("UploadGame.aspx");
+        }
         protected void editGame_click(object sender, EventArgs e)
         {
             //게임  등록 수정페이지
-            return;
-        }
-        protected void resistGame_click(object sender, EventArgs e)
-        {
-            //게임  등록 수정페이지
-            return;
+            Response.Redirect("UploadGame.aspx");
         }
     }
 }

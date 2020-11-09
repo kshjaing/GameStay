@@ -25,7 +25,7 @@
             
             </div>
         <div class="div_list_btn">
-            <input type="button" runat="server" class="button_resist" onserverclick="resistGame_click" id="btn_resistgame" value="게임등록"/>
+            <input type="button" runat="server" class="button_resist" onserverclick="uploadGame_click" id="btn_resistgame" value="게임등록"/>
         </div>
 
         <div class="div_wrap_list">

@@ -455,5 +455,9 @@ namespace GameStay
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT SUM(구매금액) AS 매출액 FROM Transaction_detail_view WHERE 아이디  = '" + uid + "'", myConn);
             return dataAdapter;
         }
+
+        //------------------개발사 게임 등록 -----------------//
+
+        
     }
 }
