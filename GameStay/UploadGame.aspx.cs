@@ -227,7 +227,7 @@ namespace GameStay
 
                 //프로시저이용
 
-                GameTitleDo gtDo = new GameTitleDo(title, inputTitleEng.Value.ToString(), price, discount,
+                GameTitleDo gtDo = new GameTitleDo(inputTitleKor.Value.ToString(), title, price, discount,
                     txt_explain.Text.ToString(), inputDate.Value.ToString(), dev, mainimg, wideimg, subimg, inputVideoLink.Value.ToString());
 
                 //타이틀이미지 저장
