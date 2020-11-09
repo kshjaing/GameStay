@@ -96,9 +96,13 @@ namespace GameStay
 
                 img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
                 p_review_write_nickname.InnerText = Session["닉네임"].ToString();
-                textarea_review.InnerText = dbManager.GetMyReview(Session["아이디"].ToString(), gameTitle);
-                input_rating.Value = dbManager.GetRating(Session["아이디"].ToString(), gameTitle).ToString();
+                if (!IsPostBack)
+                {
+                    textarea_review.InnerText = dbManager.GetMyReview(Session["아이디"].ToString(), gameTitle);
+                    input_rating.Value = dbManager.GetRating(Session["아이디"].ToString(), gameTitle).ToString();
+                }
             }
+
 
             //게임의 총 리뷰수가 8개 초과일때 모든 리뷰 보기 버튼 활성화(상점에선 최대 8개까지 보여줌)
             if (totalGameReviewCount > 8)
@@ -113,7 +117,6 @@ namespace GameStay
                 Response.Redirect("Community.aspx");
             }
 
-            //리뷰 게시버튼 클릭이벤트
             
 
 
@@ -146,12 +149,15 @@ namespace GameStay
                 wrap_total_review.Style["height"] = 2160 + "px";
         }
 
+
+        //리뷰 게시버튼 클릭이벤트
         protected void ButtonPost_OnClick(object sender, EventArgs e)
         {
-            String textarea = Request.Form["textarea_review"];
+            String textarea = textarea_review.InnerText;
             int rating = Convert.ToInt32(input_rating.Value);
             dbManager.PostReview(Session["아이디"].ToString(), gameTitle,
                     textarea, rating);
+            Response.Redirect(Request.RawUrl);
         }
 
         
