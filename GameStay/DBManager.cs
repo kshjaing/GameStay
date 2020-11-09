@@ -133,7 +133,7 @@ namespace GameStay
         //특정게임타이틀 레코드 어댑터
         public SqlDataAdapter SetGameTitleAdapter(string gametitle)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_게임타이틀 WHERE 영어게임명='" + gametitle + "'", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 게임타이틀 WHERE 영어게임명='" + gametitle + "'", myConn);
             return dataAdapter;
         }
 
