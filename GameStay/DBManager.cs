@@ -133,7 +133,7 @@ namespace GameStay
         //특정게임타이틀 레코드 어댑터
         public SqlDataAdapter SetGameTitleAdapter(string gametitle)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 게임타이틀 WHERE 영어게임명='" + gametitle + "'", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_게임타이틀 WHERE 영어게임명='" + gametitle + "'", myConn);
             return dataAdapter;
         }
 
@@ -205,12 +205,7 @@ namespace GameStay
 
 
         //--------------------------------------------게임상세페이지 리뷰파트-------------------------------------
-        //평균평점 계산한 게임타이틀뷰
-        public SqlDataAdapter SetGameTitleViewAdapter(string gametitle)
-        {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_게임타이틀 WHERE 영어게임명='" + gametitle + "'", myConn);
-            return dataAdapter;
-        }
+        
 
 
 
@@ -395,12 +390,14 @@ namespace GameStay
             DBOpen();
             SqlDataReader dataReader = this.ExecuteReader(querystring1);
             dataReader.Read();
-            //dataReader가 읽히면 이미 이 게임에 이 유저가 작성한 리뷰가 있는것
+            //dataReader가 1이면 이미 이 게임에 이 유저가 작성한 리뷰가 있는것
             if (Convert.ToInt32(dataReader["확인"]) == 1)
             {
-                querystring2 = "UPDATE 리뷰 SET 내용='" + contents + "', 평점=" + rating + " WHERE 작성자='" + userid + "' AND 영어게임명='" + gametitle + "'";
+                querystring2 = "UPDATE 리뷰 SET 내용='" + contents + "', " 
+                    + "평점=" + rating + ", 평점이미지='Images/Icon/Star/Star_" + star + ".png' "
+                    + "WHERE 작성자='" + userid + "' AND 영어게임명='" + gametitle + "'";
             }
-            //읽히지 않으면 새로 삽입
+            //0이면 리뷰가 없으니 새로 삽입
             else if (Convert.ToInt32(dataReader["확인"]) == 0)
             {
                 querystring2 = "INSERT INTO 리뷰(작성자, 영어게임명, 내용, 평점, 평점이미지, 좋아요, 작성일) "
