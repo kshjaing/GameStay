@@ -61,10 +61,10 @@ html, body {
     display: table-cell;
     display: inline-block;
     background-color: #111213;
-    width: 1300px;
-    height: 880px;
+    width: 1000px;
+    height: 850px;
     position: relative;
-
+    text-align:center;
 }
 
 .txt_login {
@@ -76,188 +76,94 @@ html, body {
 
 .wrap_idpass {
     margin-top: 50px;
-    width: 49%;
-    height: 40%;
-    float:left;
+    width: 80%;
+    height: 600px;
     vertical-align:central;
-
+    display:inline-block;
+    text-align:left;
+}
+/*데이터 입력부분*/
+.div_upload_data {
+    width: 90%;
+    height: 520px;
+    border-bottom: 1px solid;
+    border-color: aliceblue;
+    display: inline-block;
+    text-align: left;
+    margin-top: 15px;
 }
 
-.txt_check {
-    visibility: hidden;
-    color: red;
-}
-
-.wrap_input_id {
-    padding-top: 30px;
-    left: 17%;
-    margin-left: 10px;
-    position: relative;
-    width: 300px;
-    margin-top: 0;
-
-}
-
-.input_id {
-    width: 200px;
+.input_data {
+    width: 500px;
     border: 0;
     background: transparent;
     border-bottom: 1px solid #FFFFFF;
     font-size: 17pt;
     color: #FFFFFF;
-    padding-bottom: 8px;
-    outline: none;
-    padding-left: 3vw;
-    font-family: 'NIXGONFONTS M';
-}
-
-.icon_id {
-    position: absolute;
-    bottom: 2px;
-    left: 5px;
-    width: 40px;
-    height: 40px;
-}
-
-.wrap_input_password {
-    left: 17%;
-    margin-left: 10px;
-    position: relative;
-    width: 300px;
-    margin-top: 10px;
-}
-
-.wrap_input_password_dupl {
-    left: 17%;
-    margin-left: 10px;
-    position: relative;
-    width: 300px;
-    margin-top: 10px;
-}
-
-.input_password {
-    width: 200px;
-    border: 0;
-    background: transparent;
-    border-bottom: 1px solid #FFFFFF;
-    font-size: 17pt;
-    color: #FFFFFF;
-    padding-bottom: 8px;
-    padding-left: 3vw;
-    outline: none;
-}
-
-.icon_password {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    width: 40px;
-    height: 40px;
-}
-
-.wrap_input_email {
-    left: 17%;
-    margin-left: 10px;
-    position: relative;
-    width: 300px;
-    margin-top: 10px;
-}
-
-.input_email {
-    width: 200px;
-    border: 0;
-    background: transparent;
-    border-bottom: 1px solid #FFFFFF;
-    font-size: 17pt;
-    color: #FFFFFF;
-    padding-bottom: 8px;
-    padding-left: 3vw;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
     outline: none;
     font-family: 'NIXGONFONTS M';
+    text-align: left;
 }
 
-.input_name {
-    width: 200px;
-    border: 0;
-    background: transparent;
-    border-bottom: 1px solid #FFFFFF;
-    font-size: 17pt;
-    color: #FFFFFF;
-    padding-bottom: 8px;
-    padding-left: 3vw;
-    outline: none;
-    font-family: 'NIXGONFONTS M';
-}
-
-.wrap_input_nickname {
-    left: 17%;
-    margin-left: 10px;
-    position: relative;
-    width: 300px;
-    margin-top:10px;
-}
-
-.icon_email {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    width: 40px;
-    height: 40px;
-}
-
-.wrap_input_explain {
-    padding-top: 20px;
-    width: 99%;
-    height: 30%;
-    float: left;
-    left: 17%;
-    vertical-align: central;
-}
+/*개발사 소개*/
 
 .input_explain {
-    width: 1030px;
-    height : 180px;
-
+    width: 800px;
+    height: 180px;
     background: transparent;
     border-bottom: 1px solid #FFFFFF;
     font-size: 17pt;
     color: #FFFFFF;
-    padding-bottom: 8px;
-    padding-left: 3vw;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
     outline: none;
-   
     font-family: 'NIXGONFONTS M';
+    text-align: left;
 }
-
+/*프로필 이미지 등록*/
 .wrap_input_img {
-    margin-top: 50px;
-    width: 49%;
-    height: 40%;
-    float: left;
-    vertical-align: central;
-
+    width: 500px;
+    border-bottom: 1px solid;
+    border-color: aliceblue;
+    margin-left: 5%;
+    margin-top: 15px;
+    text-align: left;
+    display: inline-block;
 }
 
 .txt_devreg_img {
-    font-size: 17pt;
-    color: #FFFFFF;
-    margin-right:400px;
-    font-family: 'NIXGONFONTS M';
-}
-
-.txt_devreg_imgselect {
     font-size: 13pt;
     color: #FFFFFF;
-    margin-right: 200px;
     font-family: 'NIXGONFONTS M';
-    margin-top:10px;
+    margin-top: 10px;
+    width: 450px;
+    text-align: left;
+    display: inline-block;
+}
+/*이미지 업로드*/
+.txt_devreg_imgselect {
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: 'NIXGONFONTS M 2.0';
+    text-align: left;
 }
 
-.img_profile {
-    width: 200px;
-    margin-right: 300px;
+.div_button {
+    width: 50%;
+    text-align:center;
+    display: inline-block;
 }
 
+/*회원가입 경고문구*/
+.txt_check {
+    visibility:hidden;
+    color: red;
+    display: inline-block;
+}
+/*가입버튼*/
 .button_register {
     border: 0;
     outline: 0;
@@ -267,11 +173,12 @@ html, body {
     width: 100px;
     height: 50px;
     position: relative;
+    display: inline-block;
     border-radius: 0 10px 0 10px;
     transition: all 0.2s;
     font-family: 'NIXGONFONTS M';
 }
-
+/*가입버튼 호버*/
     .button_register:hover {
         color: #FFFFFF;
         background-color: #3dae7a;

@@ -88,7 +88,7 @@ html, body {
 /*등록 기본정보*/
 .div_upload_data {
     width: 90%;
-    height: 600px;
+    height: 520px;
     border-bottom : 1px solid;
     border-color: aliceblue;
     display: inline-block;
@@ -124,7 +124,7 @@ html, body {
 /*게임 이미지 등록*/
 .div_upload_img {
     width: 90%;
-    height: 550px;
+    height: 610px;
     border-bottom: 1px solid;
     border-color: #FFFFFF;
     display: inline-block;
@@ -152,6 +152,7 @@ html, body {
     font-family: 'NIXGONFONTS M 2.0';
     text-align: left;
 }
+/*대표영상링크*/
 .input_link {
     width: 600px;
     border: 0;

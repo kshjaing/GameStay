@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="UploadGame.aspx.cs" Inherits="GameStay.UploadGame" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/UploadGame_StyleSheet.css?ver=19" rel="stylesheet" />
+    <link href="CSS/UploadGame_StyleSheet.css?ver=13" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -31,6 +31,10 @@
                 <div class="div_upload_subimg">
                     <a class="txt_upload_imgtitle">와이드이미지</a>
                     <asp:FileUpload ID="FileUpload2" runat="server" cssclass="txt_upload_imgselect"/>
+                </div>
+                <div class="div_upload_subimg">
+                    <a class="txt_upload_imgtitle">라이브러리 이미지</a>
+                    <asp:FileUpload ID="FileUpload3" runat="server" cssclass="txt_upload_imgselect"/>
                 </div>
                 <div class="div_upload_subimg">
                     <a class="txt_upload_imgtitle">이미지1</a>

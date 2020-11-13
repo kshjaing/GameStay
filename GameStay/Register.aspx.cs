@@ -31,10 +31,7 @@ namespace GameStay
 
             if (isIdCheck = uDao.VerifyID(inputID.Value.ToString()))
             {
-                
-
                 uDao = new UserDao();
-                // uDao.RegisterUserQry(uDo);
                 uDao.RegistUser(uDo);
                 Response.Redirect("SuccessRegist.aspx");
             }

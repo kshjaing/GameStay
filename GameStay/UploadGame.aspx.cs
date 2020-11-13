@@ -212,6 +212,7 @@ namespace GameStay
                 string mainimg = "Images/GameTitleImages/TitleImage_" + inputTitleEng.Value.ToString() + ".jpg";
                 string subimg = "Images/Game4vs3Images/4vs3_" + inputTitleEng.Value.ToString() + ".jpg";
                 string wideimg = "Images/GameWideImages/WideImage_" + inputTitleEng.Value.ToString() + ".jpg";
+                string libimg = "Images/LibraryImages/GameLibraryImages_" + inputTitleEng.Value.ToString() + ".jpg";
                 string title = inputTitleEng.Value.ToString();
 
                 string i = inputPrice.Value.ToString(); //가격 변환
@@ -228,7 +229,7 @@ namespace GameStay
                 //프로시저이용
 
                 GameTitleDo gtDo = new GameTitleDo(inputTitleKor.Value.ToString(), title, price, discount,
-                    txt_explain.Text.ToString(), inputDate.Value.ToString(), dev, mainimg, wideimg, subimg, inputVideoLink.Value.ToString());
+                    txt_explain.Text.ToString(), inputDate.Value.ToString(), dev, mainimg, wideimg, subimg, libimg,inputVideoLink.Value.ToString());
 
                 //타이틀이미지 저장
                 string uFnameT = "TitleImage_" + inputTitleEng.Value.ToString();
@@ -241,6 +242,9 @@ namespace GameStay
                 //와이드 이미지 저장
                 string uFnameW = "WideImage_" + inputTitleEng.Value.ToString();
                 FileUpload2.SaveAs(Server.MapPath(@"Images/GameWideImages/" + uFnameW + ".jpg"));
+
+                string uFnameL = "GameLibraryImage_" + inputTitleEng.Value.ToString();
+                FileUpload3.SaveAs(Server.MapPath(@"Images/LibraryImages/" + uFnameL + ".jpg"));
 
                 no = (new GameTitleDao()).uploadGame(gtDo);
 

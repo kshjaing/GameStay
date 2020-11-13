@@ -30,7 +30,6 @@ namespace GameStay
                     liblist.Fill(dt);
                     library_list.DataSource = dt;
                     library_list.DataBind();
-                    
                 }
             }
         }

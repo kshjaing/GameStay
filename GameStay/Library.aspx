@@ -10,14 +10,21 @@
         <div class="div_library_total">
             <asp:Repeater runat="server" ID="library_list">
                 <ItemTemplate>
-                    <div class="div_lib_game" onmouseover="onMouseDivFeature()">
+                    <div class="div_lib_game">
                         <div class="squar_lib_game">
                             <img class="img_lib_game" src="<%# Eval("라이브러리이미지") %>"/>
                             <a class="txt_lib_game"><%# Eval("영어게임명") %></a>
                         </div>
                         <div>
-                            <input type="button" class="btn_lib" value="상점페이지"/><br /><br />
+                            <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
+                                runat="server">
+                            <input type="button" class="btn_lib" value="상점페이지" />
+                                </asp:HyperLink>
+                                <br /><br />
+                            <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
+                                runat="server">
                             <input type="button" class="btn_lib" value="커뮤니티"/>
+                                </asp:HyperLink>
                         </div>
                     </div>
                 </ItemTemplate>

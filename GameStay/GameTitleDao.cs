@@ -56,6 +56,10 @@ namespace GameStay
             param.Value = gtdo.Wideimg;
             mCmd.Parameters.Add(param);
 
+            param = new SqlParameter("@라이브러리이미지", SqlDbType.NVarChar, 150);
+            param.Value = gtdo.Wideimg;
+            mCmd.Parameters.Add(param);
+
             param = new SqlParameter("@이미지4대3", SqlDbType.NVarChar, 150);
             param.Value = gtdo.Subimg;
             mCmd.Parameters.Add(param);
