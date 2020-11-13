@@ -65,7 +65,6 @@
                  </div>
                  <div class="wrap_input_img">
                      <p class="txt_devreg_img">개발사 이미지 등록</p>
-                     <img id="blah" src="#" alt="your image" class="img_profile"/>
                      <br />
                      <asp:FileUpload ID="uploadImg_dev" runat="server" CssClass="txt_devreg_imgselect" OnPropertyChanged="Image1" />
                  </div>

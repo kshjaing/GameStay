@@ -1,0 +1,99 @@
+﻿@font-face {
+    font-family: 'NIXGONFONTS L';
+    src: url('../Fonts/NIXGONFONTS L 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M 2.0';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B 2.0';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Bold';
+    src: url('../Fonts/IBMPlexSansKR-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
+}
+
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrap_total {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.p {
+    user-select: none;
+}
+
+.div_library_total{
+    width:100%;
+    margin-top:10px;
+}
+.div_lib_game {
+    width: 180px;
+    height: 300px;
+    margin-right: 28px;
+    float: left;
+    background-color: #1B1C1E;
+    margin-top: 20px;
+}
+.img_lib_game{
+    width:180px;
+    height:250px;
+}
+.txt_lib_game {
+    width: 170px;
+    font-size: 20px;
+    color: #FFFFFF;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display:inline-block;
+}
+.div_lib_game:hover .img_lib_game{
+    filter: blur(5px);
+    
+}
+    .div_lib_game:hover .btn_lib {
+        opacity: 1;
+    }
+.btn_lib {
+    position: absolute;
+    width: 95px;
+    height: 30px;
+    transform: translate(-50%, -150px);
+    text-align: center;
+    opacity: 0;
+}

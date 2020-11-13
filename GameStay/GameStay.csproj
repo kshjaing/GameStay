@@ -71,6 +71,7 @@
     <Content Include="CSS\DevLogin_StyleSheet.css" />
     <Content Include="CSS\DevProfile_StyleSheet.css" />
     <Content Include="CSS\DevRegister_StyleSheet.css" />
+    <Content Include="CSS\Library_StyleSheet.css" />
     <Content Include="CSS\Login_StyleSheet.css" />
     <Content Include="CSS\MasterPage_StyleSheet.css" />
     <Content Include="CSS\Profile_StyleSheet.css" />

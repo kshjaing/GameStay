@@ -51,30 +51,13 @@ namespace GameStay
                         DevInfo.DataBind();
                         DevInfo1.DataSource = dt4;
                         DevInfo1.DataBind();
-                        //최근 출시게임 1번째
+                        //최근 출시게임
                         SqlDataAdapter newgame1 = dbManager.SetDevNewGame1(id);
                         DataTable ngdt1 = new DataTable();
                         newgame1.Fill(ngdt1);
                         NewGame1.DataSource = ngdt1;
                         NewGame1.DataBind();
-                        //최근 출시게임 2번째
-                        SqlDataAdapter newgame2 = dbManager.SetDevNewGame2(id);
-                        DataTable ngdt2 = new DataTable();
-                        newgame2.Fill(ngdt2);
-                        NewGame2.DataSource = ngdt2;
-                        NewGame2.DataBind();
-                        //최근 출시게임 3번째
-                        SqlDataAdapter newgame3 = dbManager.SetDevNewGame3(id);
-                        DataTable ngdt3 = new DataTable();
-                        newgame3.Fill(ngdt3);
-                        NewGame3.DataSource = ngdt3;
-                        NewGame3.DataBind();
-                        //최근 출시게임 4번째
-                        SqlDataAdapter newgame4 = dbManager.SetDevNewGame4(id);
-                        DataTable ngdt4 = new DataTable();
-                        newgame4.Fill(ngdt4);
-                        NewGame4.DataSource = ngdt4;
-                        NewGame4.DataBind();
+                        
                         //개발사 게임 리스트
                         SqlDataAdapter gamelist = dbManager.SetDevGameList(id);
                         DataTable gldt = new DataTable();

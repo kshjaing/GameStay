@@ -227,24 +227,13 @@ namespace GameStay
             return returnValue;
         }
         //----------------------------------------------유저 프로필----------------------------------------------
-        //최근 구매게임 1
+        //최근 구매게임 
         public SqlDataAdapter SetRecentAdapter1(string uid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.영어게임명 = 거래목록.영어게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 1;", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.영어게임명 = 거래목록.영어게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 3;", myConn);
             return dataAdapter;
         }
-        //최근 구매게임 2
-        public SqlDataAdapter SetRecentAdapter2(string uid)
-        {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.영어게임명 = 거래목록.영어게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 2 AND 2;", myConn);
-            return dataAdapter;
-        }
-        //최근 구매게임 3
-        public SqlDataAdapter SetRecentAdapter3(string uid)
-        {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 거래목록.거래일 DESC) AS rownum, 거래목록.구매자, 게임타이틀.게임명, 거래목록.구매금액, 거래목록.거래일, 게임타이틀.메인이미지 FROM 게임타이틀 INNER JOIN 거래목록 ON 게임타이틀.영어게임명 = 거래목록.영어게임명 WHERE 구매자 = '" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3;", myConn);
-            return dataAdapter;
-        }
+        
 
         //유저 정보
         public SqlDataAdapter SetUserInfo(string uid)
@@ -415,30 +404,13 @@ namespace GameStay
             return dataAdapter;
         }
 
-        //개발사 최근발매 게임1
+        //개발사 최근발매 게임
         public SqlDataAdapter SetDevNewGame1(string uid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 1", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 1 AND 4", myConn);
             return dataAdapter;
         }
-        //개발사 최근발매 게임2
-        public SqlDataAdapter SetDevNewGame2(string uid)
-        {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 2 AND 2", myConn);
-            return dataAdapter;
-        }
-        //개발사 최근발매 게임3
-        public SqlDataAdapter SetDevNewGame3(string uid)
-        {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 3 AND 3", myConn);
-            return dataAdapter;
-        }
-        //개발사 최근발매 게임4
-        public SqlDataAdapter SetDevNewGame4(string uid)
-        {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC)AS rownum, * FROM Dev_title_view WHERE 아이디 = " + "'" + uid + "') transc WHERE transc.rownum BETWEEN 4 AND 4", myConn);
-            return dataAdapter;
-        }
+        
         //개발사 게임 리스트
         public SqlDataAdapter SetDevGameList(string uid)
         {
@@ -453,8 +425,12 @@ namespace GameStay
             return dataAdapter;
         }
 
-        //------------------개발사 게임 등록 -----------------//
-
+        //------------------유저 라이브러리 -----------------//
+        public SqlDataAdapter SetLibrary(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_유저라이브러리 WHERE 아이디 ='" + uid + "'", myConn);
+            return dataAdapter;
+        }
         
     }
 }

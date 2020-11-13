@@ -74,7 +74,7 @@ namespace GameStay
             {
                 Response.Redirect("RequestLogin.aspx?before=Library");
             }
-            Response.Redirect("Library.aspx");
+            Response.Redirect("Library.aspx?uid=" + Session["아이디"]);
             button_library.Style["background"] = "#85cba5";
         }
         protected void CommunityMenu_OnClick(object sender, EventArgs e)
@@ -97,10 +97,6 @@ namespace GameStay
                 Response.Redirect("Profile.aspx?uid=" + Session["아이디"]);
             }
             button_profile.Style["background"] = "#85cba5";
-        }
-        public void isDevCheck()
-        {
-            
         }
 
         protected void Login_OnClick(object sender, EventArgs e)

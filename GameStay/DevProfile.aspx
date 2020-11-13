@@ -38,30 +38,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:Repeater runat="server" ID="NewGame2">
-                    <ItemTemplate>
-                        <div class="div_newgames2">
-                            <input type="image" id="Img2" runat="server" class="img_newgame" src='<%# Eval("메인이미지") %>' />
-                                <p class="txt_profile_game_title"><%#Eval("게임명") %></p>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-                <asp:Repeater runat="server" ID="NewGame3">
-                    <ItemTemplate>
-                        <div class="div_newgames3">
-                            <input type="image" id="Img3" runat="server" class="img_newgame" src='<%# Eval("메인이미지") %>' />
-                                <p class="txt_profile_game_title"><%#Eval("게임명") %></p>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-                <asp:Repeater runat="server" ID="NewGame4">
-                    <ItemTemplate>
-                        <div class="div_newgames4">
-                            <input type="image" id="Img4" runat="server" class="img_newgame" src='<%# Eval("메인이미지") %>' />
-                                <p class="txt_profile_game_title"><%#Eval("게임명") %></p>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
+
             </div>
         <div class="div_wrap_list">
             <p class="txt_newgame_title ">게임 목록</p>
