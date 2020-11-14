@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace GameStay
@@ -23,7 +24,7 @@ namespace GameStay
                 {
                     DBManager dbManager = new DBManager();
                     string uid = Session["아이디"].ToString();
-
+                    (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
                     SqlDataAdapter liblist = dbManager.SetLibrary(uid);
                     
                     DataTable dt = new DataTable();

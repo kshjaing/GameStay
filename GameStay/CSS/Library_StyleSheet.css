@@ -127,8 +127,8 @@ html, body {
     font-size: 17px;
     color: #FFFFFF;
     vertical-align: middle;
-    text-align: center;
-    padding-left: 10px;
+    text-align: left;
+    padding-left: 15px;
     padding-right: 10px;
     position: relative;
 }
