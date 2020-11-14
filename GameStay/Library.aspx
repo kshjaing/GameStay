@@ -13,16 +13,16 @@
                             <div class="div_wrap_buttons">
                                 <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
                                  runat="server" CssClass="link">
-                                <div class="div_btn_lib">
-                                    <p class="p_lib">상점페이지</p>
-                                </div>
-                            </asp:HyperLink>
-                            <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
-                                runat="server" CssClass="link">
-                                <div class="div_btn_lib">
-                                    <p class="p_lib">커뮤니티</p>
-                                </div>
-                            </asp:HyperLink>
+                                    <div class="div_btn_lib">
+                                        <p class="p_lib">상점페이지</p>
+                                    </div>
+                                </asp:HyperLink>
+                                <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
+                                 runat="server" CssClass="link">
+                                     <div class="div_btn_lib">
+                                        <p class="p_lib">커뮤니티</p>
+                                     </div>
+                               </asp:HyperLink>
                             </div>
                             <div class="div_title">
                                 <p class="p_title"><%# Eval("게임명") %></p>
