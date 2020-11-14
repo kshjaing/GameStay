@@ -462,7 +462,7 @@ namespace GameStay
         //------------------유저 라이브러리 -----------------//
         public SqlDataAdapter SetLibrary(string uid)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_유저라이브러리 WHERE 아이디 ='" + uid + "' ORDER BY 영어게임명 ASC", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_유저라이브러리 WHERE 아이디 ='" + uid + "' ORDER BY 게임명 ASC", myConn);
             return dataAdapter;
         }
         
