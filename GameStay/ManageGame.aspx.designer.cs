@@ -11,43 +11,52 @@ namespace GameStay
 {
 
 
-    public partial class Profile
+    public partial class RegistGame
     {
 
         /// <summary>
-        /// UserInfo 컨트롤입니다.
+        /// Devname 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater UserInfo;
+        protected global::System.Web.UI.WebControls.Repeater Devname;
 
         /// <summary>
-        /// txt_profile_countgame 컨트롤입니다.
+        /// txt_manageinfo 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor txt_profile_countgame;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor txt_manageinfo;
 
         /// <summary>
-        /// wrap_edit_p 컨트롤입니다.
+        /// DevInfo 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wrap_edit_p;
+        protected global::System.Web.UI.WebControls.Repeater DevInfo;
 
         /// <summary>
-        /// RecentGame1 컨트롤입니다.
+        /// btn_resistgame 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RecentGame1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btn_resistgame;
+
+        /// <summary>
+        /// Devgamelist 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Devgamelist;
     }
 }

@@ -94,7 +94,7 @@ namespace GameStay
             param.Value = this.GetMD5(dDo.Passwd);
             mCmd.Parameters.Add(param);
 
-            param = new SqlParameter("@개발사", SqlDbType.NVarChar, 25);
+            param = new SqlParameter("@개발사이름", SqlDbType.NVarChar, 25);
             param.Value = dDo.Name;
             mCmd.Parameters.Add(param);
 
@@ -104,6 +104,10 @@ namespace GameStay
 
             param = new SqlParameter("개발사소개", SqlDbType.NVarChar, 150);
             param.Value = dDo.Devintro;
+            mCmd.Parameters.Add(param);
+
+            param = new SqlParameter("사이트링크", SqlDbType.VarChar, 150);
+            param.Value = dDo.Link;
             mCmd.Parameters.Add(param);
 
             param = new SqlParameter("@이메일", SqlDbType.VarChar, 30);

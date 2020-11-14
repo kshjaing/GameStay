@@ -42,6 +42,13 @@ namespace GameStay
             set { profileimg = value; }
         }
 
+        private string link;
+        public string Link
+        {
+            get { return link; }
+            set { link = value; }
+        }
+
         private string email;
         public string Email
         {
@@ -49,13 +56,14 @@ namespace GameStay
             set { email = value; }
         }
 
-        public DevDo(string uid, string pwd, string name, string profimg, string devintro, string email)
+        public DevDo(string uid, string pwd, string name, string profimg, string devintro, string link, string email)
         {
             this.userid = uid;
             this.passwd = pwd;
             this.name = name;
             this.profileimg = profimg;
             this.devintro = devintro;
+            this.link = link;
             this.email = email;
         }
     }

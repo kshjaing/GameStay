@@ -40,12 +40,11 @@ namespace GameStay
 
             dDao = new DevDao();
 
-            DevDo dDo = new DevDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString(), fname, txt_explain.Text.ToString(), inputEmail.Value.ToString());
+            DevDo dDo = new DevDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString(), fname, txt_explain.Text.ToString(), inputLink.Value.ToString(), inputEmail.Value.ToString());
             //파일 경로
             
                 string ufname = Server.MapPath(@"~\Images\Profile\" + dDo.Name.ToString() + fileExt);
                 uploadImg_dev.SaveAs(ufname);
-            
 
             if (isIdCheck = dDao.VerifyID(inputID.Value.ToString()))
             {
@@ -79,6 +78,7 @@ namespace GameStay
                 inputEmail.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
                 txtRegistCheck.InnerText = "개발사 이메일을 입력해주세요.";
+                txtRegistCheck.InnerText = "fuck";
                 return;
             }
             else if (inputNickname.Value.Length < 1)
@@ -101,6 +101,12 @@ namespace GameStay
                 return;
 
             }
+            else if (inputLink.Value.Length < 1)
+            {
+                txtRegistCheck.Attributes.Add("style", "visibility: visible");
+                txtRegistCheck.InnerText = "개발사 사이트 링크를 입력해주세요";
+                return;
+            }
             else
             {
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
@@ -109,6 +115,7 @@ namespace GameStay
                 inputID.Focus();
                 return;
             }
+
         }
 
         private string GetFilename(string path)

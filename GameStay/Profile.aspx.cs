@@ -39,25 +39,14 @@ namespace GameStay
                         }
                         DBManager dbManager = new DBManager();
                         SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(Request["id"].ToString().TrimEnd());
-                        SqlDataAdapter recentAdapter2 = dbManager.SetRecentAdapter2(Request["id"].ToString().TrimEnd());
-                        SqlDataAdapter recentAdapter3 = dbManager.SetRecentAdapter3(Request["id"].ToString().TrimEnd());
+                        
                         SqlDataAdapter userinfo = dbManager.SetUserInfo(Request["id"].ToString().TrimEnd());
 
                         DataTable dt1 = new DataTable();
                         recentAdapter1.Fill(dt1);
                         RecentGame1.DataSource = dt1;
                         RecentGame1.DataBind();
-
-                        DataTable dt2 = new DataTable();
-                        recentAdapter2.Fill(dt2);
-                        RecentGame2.DataSource = dt2;
-                        RecentGame2.DataBind();
-
-                        DataTable dt3 = new DataTable();
-                        recentAdapter3.Fill(dt3);
-                        RecentGame3.DataSource = dt3;
-                        RecentGame3.DataBind();
-
+                       
                         DataTable dt4 = new DataTable();
                         userinfo.Fill(dt4);
                         UserInfo.DataSource = dt4;

@@ -73,13 +73,16 @@
     <Content Include="CSS\DevLogin_StyleSheet.css" />
     <Content Include="CSS\DevProfile_StyleSheet.css" />
     <Content Include="CSS\DevRegister_StyleSheet.css" />
+    <Content Include="CSS\Library_StyleSheet.css" />
     <Content Include="CSS\Login_StyleSheet.css" />
     <Content Include="CSS\MasterPage_StyleSheet.css" />
     <Content Include="CSS\Profile_StyleSheet.css" />
     <Content Include="CSS\Register_StyleSheet.css" />
+    <Content Include="CSS\ManageGame_StyleSheet.css" />
     <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="CSS\Store_ProductDetail_StyleSheet.css" />
+    <Content Include="CSS\UploadGame_StyleSheet.css" />
     <Content Include="DevLogin.aspx" />
     <Content Include="Images\Game4vs3Images\4vs3_AssassinsCreedOrigins.jpg" />
     <Content Include="Images\Game4vs3Images\4vs3_Battlefield1.png" />
@@ -347,10 +350,12 @@
     <Content Include="Profile.aspx" />
     <Content Include="ProfileEdit.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="ManageGame.aspx" />
     <Content Include="RequestLogin.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
     <Content Include="SuccessRegist.aspx" />
+    <Content Include="UploadGame.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -392,6 +397,8 @@
     <Compile Include="DevRegister.aspx.designer.cs">
       <DependentUpon>DevRegister.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GameTitleDao.cs" />
+    <Compile Include="GameTitleDo.cs" />
     <Compile Include="Library.aspx.cs">
       <DependentUpon>Library.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,6 +442,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageGame.aspx.cs">
+      <DependentUpon>ManageGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageGame.aspx.designer.cs">
+      <DependentUpon>ManageGame.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RequestLogin.aspx.cs">
       <DependentUpon>RequestLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -462,6 +476,13 @@
     </Compile>
     <Compile Include="SuccessRegist.aspx.designer.cs">
       <DependentUpon>SuccessRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadGame.aspx.cs">
+      <DependentUpon>UploadGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadGame.aspx.designer.cs">
+      <DependentUpon>UploadGame.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserDao.cs" />
     <Compile Include="UserDo.cs" />
