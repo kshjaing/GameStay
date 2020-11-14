@@ -92,10 +92,11 @@ namespace GameStay
             {
                 (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
                 wrap_total_review_write.Style["display"] = "block";
+                buy_button.InnerText = "소유함";
 
                 img_review_write_profile.Attributes["src"] = dbManager.GetProfileImage(Session["아이디"].ToString());
                 p_review_write_nickname.InnerText = Session["닉네임"].ToString();
-
+                div_buy_button.Style["background-color"] = "#0f1011";
                 //리뷰와 평점을 가져옴
                 if (!IsPostBack)
                 {
@@ -116,6 +117,25 @@ namespace GameStay
             if (Request["__EVENTTARGET"] == "div_p_review_total")
             {
                 Response.Redirect("Community.aspx");
+            }
+
+            if (Request["__EVENTTARGET"] == "buy_button")
+            {
+                if (Session["아이디"] == null)
+                {
+                    Session["구매예정"] = gameTitle;
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    if (checkHasGame == true)
+                    {
+                        return;
+                    }
+                    else
+                       Response.Redirect("BuyGame.aspx?title=" + gameTitle);
+                }
+                    
             }
 
             

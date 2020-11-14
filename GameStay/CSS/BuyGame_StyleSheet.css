@@ -1,0 +1,127 @@
+﻿@font-face {
+    font-family: 'IBMPlexSansKR-Bold';
+    src: url('../Fonts/IBMPlexSansKR-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M 2.0';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B 2.0';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HangeulNuriB';
+    src: url('../Fonts/HangeulNuriB.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HangeulNuriR';
+    src: url('../Fonts/HangeulNuriR.ttf') format('truetype');
+}
+
+html, body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrap_total {
+    width: 100%;
+    height: 100%;
+}
+
+.div_wrap_contentbox {
+    width: 100%;
+    height: 90px;
+    background: #1B1C1E;
+    margin-top: 30px;
+    position: relative
+}
+
+.div_wrap_image {
+    width: 200px;
+    height: 90px;
+    position: relative;
+    float: left;
+    user-select: none;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.div_wrap_p_title {
+    width: 650px;
+    height: 100%;
+    margin-top: 10px;
+    float: left;
+    position: relative;
+}
+
+.p_title {
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-bottom: 0;
+    margin-left: 20px;
+    user-select: none;
+}
+
+.div_wrap_p_price {
+    display: table;
+    width: 160px;
+    height: 100%;
+    float: left;
+    margin-left: 80px;
+    position: relative;
+}
+
+.p_price {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15pt;
+    font-family: IBMPlexSansKR-Bold;
+    user-select: none;
+}
+
+.div_wrap_button {
+    width: 100%;
+    height: 40%;
+    float: left;
+    position: relative;
+}
+
+.div_buy_button {
+    width: 120px;
+    height: 35px;
+    background: #33a6f3;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+}
+
+.buy_button {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    position: relative;
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    cursor: pointer;
+}

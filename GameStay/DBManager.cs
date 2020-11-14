@@ -111,8 +111,8 @@ namespace GameStay
         public SqlDataAdapter SetBestGamesAdapter()
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 평점 DESC) " +
-                "AS rownum, *FROM 게임타이틀) AS best WHERE best.rownum BETWEEN 1 AND 8; SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC) AS rownum, " +
-                "*FROM 게임타이틀) AS release WHERE release.rownum BETWEEN 1 AND 8", myConn);
+                "AS rownum, *FROM 뷰_게임타이틀) AS best WHERE best.rownum BETWEEN 1 AND 8; SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC) AS rownum, " +
+                "*FROM 뷰_게임타이틀) AS release WHERE release.rownum BETWEEN 1 AND 8", myConn);
             return dataAdapter;
         }
 

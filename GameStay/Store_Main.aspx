@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_Main.aspx.cs" Inherits="GameStay.Store_Main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/StoreMain_StyleSheet.css?ver=11" rel="stylesheet" />
+    <link href="CSS/StoreMain_StyleSheet.css?ver=12" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
@@ -501,10 +501,11 @@
                                        </div>
                                        <div class="div_wrap_p_best_title">
                                           <p class="p_best_title"><%# Eval("게임명") %></p>
-                                          <p class="p_best_tags">온라인 멀티플레이어, 귀여운, 유머</p>       
+                                          <p class="p_best_tags"><%# Eval("태그1") %>, <%# Eval("태그2") %>, <%# Eval("태그3") %></p>       
                                        </div>
                                        <div class="div_wrap_p_best_price">
-                                          <p class="p_best_price">&#8361;<%# Eval("게임가격") %>원</p>
+                                          <p class="p_best_price">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
+                                                - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
                                        </div>
                                        <div class="div_wrap_rating">
                                           <div class="div_ratingbox">
@@ -523,4 +524,5 @@
              </Triggers>
         </asp:UpdatePanel>
     </div>
+    <div class="footer"></div>
 </asp:Content>

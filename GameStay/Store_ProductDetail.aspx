@@ -1,6 +1,6 @@
 ﻿<%@ Page ValidateRequest="false" Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_ProductDetail.aspx.cs" Inherits="GameStay.Store_ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=17" rel="stylesheet" />
+    <link href="CSS/Store_ProductDetail_StyleSheet.css?ver=11" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script>
@@ -24,6 +24,10 @@
 
         function onClickReviewTotal() {
             __doPostBack('div_p_review_total');
+        }
+
+        function onClickBuy() {
+            __doPostBack('buy_button');
         }
 
 
@@ -126,6 +130,10 @@
                        <p class="p_info1">개발사</p>
                        <p class="p_info2"><%# Eval("개발사이름") %></p>
                    </div>
+                   <div class="div_info div_tag">
+                       <p class="p_info1">태그</p>
+                       <p class="p_info2"><%# Eval("태그1") %>, <%# Eval("태그2") %>, <%# Eval("태그3") %></p>
+                   </div>
                </div>
                <div class="div_empty"></div>
 
@@ -137,11 +145,28 @@
                        <p class="p_purchase_introduce_text"><%# Eval("게임소개") %></p>
                    </div>
                    <div class="div_wrap_purchase_buttons">
-
+                       <div class="div_wrap_price">
+                           <div class="empty_price"></div>
+                           <div class="div_wrap_discount_rate">
+                               <img src="Images/Icon/Icon_Discount.png" class="icon_discount"/>
+                               <p class="p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
+                           </div>
+                           <div class="div_wrap_p_price">
+                               <p class="p_original_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p>
+                               <p class="p_discounted_price">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
+                                                - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                           </div>
+                       </div>
+                          </ItemTemplate>
+                      </asp:Repeater>
+                       <div class="div_wrap_button">
+                           <div class="div_buy_button" runat="server" id="div_buy_button">
+                               <button class="buy_button" onclick="onClickBuy()" runat="server" id="buy_button">구매</button>
+                           </div>
+                       </div>
                    </div>
                </div>
-            </ItemTemplate>
-        </asp:Repeater>
+            
 
 
 

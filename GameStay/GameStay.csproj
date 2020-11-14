@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BuyGame.aspx" />
     <Content Include="Community.aspx" />
+    <Content Include="CSS\BuyGame_StyleSheet.css" />
     <Content Include="CSS\DevLogin_StyleSheet.css" />
     <Content Include="CSS\DevProfile_StyleSheet.css" />
     <Content Include="CSS\DevRegister_StyleSheet.css" />
@@ -352,6 +354,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuyGame.aspx.cs">
+      <DependentUpon>BuyGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuyGame.aspx.designer.cs">
+      <DependentUpon>BuyGame.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Community.aspx.cs">
       <DependentUpon>Community.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

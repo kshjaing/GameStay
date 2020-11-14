@@ -28,10 +28,21 @@ namespace GameStay
             UserDao uDao = new UserDao();
             if (uDao.Authenticate(inputID.Value.ToString(), inputPassword.Value.ToString()))
             {
-                Session["아이디"] = inputID.Value.ToString();
-                Session["닉네임"] = dbManager.GetNickName(Session["아이디"].ToString());
-                Session["접속경로"] = "USER";
-                Response.Redirect("Store_main.aspx");
+                if (Session["구매예정"] != null)
+                {
+                    Session["아이디"] = inputID.Value.ToString();
+                    Session["닉네임"] = dbManager.GetNickName(Session["아이디"].ToString());
+                    Session["접속경로"] = "USER";
+                    Response.Redirect("Store_ProductDetail.aspx?title=" + Session["구매예정"]);
+                }
+
+                else
+                {
+                    Session["아이디"] = inputID.Value.ToString();
+                    Session["닉네임"] = dbManager.GetNickName(Session["아이디"].ToString());
+                    Session["접속경로"] = "USER";
+                    Response.Redirect("Store_main.aspx");
+                }
             }
             else
             {
