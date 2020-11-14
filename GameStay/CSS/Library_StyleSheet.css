@@ -62,7 +62,7 @@ html, body {
 }
 .div_lib_game {
     width: 180px;
-    height: 320px;
+    height: 310px;
     margin-right: 28px;
     float: left;
     background-color: #1B1C1E;
@@ -71,7 +71,7 @@ html, body {
 }
 .img_lib_game{
     width:180px;
-    height:250px;
+    height:auto;
 }
 
 .div_lib_game:hover .img_lib_game{
