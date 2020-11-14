@@ -254,8 +254,7 @@
                                        <div class="div_wrap_details2">
                                           <p class="p p_title" id="p_title" runat="server"><%# Eval("게임명") %></p>
                                           <p class="p p_release_date" id="p_release_date" runat="server"><%# DataBinder.Eval(Container.DataItem, "출시일", "{0:D}") %></p>
-                                          <p class="p p_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                             - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                          <p class="p p_price" id="p_price" runat="server">&#8361;<%# Eval("할인가격", "{0:0,00}") %>원</p>
                                        </div>
                                    </asp:HyperLink>
                                </ItemTemplate>
@@ -331,8 +330,7 @@
                                            </div>
                                            <div class="div_wrap_discount_price2">
                                               <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
-                                              <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                                 - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                              <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Eval("할인가격", "{0:0,00}") %>원</p>
                                            </div>
                                         </div>
                                     </div>
@@ -365,8 +363,7 @@
                                           </div>
                                           <div class="div_wrap_discount_price2">
                                              <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
-                                             <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                                - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                             <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Eval("할인가격", "{0:0,00}") %>원</p>
                                           </div>
                                        </div>
                                    </div>
@@ -399,8 +396,7 @@
                                           </div>
                                           <div class="div_wrap_discount_price2">
                                               <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
-                                              <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                                 - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                              <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Eval("할인가격", "{0:0,00}") %>원</p>
                                           </div>
                                       </div>
                                    </div>
@@ -433,8 +429,7 @@
                                           </div>
                                           <div class="div_wrap_discount_price2">
                                              <p class="p p_discount_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p><br />
-                                             <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                                - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                             <p class="p p_discounted_price" id="p_price" runat="server">&#8361;<%# Eval("할인가격", "{0:0,00}") %>원</p>
                                           </div>
                                        </div>
                                    </div>
@@ -504,8 +499,7 @@
                                           <p class="p_best_tags"><%# Eval("태그1") %>, <%# Eval("태그2") %>, <%# Eval("태그3") %></p>       
                                        </div>
                                        <div class="div_wrap_p_best_price">
-                                          <p class="p_best_price">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                                - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                                          <p class="p_best_price">&#8361;<%# Eval("할인가격", "{0:0,00}") %>원</p>
                                        </div>
                                        <div class="div_wrap_rating">
                                           <div class="div_ratingbox">

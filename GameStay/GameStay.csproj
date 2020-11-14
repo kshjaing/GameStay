@@ -82,6 +82,7 @@
     <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="CSS\Store_ProductDetail_StyleSheet.css" />
+    <Content Include="CSS\SuccessPurchase_StyleSheet.css" />
     <Content Include="CSS\UploadGame_StyleSheet.css" />
     <Content Include="DevLogin.aspx" />
     <Content Include="Images\Game4vs3Images\4vs3_AssassinsCreedOrigins.jpg" />
@@ -162,10 +163,10 @@
     <Content Include="Images\GameIntroImages\IntroImage_DeathStranding_3.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_DeathStranding_4.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_DeathStranding_5.jpg" />
-    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman1.jpg" />
-    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman2.jpg" />
-    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman3.jpg" />
-    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman4.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman_1.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman_2.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman_3.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_DetroitBecomeHuman_4.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_FallGuys_1.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_FallGuys_2.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_FallGuys_3.jpg" />
@@ -354,6 +355,7 @@
     <Content Include="RequestLogin.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
+    <Content Include="SuccessPurchase.aspx" />
     <Content Include="SuccessRegist.aspx" />
     <Content Include="UploadGame.aspx" />
     <Content Include="Web.config" />
@@ -469,6 +471,13 @@
     </Compile>
     <Compile Include="Store_ProductDetail.aspx.designer.cs">
       <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessPurchase.aspx.cs">
+      <DependentUpon>SuccessPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessPurchase.aspx.designer.cs">
+      <DependentUpon>SuccessPurchase.aspx</DependentUpon>
     </Compile>
     <Compile Include="SuccessRegist.aspx.cs">
       <DependentUpon>SuccessRegist.aspx</DependentUpon>

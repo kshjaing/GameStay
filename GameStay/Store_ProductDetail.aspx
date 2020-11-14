@@ -152,9 +152,8 @@
                                <p class="p_discount_rate"><%# Convert.ToDouble(Eval("할인율")) * 100 %>%</p>
                            </div>
                            <div class="div_wrap_p_price">
-                               <p class="p_original_price"><strike>&#8361;<%# Eval("게임가격") %>원</strike></p>
-                               <p class="p_discounted_price">&#8361;<%# Convert.ToInt32(Eval("게임가격"))
-                                                - Convert.ToInt32(Eval("게임가격")) * Convert.ToDouble(Eval("할인율")) %>원</p>
+                               <p class="p_original_price"><strike>&#8361;<%# Eval("게임가격", "{0:0,00}") %>원</strike></p>
+                               <p class="p_discounted_price">&#8361;<%# Eval("할인가격", "{0:0,00}") %>원</p>
                            </div>
                        </div>
                           </ItemTemplate>
@@ -166,6 +165,7 @@
                        </div>
                    </div>
                </div>
+
             
 
 

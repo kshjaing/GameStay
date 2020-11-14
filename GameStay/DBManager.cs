@@ -58,9 +58,9 @@ namespace GameStay
         //특집 및 추천에 들어갈 게임들을 어댑터에 적용(어떤게임을 추천할지 그 로직은 추후 추가)
         public SqlDataAdapter SetFeaturesAdapter()
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT 게임타이틀.게임명, 게임타이틀.영어게임명, 게임타이틀.게임가격, 게임타이틀.할인율, 게임타이틀.출시일, 게임타이틀.메인이미지 " +
-                "FROM 게임타이틀 INNER JOIN 추천게임 " +
-                "ON 게임타이틀.게임명 = 추천게임.게임명 ORDER BY 추천게임.번호", myConn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT 뷰_게임타이틀.게임명, 뷰_게임타이틀.영어게임명, 뷰_게임타이틀.할인가격, 뷰_게임타이틀.할인율, 뷰_게임타이틀.출시일, 뷰_게임타이틀.메인이미지 " +
+                "FROM 뷰_게임타이틀 INNER JOIN 추천게임 " +
+                "ON 뷰_게임타이틀.게임명 = 추천게임.게임명 ORDER BY 추천게임.번호", myConn);
             return dataAdapter;
         }
 
@@ -75,7 +75,7 @@ namespace GameStay
         public SqlDataAdapter SetDiscountAdapter1()
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
-                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " AS rownum, *FROM 뷰_게임타이틀 WHERE 할인율 > 0) dis" +
                 " WHERE dis.rownum BETWEEN 1 AND 6; ", myConn);
             return dataAdapter;
         }
@@ -84,7 +84,7 @@ namespace GameStay
         public SqlDataAdapter SetDiscountAdapter2()
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
-                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " AS rownum, *FROM 뷰_게임타이틀 WHERE 할인율 > 0) dis" +
                 " WHERE dis.rownum BETWEEN 7 AND 12; ", myConn);
             return dataAdapter;
         }
@@ -93,7 +93,7 @@ namespace GameStay
         public SqlDataAdapter SetDiscountAdapter3()
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
-                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " AS rownum, *FROM 뷰_게임타이틀 WHERE 할인율 > 0) dis" +
                 " WHERE dis.rownum BETWEEN 13 AND 18; ", myConn);
             return dataAdapter;
         }
@@ -102,7 +102,7 @@ namespace GameStay
         public SqlDataAdapter SetDiscountAdapter4()
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 게임명)" +
-                " AS rownum, *FROM 게임타이틀 WHERE 할인율 > 0) dis" +
+                " AS rownum, *FROM 뷰_게임타이틀 WHERE 할인율 > 0) dis" +
                 " WHERE dis.rownum BETWEEN 19 AND 24; ", myConn);
             return dataAdapter;
         }
@@ -120,7 +120,7 @@ namespace GameStay
         public SqlDataAdapter SetNewGamesAdapter()
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY 출시일 DESC) AS rownum, " +
-                "*FROM 게임타이틀) AS release WHERE release.rownum BETWEEN 1 AND 8", myConn);
+                "*FROM 뷰_게임타이틀) AS release WHERE release.rownum BETWEEN 1 AND 8", myConn);
             return dataAdapter;
         }
 
@@ -363,6 +363,19 @@ namespace GameStay
             return myReview;
         }
 
+        //특정게임의 한글게임명 반환
+        public String GetGameKorTitle(string gametitle)
+        {
+            String querystring = "SELECT 게임명 FROM 게임타이틀 WHERE 영어게임명='" + gametitle + "'";
+            String korTitle = "";
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            dataReader.Read();
+            korTitle = dataReader["게임명"].ToString();
+            dataReader.Close();
+            return korTitle;
+        }
+
         //리뷰 게시
         public void PostReview(string userid, string gametitle, string contents, int rating)
         {
@@ -395,6 +408,27 @@ namespace GameStay
             }
             this.ExecuteNonQuery(querystring2);
             dataReader.Close();
+        }
+
+        //게임의 할인된 가격 반환
+        public int GetDiscountedPrice(string gametitle)
+        {
+            String querystring = "SELECT 할인가격 FROM 뷰_게임타이틀 WHERE 영어게임명='" + gametitle + "'";
+            int price = 0;
+            DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            dataReader.Read();
+            price = Convert.ToInt32(dataReader["할인가격"]);
+            return price;
+        }
+
+        //게임 구매
+        public void PurchaseGame(string userid, string gametitle, int price)
+        {
+            String querystring = "INSERT INTO 거래목록(구매자, 영어게임명, 구매금액, 거래일) "
+                + "VALUES('" + userid + "', '" + gametitle + "', '" + price + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+            DBOpen();
+            this.ExecuteNonQuery(querystring);
         }
 
         //개발사 정보

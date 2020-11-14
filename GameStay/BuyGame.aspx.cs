@@ -44,7 +44,8 @@ namespace GameStay
             //구매버튼 클릭이벤트
             if (Request["__EVENTTARGET"] == "buy_button")
             {
-
+                dbManager.PurchaseGame(Session["아이디"].ToString(), gameTitle, dbManager.GetDiscountedPrice(gameTitle));
+                Response.Redirect("SuccessPurchase.aspx?title=" + gameTitle);
             }
         }
     }
