@@ -58,42 +58,77 @@ html, body {
 .div_library_total{
     width:100%;
     margin-top:10px;
+    position: relative;
 }
 .div_lib_game {
     width: 180px;
-    height: 300px;
+    height: 320px;
     margin-right: 28px;
     float: left;
     background-color: #1B1C1E;
     margin-top: 20px;
+    position: relative;
 }
 .img_lib_game{
     width:180px;
     height:250px;
 }
-.txt_lib_game {
-    width: 170px;
-    font-size: 20px;
-    color: #FFFFFF;
-    vertical-align: middle;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    overflow:hidden;
-    text-overflow: ellipsis;
-    display:inline-block;
-}
+
 .div_lib_game:hover .img_lib_game{
     filter: blur(5px);
     
 }
-    .div_lib_game:hover .btn_lib {
-        opacity: 1;
+    .div_lib_game:hover .div_wrap_buttons {
+        display: block;
     }
-.btn_lib {
+
+
+.link {
+    text-decoration: none;
+}
+
+.div_wrap_buttons {
+    width: 100px;
+    height: 130px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     position: absolute;
-    width: 95px;
-    height: 30px;
-    transform: translate(-50%, -150px);
+    display: none;
+}
+
+.div_btn_lib {
+    display: table;
+    width: 100px;
+    height: 45px;
+    margin-bottom: 20px;
+    background: #1B1C1E;
+    position: relative;
+}
+
+.p_lib {
+    color: #FFFFFF;
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
-    opacity: 0;
+}
+
+.div_title {
+    display: table;
+    width: 180px;
+    height: 70px;
+    bottom: 0;
+    position: absolute;
+}
+
+.p_title {
+    font-family: 'NIXGONFONTS B 2.0';
+    display: table-cell;
+    font-size: 17px;
+    color: #FFFFFF;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
 }

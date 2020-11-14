@@ -1,9 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Library.aspx.cs" Inherits="GameStay.Library" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Library_StyleSheet.css?ver=12" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-    
+    <link href="CSS/Library_StyleSheet.css?ver=13" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">
@@ -13,18 +10,23 @@
                     <div class="div_lib_game">
                         <div class="squar_lib_game">
                             <img class="img_lib_game" src="<%# Eval("라이브러리이미지") %>"/>
-                            <a class="txt_lib_game"><%# Eval("영어게임명") %></a>
-                        </div>
-                        <div>
+                            <div class="div_wrap_buttons">
+                                <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
+                                 runat="server" CssClass="link">
+                                <div class="div_btn_lib">
+                                    <p class="p_lib">상점페이지</p>
+                                </div>
+                            </asp:HyperLink>
                             <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
-                                runat="server">
-                            <input type="button" class="btn_lib" value="상점페이지" />
-                                </asp:HyperLink>
-                                <br /><br />
-                            <asp:HyperLink NavigateUrl='<%# String.Concat("~/Store_ProductDetail.aspx?title=", Eval("영어게임명")) %>'
-                                runat="server">
-                            <input type="button" class="btn_lib" value="커뮤니티"/>
-                                </asp:HyperLink>
+                                runat="server" CssClass="link">
+                                <div class="div_btn_lib">
+                                    <p class="p_lib">커뮤니티</p>
+                                </div>
+                            </asp:HyperLink>
+                            </div>
+                            <div class="div_title">
+                                <p class="p_title"><%# Eval("게임명") %></p>
+                            </div>
                         </div>
                     </div>
                 </ItemTemplate>
