@@ -15,7 +15,7 @@ namespace GameStay
         {
             dbManager = new DBManager();
             gameTitle = Request["title"];
-            p_content.InnerText = "이제 " + dbManager.GetGameKorTitle(gameTitle) + "를 플레이하실 수 있습니다.";
+            p_content.InnerText = "이제 " + dbManager.GetGameKorTitle(gameTitle) + "(을)를 플레이하실 수 있습니다.";
             bg_image.Src = "Images/GameIntroImages/IntroImage_" + gameTitle + "_1.jpg";
             if (Request["__EVENTTARGET"] == "p_goStore")
             {
