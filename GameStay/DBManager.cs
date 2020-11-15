@@ -384,6 +384,12 @@ namespace GameStay
             String querystring1 = "SELECT COUNT(*) AS 확인 FROM 리뷰 WHERE 작성자='" + userid + "' AND 영어게임명='" + gametitle + "'";
             String querystring2 = "";
 
+            String tag1, tag2, tag3;
+            String queryadd1 = "", queryadd2 = "", queryadd3 = "";
+            String querytag1 = "SELECT 태그1 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
+            String querytag2 = "SELECT 태그2 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
+            String querytag3 = "SELECT 태그3 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
+
             //평점을 20으로 나눈 몫으로 별 개수 선정
             int star = 1;
             if (rating / 20 == 5)
@@ -392,12 +398,27 @@ namespace GameStay
                 star = rating / 20 + 1;
 
             DBOpen();
+            SqlDataReader dataReader1 = this.ExecuteReader(querytag1);
+            dataReader1.Read();
+            tag1 = dataReader1["태그1"].ToString();
+            dataReader1.Close();
+
+            SqlDataReader dataReader2 = this.ExecuteReader(querytag2);
+            dataReader2.Read();
+            tag2 = dataReader2["태그2"].ToString();
+            dataReader2.Close();
+
+            SqlDataReader dataReader3 = this.ExecuteReader(querytag3);
+            dataReader3.Read();
+            tag3 = dataReader3["태그3"].ToString();
+            dataReader3.Close();
+
             SqlDataReader dataReader = this.ExecuteReader(querystring1);
             dataReader.Read();
             //dataReader가 1이면 이미 이 게임에 이 유저가 작성한 리뷰가 있는것
             if (Convert.ToInt32(dataReader["확인"]) == 1)
             {
-                querystring2 = "UPDATE 리뷰 SET 내용='" + contents + "', " 
+                querystring2 = "UPDATE 리뷰 SET 내용='" + contents + "', "
                     + "평점=" + rating + ", 평점이미지='Images/Icon/Star/Star_" + star + ".png' "
                     + "WHERE 작성자='" + userid + "' AND 영어게임명='" + gametitle + "'";
             }
@@ -407,10 +428,18 @@ namespace GameStay
                 querystring2 = "INSERT INTO 리뷰(작성자, 영어게임명, 내용, 평점, 평점이미지, 좋아요, 작성일) "
                   + "VALUES('" + userid + "', '" + gametitle + "', '" + contents + "', '" + rating + "', "
                   + "'Images/Icon/Star/Star_" + star + ".png', 0, '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+                queryadd1 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 3 WHERE 태그='" + tag1 + "' AND 유저='" + userid + "'";
+                queryadd2 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 3 WHERE 태그='" + tag2 + "' AND 유저='" + userid + "'";
+                queryadd3 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 3 WHERE 태그='" + tag3 + "' AND 유저='" + userid + "'";
             }
             dataReader.Close();
             this.ExecuteNonQuery(querystring2);
-            
+            if (queryadd1 != "" && queryadd2 != "" && queryadd3 != "")
+            {
+                this.ExecuteNonQuery(queryadd1);
+                this.ExecuteNonQuery(queryadd2);
+                this.ExecuteNonQuery(queryadd3);
+            }
         }
 
         //게임의 할인된 가격 반환
