@@ -135,7 +135,7 @@ namespace GameStay
               + "WHERE 태그1 = '" + tag1 + "' OR 태그2 = '" + tag1 + "' OR 태그3 = '" + tag1 + "' "
               + "OR 태그1 = '" + tag2 + "' OR 태그2 = '" + tag2 + "' OR 태그3 = '" + tag2 + "' "
               + "OR 태그1 = '" + tag3 + "' OR 태그2 = '" + tag3 + "' OR 태그3 = '" + tag3 + "' "
-              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 1 AND 6", myConn);
+              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 1 AND 6 AND 할인율 > 0", myConn);
             return dataAdapter;
         }
 
@@ -167,7 +167,7 @@ namespace GameStay
               + "WHERE 태그1 = '" + tag1 + "' OR 태그2 = '" + tag1 + "' OR 태그3 = '" + tag1 + "' "
               + "OR 태그1 = '" + tag2 + "' OR 태그2 = '" + tag2 + "' OR 태그3 = '" + tag2 + "' "
               + "OR 태그1 = '" + tag3 + "' OR 태그2 = '" + tag3 + "' OR 태그3 = '" + tag3 + "' "
-              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 7 AND 12", myConn);
+              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 7 AND 12 AND 할인율 > 0", myConn);
             return dataAdapter;
         }
 
@@ -199,7 +199,7 @@ namespace GameStay
               + "WHERE 태그1 = '" + tag1 + "' OR 태그2 = '" + tag1 + "' OR 태그3 = '" + tag1 + "' "
               + "OR 태그1 = '" + tag2 + "' OR 태그2 = '" + tag2 + "' OR 태그3 = '" + tag2 + "' "
               + "OR 태그1 = '" + tag3 + "' OR 태그2 = '" + tag3 + "' OR 태그3 = '" + tag3 + "' "
-              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 13 AND 18", myConn);
+              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 13 AND 18 AND 할인율 > 0", myConn);
             return dataAdapter;
         }
 
@@ -231,7 +231,7 @@ namespace GameStay
               + "WHERE 태그1 = '" + tag1 + "' OR 태그2 = '" + tag1 + "' OR 태그3 = '" + tag1 + "' "
               + "OR 태그1 = '" + tag2 + "' OR 태그2 = '" + tag2 + "' OR 태그3 = '" + tag2 + "' "
               + "OR 태그1 = '" + tag3 + "' OR 태그2 = '" + tag3 + "' OR 태그3 = '" + tag3 + "' "
-              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 19 AND 24", myConn);
+              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 19 AND 24 AND 할인율 > 0", myConn);
             return dataAdapter;
         }
 
@@ -517,6 +517,7 @@ namespace GameStay
             String querytag1 = "SELECT 태그1 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
             String querytag2 = "SELECT 태그2 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
             String querytag3 = "SELECT 태그3 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
+            String querypoint = "";
 
             //평점을 20으로 나눈 몫으로 별 개수 선정
             int star = 1;
@@ -559,14 +560,21 @@ namespace GameStay
                 queryadd1 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 3 WHERE 태그='" + tag1 + "' AND 유저='" + userid + "'";
                 queryadd2 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 3 WHERE 태그='" + tag2 + "' AND 유저='" + userid + "'";
                 queryadd3 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 3 WHERE 태그='" + tag3 + "' AND 유저='" + userid + "'";
+                querypoint = "UPDATE 유저 SET 활동포인트= 활동포인트 + 50 WHERE 아이디='" + userid + "'";
             }
             dataReader.Close();
             this.ExecuteNonQuery(querystring2);
+            
             if (queryadd1 != "" && queryadd2 != "" && queryadd3 != "")
             {
                 this.ExecuteNonQuery(queryadd1);
                 this.ExecuteNonQuery(queryadd2);
                 this.ExecuteNonQuery(queryadd3);
+            }
+
+            if (querypoint != "")
+            {
+                this.ExecuteNonQuery(querypoint);
             }
         }
 
@@ -668,10 +676,13 @@ namespace GameStay
             }
             dataReaderCheck3.Close();
 
+            //포인트 추가
+            String querypoint = "UPDATE 유저 SET 활동포인트= 활동포인트 + FLOOR(" + price +" * 0.01) WHERE 아이디='" + userid + "'";
             this.ExecuteNonQuery(querystring);
             this.ExecuteNonQuery(queryadd1);
             this.ExecuteNonQuery(queryadd2);
             this.ExecuteNonQuery(queryadd3);
+            this.ExecuteNonQuery(querypoint);
         }
 
         //개발사 정보
