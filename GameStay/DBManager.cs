@@ -107,6 +107,134 @@ namespace GameStay
             return dataAdapter;
         }
 
+        public SqlDataAdapter SetDiscountTagAdapter1(string userid)
+        {
+            String tag1, tag2, tag3;
+            String querytag1 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=1";
+            String querytag2 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=2";
+            String querytag3 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=3";
+            DBOpen();
+            SqlDataReader dataReader1 = this.ExecuteReader(querytag1);
+            dataReader1.Read();
+            tag1 = dataReader1["태그"].ToString();
+            dataReader1.Close();
+            SqlDataReader dataReader2 = this.ExecuteReader(querytag2);
+            dataReader2.Read();
+            tag2 = dataReader2["태그"].ToString();
+            dataReader2.Close();
+            SqlDataReader dataReader3 = this.ExecuteReader(querytag3);
+            dataReader3.Read();
+            tag3 = dataReader3["태그"].ToString();
+            dataReader3.Close();
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY(SELECT NULL)) AS rownum, * "
+              + "FROM(SELECT TOP(24) * FROM 뷰_게임타이틀 "
+              + "WHERE 태그1 = '" + tag1 + "' OR 태그2 = '" + tag1 + "' OR 태그3 = '" + tag1 + "' "
+              + "OR 태그1 = '" + tag2 + "' OR 태그2 = '" + tag2 + "' OR 태그3 = '" + tag2 + "' "
+              + "OR 태그1 = '" + tag3 + "' OR 태그2 = '" + tag3 + "' OR 태그3 = '" + tag3 + "' "
+              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 1 AND 6", myConn);
+            return dataAdapter;
+        }
+
+        public SqlDataAdapter SetDiscountTagAdapter2(string userid)
+        {
+            String tag1, tag2, tag3;
+            String querytag1 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=1";
+            String querytag2 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=2";
+            String querytag3 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=3";
+            DBOpen();
+            SqlDataReader dataReader1 = this.ExecuteReader(querytag1);
+            dataReader1.Read();
+            tag1 = dataReader1["태그"].ToString();
+            dataReader1.Close();
+            SqlDataReader dataReader2 = this.ExecuteReader(querytag2);
+            dataReader2.Read();
+            tag2 = dataReader2["태그"].ToString();
+            dataReader2.Close();
+            SqlDataReader dataReader3 = this.ExecuteReader(querytag3);
+            dataReader3.Read();
+            tag3 = dataReader3["태그"].ToString();
+            dataReader3.Close();
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY(SELECT NULL)) AS rownum, * "
+              + "FROM(SELECT TOP(24) * FROM 뷰_게임타이틀 "
+              + "WHERE 태그1 = '" + tag1 + "' OR 태그2 = '" + tag1 + "' OR 태그3 = '" + tag1 + "' "
+              + "OR 태그1 = '" + tag2 + "' OR 태그2 = '" + tag2 + "' OR 태그3 = '" + tag2 + "' "
+              + "OR 태그1 = '" + tag3 + "' OR 태그2 = '" + tag3 + "' OR 태그3 = '" + tag3 + "' "
+              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 7 AND 12", myConn);
+            return dataAdapter;
+        }
+
+        public SqlDataAdapter SetDiscountTagAdapter3(string userid)
+        {
+            String tag1, tag2, tag3;
+            String querytag1 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=1";
+            String querytag2 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=2";
+            String querytag3 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=3";
+            DBOpen();
+            SqlDataReader dataReader1 = this.ExecuteReader(querytag1);
+            dataReader1.Read();
+            tag1 = dataReader1["태그"].ToString();
+            dataReader1.Close();
+            SqlDataReader dataReader2 = this.ExecuteReader(querytag2);
+            dataReader2.Read();
+            tag2 = dataReader2["태그"].ToString();
+            dataReader2.Close();
+            SqlDataReader dataReader3 = this.ExecuteReader(querytag3);
+            dataReader3.Read();
+            tag3 = dataReader3["태그"].ToString();
+            dataReader3.Close();
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY(SELECT NULL)) AS rownum, * "
+              + "FROM(SELECT TOP(24) * FROM 뷰_게임타이틀 "
+              + "WHERE 태그1 = '" + tag1 + "' OR 태그2 = '" + tag1 + "' OR 태그3 = '" + tag1 + "' "
+              + "OR 태그1 = '" + tag2 + "' OR 태그2 = '" + tag2 + "' OR 태그3 = '" + tag2 + "' "
+              + "OR 태그1 = '" + tag3 + "' OR 태그2 = '" + tag3 + "' OR 태그3 = '" + tag3 + "' "
+              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 13 AND 18", myConn);
+            return dataAdapter;
+        }
+
+        public SqlDataAdapter SetDiscountTagAdapter4(string userid)
+        {
+            String tag1, tag2, tag3;
+            String querytag1 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=1";
+            String querytag2 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=2";
+            String querytag3 = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, * "
+                + "FROM 태그포인트 WHERE 유저 = '" + userid + "') a WHERE a.rownum=3";
+            DBOpen();
+            SqlDataReader dataReader1 = this.ExecuteReader(querytag1);
+            dataReader1.Read();
+            tag1 = dataReader1["태그"].ToString();
+            dataReader1.Close();
+            SqlDataReader dataReader2 = this.ExecuteReader(querytag2);
+            dataReader2.Read();
+            tag2 = dataReader2["태그"].ToString();
+            dataReader2.Close();
+            SqlDataReader dataReader3 = this.ExecuteReader(querytag3);
+            dataReader3.Read();
+            tag3 = dataReader3["태그"].ToString();
+            dataReader3.Close();
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY(SELECT NULL)) AS rownum, * "
+              + "FROM(SELECT TOP(24) * FROM 뷰_게임타이틀 "
+              + "WHERE 태그1 = '" + tag1 + "' OR 태그2 = '" + tag1 + "' OR 태그3 = '" + tag1 + "' "
+              + "OR 태그1 = '" + tag2 + "' OR 태그2 = '" + tag2 + "' OR 태그3 = '" + tag2 + "' "
+              + "OR 태그1 = '" + tag3 + "' OR 태그2 = '" + tag3 + "' OR 태그3 = '" + tag3 + "' "
+              + "ORDER BY NEWID())b) a WHERE a.rownum BETWEEN 19 AND 24", myConn);
+            return dataAdapter;
+        }
+
         //최고인기게임, 신규인기게임 8개씩 어댑터 적용
         public SqlDataAdapter SetBestGamesAdapter()
         {
