@@ -182,6 +182,7 @@ namespace GameStay
             {
                 link = dataReader["대표영상링크"].ToString();
             }
+            dataReader.Close();
             return link;
         }
 
@@ -283,6 +284,7 @@ namespace GameStay
                 isHave = true;
             else
                 isHave = false;
+            dataReader.Close();
             return isHave;
         }
 
@@ -406,29 +408,113 @@ namespace GameStay
                   + "VALUES('" + userid + "', '" + gametitle + "', '" + contents + "', '" + rating + "', "
                   + "'Images/Icon/Star/Star_" + star + ".png', 0, '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
             }
-            this.ExecuteNonQuery(querystring2);
             dataReader.Close();
+            this.ExecuteNonQuery(querystring2);
+            
         }
 
         //게임의 할인된 가격 반환
         public int GetDiscountedPrice(string gametitle)
         {
             String querystring = "SELECT 할인가격 FROM 뷰_게임타이틀 WHERE 영어게임명='" + gametitle + "'";
-            int price = 0;
+            int price;
             DBOpen();
             SqlDataReader dataReader = this.ExecuteReader(querystring);
             dataReader.Read();
             price = Convert.ToInt32(dataReader["할인가격"]);
+            dataReader.Close();
             return price;
         }
 
-        //게임 구매
-        public void PurchaseGame(string userid, string gametitle, int price)
+        public string GetKorGameTitle(string gametitle)
         {
-            String querystring = "INSERT INTO 거래목록(구매자, 영어게임명, 구매금액, 거래일) "
-                + "VALUES('" + userid + "', '" + gametitle + "', '" + price + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+            String querystring = "SELECT 게임명 FROM 게임타이틀 WHERE 영어게임명='" + gametitle + "'";
+            string title;
             DBOpen();
+            SqlDataReader dataReader = this.ExecuteReader(querystring);
+            dataReader.Read();
+            title = dataReader["게임명"].ToString();
+            dataReader.Close();
+            return title;
+        }
+
+        //게임 구매
+        public void PurchaseGame(string userid, string korgametitle, string gametitle, int price)
+        {
+            String querystring = "INSERT INTO 거래목록(구매자, 게임명, 영어게임명, 구매금액, 거래일) "
+                + "VALUES('" + userid + "', '" + korgametitle + "', '" + gametitle + "', '" + price + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+            
+            //구매하려는 게임의 태그 3개를 모두 가져옴
+            String tag1, tag2, tag3;
+            String queryadd1, queryadd2, queryadd3;
+            String querytag1 = "SELECT 태그1 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
+            String querytag2 = "SELECT 태그2 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
+            String querytag3 = "SELECT 태그3 FROM 게임별태그 WHERE 영어게임명='" + gametitle + "'";
+            DBOpen();
+            SqlDataReader dataReader1 = this.ExecuteReader(querytag1);
+            dataReader1.Read();
+            tag1 = dataReader1["태그1"].ToString();
+            dataReader1.Close();
+
+            SqlDataReader dataReader2 = this.ExecuteReader(querytag2);
+            dataReader2.Read();
+            tag2 = dataReader2["태그2"].ToString();
+            dataReader2.Close();
+
+            SqlDataReader dataReader3 = this.ExecuteReader(querytag3);
+            dataReader3.Read();
+            tag3 = dataReader3["태그3"].ToString();
+            dataReader3.Close();
+            //----------------------------------------
+            //해당태그의 태그포인트 증가
+
+            String querycheck1 = "SELECT * FROM 태그포인트 WHERE 유저='" + userid + "' AND 태그='" + tag1 + "'";
+            String querycheck2 = "SELECT * FROM 태그포인트 WHERE 유저='" + userid + "' AND 태그='" + tag2 + "'";
+            String querycheck3 = "SELECT * FROM 태그포인트 WHERE 유저='" + userid + "' AND 태그='" + tag3 + "'";
+            
+            SqlDataReader dataReaderCheck1 = this.ExecuteReader(querycheck1);
+            //태그포인트 테이블에 해당 태그가 존재할때
+            if (dataReaderCheck1.Read())
+            {
+                queryadd1 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 5 WHERE 태그='" + tag1 + "' AND 유저='" + userid + "'";
+            }
+            //태그포인트 테이블에 해당 태그가 없을때
+            else
+            {
+                queryadd1 = "INSERT INTO 태그포인트(유저, 태그, 태그포인트) VALUES('" + userid + "', '" + tag1 + "', 5)";
+            }
+            dataReaderCheck1.Close();
+
+
+
+            SqlDataReader dataReaderCheck2 = this.ExecuteReader(querycheck2);
+            if (dataReaderCheck2.Read())
+            {
+                queryadd2 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 5 WHERE 태그='" + tag2 + "' AND 유저='" + userid + "'";
+            }
+            else
+            {
+                queryadd2 = "INSERT INTO 태그포인트(유저, 태그, 태그포인트) VALUES('" + userid + "', '" + tag2 + "', 5)";
+            }
+            dataReaderCheck2.Close();
+
+
+
+            SqlDataReader dataReaderCheck3 = this.ExecuteReader(querycheck3);
+            if (dataReaderCheck3.Read())
+            {
+                queryadd3 = "UPDATE 태그포인트 SET 태그포인트= 태그포인트 + 5 WHERE 태그='" + tag3 + "' AND 유저='" + userid + "'";
+            }
+            else
+            {
+                queryadd3 = "INSERT INTO 태그포인트(유저, 태그, 태그포인트) VALUES('" + userid + "', '" + tag3 + "', 5)";
+            }
+            dataReaderCheck3.Close();
+
             this.ExecuteNonQuery(querystring);
+            this.ExecuteNonQuery(queryadd1);
+            this.ExecuteNonQuery(queryadd2);
+            this.ExecuteNonQuery(queryadd3);
         }
 
         //개발사 정보

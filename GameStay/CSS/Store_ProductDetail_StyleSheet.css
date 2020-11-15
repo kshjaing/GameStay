@@ -171,6 +171,7 @@ html, body {
     float: left;
     position: relative;
     margin-left: 50px;
+    padding-bottom: 10px;
 }
 
 .div_infobox_image {
@@ -232,10 +233,10 @@ html, body {
     color: #FFFFFF;
     font-size: 20pt;
     font-family: 'NIXGONFONTS B 2.0';
-    margin-top: 100px;
     margin-bottom: 20px;
     float: left;
     user-select: none;
+    position: relative;
 }
 
 .div_wrap_total_purchase {
@@ -709,6 +710,7 @@ html, body {
     height: 250px;
     background: #1B1C1E;
     margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 
