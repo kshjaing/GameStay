@@ -10,7 +10,7 @@ namespace GameStay
     public class DBManager
     {
 
-        string DBSource = "Data Source=(local); UID=gsdev; PWD=1234; DATABASE=GameStay";
+        string DBSource = "Data Source=PC\\SQLEXPRESS01; UID=gsdev; PWD=1234; DATABASE=GameStay";
 
         SqlConnection myConn;
 
