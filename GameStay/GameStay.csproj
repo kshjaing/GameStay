@@ -115,6 +115,7 @@
     <Content Include="Images\Game4vs3Images\4vs3_MonsterHunterWorld.png" />
     <Content Include="Images\Game4vs3Images\4vs3_NierAutomata.png" />
     <Content Include="Images\Game4vs3Images\4vs3_Overcooked2.png" />
+    <Content Include="Images\Game4vs3Images\4vs3_PUBG.jpg" />
     <Content Include="Images\Game4vs3Images\4vs3_RainbowSixSiege.jpg" />
     <Content Include="Images\Game4vs3Images\4vs3_Skyrim.png" />
     <Content Include="Images\Game4vs3Images\4vs3_Spelunky2.jpg" />
@@ -206,6 +207,11 @@
     <Content Include="Images\GameIntroImages\IntroImage_Overcooked2_2.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_Overcooked2_3.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_Overcooked2_4.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_PUBG_1.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_PUBG_2.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_PUBG_3.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_PUBG_4.jpg" />
+    <Content Include="Images\GameIntroImages\IntroImage_PUBG_5.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_RainbowSixSiege_1.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_RainbowSixSiege_2.jpg" />
     <Content Include="Images\GameIntroImages\IntroImage_RainbowSixSiege_3.jpg" />
@@ -243,6 +249,7 @@
     <Content Include="Images\GameTitleImages\TitleImage_MonsterHunterWorld.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_NierAutomata.png" />
     <Content Include="Images\GameTitleImages\TitleImage_Overcooked2.JPG" />
+    <Content Include="Images\GameTitleImages\TitleImage_PUBG.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_RainbowSixSiege.JPG" />
     <Content Include="Images\GameTitleImages\TitleImage_Skyrim.jpg" />
     <Content Include="Images\GameTitleImages\TitleImage_Spelunky2.jpg" />
@@ -267,6 +274,7 @@
     <Content Include="Images\GameWideImages\WideImage_MonsterHunterWorld.jpg" />
     <Content Include="Images\GameWideImages\WideImage_NierAutomata.jpg" />
     <Content Include="Images\GameWideImages\WideImage_Overcooked2.jpg" />
+    <Content Include="Images\GameWideImages\WideImage_PUBG.jpg" />
     <Content Include="Images\GameWideImages\WideImage_RainbowSixSiege.jpg" />
     <Content Include="Images\GameWideImages\WideImage_Skyrim.jpg" />
     <Content Include="Images\GameWideImages\WideImage_Spelunky2.jpg" />
@@ -307,6 +315,7 @@
     <Content Include="Images\LibraryImages\GameLibraryImages_MonsterHunterWorld.png" />
     <Content Include="Images\LibraryImages\GameLibraryImages_NierAutomata.png" />
     <Content Include="Images\LibraryImages\GameLibraryImages_Overcooked2.png" />
+    <Content Include="Images\LibraryImages\GameLibraryImages_PUBG.jpg" />
     <Content Include="Images\LibraryImages\GameLibraryImages_RainbowSixSiege.png" />
     <Content Include="Images\LibraryImages\GameLibraryImages_Skyrim.png" />
     <Content Include="Images\LibraryImages\GameLibraryImages_Spelunky2.png" />
@@ -334,6 +343,7 @@
     <Content Include="Images\PlaceholderImages\PlaceholderImage_MonsterHunterWorld.jpg" />
     <Content Include="Images\PlaceholderImages\PlaceholderImage_NierAutomata.jpg" />
     <Content Include="Images\PlaceholderImages\PlaceholderImage_Overcooked2.jpg" />
+    <Content Include="Images\PlaceholderImages\PlaceholderImage_PUBG.jpg" />
     <Content Include="Images\PlaceholderImages\PlaceholderImage_RainbowSixSiege.jpg" />
     <Content Include="Images\PlaceholderImages\PlaceholderImage_Skyrim.jpg" />
     <Content Include="Images\PlaceholderImages\PlaceholderImage_Spelunky2.jpg" />

@@ -12,7 +12,6 @@ namespace GameStay
 
     public partial class UploadGame : System.Web.UI.Page
     {
-        DBManager dbManager;
         GameTitleDao gtdao;
         int no;
         protected void Page_Load(object sender, EventArgs e)
@@ -28,6 +27,7 @@ namespace GameStay
                     (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
 
                 }
+
             }
         }
 

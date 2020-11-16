@@ -53,6 +53,7 @@ namespace GameStay
                     Response.Redirect("SuccessPurchase.aspx?title=" + gameTitle);
                 }
                 else return;
+                dbManager.DBClose();
             }
         }
     }
