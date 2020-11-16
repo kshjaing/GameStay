@@ -193,6 +193,7 @@ html, body {
     vertical-align: central;
     margin-left: 100px;
     margin-top: 50px;
+    margin-bottom:20px;
 }
 
 .txt_profile_screenshot {
@@ -202,23 +203,57 @@ html, body {
     padding-top: 35px;
     padding-left: 65px;
     text-align: left;
+    vertical-align:middle;
 }
+.div_scs {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    vertical-align: middle;
 
-.div_profile_scs_main{
-    width:50%;
-    float:left;
-    padding-left:65px;
 }
-
-.div_profile_scs_sub{
-    width:40%;
-    float:right;
+.div_profile_scs_main {
+    float: left;
+    width: 280px;
+    height: 200px;
+    display:inline-block;
+    margin-left:20px;
 }
 
 .img_profile_scs_main{
-    width:500px;
+    width:280px;
+    height:180px;
+}
+.div_upload_scs{
+    text-align:center;
+}
+.button_profile {
+    border: 0;
+    outline: 0;
+    background-color: #25262B;
+    color: #FFFFFF;
+    font-size: 14pt;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    margin-top: 2vh;
+    border-radius: 0 10px 0 10px;
+    transition: all 0.2s;
+    visibility: visible;
+    font-family: 'NIXGONFONTS M';
 }
 
-.img_profile_scs_sub{
-    width:250px;
+    .button_profile:hover {
+        color: #FFFFFF;
+        background-color: #3dae7a;
+        font-family: 'NIXGONFONTS M';
+    }
+.txt_upload_imgselect {
+    font-size: 13pt;
+    color: #FFFFFF;
+    font-family: 'NIXGONFONTS M';
+    margin-top: 10px;
+    width: 290px;
+    text-align: left;
 }
+

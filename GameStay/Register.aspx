@@ -53,14 +53,11 @@
                             runat="server" id="inputEmail" autocomplete="off"/>
                         <img class="icon_email" src="Images/Icon/Login/Icon_Email.png" />
                      </div>
-                     
+                 </div><br />
+                 <div>
+                     <a runat="server" id="txtRegistCheck" class="txt_check" draggable="false" ></a><br />
+                     <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
                  </div>
-<div>
-<a runat="server" id="txtRegistCheck" class="txt_check" draggable="false" >
-                            
-                        </a>
-                     </div>
-                 <input type="button" runat="server" class="button_register" onserverclick="Register_OnClick" value="가입"/>
              </div>
         </div>
     </form>

@@ -29,13 +29,8 @@ namespace GameStay
 
             UserDo uDo = new UserDo(inputID.Value.ToString(), inputPassword.Value.ToString(), inputNickname.Value.ToString() , inputEmail.Value.ToString());
 
-            if (isIdCheck = uDao.VerifyID(inputID.Value.ToString()))
-            {
-                uDao = new UserDao();
-                uDao.RegistUser(uDo);
-                Response.Redirect("SuccessRegist.aspx");
-            }
-            else if (inputID.Value.Length < 1)
+            
+            if (inputID.Value.Length < 1)
             {
                 inputID.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
@@ -56,6 +51,13 @@ namespace GameStay
                 txtRegistCheck.InnerText = "비밀번호가 일치하지 않습니다.";
                 return;
             }
+            else if (inputNickname.Value.Length < 1)
+            {
+                inputNickname.Focus();
+                txtRegistCheck.Attributes.Add("style", "visibility: visible");
+                txtRegistCheck.InnerText = "닉네임을 입력해주세요.";
+                return;
+            }
             else if (inputEmail.Value.Length < 1)
             {
                 inputEmail.Focus();
@@ -63,12 +65,11 @@ namespace GameStay
                 txtRegistCheck.InnerText = "이메일을 입력해주세요.";
                 return;
             }
-            else if (inputNickname.Value.Length < 1)
+            else if (isIdCheck = uDao.VerifyID(inputID.Value.ToString()))
             {
-                inputNickname.Focus();
-                txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "닉네임을 입력해주세요.";
-                return;
+                uDao = new UserDao();
+                uDao.RegistUser(uDo);
+                Response.Redirect("SuccessRegist.aspx");
             }
             else
             {

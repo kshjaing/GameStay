@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="GameStay.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Profile_StyleSheet.css?ver=10" rel="stylesheet" />
+    <link href="CSS/Profile_StyleSheet.css?ver=16" rel="stylesheet" />
     <script>
         function profileEditOnClick() {
             __doPostBack('wrap_edit_p');
@@ -51,13 +51,20 @@
 
         <div class="profile_square_screenshot">
             <p class="txt_profile_screenshot">스크린샷</p>
-            <div class="div_profile_scs_main">
-                <input type="image" src="Images/GameTitleImages/TitleImage_TheElderScrolls5Skyrim.JPG" class="img_profile_scs_main" />
+            <div class="div_scs">
+                <asp:Repeater runat="server" ID="ScreenShot">
+                <ItemTemplate>
+                    <div class="div_profile_scs_main">
+                <input type="image" src='<%#Eval("이미지") %>' class="img_profile_scs_main" />
             </div>
-            <div class="div_profile_scs_sub">
-                <input type="image" src="Images/GameTitleImages/TitleImage_Firewatch.PNG" class="img_profile_scs_sub"/><br />
-                <input type="image" src="Images/GameTitleImages/TitleImage_Cyberpunk2077.JPG" class="img_profile_scs_sub"/>
+                </ItemTemplate>
+            </asp:Repeater>
             </div>
+            
+            <div>
+                <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                <asp:FileUpload ID="FileUpload1" runat="server" CssClass="txt_upload_imgselect"/>
+                <input type="button" class="button_profile" value="업로드" id="btn_upload" runat="server" onserverclick="btn_upload_click"/>
         </div>
         <br />
         <br />

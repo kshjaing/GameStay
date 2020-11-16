@@ -151,5 +151,12 @@ namespace GameStay
             mCmd.Parameters.Add(paramOut);
             return dbManager.ExecuteStoredProcedure(mCmd, paramOut);
         }
+
+        public void uploadimg(string title, string uid, string fname)
+        {
+            dbManager = new DBManager();
+            string qryInsert = "INSERT INTO 스크린샷 " + "(영어게임명, 작성자, 이미지) " + "VALUES('" + title.ToString() + "', '" + uid.ToString() + "', '" + fname.ToString() + "')";
+            dbManager.ExecuteNonQuery(qryInsert);
+        }
     }
 }

@@ -31,16 +31,27 @@ namespace GameStay
                         if (Request["id"].ToString().TrimEnd().Equals(Session["아이디"].ToString().TrimEnd()))
                         {
                             wrap_edit_p.Style["visibility"] = "visible";
+                            DropDownList1.Style["visibility"] = "visible";
+                            FileUpload1.Style["visibility"] = "visible";
+                            btn_upload.Style["visibility"] = "visible";
+                            DropDownList1.SelectedIndex = 0;
                         }
 
                         else
                         {
                             wrap_edit_p.Style["visibility"] = "hidden";
+                            DropDownList1.Style["visibility"] = "hidden";
+                            FileUpload1.Style["visibility"] = "hidden";
+                            btn_upload.Style["visibility"] = "hidden";
                         }
                         DBManager dbManager = new DBManager();
                         SqlDataAdapter recentAdapter1 = dbManager.SetRecentAdapter1(Request["id"].ToString().TrimEnd());
                         
                         SqlDataAdapter userinfo = dbManager.SetUserInfo(Request["id"].ToString().TrimEnd());
+
+                        SqlDataAdapter screen = dbManager.SetScreenShot(Request["id"].ToString().TrimEnd());
+
+                        SqlDataAdapter screengame = dbManager.SetScreenShotGame(Session["아이디"].ToString().TrimEnd());
 
                         DataTable dt1 = new DataTable();
                         recentAdapter1.Fill(dt1);
@@ -51,6 +62,17 @@ namespace GameStay
                         userinfo.Fill(dt4);
                         UserInfo.DataSource = dt4;
                         UserInfo.DataBind();
+
+                        DataTable dt2 = new DataTable();
+                        screen.Fill(dt2);
+                        ScreenShot.DataSource = dt2;
+                        ScreenShot.DataBind();
+
+                        DataTable dt3 = new DataTable();
+                        screengame.Fill(dt3);
+                        DropDownList1.DataSource = dt3;
+                        DropDownList1.DataTextField = "영어게임명";
+                        DropDownList1.DataBind();
 
                         //소유한 게임 수
                         txt_profile_countgame.InnerText = dbManager.GetHasGameCount(Request["id"].ToString()).ToString();
@@ -66,6 +88,24 @@ namespace GameStay
             {
                 Response.Redirect("ProfileEdit.aspx");
             }
+        }
+
+
+        
+
+        protected void btn_upload_click(object sender, EventArgs e)
+        {
+            if(FileUpload1.ClientID.Length < 1)
+            {
+                return;
+            }
+            string uid = Session["아이디"].ToString();
+            string title = DropDownList1.SelectedValue.ToString();
+            string fname = "Images/ScreenShot/" + uid.ToString() + "_" + DateTime.Now.ToString("yyyymmddhhmmss") + ".jpg";
+
+            UserDao udo = new UserDao();
+            udo.uploadimg(title, uid, fname);
+            FileUpload1.SaveAs(Server.MapPath(@"" + fname.ToString()));
         }
     }
 }

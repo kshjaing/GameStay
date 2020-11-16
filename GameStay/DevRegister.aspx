@@ -21,12 +21,12 @@
              <div class="login_square">
                  <h1 class="txt_login">개발사 계정등록</h1>
                  <div class="wrap_idpass">
-                     <input type="text" class="input_data" placeholder="아이디" runat="server" id="inputID" autocomplete="off"/><br />
-                     <input type="password" class="input_data" placeholder="비밀번호" runat="server" id="inputPassword" autocomplete="off"/><br />
-                     <input type="password" class="input_data" placeholder="비밀번호 확인" runat="server" id="inputPasswordDupl" autocomplete="off"/><br />
-                     <input type="email" class="input_data" placeholder="이메일" runat="server" id="inputEmail" autocomplete="off"/><br />
-                     <input type="text" class="input_data" placeholder="개발사 이름" runat="server" id="inputNickname" autocomplete="off"/><br />
-                     <input type="text" class="input_data" placeholder="개발사 사이트 링크" runat="server" id="inputLink" autocomplete="off"/><br />
+                     <input type="text" class="input_data" placeholder="아이디" runat="server" ID="inputID" autocomplete="off"/><br />
+                     <input type="password" class="input_data" placeholder="비밀번호" runat="server" ID="inputPassword" autocomplete="off"/><br />
+                     <input type="password" class="input_data" placeholder="비밀번호 확인" runat="server" ID="inputPasswordDupl" autocomplete="off"/><br />
+                     <input type="email" class="input_data" placeholder="이메일" runat="server" ID="inputEmail" autocomplete="off"/><br />
+                     <input type="text" class="input_data" placeholder="개발사 이름" runat="server" ID="inputNickname" autocomplete="off"/><br />
+                     <input type="text" class="input_data" placeholder="개발사 사이트 링크" runat="server" ID="inputLink" autocomplete="off"/><br />
                      <div class="wrap_input_img">
                     <a class="txt_devreg_img">프로필이미지</a>
                     <asp:FileUpload ID="uploadImg_dev" runat="server" cssclass="txt_devreg_imgselect"/><br />
@@ -43,4 +43,3 @@
     </form>
 </body>
 </html>
-

@@ -15,7 +15,8 @@ namespace GameStay
             {
                 Response.Redirect("Store_Main.aspx");
             }
-
+            
+            
 
         }
 
@@ -26,7 +27,7 @@ namespace GameStay
 
         protected void Register_OnClick(object sender, EventArgs e)
         {
-
+            
             string fname = "";
             if (uploadImg_dev.HasFile) fname = this.GetFilename(uploadImg_dev.FileName);
             else
@@ -52,70 +53,68 @@ namespace GameStay
                 dDao.RegistDev(dDo);
                 Response.Redirect("SuccessRegist.aspx");
             }
-            else if (inputID.Value.Length < 1)
+            else if (inputID.Value.Length <= 0)
             {
                 inputID.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "아이디를 입력해주세요.";
+                txtRegistCheck.InnerText = "아이디를 입력해 주세요.";
                 return;
             }
-            else if (inputPassword.Value.Length < 1)
+            else if(inputPassword.Value.Length <=0)
             {
                 inputPassword.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "비밀번호를 입력해주세요.";
+                txtRegistCheck.InnerText = "비밀번호를 입력해 주세요.";
                 return;
             }
-            else if (inputPassword.Value != inputPasswordDupl.Value)
+            else if(inputPassword.Value != inputPasswordDupl.Value)
             {
                 inputPassword.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
                 txtRegistCheck.InnerText = "비밀번호가 일치하지 않습니다.";
                 return;
             }
-            else if (inputEmail.Value.Length < 1)
+            else if(inputEmail.Value.Length <= 0)
             {
                 inputEmail.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "개발사 이메일을 입력해주세요.";
-                txtRegistCheck.InnerText = "fuck";
+                txtRegistCheck.InnerText = "이메일을 입력해 주세요.";
                 return;
             }
-            else if (inputNickname.Value.Length < 1)
+            else if(inputNickname.Value.Length <= 0)
             {
                 inputNickname.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "개발사 이름을 입력해주세요.";
+                txtRegistCheck.InnerText = "개발사 이름을 입력해 주세요.";
                 return;
             }
-            else if (txt_explain.Text.Length < 1)
+            else if(inputLink.Value.Length <= 0)
             {
+                inputLink.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "개발사 설명을 입력해주세요.";
+                txtRegistCheck.InnerText = "개발사 사이트 링크를 입력해 주세요.";
                 return;
             }
-            else if (uploadImg_dev.FileName.Length < 1)
+            else if(uploadImg_dev.FileName.Length <= 0)
             {
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "개발사 로고를 입력해주세요.";
+                txtRegistCheck.InnerText = "개발사 프로필 이미지를 등록해 주세요.";
                 return;
-
             }
-            else if (inputLink.Value.Length < 1)
+            else if(txt_explain.Text.Length <= 0)
             {
+                txt_explain.Focus();
                 txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "개발사 사이트 링크를 입력해주세요";
+                txtRegistCheck.InnerText = "개발사 설명을 입력해 주세요.";
                 return;
             }
             else
             {
-                txtRegistCheck.Attributes.Add("style", "visibility: visible");
-                txtRegistCheck.InnerText = "이미 사용중인 ID 입니다.";
-                inputID.Value = "";
                 inputID.Focus();
+                txtRegistCheck.Attributes.Add("style", "visibility: visible");
+                txtRegistCheck.InnerText = "이미 사용중인 아이디 입니다.";
                 return;
             }
-
         }
 
         private string GetFilename(string path)

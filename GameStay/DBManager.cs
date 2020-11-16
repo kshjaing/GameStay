@@ -207,7 +207,7 @@ namespace GameStay
         //--------------------------------------------게임상세페이지 리뷰파트-------------------------------------
         
 
-
+        
 
         //특정 게임의 리뷰를 1~8개까지 보여줌
         public SqlDataAdapter SetReviewAdapter(string gametitle)
@@ -234,6 +234,19 @@ namespace GameStay
             return dataAdapter;
         }
         
+        //유저 스크린샷
+        public SqlDataAdapter SetScreenShot(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from (SELECT ROW_NUMBER() OVER(ORDER BY 번호 DESC)AS rownum, * FROM 스크린샷 where 작성자 ='" + uid + "' )transc WHERE transc.rownum BETWEEN 1 AND 3", myConn);
+            return dataAdapter;
+        }
+
+        //유저 스크린샷 업로드(소유게임 선택)
+        public SqlDataAdapter SetScreenShotGame(string uid)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT 영어게임명 FROM 거래목록 where 구매자 ='" + uid + "'", myConn);
+            return dataAdapter;
+        }
 
         //유저 정보
         public SqlDataAdapter SetUserInfo(string uid)

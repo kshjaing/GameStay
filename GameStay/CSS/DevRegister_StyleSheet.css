@@ -161,7 +161,7 @@ html, body {
 .txt_check {
     visibility:hidden;
     color: red;
-    display: inline-block;
+    
 }
 /*가입버튼*/
 .button_register {
