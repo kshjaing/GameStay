@@ -27,7 +27,7 @@ namespace GameStay
             dbManager = new DBManager();
             featureAdapter = dbManager.SetFeaturesAdapter();              //추천게임 어댑터
             discountCountAdpater = dbManager.SetDiscountCountAdapter();   //할인게임 총 개수 어댑터
-            if (Session["아이디"] != null)
+            if (Session["아이디"] != null && Session["접속경로"].ToString() == "USER")
             {
                 (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
                 discountAdapter1 = dbManager.SetDiscountTagAdapter1(Session["아이디"].ToString());     //할인게임 어댑터 1페이지
@@ -36,8 +36,17 @@ namespace GameStay
                 discountAdapter4 = dbManager.SetDiscountTagAdapter4(Session["아이디"].ToString());     //할인게임 어댑터 4페이지
 
             }
-            else
+            else if (Session["아이디"] ==null)
             {
+                discountAdapter1 = dbManager.SetDiscountAdapter1();     //할인게임 어댑터 1페이지
+                discountAdapter2 = dbManager.SetDiscountAdapter2();     //할인게임 어댑터 2페이지
+                discountAdapter3 = dbManager.SetDiscountAdapter3();     //할인게임 어댑터 3페이지
+                discountAdapter4 = dbManager.SetDiscountAdapter4();     //할인게임 어댑터 4페이지
+
+            }
+            else if (Session["아이디"] != null && Session["접속경로"].ToString() == "DEV")
+            {
+                (this.Master.FindControl("button_login") as HtmlButton).InnerText = "로그아웃";
                 discountAdapter1 = dbManager.SetDiscountAdapter1();     //할인게임 어댑터 1페이지
                 discountAdapter2 = dbManager.SetDiscountAdapter2();     //할인게임 어댑터 2페이지
                 discountAdapter3 = dbManager.SetDiscountAdapter3();     //할인게임 어댑터 3페이지
