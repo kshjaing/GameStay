@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Store_TotalList.aspx.cs" Inherits="GameStay.Store_TotalList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Store_TotalList_StyleSheet.css?ver=10" rel="stylesheet" />
+    <link href="CSS/Store_TotalList_StyleSheet.css?ver=11" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrap_total">

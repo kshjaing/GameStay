@@ -140,6 +140,11 @@ namespace GameStay
             {
                 Response.Redirect("Store_TotalList.aspx?sort=discount");
             }
+
+            if (Request["__EVENTTARGET"] == "div_wrap_p_moregames")
+            {
+                Response.Redirect("Store_TotalList.aspx?sort=release");
+            }
         }
 
         protected void NewGames_OnClick(object sender, EventArgs e)
