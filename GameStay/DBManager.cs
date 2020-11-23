@@ -256,6 +256,43 @@ namespace GameStay
         //-------------------------------------------------------------------------------------------------
 
 
+
+        //---------------------------------------전체 게임리스트-------------------------------------------
+        //할인중인 모든게임 어댑터 적용
+        public SqlDataAdapter SetDiscountTotalGameAdapter()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_게임타이틀 WHERE 할인율 > 0 ORDER BY 평점 DESC, 게임명", myConn);
+            return dataAdapter;
+        }
+
+        //모든게임 평점순 어댑터 적용
+        public SqlDataAdapter SetRatingTotalGameAdapter()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_게임타이틀 ORDER BY 평점 DESC", myConn);
+            return dataAdapter;
+        }
+        //모든게임 최근출시일순 어댑터 적용
+        public SqlDataAdapter SetReleaseTotalGameAdapter()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM 뷰_게임타이틀 ORDER BY 출시일 DESC", myConn);
+            return dataAdapter;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //--------------------------------------------게임상세페이지 관련-------------------------------------
 
         //특정게임타이틀 레코드 어댑터

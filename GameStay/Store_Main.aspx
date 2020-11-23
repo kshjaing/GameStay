@@ -181,6 +181,10 @@
     </script>
 
     <script>
+        function onClickDiscountMore() {
+            __doPostBack('div_wrap_p_discount_more');
+        }
+
         function onClickDivDiscount1() {
             __doPostBack('div_discount_contentbox1');
         }
@@ -299,7 +303,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <div class="div_wrap_p_discount_more" id="div_wrap_p_discount_more"
-                onmouseover="onMouseMore()" onmouseout="onMouseoutMore()">
+                onmouseover="onMouseMore()" onmouseout="onMouseoutMore()" onclick="onClickDiscountMore()">
                 <p class="p_discount_more" id="p_discount_more">더보기</p>
             </div>
             <div class="div_wrap_contents">

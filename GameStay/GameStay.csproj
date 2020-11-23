@@ -82,6 +82,7 @@
     <Content Include="CSS\RequestLogin_StyleSheet.css" />
     <Content Include="CSS\StoreMain_StyleSheet.css" />
     <Content Include="CSS\Store_ProductDetail_StyleSheet.css" />
+    <Content Include="CSS\Store_TotalList_StyleSheet.css" />
     <Content Include="CSS\SuccessPurchase_StyleSheet.css" />
     <Content Include="CSS\UploadGame_StyleSheet.css" />
     <Content Include="DevLogin.aspx" />
@@ -280,6 +281,7 @@
     <Content Include="Images\GameWideImages\WideImage_Spelunky2.jpg" />
     <Content Include="Images\GameWideImages\WideImage_TheWitcher3.jpg" />
     <Content Include="Images\Icon\Icon_Discount.png" />
+    <Content Include="Images\Icon\Icon_Search.png" />
     <Content Include="Images\Icon\Star\Star_1.png" />
     <Content Include="Images\Icon\Star\Star_2.png" />
     <Content Include="Images\Icon\Star\Star_3.png" />
@@ -365,6 +367,7 @@
     <Content Include="RequestLogin.aspx" />
     <Content Include="Store_Main.aspx" />
     <Content Include="Store_ProductDetail.aspx" />
+    <Content Include="Store_TotalList.aspx" />
     <Content Include="SuccessPurchase.aspx" />
     <Content Include="SuccessRegist.aspx" />
     <Content Include="UploadGame.aspx" />
@@ -481,6 +484,13 @@
     </Compile>
     <Compile Include="Store_ProductDetail.aspx.designer.cs">
       <DependentUpon>Store_ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store_TotalList.aspx.cs">
+      <DependentUpon>Store_TotalList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store_TotalList.aspx.designer.cs">
+      <DependentUpon>Store_TotalList.aspx</DependentUpon>
     </Compile>
     <Compile Include="SuccessPurchase.aspx.cs">
       <DependentUpon>SuccessPurchase.aspx</DependentUpon>

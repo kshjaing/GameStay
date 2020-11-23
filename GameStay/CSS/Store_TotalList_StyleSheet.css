@@ -1,0 +1,148 @@
+﻿@font-face {
+    font-family: 'IBMPlexSansKR-Bold';
+    src: url('../Fonts/IBMPlexSansKR-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('../Fonts/IBMPlexSansKR-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS M 2.0';
+    src: url('../Fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NIXGONFONTS B 2.0';
+    src: url('../Fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HangeulNuriB';
+    src: url('../Fonts/HangeulNuriB.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HangeulNuriR';
+    src: url('../Fonts/HangeulNuriR.ttf') format('truetype');
+}
+
+html, body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrap_total {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.p_totalgame {
+    color: #FFFFFF;
+    font-size: 30pt;
+    font-family: 'NIXGONFONTS B 2.0';
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.div_wrap_search {
+    width: 230px;
+    height: 35px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+.div_wrap_image_search {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
+
+.img_search {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.input_search {
+    background: transparent;
+    width: 50px;
+    font-size: 13pt;
+    border: none;
+    outline: none;
+    float: left;
+    position: absolute;
+}
+
+.div_wrap_contentbox {
+    left: 50%;
+    transform:translateX(-50%);
+    width: 900px;
+    height: 85px;
+    background: #1B1C1E;
+    margin-top: 10px;
+    position: relative;
+}
+
+.div_wrap_image {
+    width: 200px;
+    height: 100%;
+    position: relative;
+    float: left;
+    user-select: none;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.div_wrap_p_title {
+    display: table;
+    width: 550px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.p_title {
+    display: table-cell;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: IBMPlexSansKR-Bold;
+    margin-bottom: 0;
+    padding-left: 20px;
+    user-select: none;
+}
+
+.div_wrap_p_price {
+    display: table;
+    width: 100px;
+    height: 100%;
+    float: right;
+    right: 10px;
+    position: relative;
+}
+
+.p_price {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    color: #FFFFFF;
+    font-size: 13pt;
+    font-family: IBMPlexSansKR-Bold;
+    user-select: none;
+}

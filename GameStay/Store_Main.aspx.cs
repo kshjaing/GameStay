@@ -36,7 +36,7 @@ namespace GameStay
                 discountAdapter4 = dbManager.SetDiscountTagAdapter4(Session["아이디"].ToString());     //할인게임 어댑터 4페이지
 
             }
-            else if (Session["아이디"] ==null)
+            else if (Session["아이디"] == null)
             {
                 discountAdapter1 = dbManager.SetDiscountAdapter1();     //할인게임 어댑터 1페이지
                 discountAdapter2 = dbManager.SetDiscountAdapter2();     //할인게임 어댑터 2페이지
@@ -54,7 +54,7 @@ namespace GameStay
 
             }
             bestgamesAdapter = dbManager.SetBestGamesAdapter();           //최고인기, 신규출시게임 어댑터
-            
+
 
 
             //추천게임 바인딩
@@ -102,7 +102,7 @@ namespace GameStay
 
 
             //---------------------인기게임 파트----------------------//
-            
+
             bestDS = new DataSet();
             bestgamesAdapter.Fill(bestDS);
             bestgamesRepeater.DataSource = bestDS.Tables[0];
@@ -136,7 +136,10 @@ namespace GameStay
                 Response.Redirect("Store_ProductDetail.aspx");
             }
 
-
+            if (Request["__EVENTTARGET"] == "div_wrap_p_discount_more")
+            {
+                Response.Redirect("Store_TotalList.aspx?sort=discount");
+            }
         }
 
         protected void NewGames_OnClick(object sender, EventArgs e)
