@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="GameStay.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Profile_StyleSheet.css?ver=11" rel="stylesheet" />
+    <link href="CSS/Profile_StyleSheet.css?ver=12" rel="stylesheet" />
     <script>
         function profileEditOnClick() {
             __doPostBack('wrap_edit_p');

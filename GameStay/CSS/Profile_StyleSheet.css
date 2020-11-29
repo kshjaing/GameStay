@@ -167,7 +167,7 @@ html, body {
 
 .txt_profile_game {
     color: #FFFFFF;
-    font-size: 35pt;
+    font-size: 20pt;
     font-family: 'NIXGONFONTS B';
     padding-top:30px;
     padding-left:55px;
@@ -189,12 +189,12 @@ html, body {
 }
 .txt_profile_game_title {
     color: #FFFFFF;
-    font-size: 25pt;
+    font-size: 20pt;
     font-family: 'NIXGONFONTS M';
 }
 .txt_profile_game_date {
     color: #FFFFFF;
-    font-size: 15pt;
+    font-size: 12pt;
     font-family: 'NIXGONFONTS M';
 }
 .txt_profile_game_price {
