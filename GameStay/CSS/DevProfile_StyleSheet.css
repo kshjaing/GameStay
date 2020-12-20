@@ -57,7 +57,7 @@ html, body {
 .profile_square {
     background-color: #1B1C1E;
     width: 900px;
-    height: 430px;
+    height: 470px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
