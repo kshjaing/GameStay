@@ -181,6 +181,10 @@
     </script>
 
     <script>
+        function onClickDiscountMore() {
+            __doPostBack('div_wrap_p_discount_more');
+        }
+
         function onClickDivDiscount1() {
             __doPostBack('div_discount_contentbox1');
         }
@@ -212,6 +216,9 @@
 
     <!-----------------------------------인기게임파트 클릭메서드 및 페이징 --------------------------------------->
     <script>
+        function onClickBestMore() {
+            __doPostBack('div_wrap_p_moregames');
+        }
         function onMouseBestMore() {
             document.getElementById("div_wrap_p_moregames").style.background = "#FFFFFF";
             document.getElementById("p_moregames").style.color = "#000000";
@@ -299,7 +306,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <div class="div_wrap_p_discount_more" id="div_wrap_p_discount_more"
-                onmouseover="onMouseMore()" onmouseout="onMouseoutMore()">
+                onmouseover="onMouseMore()" onmouseout="onMouseoutMore()" onclick="onClickDiscountMore()">
                 <p class="p_discount_more" id="p_discount_more">더보기</p>
             </div>
             <div class="div_wrap_contents">
@@ -468,7 +475,7 @@
     <!------------------------------------------------------------------------------------------->
 
     <!---------------------------------최고 인기 게임 리스트------------------------------------->
-        
+           
            <asp:ScriptManager ID="ScriptManager" runat="server" EnablePartialRendering="true" />
            <asp:UpdatePanel ID="UpdatePanel" runat="server">
                <ContentTemplate>
@@ -481,7 +488,7 @@
                                   OnClick="NewGames_OnClick"/>
                    </div>
                    <div class="div_wrap_p_moregames" onmouseover="onMouseBestMore()" onmouseout="onMouseoutBestMore()"
-                        id="div_wrap_p_moregames">
+                        id="div_wrap_p_moregames" onclick="onClickBestMore()">
                        <p class="p_moregames" id="p_moregames">더보기</p>
                    </div>
                    <div class="div_wrap_list">

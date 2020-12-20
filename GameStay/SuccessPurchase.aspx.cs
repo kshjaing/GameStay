@@ -21,6 +21,7 @@ namespace GameStay
             {
                 Response.Redirect("Store_ProductDetail.aspx?title=" + gameTitle);
             }
+            dbManager.DBClose();
         }
     }
 }

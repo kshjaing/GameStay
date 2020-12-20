@@ -76,6 +76,7 @@ namespace GameStay
 
                         //소유한 게임 수
                         txt_profile_countgame.InnerText = dbManager.GetHasGameCount(Request["id"].ToString()).ToString();
+                        dbManager.DBClose();
                     }
                     else
                     {

@@ -1,0 +1,14 @@
+SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY(SELECT NULL)) AS rownum, *
+FROM (
+SELECT TOP(24) * FROM 뷰_게임타이틀
+WHERE 태그1 = '방대한스토리' OR 태그2 = '방대한스토리' OR 태그3 = '방대한스토리'
+OR 태그1 = '풍부한스토리' OR 태그2 = '풍부한스토리' OR 태그3 = '풍부한스토리'
+OR 태그1 = '멀티플레이' OR 태그2 = '멀티플레이' OR 태그3 = '멀티플레이'
+ORDER BY NEWID())b) a
+WHERE a.rownum BETWEEN 1 AND 6
+
+
+//태그포인트 가장높은 것 3개 추출쿼리
+SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY 태그포인트 DESC) AS rownum, *
+FROM 태그포인트 WHERE 유저='user') a
+WHERE a.rownum BETWEEN 1 AND 3

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="GameStay.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/Profile_StyleSheet.css?ver=16" rel="stylesheet" />
+    <link href="CSS/Profile_StyleSheet.css?ver=12" rel="stylesheet" />
     <script>
         function profileEditOnClick() {
             __doPostBack('wrap_edit_p');
@@ -18,6 +18,7 @@
                   <div class="div_profile_detail">
                       <p class="txt_profile_nickname"><%#Eval("닉네임") %></p>
                       <a class="txt_profile_detail">레벨 : </a> <a class="txt_profile_level" ><%#Eval("레벨") %></a> <br />
+                      <a class="txt_profile_pointtext">보유포인트 : </a><a class="txt_profile_point"><%# Eval("활동포인트") %></a><br />
                       </ItemTemplate>
             </asp:Repeater>
             <a class="txt_profile_detail">보유한 게임 :</a> <a class="txt_profile_countgame" runat="server" id="txt_profile_countgame"></a> <a class="txt_profile_detail2">개</a>

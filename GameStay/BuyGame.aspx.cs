@@ -49,10 +49,11 @@ namespace GameStay
             {
                 if (checkHasGame == false)
                 {
-                    dbManager.PurchaseGame(Session["아이디"].ToString(), gameTitle, dbManager.GetDiscountedPrice(gameTitle));
+                    dbManager.PurchaseGame(Session["아이디"].ToString(), dbManager.GetKorGameTitle(gameTitle), gameTitle, dbManager.GetDiscountedPrice(gameTitle));
                     Response.Redirect("SuccessPurchase.aspx?title=" + gameTitle);
                 }
                 else return;
+                dbManager.DBClose();
             }
         }
     }
